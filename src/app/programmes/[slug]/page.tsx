@@ -1,32 +1,46 @@
-import Program1 from "@/components/program1";
-import Program2 from "@/components/program2";
-import Program3 from "@/components/program3";
+import { notFound } from "next/navigation";
+import { companiesData } from "@/constants/companies";
+import ProgramHero from "@/sections/program/ProgramHero";
+import ProgramAbout from "@/sections/program/ProgramAbout";
+import ProgramTestimonial from "@/sections/program/ProgramTestimonial";
+import ProgramUpcomingEvents from "@/sections/program/ProgramUpcomingEvents";
 
-export default async function ProgrammeDetailPage({ 
+const ComponentMap: Record<string, React.FC<any>> = {
+  Hero: ProgramHero,
+  About: ProgramAbout,
+  Testimonial: ProgramTestimonial,
+  UpcomingEvents: ProgramUpcomingEvents,
+};
+
+export default async function DynamicCompanyPage({ 
   params 
 }: { 
   params: Promise<{ slug: string }> 
 }) {
   const { slug } = await params;
+  const company = companiesData.find((c) => c.slug === slug);
+
+  if (!company) {
+    notFound();
+  }
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center">
-      {/* Dynamic Component Rendering Based on Slug */}
-      {slug === "program1" && <Program1 />}
-      {slug === "program2" && <Program2 />}
-      {slug === "program3" && <Program3 />}
-
-      {/* Fallback for unknown slugs */}
-      {!["program1", "program2", "program3"].includes(slug) && (
-        <div className="text-center py-40">
-          <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-            Program Not Found
-          </h1>
-          <p className="text-xl text-zinc-400">
-            The program "{slug}" does not exist.
-          </p>
-        </div>
-      )}
+    <main className="min-h-screen pt-20 bg-zinc-950">
+      {/* Dynamically render components based on the company's configuration array */}
+      {company.components.map((componentName, idx) => {
+        const Component = ComponentMap[componentName];
+        if (!Component) return null;
+        
+        // We pass the company data object down as a prop so the component knows what to display
+        return <Component key={idx} company={company} />;
+      })}
     </main>
   );
+}
+
+// Generate static params for lightning-fast performance
+export function generateStaticParams() {
+  return companiesData.map((company) => ({
+    slug: company.slug,
+  }));
 }
