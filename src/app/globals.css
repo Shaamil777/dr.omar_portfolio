@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-zigma: #4E37FF;
+  --color-lambda: #D8D3D3;
+  --font-national2: var(--font-national2);
+}
