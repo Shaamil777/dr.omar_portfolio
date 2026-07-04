@@ -1,16 +1,27 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
   // Track the scroll position relative to the heading section
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 0.95", "center 0.3"],
+    offset: isMobile ? ["start 1.1", "start -0.1"] : ["start 0.95", "center 0.3"],
   });
 
   // Create staggered animations for the main heading
@@ -39,7 +50,7 @@ export default function About() {
   const personParallax = useTransform(rowProgress, [0, 1], ["10%", "-10%"]);
 
   return (
-    <section ref={containerRef} className="bg-[#FAF8F5] text-zinc-950 py-32 px-6 md:px-12 lg:px-24 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section ref={containerRef} className="bg-[#FAF8F5] text-zinc-950 py-16 md:py-32 px-6 md:px-12 lg:px-24 min-h-screen flex flex-col justify-center overflow-hidden">
       <div className="max-w-[100rem] mx-auto w-full">
         <h2 className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 mb-16 uppercase">
           About Dr. Omar
@@ -50,7 +61,7 @@ export default function About() {
             <div key={index} className={`overflow-hidden ${line.indent}`}>
               <motion.h3
                 style={{ y: line.y, opacity: line.opacity }}
-                className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[6rem] font-black uppercase tracking-tighter leading-[0.95] py-1 text-black whitespace-nowrap"
+                className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[6rem] font-black uppercase tracking-tighter leading-[0.95] py-1 text-black whitespace-nowrap"
               >
                 {line.text}
               </motion.h3>
@@ -98,7 +109,7 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-              className="text-base md:text-lg text-zinc-600 leading-normal"
+              className={`text-base md:text-lg text-zinc-600 leading-normal ${!isExpanded ? 'hidden md:block' : ''}`}
             >
               Having mentored thousands of entrepreneurs, coached organizations across industries, and worked with leaders throughout India and the GCC, his mission is to develop purpose-driven leaders who create meaningful and lasting impact in their communities and organizations.
             </motion.p>
@@ -107,10 +118,18 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-              className="text-base md:text-lg text-zinc-900 leading-normal"
+              className={`text-base md:text-lg text-zinc-900 leading-normal ${!isExpanded ? 'hidden md:block' : ''}`}
             >
               "His philosophy is simple: transform people first, and lasting success will follow."
             </motion.p>
+
+            {/* Read More Toggle for Mobile */}
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="md:hidden self-start text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors mt-2 underline underline-offset-4"
+            >
+              {isExpanded ? "Read Less" : "Read More"}
+            </button>
 
             {/* CTA Buttons */}
             <motion.div 
@@ -121,7 +140,7 @@ export default function About() {
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
               {/* Primary Button */}
-              <a href="#journey" className="group relative inline-flex items-center justify-center ml-2">
+              <a href="#journey" className="group relative inline-flex items-center justify-center self-center sm:self-auto sm:ml-2">
                 {/* Slab Layer */}
                 <div className="absolute inset-0 bg-zinc-300 transform -skew-x-12 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
                 
@@ -138,7 +157,7 @@ export default function About() {
               </a>
 
               {/* Secondary Button */}
-              <a href="#consultation" className="group relative inline-flex items-center justify-center ml-2 mt-4 sm:mt-0">
+              <a href="#consultation" className="group relative inline-flex items-center justify-center self-center sm:self-auto mt-4 sm:mt-0 sm:ml-4">
                 {/* Slab Layer */}
                 <div className="absolute inset-0 bg-zinc-300 transform -skew-x-12 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
                 
@@ -154,12 +173,12 @@ export default function About() {
           </div>
 
           {/* Image Area with Parallax and Reveal */}
-          <div className="w-full lg:w-1/2 relative flex justify-center items-end min-h-[950px] -mt-32 lg:-mt-96">
+          <div className="w-full lg:w-1/2 relative flex justify-center items-end min-h-[450px] sm:min-h-[600px] lg:min-h-[950px] -mt-10 sm:-mt-20 lg:-mt-96">
             
             {/* Abstract Background (Blob scales) */}
             <motion.div 
               style={{ y: bgParallax }}
-              className="absolute inset-0 z-0"
+              className="absolute inset-0 z-0 flex items-center justify-center"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -167,14 +186,14 @@ export default function About() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 2, ease: "easeOut" }}
                 style={{ backgroundImage: `url('/images/about/about_abstract.png')` }}
-                className="w-full h-full bg-contain blur-[0.7px] bg-center bg-no-repeat"
+                className="w-[250%] h-[250%] sm:w-[180%] sm:h-[180%] lg:w-full lg:h-full bg-contain blur-[0.7px] bg-center bg-no-repeat"
               />
             </motion.div>
             
             {/* Person Container (Portrait fades up) */}
             <motion.div 
               style={{ y: personParallax }}
-              className="relative z-10 flex flex-col items-center w-[75%] lg:w-[65%] mb-8 lg:mb-20"
+              className="relative z-10 flex flex-col items-center w-[90%] sm:w-[75%] lg:w-[65%] mb-0 sm:mb-8 lg:mb-20"
             >
               <img 
                 src="/images/about/09.png" 
