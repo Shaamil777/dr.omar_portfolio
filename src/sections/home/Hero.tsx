@@ -1,6 +1,76 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame
+} from "framer-motion";
+
+const wrap = (min: number, max: number, v: number) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+
+const brands = [
+  "ACME CORP",
+  "GLOBEX",
+  "SOYLENT",
+  "INITECH",
+  "UMBRELLA",
+  "WAYNE ENT",
+  "STARK IND",
+  "VANDELAY",
+  "HOOLI",
+  "MASSIVE DYNAMIC"
+];
+
+function LogoSlider({ baseVelocity = -1 }: { baseVelocity?: number }) {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
+
+  const directionFactor = useRef<number>(1);
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000) * 2;
+
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
+
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  return (
+    <div className="absolute bottom-4 lg:bottom-8 left-0 w-full overflow-hidden flex flex-nowrap py-5 border-y border-neutral-200 bg-[#FAF8F5] z-40">
+      <motion.div className="flex font-national2 uppercase text-sm lg:text-base text-neutral-400 whitespace-nowrap items-center" style={{ x }}>
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="flex gap-25 lg:gap-50 px-6 lg:px-12 items-center">
+            {brands.map((brand, idx) => (
+              <span key={idx} className="font-semibold tracking-[0.1em] hover:text-neutral-600 transition-colors duration-300 cursor-pointer">{brand}</span>
+            ))}
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Hero() {
   const wordVariants = {
@@ -17,7 +87,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen bg-[#FAF8F5] flex flex-col justify-center py-24 lg:py-32 px-6 lg:px-16 overflow-hidden">
+    <section className="relative min-h-screen bg-[#FAF8F5] flex flex-col justify-center pt-24 pb-36 lg:pt-32 lg:pb-40 px-6 lg:px-16 overflow-hidden">
 
       {/* Polaroid Card 1 - Behind 'WE' */}
       <motion.div
@@ -47,7 +117,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1, rotate: 15, y: 0 }}
           transition={{ delay: 1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute z-20 flex flex-col p-1.5 pb-6 w-36 h-44 md:p-2 md:pb-8 md:w-48 md:h-60 lg:w-64 lg:h-80 bg-white shadow-2xl border border-neutral-100"
-          style={{ top: "33%", left: "55%" }}
+          style={{ top: "33%", left: "60%" }}
         >
           <div className="flex-1 bg-neutral-200 w-full h-full flex flex-col items-center justify-center border border-black/5 overflow-hidden relative">
             <motion.img 
@@ -62,7 +132,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Left Side: Typography */}
-        <div className="w-full lg:w-[75%] flex flex-col mt-12 lg:mt-24 text-[rgb(14,22,35)] font-national2 font-light uppercase tracking-[0.04em] leading-[0.7] text-[14vw] lg:text-[240px] lg:leading-[165px]">
+        <div className="w-full lg:w-[75%] flex flex-col mt-12 lg:mt-24 text-black font-national2 font-light uppercase tracking-[0.04em] leading-[0.7] text-[14vw] lg:text-[240px] lg:leading-[165px]">
 
           {/* Row 1 */}
           <div className="flex flex-col lg:flex-row w-full lg:justify-between items-start lg:items-end gap-6 lg:gap-0 mb-6 lg:mb-12 relative z-10 whitespace-nowrap">
@@ -133,6 +203,7 @@ export default function Hero() {
 
       </div>
 
+      <LogoSlider />
     </section>
   );
 }
