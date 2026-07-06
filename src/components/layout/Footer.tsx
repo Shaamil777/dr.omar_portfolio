@@ -16,6 +16,33 @@ export default function Footer() {
     let scrollDirection = 1;
     let scrollInfluence = 0;
 
+    let itemWidth1 = 0;
+    let itemWidth2 = 0;
+
+    const updateWidths = () => {
+      if (band1Ref.current && band1Ref.current.children[0]) {
+        const childWidth = parseFloat(window.getComputedStyle(band1Ref.current.children[0]).width);
+        const gap = parseFloat(window.getComputedStyle(band1Ref.current).columnGap) || 32;
+        itemWidth1 = childWidth + gap;
+      }
+      if (band2Ref.current && band2Ref.current.children[0]) {
+        const childWidth = parseFloat(window.getComputedStyle(band2Ref.current.children[0]).width);
+        const gap = parseFloat(window.getComputedStyle(band2Ref.current).columnGap) || 32;
+        itemWidth2 = childWidth + gap;
+      }
+    };
+
+    updateWidths();
+    
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => updateWidths());
+      if (band1Ref.current?.children[0]) resizeObserver.observe(band1Ref.current.children[0]);
+      if (band2Ref.current?.children[0]) resizeObserver.observe(band2Ref.current.children[0]);
+    }
+
+    window.addEventListener("resize", updateWidths);
+
     const handleScroll = () => {
       currentScroll = window.scrollY;
       const delta = currentScroll - prevScroll;
@@ -39,6 +66,13 @@ export default function Footer() {
       xPos1 += speed1;
       xPos2 += speed2;
 
+      if (itemWidth1 > 0) {
+        xPos1 = gsap.utils.wrap(-itemWidth1, 0, xPos1);
+      }
+      if (itemWidth2 > 0) {
+        xPos2 = gsap.utils.wrap(-itemWidth2, 0, xPos2);
+      }
+
       if (band1Ref.current) {
         gsap.set(band1Ref.current, { x: xPos1 });
       }
@@ -54,6 +88,8 @@ export default function Footer() {
     return () => {
       cancelAnimationFrame(id);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateWidths);
+      if (resizeObserver) resizeObserver.disconnect();
     };
   }, []);
 
