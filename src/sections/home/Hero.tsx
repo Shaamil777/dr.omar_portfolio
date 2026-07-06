@@ -58,7 +58,7 @@ function LogoSlider({ baseVelocity = -1 }: { baseVelocity?: number }) {
   });
 
   return (
-    <div className="absolute bottom-4 lg:bottom-8 left-0 w-full overflow-hidden flex flex-nowrap py-5 border-y border-neutral-200 bg-[#FAF8F5] z-40">
+    <div className="absolute bottom-0 left-0 w-full overflow-hidden flex flex-nowrap py-5 border-y border-neutral-200 bg-[#FAF8F5] z-40">
       <motion.div className="flex font-national2 uppercase text-sm lg:text-base text-neutral-400 whitespace-nowrap items-center" style={{ x }}>
         {[...Array(4)].map((_, i) => (
           <div key={i} className="flex gap-25 lg:gap-50 px-6 lg:px-12 items-center">
@@ -95,7 +95,7 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1, rotate: -15, y: 0 }}
         transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute z-0 flex flex-col p-1.5 pb-6 w-32 h-40 md:p-2 md:pb-8 md:w-48 md:h-60 lg:w-60 lg:h-72 bg-white shadow-2xl border border-neutral-100"
-        style={{ top: "12%", left: "19%" }}
+        style={{ top: "7%", left: "19%" }}
       >
         <div className="flex-1 bg-neutral-200 w-full h-full flex flex-col items-center justify-center border border-black/5 overflow-hidden relative">
           <motion.img 
@@ -109,7 +109,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <div className="max-w-[1700px] w-full mx-auto flex flex-col lg:flex-row relative z-10">
+      <div className="max-w-[1700px] w-full mx-auto flex flex-col lg:flex-row relative z-10 -mt-8 lg:-mt-16">
 
         {/* Polaroid Card 2 - Interleaved between rows */}
         <motion.div
@@ -117,7 +117,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1, rotate: 15, y: 0 }}
           transition={{ delay: 1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute z-20 flex flex-col p-1.5 pb-6 w-36 h-44 md:p-2 md:pb-8 md:w-48 md:h-60 lg:w-64 lg:h-80 bg-white shadow-2xl border border-neutral-100"
-          style={{ top: "33%", left: "60%" }}
+          style={{ top: "33%", left: "62%" }}
         >
           <div className="flex-1 bg-neutral-200 w-full h-full flex flex-col items-center justify-center border border-black/5 overflow-hidden relative">
             <motion.img 
@@ -201,6 +201,50 @@ export default function Hero() {
           </div>
         </div>
 
+      </div>
+
+      {/* Achievements Block */}
+      <div className="max-w-[1700px] w-full mx-auto mt-1 lg:mt-5 z-20 relative pb-4 lg:pb-0 px-2 lg:px-8">
+        <div className="w-full max-w-5xl mx-auto flex flex-row items-start md:items-center justify-between py-4 md:py-8 px-2 md:px-16 bg-transparent">
+          {/* Item 1 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
+            className="flex flex-col items-center md:items-start w-[30%] md:w-auto"
+          >
+            <span className="text-xl sm:text-3xl lg:text-[64px] leading-none font-black text-[#18181b] tracking-tighter mb-1 md:mb-2">10,000+</span>
+            <span className="text-[10px] sm:text-sm lg:text-base text-neutral-700 font-medium tracking-tight text-center md:text-left leading-[1.1] md:leading-tight">Entrepreneurs Mentored</span>
+          </motion.div>
+
+          {/* Divider */}
+          <div className="w-px h-12 md:h-16 bg-neutral-200 mt-2 md:mt-0"></div>
+
+          {/* Item 2 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.9, duration: 0.8 }}
+            className="flex flex-col items-center md:items-start w-[30%] md:w-auto"
+          >
+            <span className="text-xl sm:text-3xl lg:text-[64px] leading-none font-black text-[#18181b] tracking-tighter mb-1 md:mb-2">1,000+</span>
+            <span className="text-[10px] sm:text-sm lg:text-base text-neutral-700 font-medium tracking-tight text-center md:text-left leading-[1.1] md:leading-tight">Organizations Coached</span>
+          </motion.div>
+
+          {/* Divider */}
+          <div className="w-px h-12 md:h-16 bg-neutral-200 mt-2 md:mt-0"></div>
+
+          {/* Item 3 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.0, duration: 0.8 }}
+            className="flex flex-col items-center md:items-start w-[30%] md:w-auto"
+          >
+            <span className="text-xl sm:text-3xl lg:text-[64px] leading-none font-black text-[#18181b] tracking-tighter mb-1 md:mb-2">20+</span>
+            <span className="text-[10px] sm:text-sm lg:text-base text-neutral-700 font-medium tracking-tight text-center md:text-left leading-[1.1] md:leading-tight">Years of Experience</span>
+          </motion.div>
+        </div>
       </div>
 
       <LogoSlider />
