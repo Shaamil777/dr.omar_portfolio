@@ -4,7 +4,7 @@ import { Users, Building, Award, Globe, Presentation } from "lucide-react";
 
 export default function Achievements() {
   return (
-    <section className="w-full bg-[#FAF8F5] py-12 lg:py-20 overflow-hidden">
+    <section className="w-full bg-[#FAF8F5] py-8 lg:py-20 overflow-hidden">
       <div className="max-w-[1700px] w-full mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-14 lg:gap-0">
         
         {/* Left Side: Title & Description */}
@@ -23,11 +23,11 @@ export default function Achievements() {
         </div>
 
         {/* Right Side: 5 Stats */}
-        <div className="w-full lg:w-[65%] xl:w-[70%] flex-1 overflow-x-auto lg:overflow-visible pb-6 lg:pb-0 scrollbar-hide">
-          <div className="flex flex-row items-start min-w-max lg:min-w-0 lg:w-full lg:justify-between h-full">
+        <div className="w-full lg:w-[65%] xl:w-[70%] flex-1 pb-6 lg:pb-0 mt-8 lg:mt-0">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row lg:items-start lg:w-full lg:justify-between h-full gap-y-12 gap-x-4 lg:gap-y-0 lg:gap-x-0">
             
             {/* Stat 1 */}
-            <div className="flex flex-col items-center justify-center w-[180px] lg:w-1/5 px-4 lg:px-6 lg:border-r border-neutral-200 h-full">
+            <div className="flex flex-col items-center justify-center w-full lg:w-1/5 px-2 lg:px-6 lg:border-r border-neutral-200 h-full">
               <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full bg-black/5 flex items-center justify-center mb-4 lg:mb-4">
                 <Users className="w-6 h-6 lg:w-7 lg:h-7 text-neutral-800" strokeWidth={1.5} />
               </div>
@@ -36,7 +36,7 @@ export default function Achievements() {
             </div>
 
             {/* Stat 2 */}
-            <div className="flex flex-col items-center justify-center w-[180px] lg:w-1/5 px-4 lg:px-6 lg:border-r border-neutral-200 h-full">
+            <div className="flex flex-col items-center justify-center w-full lg:w-1/5 px-2 lg:px-6 lg:border-r border-neutral-200 h-full">
               <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full bg-black/5 flex items-center justify-center mb-4 lg:mb-4">
                 <Building className="w-6 h-6 lg:w-7 lg:h-7 text-neutral-800" strokeWidth={1.5} />
               </div>
@@ -45,7 +45,7 @@ export default function Achievements() {
             </div>
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center justify-center w-[180px] lg:w-1/5 px-4 lg:px-6 lg:border-r border-neutral-200 h-full">
+            <div className="flex flex-col items-center justify-center w-full lg:w-1/5 px-2 lg:px-6 lg:border-r border-neutral-200 h-full">
               <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full bg-black/5 flex items-center justify-center mb-4 lg:mb-4">
                 <Award className="w-6 h-6 lg:w-7 lg:h-7 text-neutral-800" strokeWidth={1.5} />
               </div>
@@ -54,7 +54,7 @@ export default function Achievements() {
             </div>
 
             {/* Stat 4 */}
-            <div className="flex flex-col items-center justify-center w-[180px] lg:w-1/5 px-4 lg:px-6 lg:border-r border-neutral-200 h-full">
+            <div className="flex flex-col items-center justify-center w-full lg:w-1/5 px-2 lg:px-6 lg:border-r border-neutral-200 h-full">
               <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full bg-black/5 flex items-center justify-center mb-4 lg:mb-4">
                 <Globe className="w-6 h-6 lg:w-7 lg:h-7 text-neutral-800" strokeWidth={1.5} />
               </div>
@@ -63,7 +63,7 @@ export default function Achievements() {
             </div>
 
             {/* Stat 5 */}
-            <div className="flex flex-col items-center justify-center w-[180px] lg:w-1/5 px-4 lg:px-6 h-full">
+            <div className="flex flex-col items-center justify-center w-full lg:w-1/5 px-2 lg:px-6 h-full col-span-2 md:col-span-1">
               <div className="w-14 h-14 lg:w-[60px] lg:h-[60px] rounded-full bg-black/5 flex items-center justify-center mb-4 lg:mb-4">
                 <Presentation className="w-6 h-6 lg:w-7 lg:h-7 text-neutral-800" strokeWidth={1.5} />
               </div>

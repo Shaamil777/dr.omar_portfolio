@@ -85,7 +85,7 @@ export default function Testimonial() {
   const prevSlide = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
 
   return (
-    <section className="w-full bg-[#FAF8F5] py-24 md:py-10 overflow-hidden text-black" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+    <section className="w-full bg-[#FAF8F5] py-8 lg:py-16 overflow-hidden text-black" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
       <div className="max-w-[1700px] w-full mx-auto px-6 lg:px-16 relative">
         
         {/* Removed Top Header Section */}
