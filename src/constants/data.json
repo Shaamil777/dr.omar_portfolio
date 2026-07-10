@@ -1,0 +1,294 @@
+{
+  "site": {
+    "title": "Dr. Abdussalam Omar — Portfolio",
+    "description": "Leading coach for business & life success. Empowering individuals and organizations to achieve their highest potential through proven coaching methodologies and transformational programs."
+  },
+
+  "profile": {
+    "name": "Dr. Abdussalam Omar",
+    "title": "Celebrated Global Leadership Coach",
+    "tagline": "Leading coach for business & life success",
+    "headline": "Empowering individuals and organizations to achieve their highest potential through proven coaching methodologies and transformational programs.",
+    "bio": "Meet Dr. Abdussalam Omar, the visionary founder of Deep Immersion, recognized as one of the top 10 NLP consultants in CEO Insights 2020. With over a decade of expertise as a Leadership Coach and Counselor, he holds accreditation from the American Board of NLP and is an ICF-accredited coach. Renowned for transforming lives and businesses, he integrates innovative coaching, spiritual healing, and NLP techniques to guide individuals and organizations toward purposeful living. Beyond coaching, Dr. Omar contributes to academia as a faculty member at King Saud University. His commitment to societal impact is evident in chairing the Ruqayya Foundation, dedicated to protecting orphans and widows. Experience profound change under his guidance at Deep Immersion.",
+    "credentials": [
+      "Top 10 NLP Consultants — CEO Insights 2020",
+      "Accredited by the American Board of NLP",
+      "ICF-Accredited Coach",
+      "Faculty Member, King Saud University",
+      "Chairman, Ruqayya Foundation"
+    ],
+    "stats": {
+      "years_of_experience": 18,
+      "entrepreneurs_mentored": 8000,
+      "companies_coached": 100,
+      "regions": ["Middle East", "Asia", "India", "GCC", "Europe", "Southeast Asia"]
+    },
+    "notable_clients": [
+      "Nesto Group",
+      "Geepas",
+      "Saudi German Hospital",
+      "Al Madina Group"
+    ],
+    "social_impact": {
+      "foundation": "Ruqayya Foundation",
+      "mission": "Dedicated to protecting orphans and widows"
+    }
+  },
+
+  "organizations": {
+    "deep_immersion": {
+      "id": "deep_immersion",
+      "name": "Deep Immersion",
+      "type": "Life Transformation Brand",
+      "founded_by": "Dr. Abdussalam Omar",
+      "description": "The flagship life transformation program integrating innovative coaching, holistic healing, and NLP techniques.",
+      "award": "Most Innovative and Sustainable 360-degree Life Transformation Program in India — CEOInsights",
+      "award_source": "CEOInsights — India's leading business magazine with 1.4M+ subscribers"
+    },
+    "hea": {
+      "id": "hea",
+      "name": "Dr. Omar's Human Excellence Academy",
+      "short_name": "HEA",
+      "type": "Coaching & Training Academy",
+      "founded": 2010,
+      "expanded_to_india": 2019,
+      "description": "The most sought-after, innovative, ethical, and result-oriented coaching, counselling, and training & development provider in the Middle East since 2010, expanded to India since 2019.",
+      "regions": ["Middle East", "India"]
+    },
+    "bcc": {
+      "id": "bcc",
+      "name": "Business Coaching Club",
+      "short_name": "BCC",
+      "type": "Annual Mentorship & Business Networking Ecosystem",
+      "description": "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy. The program integrates business strategy with leadership intelligence and personal life balance.",
+      "led_by": "Dr. Abdussalam Omar",
+      "duration": "48 weeks (1 year)",
+      "core_pillars": [
+        {
+          "pillar": "Ethical Leadership",
+          "description": "Operating with integrity, transparency, and fairness."
+        },
+        {
+          "pillar": "Purpose-Driven Growth",
+          "description": "Creating businesses that solve real problems and serve beyond profit."
+        },
+        {
+          "pillar": "Sustainability & Legacy",
+          "description": "Designing systems, culture, and governance that endure across generations."
+        },
+        {
+          "pillar": "Balanced Life",
+          "description": "Finding harmony between family, business, society, and spirituality."
+        },
+        {
+          "pillar": "Collective Growth",
+          "description": "Fostering a trusted circle of collaborative entrepreneurs."
+        },
+        {
+          "pillar": "Continuous Learning",
+          "description": "Maintaining a growth mindset to adapt to a fast-changing world."
+        }
+      ],
+      "curriculum": [
+        {
+          "quarter": 1,
+          "title": "Foundation & Vision Setting",
+          "weeks": "1-12"
+        },
+        {
+          "quarter": 2,
+          "title": "Scaling Systems & Automation",
+          "weeks": "13-24"
+        },
+        {
+          "quarter": 3,
+          "title": "Advanced Growth & Expansion",
+          "weeks": "25-36"
+        },
+        {
+          "quarter": 4,
+          "title": "Mastery, Wealth & Legacy",
+          "weeks": "37-48"
+        }
+      ],
+      "member_benefits": [
+        {
+          "benefit": "Daily Mentorship",
+          "description": "Ongoing accountability and clarity throughout the year."
+        },
+        {
+          "benefit": "Practical Toolkits",
+          "description": "Ready-to-use SOPs, dashboards, checklists, and frameworks."
+        },
+        {
+          "benefit": "Global Networking",
+          "description": "Access to exclusive in-person gatherings, strategic collaborations, and global networks."
+        },
+        {
+          "benefit": "Corporate Readiness",
+          "description": "Guidance on structuring companies for IPO and Private Equity (PE) funding readiness."
+        }
+      ]
+    },
+    "oathmen": {
+      "id": "oathmen",
+      "name": "OATHMEN",
+      "type": "Startup Coaching Club",
+      "tagline": "From IDEAS to IPO",
+      "subtitle": "A 1-Year Practical Entrepreneurship Fellowship for Young Founders",
+      "description": "OATHMEN is a startup coaching club that helps young entrepreneurs turn their ideas into real businesses. It's a practical program that teaches founders how to build ethical, organized, and scalable companies that are ready for investment. The goal is to support entrepreneurs in creating successful ventures that make a positive impact.",
+      "value_proposition": "By joining OATHMEN, founders can gain the skills and knowledge they need to take their idea to the next level and create investment-ready enterprises.",
+      "delivery_model": "Global Hybrid Delivery Model",
+      "regions": ["India", "GCC", "Europe", "Southeast Asia"],
+      "duration": "1 Year",
+      "key_features": [
+        {
+          "feature": "Execution-First Learning",
+          "description": "Build real products, get real feedback, and achieve real results through hands-on startup experience."
+        },
+        {
+          "feature": "Expert Mentorship",
+          "description": "Learn from experienced founders and industry experts who have built successful ventures."
+        },
+        {
+          "feature": "Weekly Ship Cadence",
+          "description": "Build in public, ship weekly, and maintain momentum with structured accountability."
+        },
+        {
+          "feature": "Investment Ready",
+          "description": "Prepare your venture for funding with polished pitch decks and investor connections."
+        }
+      ],
+      "ideal_for": [
+        {
+          "segment": "Students",
+          "description": "With innovative startup ideas"
+        },
+        {
+          "segment": "Graduates",
+          "description": "Planning entrepreneurship journey"
+        },
+        {
+          "segment": "Professionals",
+          "description": "Exploring business opportunities"
+        },
+        {
+          "segment": "Founders",
+          "description": "Early-stage startup builders"
+        },
+        {
+          "segment": "Family Business",
+          "description": "Successors and innovators"
+        },
+        {
+          "segment": "Social Innovators",
+          "description": "Building impact-driven ventures"
+        },
+        {
+          "segment": "Youth",
+          "description": "Building ventures with purpose"
+        },
+        {
+          "segment": "Teams",
+          "description": "Preparing ideas for investment"
+        }
+      ]
+    }
+  },
+
+  "programs": [
+    {
+      "id": "bcc",
+      "name": "Business Coaching Club",
+      "short_name": "BCC",
+      "category": "Business & Entrepreneurship",
+      "organization": "BCC",
+      "target_audience": "Entrepreneurs, Business Owners, Business Leaders",
+      "summary": "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy.",
+      "duration": "48 weeks (1 year)",
+      "format": "Annual Program"
+    },
+    {
+      "id": "business_immersion",
+      "name": "Business Immersion",
+      "tagline": "Elevate Your Leadership",
+      "category": "Business & Leadership",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Business Owners and Leaders",
+      "summary": "A seven-day residential program exclusively designed for business owners and leaders, focusing on productivity, leadership skills, and developing the next generation of leaders.",
+      "duration": "7 Days",
+      "format": "Residential Program"
+    },
+    {
+      "id": "deep_immersion",
+      "name": "Deep Immersion",
+      "tagline": "Life Transformation Program",
+      "category": "Personal Development & Life Transformation",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Individuals seeking holistic life transformation",
+      "summary": "Embark on a seven-day journey of self-discovery, utilizing innovative coaching, holistic healing, and NLP techniques to transform various facets of your life.",
+      "duration": "7 Days",
+      "format": "Immersive Program",
+      "award": "Most Innovative and Sustainable 360-degree Life Transformation Program in India — CEOInsights"
+    },
+    {
+      "id": "master_deep_immersion",
+      "name": "Master Deep Immersion",
+      "category": "Advanced Personal Development",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Deep Immersion alumni seeking advanced transformation",
+      "summary": "An advanced continuation of the Deep Immersion program for those seeking deeper mastery of life transformation techniques.",
+      "format": "Advanced Immersive Program"
+    },
+    {
+      "id": "oathmen",
+      "name": "OATHMEN — The Startup Coaching Club",
+      "tagline": "From IDEAS to IPO",
+      "category": "Entrepreneurship & Startup",
+      "organization": "OATHMEN",
+      "target_audience": "Students, graduates, young professionals, early-stage founders, family business successors, social innovators",
+      "summary": "A 1-year practical entrepreneurship fellowship for young founders, helping them build ethical, organized, and scalable investment-ready companies.",
+      "duration": "1 Year",
+      "format": "Global Hybrid Fellowship"
+    },
+    {
+      "id": "emotional_intelligence",
+      "name": "Emotional Intelligence",
+      "short_name": "EI",
+      "category": "Personal Development & Leadership",
+      "organization": "HEA",
+      "target_audience": "Individuals, Leaders, Teams",
+      "summary": "A dedicated program focused on developing emotional intelligence skills for personal growth, better relationships, and effective leadership.",
+      "format": "Training Program"
+    },
+    {
+      "id": "hea_program",
+      "name": "Human Excellence Academy",
+      "short_name": "HEA",
+      "category": "Coaching, Counselling & Training",
+      "organization": "HEA",
+      "target_audience": "Individuals and organizations seeking coaching, counselling, and training",
+      "summary": "The most sought-after, innovative, ethical, and result-oriented coaching, counselling, and training & development offerings in the Middle East since 2010, now expanded to India.",
+      "format": "Multi-Program Academy"
+    },
+    {
+      "id": "teens_immersion",
+      "name": "Teens Immersion",
+      "category": "Youth Development",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Teenagers aged 14 to 19",
+      "age_group": "14-19 years",
+      "summary": "Teen Immersion offers a transformative experience for teenagers aged 14 to 19, providing a platform for self-discovery and growth. Through a blend of adventure, creativity, and mindfulness practices, participants explore their potential, develop resilience, and clarify their life vision.",
+      "format": "Immersive Youth Program"
+    },
+    {
+      "id": "youth_immersion",
+      "name": "Youth Immersion",
+      "category": "Youth Development",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Young adults building their vision and purpose",
+      "summary": "A transformative immersion program for young adults focused on purpose-discovery, personal growth, and preparing for the future with clarity and confidence.",
+      "format": "Immersive Youth Program"
+    }
+  ]
+}

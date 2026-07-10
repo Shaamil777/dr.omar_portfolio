@@ -3,5 +3,14 @@
 @theme {
   --color-zigma: #4E37FF;
   --color-lambda: #D8D3D3;
+  /* Stacked scroll section colours */
+  --color-bravo: #F4793B;
+  --color-charlie: #8F9587;
+  --color-delta: #8598AC;
+  --color-echo: #8F9587;
+  --color-fox: #C4929D;
+  --color-golf: #8598AC;
+  --color-secondary: #131313;
   --font-national2: var(--font-national2);
+  --font-headingNow: var(--font-heading-now);
 }

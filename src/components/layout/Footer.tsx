@@ -9,8 +9,21 @@ export default function Footer() {
   const band2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let xPos1 = 0;
-    let xPos2 = 0;
+    if (!band1Ref.current || !band2Ref.current) return;
+
+    // Wait a tick to ensure layout is done so offsetWidth is accurate
+    const item1 = band1Ref.current.children[0] as HTMLElement;
+    const item2 = band2Ref.current.children[0] as HTMLElement;
+    
+    // Width = element width + flex gap (32px for gap-8)
+    const item1Width = item1.offsetWidth + 32;
+    const item2Width = item2.offsetWidth + 32;
+
+    // Start in the middle so we can scroll infinitely in either direction
+    // (We will render 8 copies, so index 3 is safely in the middle)
+    let xPos1 = -item1Width * 3;
+    let xPos2 = -item2Width * 3;
+
     let currentScroll = 0;
     let prevScroll = 0;
     let scrollDirection = 1;
@@ -160,7 +173,7 @@ export default function Footer() {
           style={{ width: "200%", left: "-50%", transform: "rotate(-1.5deg)" }}
         >
           <div ref={band1Ref} className="flex gap-8 items-center whitespace-nowrap">
-            {[...Array(4)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div key={i} className="flex items-center gap-8 flex-shrink-0">
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>TRANSFORM</span>
                 <span style={stickerFilled} className="uppercase">DEEP IMMERSION</span>
@@ -184,7 +197,7 @@ export default function Footer() {
           style={{ width: "200%", left: "-50%", transform: "rotate(1deg)" }}
         >
           <div ref={band2Ref} className="flex gap-8 items-center whitespace-nowrap">
-            {[...Array(4)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div key={i} className="flex items-center gap-8 flex-shrink-0">
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>IMPACT</span>
                 <span style={stickerDashed} className="uppercase">EVOLVE</span>

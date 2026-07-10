@@ -40,6 +40,26 @@ const national2 = localFont({
   ],
   variable: "--font-national2",
 });
+const headingNow = localFont({
+  src: [
+    {
+      path: "./fonts/HeadingNow/HeadingNowTrial-16Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/HeadingNow/HeadingNowTrial-17Extrabold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/HeadingNow/HeadingNowTrial-18Heavy.ttf",
+      weight: "900",
+      style: "normal",
+    }
+  ],
+  variable: "--font-heading-now",
+});
 
 export const metadata: Metadata = {
   title: "Dr. Omar Portfolio",
