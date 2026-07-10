@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { companiesData } from "@/constants/companies";
+import { companiesData, CompanyData } from "@/constants/companies";
 import ProgramHero from "@/sections/program/ProgramHero";
 import ProgramAbout from "@/sections/program/ProgramAbout";
 import ProgramTestimonial from "@/sections/program/ProgramTestimonial";
 import ProgramUpcomingEvents from "@/sections/program/ProgramUpcomingEvents";
 
-const ComponentMap: Record<string, React.FC<any>> = {
+const ComponentMap: Record<string, React.FC<{ company: CompanyData }>> = {
   Hero: ProgramHero,
   About: ProgramAbout,
   Testimonial: ProgramTestimonial,

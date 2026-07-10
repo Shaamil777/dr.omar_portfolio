@@ -57,7 +57,7 @@ export default function Cta() {
           }}
         >
           PEOPLE<br />
-          DON'T<br />
+          DON&apos;T<br />
           REMEMBER<br />
           PROMISES.<br />
           THEY<br />
@@ -80,7 +80,7 @@ export default function Cta() {
           }}
         >
           PEOPLE<br />
-          DON'T<br />
+          DON&apos;T<br />
           REMEMBER<br />
           PROMISES.<br />
           THEY<br />

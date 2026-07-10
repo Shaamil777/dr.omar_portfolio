@@ -95,7 +95,7 @@ export default function Programmes() {
                     
                     {program.tagline && (
                       <p className="text-2xl md:text-3xl font-bold italic opacity-90 mt-2">
-                        "{program.tagline}"
+                        &quot;{program.tagline}&quot;
                       </p>
                     )}
                     

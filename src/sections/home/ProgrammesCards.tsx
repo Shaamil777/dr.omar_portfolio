@@ -3,13 +3,16 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, useTexture, Text } from "@react-three/drei";
 import * as THREE from "three";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 // A curved 3D mesh that applies the generated texture
-const CurvedCard = ({ textureUrl, rotation }: any) => {
-  const texture = useTexture(textureUrl);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  
+const CurvedCard = ({ textureUrl, rotation }: { textureUrl: string; rotation: [number, number, number] }) => {
+  const texture = useTexture(textureUrl) as THREE.Texture;
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/immutability
+    texture.colorSpace = THREE.SRGBColorSpace;
+  }, [texture]);
+
   // Height = 4.8. Width = 3.6.
   // Radius = 6. thetaLength = Width / Radius = 3.6 / 6 = 0.6.
   return (
@@ -17,9 +20,9 @@ const CurvedCard = ({ textureUrl, rotation }: any) => {
       {/* Front face with texture */}
       <mesh>
         <cylinderGeometry args={[6, 6, 5.6, 32, 1, true, -0.36, 0.72]} />
-        <meshStandardMaterial 
-          map={texture} 
-          transparent 
+        <meshStandardMaterial
+          map={texture}
+          transparent
           side={THREE.FrontSide}
           roughness={0.2}
         />
@@ -27,7 +30,7 @@ const CurvedCard = ({ textureUrl, rotation }: any) => {
       {/* Back face for the solid, dark shadow look when curved away */}
       <mesh>
         <cylinderGeometry args={[5.99, 5.99, 5.6, 32, 1, true, -0.36, 0.72]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#090909"
           side={THREE.BackSide}
           roughness={0.9}
@@ -65,16 +68,16 @@ const LETTER_GAP = -0.06; // Negative to tighten gaps between letters
 // The massive 3D text — each letter rendered individually for variable height control
 const IntersectingText = () => {
   const { viewport } = useThree();
-  
+
   // Calculate the visible world-space width at the text's z-depth (-3)
   const depthScale = 14 / 11;
   const widthAtText = viewport.width * depthScale;
-  
+
   // Compute fontSize so all letters span ~95% of viewport width
   const totalCharWidth = LETTERS_CONFIG.reduce((sum, l) => sum + l.width, 0);
   const totalGaps = LETTER_GAP * (LETTERS_CONFIG.length - 1);
   const fontSize = (widthAtText * 0.95) / (totalCharWidth + totalGaps);
-  
+
   // Compute cumulative X positions for each letter
   const positions: number[] = [];
   let x = 0;
@@ -124,7 +127,7 @@ const CarouselScene = () => {
       <ambientLight intensity={1.5} />
       <directionalLight position={[5, 5, 5]} intensity={2} />
       <Environment preset="city" />
-      
+
       {/* The massive text sits at the cylinder's center depth — 
           front cards will occlude it, back cards sit behind it */}
       <IntersectingText />
@@ -135,10 +138,10 @@ const CarouselScene = () => {
         <group ref={groupRef}>
           {/* 8 Cards forming a closed 360° loop */}
           {Array.from({ length: 8 }).map((_, i) => (
-            <CurvedCard 
+            <CurvedCard
               key={i}
-              textureUrl={imageUrls[i % 3]} 
-              rotation={[0, i * (Math.PI * 2 / 8), 0]} 
+              textureUrl={imageUrls[i % 3]}
+              rotation={[0, i * (Math.PI * 2 / 8), 0]}
             />
           ))}
         </group>
