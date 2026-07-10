@@ -7,22 +7,23 @@ import gsap from 'gsap';
 import TestimonialCard from '../components/TestimonialCard';
 
 // ─── Slot coordinate system ─────────────────────────────────────────────────
+
 interface SlotConfig {
   x: number; y: number; z: number;
-  rotateZ: number;
+  rotateX: number; rotateY: number; rotateZ: number;
   scale: number;
   opacity: number;
 }
 
 const SLOTS: Record<number, SlotConfig> = {
-  [-2]: { x: -8, y: -1,  z: -4, rotateZ:  0.4,  scale: 0.4, opacity: 0 },
-  [-1]: { x: -4, y:  0.5, z: -2, rotateZ:  0.15, scale: 0.8, opacity: 1 },
-  [0]:  { x:  0, y:  0,  z:  0, rotateZ:  0,    scale: 1.0, opacity: 1 },
-  [1]:  { x:  4, y:  0.5, z: -2, rotateZ: -0.15, scale: 0.8, opacity: 1 },
-  [2]:  { x:  8, y: -1,  z: -4, rotateZ: -0.4,  scale: 0.4, opacity: 0 },
+  [-2]: { x: -11,  y:  0,   z: -6,   rotateX: 0, rotateY:  0.8,  rotateZ:  0.25,  scale: 0.5,  opacity: 0 },
+  [-1]: { x: -6.8, y:  0.1, z: -2.8, rotateX: 0, rotateY:  0.5,  rotateZ:  0.15,  scale: 0.85, opacity: 1 },
+  [0]:  { x:  0,   y:  0,   z:  0,   rotateX: 0, rotateY:  0,    rotateZ:  0,     scale: 1.0,  opacity: 1 },
+  [1]:  { x:  6.8, y:  0.1, z: -2.8, rotateX: 0, rotateY: -0.5,  rotateZ: -0.15,  scale: 0.85, opacity: 1 },
+  [2]:  { x:  11,  y:  0,   z: -6,   rotateX: 0, rotateY: -0.8,  rotateZ: -0.25,  scale: 0.5,  opacity: 0 },
 };
 
-const HIDDEN: SlotConfig = { x: 0, y: -8, z: -8, rotateZ: 0, scale: 0, opacity: 0 };
+const HIDDEN: SlotConfig = { x: 0, y: -8, z: -8, rotateX: 0, rotateY: 0, rotateZ: 0, scale: 0, opacity: 0 };
 
 function getSlotConfig(relativeIndex: number): SlotConfig {
   if (relativeIndex in SLOTS) return SLOTS[relativeIndex];
@@ -61,7 +62,7 @@ export function CardRig({ testimonial, index, relativeIndex }: CardRigProps) {
     if (!carouselGroupRef.current) return;
     const slot = getSlotConfig(relativeIndex);
     carouselGroupRef.current.position.set(slot.x, slot.y, slot.z);
-    carouselGroupRef.current.rotation.set(0, 0, slot.rotateZ);
+    carouselGroupRef.current.rotation.set(slot.rotateX, slot.rotateY, slot.rotateZ);
     carouselGroupRef.current.scale.setScalar(slot.scale);
     setOpacity(slot.opacity);
   }, []);
@@ -81,6 +82,8 @@ export function CardRig({ testimonial, index, relativeIndex }: CardRigProps) {
     });
 
     gsap.to(carouselGroupRef.current.rotation, {
+      x: slot.rotateX,
+      y: slot.rotateY,
       z: slot.rotateZ,
       duration: 0.8,
       ease: 'power3.inOut',
