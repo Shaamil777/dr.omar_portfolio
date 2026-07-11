@@ -18,9 +18,13 @@
       "Chairman, Ruqayya Foundation"
     ],
     "stats": {
-      "years_of_experience": 18,
-      "entrepreneurs_mentored": 8000,
-      "companies_coached": 100,
+      "years_of_experience": 20,
+      "years_of_coaching": 15,
+      "entrepreneurs_mentored": 10000,
+      "organizations_coached": 1000,
+      "multinational_brands": 200,
+      "startups_established": 50,
+      "training_programs": 1500,
       "regions": ["Middle East", "Asia", "India", "GCC", "Europe", "Southeast Asia"]
     },
     "notable_clients": [
@@ -193,6 +197,22 @@
           "description": "Preparing ideas for investment"
         }
       ]
+    },
+    "brandmount": {
+      "id": "brandmount",
+      "name": "Brandmount",
+      "type": "Strategic Branding & Business Consulting",
+      "description": "Brandmount is a strategic branding and business consulting company that helps entrepreneurs and organizations discover, define, and communicate their authentic identity.",
+      "specialization": "Purpose discovery, vision and mission development, brand positioning, customer experience, business strategy, and long-term brand building."
+    },
+    "travelngrow": {
+      "id": "travelngrow",
+      "name": "TravelNGrow LLC",
+      "location": "Dubai",
+      "type": "Global Tourism & Business Networking",
+      "tagline": "Where Business Meets the World.",
+      "description": "TravelNGrow is a premium global tourism, business networking, and experiential learning company that combines international travel with entrepreneurship, leadership development, and business networking.",
+      "activities": "Organizes curated business delegations, investment tours, leadership retreats, corporate travel experiences, and international networking events."
     }
   },
 
@@ -289,6 +309,59 @@
       "target_audience": "Young adults building their vision and purpose",
       "summary": "A transformative immersion program for young adults focused on purpose-discovery, personal growth, and preparing for the future with clarity and confidence.",
       "format": "Immersive Youth Program"
+    },
+    {
+      "id": "queens_immersion",
+      "name": "Queens Immersion",
+      "tagline": "Empowering Women to Lead with Confidence.",
+      "category": "Women's Leadership & Personal Development",
+      "organization": "Deep Immersion / HEA",
+      "target_audience": "Women seeking leadership, confidence, and purpose",
+      "summary": "A transformational leadership and personal development program created exclusively for women, focusing on confidence, emotional well-being, purpose discovery, and work-life balance.",
+      "format": "Immersive Women's Program"
+    }
+  ],
+
+  "life_principles": [
+    {
+      "principle": "A loving family",
+      "description": "The strongest foundation of every meaningful life."
+    },
+    {
+      "principle": "Ethical wealth",
+      "description": "Creating prosperity through integrity while making a positive contribution to society."
+    },
+    {
+      "principle": "Inner peace",
+      "description": "Achieving emotional balance, mental clarity, and spiritual fulfilment."
+    },
+    {
+      "principle": "Meaningful contribution to society",
+      "description": "Using knowledge, influence, and resources to improve the lives of others."
+    },
+    {
+      "principle": "A deep connection with nature",
+      "description": "Living in harmony with nature to restore balance, creativity, and well-being."
+    },
+    {
+      "principle": "Excellent health",
+      "description": "True success is impossible without holistic well-being (physical, mental, emotional, social, and spiritual)."
+    },
+    {
+      "principle": "A positive self-image and authentic personal brand",
+      "description": "Becoming the best version of yourself while remaining true to your values."
+    },
+    {
+      "principle": "Celebrating life’s journey",
+      "description": "Finding joy in the process rather than waiting only for achievements."
+    },
+    {
+      "principle": "Continuous learning and personal growth",
+      "description": "Remaining a lifelong student through curiosity, reflection, and continuous improvement."
+    },
+    {
+      "principle": "Building purpose-driven businesses",
+      "description": "Creating organizations that generate ethical wealth while serving customers, employees, communities, and future generations."
     }
   ]
 }

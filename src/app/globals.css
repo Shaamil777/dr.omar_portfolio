@@ -13,4 +13,6 @@
   --color-secondary: #131313;
   --font-national2: var(--font-national2);
   --font-headingNow: var(--font-heading-now);
+  --font-helvetica: var(--font-helvetica);
+  --font-courier: var(--font-courier);
 }

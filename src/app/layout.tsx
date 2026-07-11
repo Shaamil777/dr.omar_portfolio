@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollRestoration from "@/components/layout/ScrollRestoration";
+
+const courier = localFont({
+  src: "./fonts/cour.ttf",
+  variable: "--font-courier",
+});
 
 const helvetica = localFont({
   src: [
@@ -73,9 +77,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth bg-zinc-950 text-white">
-      <body className={`${helvetica.className} ${national2.variable} ${headingNow.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${helvetica.className} ${national2.variable} ${headingNow.variable} ${courier.variable} antialiased min-h-screen flex flex-col`}>
         <ScrollRestoration />
-        <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
       </body>
