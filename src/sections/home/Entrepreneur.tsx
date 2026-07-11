@@ -11,42 +11,49 @@ const companies = [
     name: "BCC - SINCE 2020", 
     description: "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/BCC/bcc.png",
   },
   {
     id: "deep_immersion",
     name: "DEEP IMMERSION", 
     description: "The flagship life transformation program integrating innovative coaching, holistic healing, and NLP techniques.",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/DI/di_light.png",
   },
   {
     id: "hea",
     name: "HEA - SINCE 2010", 
     description: "The most sought-after coaching, counselling, and training & development provider in the Middle East and India.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/HEA/hea.png",
   },
   {
     id: "business_immersion",
     name: "BUSINESS IMMERSION", 
     description: "A residential program exclusively designed for business owners and leaders, focusing on productivity and leadership.",
     image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/BI/bi_light.png",
   },
   {
     id: "mdi",
     name: "MASTER DEEP IMMERSION", 
     description: "An advanced continuation of the Deep Immersion program for those seeking deeper mastery of life transformation techniques.",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/MDI/mdi_liight.png",
   },
   {
     id: "youth_immersion",
     name: "YOUTH IMMERSION", 
     description: "A transformative immersion program for young adults focused on purpose-discovery, personal growth, and clarity.",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/YI/yi_light.png",
   },
   {
     id: "teens_immersion",
     name: "TEENS IMMERSION", 
     description: "A transformative experience for teenagers aged 14 to 19, exploring potential and developing resilience.",
     image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=1200",
+    logo: "/logos/TI/ti_light.png",
   },
 ];
 
@@ -119,11 +126,23 @@ export default function Entrepreneur() {
                   className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
                 />
               </div>
-              <div className="flex flex-col lg:flex-row gap-3 lg:gap-8 justify-between items-start">
-                <h3 className="text-3xl md:text-4xl lg:text-[2.5rem] font-black uppercase tracking-wide lg:w-[55%] leading-[0.9]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
-                  {company.name}
-                </h3>
-                <p className="text-zinc-400 text-sm md:text-base lg:text-lg lg:w-[45%] font-medium leading-snug">
+              <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-between items-start">
+                <div className="flex flex-col gap-2 lg:w-[55%]">
+                  {company.logo && (
+                    <div className="relative h-10 w-32 md:h-14 md:w-48 mb-1">
+                      <Image 
+                        src={company.logo} 
+                        alt={`${company.name} logo`} 
+                        fill 
+                        className="object-contain object-left" 
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-3xl md:text-4xl lg:text-[2.5rem] font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
+                    {company.name}
+                  </h3>
+                </div>
+                <p className="text-zinc-400 text-sm md:text-base lg:text-lg lg:w-[45%] font-medium leading-snug lg:mt-16">
                   {company.description}
                 </p>
               </div>

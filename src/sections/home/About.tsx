@@ -56,12 +56,12 @@ export default function About() {
           About Dr. Omar
         </h2>
 
-        <div className="mb-2">
+        <div className="mb-8 md:mb-16 border-b border-black/10 pb-8">
           {textLines.map((line, index) => (
             <div key={index} className={`overflow-hidden ${line.indent}`}>
               <motion.h3
                 style={{ y: line.y, opacity: line.opacity }}
-                className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[6rem] font-black uppercase tracking-tighter leading-[0.95] py-1 text-black whitespace-nowrap"
+                className="font-national2 text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] xl:text-[130px] 2xl:text-[150px] font-black uppercase tracking-tighter leading-[0.85] text-[#111] whitespace-nowrap"
               >
                 {line.text}
               </motion.h3>
@@ -78,50 +78,50 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col gap-5 mb-2"
+              className="flex items-center gap-3 mb-4 font-courier text-[11px] md:text-[13px] text-zinc-500 tracking-widest uppercase font-bold"
             >
-              <div className="w-10 h-[1px] bg-zinc-400"></div>
-              <h4 className="text-xs md:text-sm font-bold tracking-[0.25em] text-zinc-500 uppercase">
-                Who is Dr. Omar
-              </h4>
+              <div className="w-2.5 h-2.5 bg-[#CD1D1D]"></div>
+              <div>AUTHORIZATION / BIO_DATA</div>
             </motion.div>
             
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-              className="text-base md:text-lg text-zinc-600 leading-normal"
-            >
-              For over 20 years, Dr. Abdussalam Omar has helped entrepreneurs, executives, and organizations unlock their full potential through leadership coaching, human transformation, branding, and strategic business development.
-            </motion.p>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-              className="text-base md:text-lg text-zinc-600 leading-normal"
-            >
-              By combining emotional intelligence, psychology, leadership, and business strategy, he empowers people to become better leaders, build ethical businesses, and create lasting impact.
-            </motion.p>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-              className={`text-base md:text-lg text-zinc-600 leading-normal ${!isExpanded ? 'hidden md:block' : ''}`}
-            >
-              Having mentored thousands of entrepreneurs, coached organizations across industries, and worked with leaders throughout India and the GCC, his mission is to develop purpose-driven leaders who create meaningful and lasting impact in their communities and organizations.
-            </motion.p>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-              className={`text-base md:text-lg text-zinc-900 leading-normal ${!isExpanded ? 'hidden md:block' : ''}`}
-            >
-              "His philosophy is simple: transform people first, and lasting success will follow."
-            </motion.p>
+            <div className="border-l-[3px] border-[#CD1D1D] pl-6 md:pl-8 flex flex-col gap-6">
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                className="text-xl md:text-2xl lg:text-[26px] font-helvetica font-bold text-[#111] leading-[1.3] tracking-tight"
+              >
+                For over 20 years, Dr. Abdussalam Omar has helped entrepreneurs, executives, and organizations unlock their full potential through leadership coaching, human transformation, branding, and strategic business development.
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                className="text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight"
+              >
+                By combining emotional intelligence, psychology, leadership, and business strategy, he empowers people to become better leaders, build ethical businesses, and create lasting impact.
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+                className={`text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight ${!isExpanded ? 'hidden md:block' : ''}`}
+              >
+                Having mentored thousands of entrepreneurs, coached organizations across industries, and worked with leaders throughout India and the GCC, his mission is to develop purpose-driven leaders who create meaningful and lasting impact in their communities and organizations.
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+                className={`text-xl md:text-2xl lg:text-[28px] font-national2 font-black uppercase text-[#111] leading-[1.1] tracking-tight mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
+              >
+                "His philosophy is simple: transform people first, and lasting success will follow."
+              </motion.p>
+            </div>
 
             {/* Read More Toggle for Mobile */}
             <button 
@@ -140,34 +140,16 @@ export default function About() {
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
               {/* Primary Button */}
-              <a href="#journey" className="group relative inline-flex items-center justify-center self-center sm:self-auto sm:ml-2">
-                {/* Slab Layer */}
-                <div className="absolute inset-0 bg-zinc-300 transform -skew-x-12 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-                
-                {/* Top Layer */}
-                <div className="relative px-8 py-4 bg-zinc-700 text-white transform -skew-x-12 transition-transform duration-300 group-hover:translate-y-1 group-hover:translate-x-1 flex items-center justify-center">
-                  {/* Un-skew Content */}
-                  <div className="transform skew-x-12 flex items-center gap-3">
-                    <span className="font-bold text-xs md:text-sm tracking-widest uppercase">Explore Dr. Omar's Journey</span>
-                    <svg className="w-5 h-5 text-white transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
-                </div>
+              <a href="#journey" className="bg-[#111] text-white px-8 py-5 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[18px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
+                EXPLORE JOURNEY
+                <svg className="w-5 h-5 md:w-6 md:h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
 
               {/* Secondary Button */}
-              <a href="#consultation" className="group relative inline-flex items-center justify-center self-center sm:self-auto mt-4 sm:mt-0 sm:ml-4">
-                {/* Slab Layer */}
-                <div className="absolute inset-0 bg-zinc-300 transform -skew-x-12 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-                
-                {/* Top Layer */}
-                <div className="relative px-8 py-4 bg-white text-zinc-900 transform -skew-x-12 border border-zinc-900 transition-transform duration-300 group-hover:translate-y-1 group-hover:translate-x-1 flex items-center justify-center">
-                  {/* Un-skew Content */}
-                  <div className="transform skew-x-12 flex items-center gap-3">
-                    <span className="font-bold text-xs md:text-sm tracking-widest uppercase">Book a Consultation</span>
-                  </div>
-                </div>
+              <a href="#consultation" className="bg-transparent border-4 border-[#111] text-[#111] px-8 py-5 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[18px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0">
+                BOOK CONSULTATION
               </a>
             </motion.div>
           </div>

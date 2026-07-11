@@ -159,17 +159,16 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full h-[75vh] bg-transparent text-white flex flex-col justify-end overflow-x-clip overflow-y-visible"
+      className="relative w-full h-[75vh] bg-[#131313] text-white flex flex-col justify-end overflow-hidden"
     >
       {/* Solid zigma background filler */}
-      <div className="absolute bottom-0 left-0 w-full h-[85%] bg-zigma z-0" />
+      <div className="absolute top-[15%] left-0 w-full h-[150%] bg-zigma z-0" />
 
       {/* Marquee bands */}
-      <div className="absolute top-0 left-0 w-full h-[55%] z-10" style={{ overflow: "visible" }}>
-
+      <div className="absolute top-0 left-0 w-full h-full z-10">
         {/* Upper Band */}
         <div
-          className="absolute -top-[8%] bg-zigma border-y-2 border-lambda/40 py-8 z-10 shadow-xl"
+          className="absolute top-[5%] bg-zigma border-y-2 border-lambda/40 py-8 z-10 shadow-xl"
           style={{ width: "200%", left: "-50%", transform: "rotate(-1.5deg)" }}
         >
           <div ref={band1Ref} className="flex gap-8 items-center whitespace-nowrap">
@@ -193,7 +192,7 @@ export default function Footer() {
 
         {/* Lower Band */}
         <div
-          className="absolute top-[22%] bg-zigma border-y-2 border-lambda/40 py-8 z-20 shadow-2xl"
+          className="absolute top-[18%] bg-zigma border-y-2 border-lambda/40 py-8 z-20 shadow-2xl"
           style={{ width: "200%", left: "-50%", transform: "rotate(1deg)" }}
         >
           <div ref={band2Ref} className="flex gap-8 items-center whitespace-nowrap">
