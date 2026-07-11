@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth bg-zinc-950 text-white">
-      <body className={`${helvetica.className} ${national2.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${helvetica.className} ${national2.variable} ${headingNow.variable} antialiased min-h-screen flex flex-col`}>
         <ScrollRestoration />
         <Navbar />
         <div className="flex-1">{children}</div>
