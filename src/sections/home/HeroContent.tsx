@@ -180,15 +180,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
              DR. OMAR LEGACY CONCEPT
            </div>
            
-           {/* Top Right Box */}
-           <div className="border-b border-l border-white/10 px-3 sm:px-6 py-2 sm:py-3 flex flex-col font-courier tracking-widest text-right items-end bg-black/20 backdrop-blur-sm">
-             <div className="text-[8px] sm:text-[10px] text-white/40 uppercase mb-1">DATA SCANNED</div>
-             <div className="text-2xl sm:text-4xl font-bold font-helvetica text-white leading-none tracking-tighter">100%</div>
-             <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-[8px] sm:text-[10px] uppercase font-bold text-[#CD1D1D]">
-                <div className="w-1.5 h-1.5 bg-[#CD1D1D]"></div>
-                <div>FULL COVERAGE</div>
-             </div>
-           </div>
+           
         </div>
 
         {/* BOTTOM ROW (Huge Text) */}
