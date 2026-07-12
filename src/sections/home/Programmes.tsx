@@ -104,7 +104,7 @@ export default function Programmes() {
   }, []);
 
   return (
-    <section id="programmes-section" className="w-full bg-[#FAF8F5] text-[#111] overflow-hidden pt-8 pb-32 cursor-default">
+    <section id="programmes-section" className="w-full bg-[#FAF8F5] text-[#111] overflow-hidden md:overflow-x-clip md:overflow-y-visible relative z-20 pt-8 pb-32 cursor-default">
       
       {/* Custom Follower Cursor */}
       <div 

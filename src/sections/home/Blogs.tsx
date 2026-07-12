@@ -33,7 +33,7 @@ export default function Blogs() {
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-[#f4f5f5]">
+    <section ref={containerRef} className="relative h-[400vh] bg-[#FAF8F5]">
       
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
