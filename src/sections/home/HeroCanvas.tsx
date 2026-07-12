@@ -15,8 +15,7 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
   const totalFrames = 193;
   
   useEffect(() => {
-    const loadedImages: HTMLImageElement[] = [];
-    let loadedCount = 0;
+    const loadedImages: HTMLImageElement[] = new Array(totalFrames);
     
     for (let i = 1; i <= totalFrames; i++) {
       const img = new Image();
@@ -28,22 +27,17 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
         img.src = `/hero/frame_${frameNum}.png`;
       }
       img.onload = () => {
-        loadedCount++;
-        if (loadedCount === totalFrames) {
-          imagesRef.current = loadedImages;
+        if (i === 1) {
           setLoaded(true);
         }
       };
-      img.onerror = () => {
-        console.warn(`Failed to load frame ${frameNum}`);
-        loadedCount++;
-        if (loadedCount === totalFrames) {
-          imagesRef.current = loadedImages;
-          setLoaded(true);
-        }
-      };
-      loadedImages.push(img);
+      loadedImages[i - 1] = img;
     }
+    
+    imagesRef.current = loadedImages;
+    // Fallback: show canvas after 1 second even if frame 1 is slow
+    const timeout = setTimeout(() => setLoaded(true), 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
   const renderFrame = (index: number) => {
@@ -51,14 +45,22 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
     currentIndexRef.current = index;
     
     const images = imagesRef.current;
-    if (!images[index] || !canvasRef.current) return;
+    if (!images || images.length === 0 || !canvasRef.current) return;
     
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    const img = images[index];
-    if (img.naturalWidth === 0) return; // Skip broken images
+    // Find the closest loaded image at or before the requested index
+    let imgToDraw = null;
+    for (let i = index; i >= 0; i--) {
+      if (images[i] && images[i].complete && images[i].naturalWidth > 0) {
+        imgToDraw = images[i];
+        break;
+      }
+    }
+    
+    if (!imgToDraw) return; // Nothing loaded yet
     
     const dpr = window.devicePixelRatio || 1;
     
@@ -68,7 +70,7 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
     ctx.scale(dpr, dpr);
     
     const canvasRatio = window.innerWidth / window.innerHeight;
-    const imgRatio = img.width / img.height;
+    const imgRatio = imgToDraw.width / imgToDraw.height;
     
     let renderWidth = window.innerWidth;
     let renderHeight = window.innerHeight;
@@ -84,7 +86,7 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
     }
     
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    ctx.drawImage(img, offsetX, offsetY, renderWidth, renderHeight);
+    ctx.drawImage(imgToDraw, offsetX, offsetY, renderWidth, renderHeight);
   };
 
   useImperativeHandle(ref, () => ({
@@ -111,8 +113,7 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
     <>
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ display: loaded ? 'block' : 'none' }}
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
       />
       {!loaded && (
         <div className="absolute top-0 left-0 w-full h-full bg-[#131313] flex items-center justify-center z-50">

@@ -50,7 +50,7 @@ export default function About() {
   const personParallax = useTransform(rowProgress, [0, 1], ["10%", "-10%"]);
 
   return (
-    <section ref={containerRef} className="bg-[#FAF8F5] text-zinc-950 py-16 md:py-32 px-6 md:px-12 lg:px-24 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="about" ref={containerRef} className="bg-[#FAF8F5] text-zinc-950 py-16 md:py-32 px-6 md:px-12 lg:px-24 min-h-screen flex flex-col justify-center overflow-hidden">
       <div className="max-w-[100rem] mx-auto w-full">
         <h2 className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 mb-16 uppercase">
           About Dr. Omar
@@ -61,7 +61,7 @@ export default function About() {
             <div key={index} className={`overflow-hidden ${line.indent}`}>
               <motion.h3
                 style={{ y: line.y, opacity: line.opacity }}
-                className="font-national2 text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] xl:text-[130px] 2xl:text-[150px] font-black uppercase tracking-tighter leading-[0.85] text-[#111] whitespace-nowrap"
+                className="font-national2 text-[10vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw] xl:text-[110px] 2xl:text-[130px] font-black uppercase tracking-normal leading-[0.9] text-[#111] whitespace-nowrap"
               >
                 {line.text}
               </motion.h3>
@@ -69,7 +69,7 @@ export default function About() {
           ))}
         </div>
 
-        <div ref={rowRef} className="flex flex-col lg:flex-row gap-16 items-center mt-6">
+        <div ref={rowRef} className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center mt-6">
           {/* Content with staggered reveal animations */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6 z-10 relative">
             {/* Anchor Heading & Micro Decoration */}
@@ -78,19 +78,19 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex items-center gap-3 mb-4 font-courier text-[11px] md:text-[13px] text-zinc-500 tracking-widest uppercase font-bold"
+              className="flex items-center gap-3 mb-2 md:mb-4 font-courier text-[11px] md:text-[13px] text-zinc-500 tracking-widest uppercase font-bold"
             >
               <div className="w-2.5 h-2.5 bg-[#CD1D1D]"></div>
               <div>AUTHORIZATION / BIO_DATA</div>
             </motion.div>
             
-            <div className="border-l-[3px] border-[#CD1D1D] pl-6 md:pl-8 flex flex-col gap-6">
+            <div className="border-l-[3px] border-[#CD1D1D] pl-5 md:pl-8 flex flex-col gap-4 md:gap-6">
               <motion.p 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                className="text-xl md:text-2xl lg:text-[26px] font-helvetica font-bold text-[#111] leading-[1.3] tracking-tight"
+                className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-helvetica font-bold text-[#111] leading-[1.3] tracking-tight"
               >
                 For over 20 years, Dr. Abdussalam Omar has helped entrepreneurs, executives, and organizations unlock their full potential through leadership coaching, human transformation, branding, and strategic business development.
               </motion.p>
@@ -99,7 +99,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                className="text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight"
+                className="text-base sm:text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight"
               >
                 By combining emotional intelligence, psychology, leadership, and business strategy, he empowers people to become better leaders, build ethical businesses, and create lasting impact.
               </motion.p>
@@ -108,7 +108,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-                className={`text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight ${!isExpanded ? 'hidden md:block' : ''}`}
+                className={`text-base sm:text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight ${!isExpanded ? 'hidden md:block' : ''}`}
               >
                 Having mentored thousands of entrepreneurs, coached organizations across industries, and worked with leaders throughout India and the GCC, his mission is to develop purpose-driven leaders who create meaningful and lasting impact in their communities and organizations.
               </motion.p>
@@ -117,7 +117,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-                className={`text-xl md:text-2xl lg:text-[28px] font-national2 font-black uppercase text-[#111] leading-[1.1] tracking-tight mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
+                className={`text-lg sm:text-xl md:text-2xl lg:text-[28px] font-national2 font-black uppercase text-[#111] leading-[1.1] tracking-normal mt-2 md:mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
               >
                 "His philosophy is simple: transform people first, and lasting success will follow."
               </motion.p>
@@ -137,25 +137,25 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 mt-8"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 w-full"
             >
               {/* Primary Button */}
-              <a href="#journey" className="bg-[#111] text-white px-8 py-5 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[18px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
+              <a href="#journey" className="bg-[#111] text-white px-6 py-4 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
                 EXPLORE JOURNEY
-                <svg className="w-5 h-5 md:w-6 md:h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-6 md:h-6 ml-2 md:ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
               {/* Secondary Button */}
-              <a href="#consultation" className="bg-transparent border-4 border-[#111] text-[#111] px-8 py-5 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[18px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0">
+              <a href="#consultation" className="bg-transparent border-[3px] md:border-4 border-[#111] text-[#111] px-6 py-4 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
                 BOOK CONSULTATION
               </a>
             </motion.div>
           </div>
 
           {/* Image Area with Parallax and Reveal */}
-          <div className="w-full lg:w-1/2 relative flex justify-center items-end min-h-[450px] sm:min-h-[600px] lg:min-h-[950px] -mt-10 sm:-mt-20 lg:-mt-96">
+          <div className="w-full lg:w-1/2 relative flex justify-center items-end min-h-[350px] sm:min-h-[500px] lg:min-h-[950px] mt-8 lg:-mt-96">
             
             {/* Abstract Background (Blob scales) */}
             <motion.div 

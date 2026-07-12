@@ -41,18 +41,18 @@ export default function Cta() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative w-full bg-[#131313] flex flex-col items-center justify-center overflow-hidden pt-10 pb-24 md:pt-16 md:pb-32 group cursor-default"
+      className="relative w-full bg-[#131313] flex flex-col items-center justify-center overflow-hidden min-h-[100svh] md:min-h-0 py-32 md:pt-16 md:pb-32 group cursor-default"
+      id="cta"
     >
-      <div ref={textWrapperRef} className="relative z-0">
+      <div ref={textWrapperRef} className="relative z-0 px-2 md:px-0 flex flex-col justify-center h-full w-full">
         {/* Base Dim Text */}
         <h1
-          className="relative z-0 text-[16vw] md:text-[14vw] pt-[1vw] leading-[0.7] font-black uppercase text-center tracking-tight pointer-events-none select-none transition-opacity duration-300"
+          className="relative z-0 text-[22vw] sm:text-[18vw] md:text-[14vw] pt-[1vw] leading-[0.85] md:leading-[0.75] font-black uppercase text-center tracking-tighter pointer-events-none select-none transition-opacity duration-300 scale-y-[1.4] md:scale-y-100 bg-[length:10px_10px] md:bg-[length:24px_24px]"
           style={{
             WebkitTextFillColor: "transparent",
             WebkitBackgroundClip: "text",
             backgroundImage: `url("${patternUrlDim}")`,
             backgroundRepeat: "repeat",
-            backgroundSize: "24px 24px",
             fontFamily: "var(--font-national2)",
           }}
         >
@@ -67,16 +67,15 @@ export default function Cta() {
 
         {/* Spotlight Bright Text */}
         <h1
-          className="absolute top-0 left-0 w-full h-full z-10 text-[16vw] md:text-[14vw] pt-[1vw] leading-[0.7] font-black uppercase text-center tracking-tight pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute top-0 left-0 w-full h-full z-10 text-[22vw] sm:text-[18vw] md:text-[14vw] pt-[1vw] leading-[0.85] md:leading-[0.75] font-black uppercase text-center tracking-tighter pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-y-[1.4] md:scale-y-100 flex items-center justify-center bg-[length:10px_10px] md:bg-[length:24px_24px]"
           style={{
             WebkitTextFillColor: "transparent",
             WebkitBackgroundClip: "text",
             backgroundImage: `url("${patternUrlBright}")`,
             backgroundRepeat: "repeat",
-            backgroundSize: "24px 24px",
             fontFamily: "var(--font-national2)",
-            maskImage: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
-            WebkitMaskImage: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
+            maskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
+            WebkitMaskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
           }}
         >
           PEOPLE<br />

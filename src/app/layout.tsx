@@ -64,6 +64,7 @@ const headingNow = localFont({
   ],
   variable: "--font-heading-now",
 });
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: "Dr. Omar Portfolio",
@@ -79,8 +80,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth bg-zinc-950 text-white">
       <body className={`${helvetica.className} ${national2.variable} ${headingNow.variable} ${courier.variable} antialiased min-h-screen flex flex-col`}>
         <ScrollRestoration />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <SmoothScrollProvider>
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

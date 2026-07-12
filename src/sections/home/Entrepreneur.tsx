@@ -71,6 +71,7 @@ export default function Entrepreneur() {
     const ctx = gsap.context(() => {
       const getScrollAmount = () => track.scrollWidth - window.innerWidth;
       
+      // 1. Horizontal Scroll Animation
       const tween = gsap.to(track, {
         x: () => -getScrollAmount(),
         ease: "none"
@@ -85,13 +86,54 @@ export default function Entrepreneur() {
         scrub: 1,
         invalidateOnRefresh: true,
       });
+
+      // 2. Card Image Parallax & Content Stagger
+      gsap.utils.toArray('.entrepreneur-card').forEach((card: any) => {
+        const image = card.querySelector('.parallax-image');
+        const inner = card.querySelector('.card-inner');
+        
+        // Horizontal Image Parallax (Safe range to prevent black borders)
+        gsap.fromTo(image, 
+          { xPercent: -25 },
+          {
+            xPercent: 25,
+            ease: "none",
+            scrollTrigger: {
+              trigger: card,
+              start: "left right",
+              end: "right left",
+              containerAnimation: tween,
+              scrub: true,
+            }
+          }
+        );
+        
+        // Massive Staggered Reveal for the entire card contents
+        gsap.fromTo(inner,
+          { opacity: 0, y: 150, scale: 0.85, rotateZ: 2 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotateZ: 0,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "left 95%", // Trigger right as it enters
+              end: "left 35%",   // Finish when it's mostly centered
+              containerAnimation: tween,
+              scrub: 1,
+            }
+          }
+        );
+      });
     }, section);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#131313] text-white h-[100dvh] relative overflow-hidden pt-12 md:pt-20 flex flex-col justify-center">
+    <section ref={sectionRef} id="entrepreneur" className="bg-[#131313] text-white h-[100dvh] relative overflow-hidden pt-12 md:pt-20 flex flex-col justify-center">
       {/* Header Container */}
       <div className="px-6 md:px-12 lg:px-24 w-full flex-shrink-0">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4">
@@ -116,35 +158,46 @@ export default function Entrepreneur() {
       <div className="pl-6 md:pl-12 lg:pl-24 pb-6 md:pb-12 flex-1 flex items-center min-h-0">
         <div ref={trackRef} className="flex gap-8 md:gap-12 w-[max-content] items-start">
           {companies.map((company) => (
-            <div key={company.id} className="w-[85vw] md:w-[65vw] lg:w-[45vw] flex flex-col shrink-0 group">
-              <div className="relative w-full aspect-[16/10] md:aspect-[16/9] max-h-[50vh] rounded-xl overflow-hidden mb-4 md:mb-6 bg-zinc-800">
-                <Image 
-                  src={company.image} 
-                  alt={company.name} 
-                  fill 
-                  sizes="(max-width: 768px) 85vw, (max-width: 1024px) 65vw, 45vw"
-                  className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
-                />
-              </div>
-              <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-between items-start">
-                <div className="flex flex-col gap-2 lg:w-[55%]">
-                  {company.logo && (
-                    <div className="relative h-10 w-32 md:h-14 md:w-48 mb-1">
-                      <Image 
-                        src={company.logo} 
-                        alt={`${company.name} logo`} 
-                        fill 
-                        className="object-contain object-left" 
-                      />
-                    </div>
-                  )}
-                  <h3 className="text-3xl md:text-4xl lg:text-[2.5rem] font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
-                    {company.name}
-                  </h3>
+            <div key={company.id} className="entrepreneur-card w-[90vw] md:w-[75vw] lg:w-[55vw] flex flex-col shrink-0 group">
+              <div className="card-inner flex flex-col w-full origin-bottom-left">
+                <div className="relative w-full aspect-[16/10] md:aspect-[16/9] max-h-[60vh] md:max-h-[65vh] rounded-[2rem] overflow-hidden mb-6 md:mb-8 bg-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <Image 
+                    src={company.image} 
+                    alt={company.name} 
+                    fill 
+                    sizes="(max-width: 768px) 90vw, (max-width: 1024px) 75vw, 55vw"
+                    className="parallax-image object-cover scale-[1.6] transition-transform duration-1000 ease-out group-hover:scale-[1.65]" 
+                  />
                 </div>
-                <p className="text-zinc-400 text-sm md:text-base lg:text-lg lg:w-[45%] font-medium leading-snug lg:mt-16">
-                  {company.description}
-                </p>
+                
+                <div className="card-content flex flex-col-reverse lg:flex-row gap-6 lg:gap-8 justify-between items-start lg:items-center mt-2">
+                  
+                  {/* Left Side: Title & Description */}
+                  <div className="flex flex-col gap-4 lg:w-[65%]">
+                    <h3 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
+                      {company.name}
+                    </h3>
+                    <p className="text-zinc-400 text-sm md:text-base lg:text-xl font-medium leading-relaxed max-w-2xl">
+                      {company.description}
+                    </p>
+                  </div>
+                  
+                  {/* Right Side: Larger Logo */}
+                  <div className="w-full lg:w-[35%] flex justify-start lg:justify-end">
+                    {company.logo && (
+                      <div className="relative h-16 w-48 md:h-24 md:w-64 lg:h-28 lg:w-72">
+                        <Image 
+                          src={company.logo} 
+                          alt={`${company.name} logo`} 
+                          fill 
+                          className="object-contain object-left lg:object-right" 
+                        />
+                      </div>
+                    )}
+                  </div>
+                  
+                </div>
+
               </div>
             </div>
           ))}

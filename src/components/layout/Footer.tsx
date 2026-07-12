@@ -110,14 +110,14 @@ export default function Footer() {
   const marqueeTextStyle: React.CSSProperties = {
     fontFamily: "var(--font-national2)",
     fontWeight: 900,
-    fontSize: "clamp(10rem, 15vw, 13rem)",
+    fontSize: "clamp(3.5rem, 12vw, 13rem)",
     lineHeight: "0.85",
   };
 
   const smallTextStyle: React.CSSProperties = {
     fontFamily: "var(--font-national2)",
     fontWeight: 900,
-    fontSize: "0.85rem",
+    fontSize: "clamp(0.6rem, 1.5vw, 0.85rem)",
     lineHeight: "1.3",
     letterSpacing: "0.05em",
   };
@@ -126,7 +126,7 @@ export default function Footer() {
   const stickerBase: React.CSSProperties = {
     fontFamily: "var(--font-national2)",
     fontWeight: 900,
-    fontSize: "clamp(7rem, 10vw, 9rem)",
+    fontSize: "clamp(2.5rem, 8vw, 9rem)",
     lineHeight: "0.85",
     display: "inline-block",
     padding: "0.1em 0.25em",
@@ -159,21 +159,21 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full h-[75vh] bg-[#131313] text-white flex flex-col justify-end overflow-hidden"
+      className="relative w-full h-[60vh] md:h-[75vh] bg-[#131313] text-white flex flex-col justify-end overflow-hidden"
     >
       {/* Solid zigma background filler */}
       <div className="absolute top-[15%] left-0 w-full h-[150%] bg-zigma z-0" />
 
       {/* Marquee bands */}
-      <div className="absolute top-0 left-0 w-full h-full z-10">
+      <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         {/* Upper Band */}
         <div
-          className="absolute top-[5%] bg-zigma border-y-2 border-lambda/40 py-8 z-10 shadow-xl"
+          className="absolute top-[10%] md:top-[5%] bg-zigma border-y-2 border-lambda/40 py-4 md:py-8 z-10 shadow-xl"
           style={{ width: "200%", left: "-50%", transform: "rotate(-1.5deg)" }}
         >
-          <div ref={band1Ref} className="flex gap-8 items-center whitespace-nowrap">
+          <div ref={band1Ref} className="flex gap-4 md:gap-8 items-center whitespace-nowrap">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex items-center gap-8 flex-shrink-0">
+              <div key={i} className="flex items-center gap-4 md:gap-8 flex-shrink-0">
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>TRANSFORM</span>
                 <span style={stickerFilled} className="uppercase">DEEP IMMERSION</span>
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>ELEVATE</span>
@@ -192,12 +192,12 @@ export default function Footer() {
 
         {/* Lower Band */}
         <div
-          className="absolute top-[18%] bg-zigma border-y-2 border-lambda/40 py-8 z-20 shadow-2xl"
+          className="absolute top-[25%] md:top-[18%] bg-zigma border-y-2 border-lambda/40 py-4 md:py-8 z-20 shadow-2xl"
           style={{ width: "200%", left: "-50%", transform: "rotate(1deg)" }}
         >
-          <div ref={band2Ref} className="flex gap-8 items-center whitespace-nowrap">
+          <div ref={band2Ref} className="flex gap-4 md:gap-8 items-center whitespace-nowrap">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex items-center gap-8 flex-shrink-0">
+              <div key={i} className="flex items-center gap-4 md:gap-8 flex-shrink-0">
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>IMPACT</span>
                 <span style={stickerDashed} className="uppercase">EVOLVE</span>
                 <span className="text-lambda uppercase" style={marqueeTextStyle}>INSPIRE</span>
@@ -216,8 +216,41 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="relative z-30 flex-grow flex justify-center items-end pb-16">
-        <h2 className="text-4xl font-bold">Footer Content Space</h2>
+      <div className="relative z-30 flex-grow w-full flex flex-col justify-end pt-32 pb-8 px-6 md:px-12 pointer-events-auto">
+        <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/20 pt-12">
+          
+          <div className="flex flex-col gap-6">
+            <h3 className="font-national2 font-black text-5xl uppercase tracking-tighter text-white">DR. OMAR®</h3>
+            <p className="font-helvetica text-white/60 text-sm md:text-base max-w-sm leading-relaxed">
+              Global Leadership Coach, NLP Expert, and Life Transformation Specialist. Empowering individuals and organizations to achieve their highest potential.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="font-national2 font-bold text-lg md:text-xl uppercase tracking-widest text-lambda">Contact</h4>
+            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-lg">info@dromar.com</a>
+            <a href="tel:+971501234567" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-lg">+971 50 123 4567</a>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="font-national2 font-bold text-lg md:text-xl uppercase tracking-widest text-lambda">Socials</h4>
+            <div className="flex flex-col gap-2">
+              <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">Instagram</a>
+              <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">LinkedIn</a>
+              <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">YouTube</a>
+              <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">Twitter</a>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-16 md:mt-24 pt-6 border-t border-white/20 text-white/40 text-sm font-helvetica">
+          <p>© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

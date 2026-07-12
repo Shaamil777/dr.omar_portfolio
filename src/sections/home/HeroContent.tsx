@@ -94,8 +94,56 @@ const RedactedText = ({ text, className = "" }: { text: string, className?: stri
 );
 
 const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    import("gsap").then((gsapModule) => {
+      const gsap = gsapModule.default;
+      
+      const ctx = gsap.context(() => {
+        // Timeline for the hero text entrance
+        const tl = gsap.timeline({ delay: 0.2 });
+        
+        // Initial setup for redaction boxes
+        gsap.set(".redaction-box", { scaleX: 1, transformOrigin: "right" });
+        gsap.set(".hidden-text", { autoAlpha: 0 });
+
+        // Animate the main text words sliding up and fading in
+        tl.fromTo(".hero-word", 
+          { y: 50, opacity: 0, rotateX: 20 },
+          { y: 0, opacity: 1, rotateX: 0, duration: 1, stagger: 0.1, ease: "power3.out" }
+        )
+        // Then reveal the redacted text
+        .to(".redaction-box", {
+          scaleX: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "expo.inOut"
+        }, "-=0.5")
+        .to(".hidden-text", {
+          autoAlpha: 1,
+          duration: 0.1,
+          stagger: 0.1
+        }, "-=0.7")
+        // Finally, reveal telemetry widgets
+        .fromTo(".telemetry-widget",
+          { opacity: 0, scale: 0.9 },
+          { opacity: 1, scale: 1, duration: 0.8, stagger: 0.1, ease: "power2.out" },
+          "-=0.2"
+        );
+      }, contentRef);
+
+      return () => ctx.revert();
+    });
+  }, []);
+
   return (
-    <div ref={ref} className="absolute top-0 left-0 w-full h-full flex flex-col text-white z-10 pointer-events-none">
+    <div ref={(node) => {
+      // Handle both forwarded ref and local ref
+      if (typeof ref === 'function') ref(node);
+      else if (ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
+      contentRef.current = node;
+    }} className="absolute top-0 left-0 w-full h-full flex flex-col text-white z-10 pointer-events-none">
       {/* Dark gradient overlay with spotlight effect */}
       <div 
         className="hero-overlay absolute inset-0 pointer-events-none opacity-80 z-0" 
@@ -133,10 +181,10 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
            </div>
            
            {/* Top Right Box */}
-           <div className="border-b border-l border-white/10 px-6 py-3 flex flex-col font-courier tracking-widest text-right items-end bg-black/20 backdrop-blur-sm">
-             <div className="text-[10px] text-white/40 uppercase mb-1">DATA SCANNED</div>
-             <div className="text-4xl font-bold font-helvetica text-white leading-none tracking-tighter">100%</div>
-             <div className="flex items-center gap-2 mt-2 text-[10px] uppercase font-bold text-[#CD1D1D]">
+           <div className="border-b border-l border-white/10 px-3 sm:px-6 py-2 sm:py-3 flex flex-col font-courier tracking-widest text-right items-end bg-black/20 backdrop-blur-sm">
+             <div className="text-[8px] sm:text-[10px] text-white/40 uppercase mb-1">DATA SCANNED</div>
+             <div className="text-2xl sm:text-4xl font-bold font-helvetica text-white leading-none tracking-tighter">100%</div>
+             <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-[8px] sm:text-[10px] uppercase font-bold text-[#CD1D1D]">
                 <div className="w-1.5 h-1.5 bg-[#CD1D1D]"></div>
                 <div>FULL COVERAGE</div>
              </div>
@@ -144,30 +192,30 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         {/* BOTTOM ROW (Huge Text) */}
-        <div className="w-full pl-6 md:pl-10 pb-12 md:pb-16 z-20">
+        <div className="w-full pl-4 sm:pl-6 md:pl-10 pb-16 md:pb-16 z-20 overflow-hidden">
            {/* Top margin line above the text */}
-           <div className="border-t border-white/20 pt-6 md:pt-8 w-full max-w-[95%]">
+           <div className="border-t border-white/20 pt-4 sm:pt-6 md:pt-8 w-full max-w-[95%]">
              <div 
-               className="flex flex-col text-left font-national2 font-black text-[5.5vw] sm:text-[50px] md:text-[68px] lg:text-[76px] uppercase leading-[0.95] md:leading-[60px] lg:leading-[68px] tracking-tight hero-text-content w-full max-w-none"
+               className="flex flex-col text-left font-national2 font-black text-[28px] leading-[1] xs:text-[8vw] sm:text-[50px] md:text-[68px] lg:text-[76px] uppercase sm:leading-[0.95] md:leading-[60px] lg:leading-[68px] tracking-tight hero-text-content w-full max-w-none"
                style={{ wordSpacing: '0.15em' }}
              >
-               <div className="font-courier text-[10px] sm:text-[12px] text-white/40 font-normal mb-3 md:mb-4 tracking-[0.2em] leading-normal uppercase" style={{ wordSpacing: 'normal' }}>
+               <div className="hero-word font-courier text-[10px] sm:text-[12px] text-white/40 font-normal mb-2 sm:mb-3 md:mb-4 tracking-[0.2em] leading-normal uppercase" style={{ wordSpacing: 'normal' }}>
                  DR. OMAR
                </div>
                
                <div className="flex flex-wrap items-center gap-x-4 md:gap-x-6">
-                 <span>YOU ARE EXECUTING</span>
-                 <RedactedText text="CRITICAL" />
-                 <RedactedText text="MULTI-MILLION" />
+                 <span className="hero-word inline-block">YOU ARE EXECUTING</span>
+                 <RedactedText text="CRITICAL" className="hero-word inline-block" />
+                 <RedactedText text="MULTI-MILLION" className="hero-word inline-block" />
                </div>
                
-               <div className="mt-1 md:mt-3 whitespace-nowrap">DOLLAR SCALING DECISIONS</div>
+               <div className="mt-1 md:mt-3 whitespace-nowrap hero-word inline-block">DOLLAR SCALING DECISIONS</div>
                
                <div className="flex flex-wrap items-center gap-x-4 md:gap-x-6 mt-1 md:mt-3">
-                 <span>ON</span>
-                 <RedactedText text="DANGEROUSLY" />
-                 <RedactedText text="ISOLATED" />
-                 <span>FRAGMENTS.</span>
+                 <span className="hero-word inline-block">ON</span>
+                 <RedactedText text="DANGEROUSLY" className="hero-word inline-block" />
+                 <RedactedText text="ISOLATED" className="hero-word inline-block" />
+                 <span className="hero-word inline-block">FRAGMENTS.</span>
                </div>
              </div>
            </div>
@@ -188,7 +236,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
           { label: "STRTUPS", value: "50+" },
           { label: "STATUS", value: "ACTIVE 24/7" }
         ]} 
-        className="top-[15%] left-[8%]"
+        className="hidden md:flex top-[15%] left-[8%]"
         revealColor="#CD1D1D" // Light Red 1
       />
       
@@ -200,7 +248,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
           { label: "NATIONS", value: "12+" },
           { label: "EXP_RTE", value: "ACCELERATED" }
         ]} 
-        className="top-[20%] right-[10%]"
+        className="hidden sm:flex top-[20%] right-[5%] md:right-[10%]"
         revealColor="#4ade80" // Light Green 1
       />
       
@@ -212,7 +260,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
           { label: "C_LEVEL", value: "3,000+" },
           { label: "IMPACT", value: "VERIFIED" }
         ]} 
-        className="top-[40%] left-[38%]"
+        className="hidden lg:flex top-[40%] left-[38%]"
         revealColor="#CD1D1D" // Light Red 2
       />
       
@@ -224,7 +272,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
           { label: "HLTH_IX", value: "OPTIMAL" },
           { label: "BALANCE", value: "SUSTAINED" }
         ]} 
-        className="top-[48%] right-[12%]"
+        className="hidden md:flex top-[48%] right-[12%]"
         revealColor="#4ade80" // Light Green 2
       />
 
@@ -236,7 +284,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
           { label: "L_T_LAT", value: "0.01MS" },
           { label: "NET_SEC", value: "LOCKED" }
         ]} 
-        className="top-[55%] left-[6%]"
+        className="hidden sm:flex top-[55%] left-[6%]"
         revealColor="#CD1D1D" // Light Red 3
       />
     </div>
