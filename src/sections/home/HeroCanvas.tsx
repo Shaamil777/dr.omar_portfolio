@@ -16,25 +16,52 @@ const HeroCanvas = forwardRef<HeroCanvasHandle>((props, ref) => {
   
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = new Array(totalFrames);
+    imagesRef.current = loadedImages;
     
-    for (let i = 1; i <= totalFrames; i++) {
-      const img = new Image();
-      const frameNum = i.toString().padStart(4, '0');
+    // 1. Load the first frame immediately for instant visual
+    const firstImg = new Image();
+    firstImg.src = `/hero/frame_0001.png`;
+    firstImg.onload = () => {
+      loadedImages[0] = firstImg;
+      setLoaded(true);
       
-      if (i === 193) {
-        img.src = `/hero/frame_0193_final.jpeg`;
-      } else {
-        img.src = `/hero/frame_${frameNum}.png`;
-      }
-      img.onload = () => {
-        if (i === 1) {
-          setLoaded(true);
+      // 2. Background batch load the rest to prevent Vercel network freezing
+      const batchSize = 10;
+      let currentIndex = 2;
+      
+      const loadBatch = () => {
+        if (currentIndex > totalFrames) return;
+        
+        let loadedCount = 0;
+        const targetCount = Math.min(batchSize, totalFrames - currentIndex + 1);
+        
+        for (let i = 0; i < targetCount; i++) {
+          const imgIndex = currentIndex + i;
+          const img = new Image();
+          const frameNum = imgIndex.toString().padStart(4, '0');
+          img.src = imgIndex === 193 ? `/hero/frame_0193_final.jpeg` : `/hero/frame_${frameNum}.png`;
+          
+          img.onload = () => {
+            loadedImages[imgIndex - 1] = img;
+            loadedCount++;
+            if (loadedCount === targetCount) {
+              currentIndex += batchSize;
+              setTimeout(loadBatch, 50); // Pause briefly to let browser breathe
+            }
+          };
+          img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === targetCount) {
+              currentIndex += batchSize;
+              setTimeout(loadBatch, 50);
+            }
+          };
         }
       };
-      loadedImages[i - 1] = img;
-    }
+      
+      loadBatch();
+    };
     
-    imagesRef.current = loadedImages;
     // Fallback: show canvas after 1 second even if frame 1 is slow
     const timeout = setTimeout(() => setLoaded(true), 1000);
     return () => clearTimeout(timeout);

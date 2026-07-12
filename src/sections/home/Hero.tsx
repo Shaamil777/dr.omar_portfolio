@@ -111,10 +111,10 @@ export default function Hero() {
   }, []);
 
   return (
-    // The container is 400dvh tall to create scrolling space
-    <section ref={containerRef} className="relative w-full h-[400dvh] bg-black">
+    // The container is 400vh tall to create scrolling space
+    <section ref={containerRef} className="relative w-full h-[400vh] bg-black">
       {/* The sticky wrapper stays locked to the screen while scrolling through the container */}
-      <div ref={stickyRef} className="sticky top-0 left-0 w-full h-[100dvh] overflow-hidden">
+      <div ref={stickyRef} className="sticky top-0 left-0 w-full h-[100vh] overflow-hidden">
         <div ref={blurRef} className="absolute inset-0 w-full h-full z-0" style={{ filter: 'blur(4px)' }}>
           <HeroCanvas ref={canvasHandleRef} />
         </div>

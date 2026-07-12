@@ -64,8 +64,20 @@ export default function Programmes() {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
     };
+    
+    const handleScroll = () => {
+      // If the user scrolls, hide the cursor so it doesn't get stuck on other sections.
+      // It will reappear automatically if they move the mouse over a card again.
+      setIsHoveringCard(false);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
