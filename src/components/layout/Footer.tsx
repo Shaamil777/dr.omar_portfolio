@@ -159,7 +159,7 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full h-[60vh] md:h-[75vh] bg-[#131313] text-white flex flex-col justify-end overflow-hidden"
+      className="relative w-full min-h-[100vh] md:min-h-0 md:h-[75vh] bg-[#131313] text-white flex flex-col justify-end overflow-hidden"
     >
       {/* Solid zigma background filler */}
       <div className="absolute top-[15%] left-0 w-full h-[150%] bg-zigma z-0" />
@@ -192,7 +192,7 @@ export default function Footer() {
 
         {/* Lower Band */}
         <div
-          className="absolute top-[25%] md:top-[18%] bg-zigma border-y-2 border-lambda/40 py-4 md:py-8 z-20 shadow-2xl"
+          className="absolute top-[18%] md:top-[18%] bg-zigma border-y-2 border-lambda/40 py-4 md:py-8 z-20 shadow-2xl"
           style={{ width: "200%", left: "-50%", transform: "rotate(1deg)" }}
         >
           <div ref={band2Ref} className="flex gap-4 md:gap-8 items-center whitespace-nowrap">
@@ -216,25 +216,25 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="relative z-30 flex-grow w-full flex flex-col justify-end pt-32 pb-8 px-6 md:px-12 pointer-events-auto">
-        <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/20 pt-12">
+      <div className="relative z-30 flex-grow w-full flex flex-col justify-end pt-[2rem] md:pt-32 pb-8 px-6 md:px-12 pointer-events-auto">
+        <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t border-white/20 pt-8 md:pt-12">
           
-          <div className="flex flex-col gap-6">
-            <h3 className="font-national2 font-black text-5xl uppercase tracking-tighter text-white">DR. OMAR®</h3>
+          <div className="flex flex-col gap-4 md:gap-6 sm:col-span-2 md:col-span-1">
+            <h3 className="font-national2 font-black text-4xl md:text-5xl uppercase tracking-tighter text-white">DR. OMAR®</h3>
             <p className="font-helvetica text-white/60 text-sm md:text-base max-w-sm leading-relaxed">
               Global Leadership Coach, NLP Expert, and Life Transformation Specialist. Empowering individuals and organizations to achieve their highest potential.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h4 className="font-national2 font-bold text-lg md:text-xl uppercase tracking-widest text-lambda">Contact</h4>
-            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-lg">info@dromar.com</a>
-            <a href="tel:+971501234567" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-lg">+971 50 123 4567</a>
+          <div className="flex flex-col gap-3 md:gap-4">
+            <h4 className="font-national2 font-bold text-base md:text-xl uppercase tracking-widest text-lambda">Contact</h4>
+            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-base md:text-lg">info@dromar.com</a>
+            <a href="tel:+971501234567" className="font-helvetica font-medium text-white/80 hover:text-lambda transition-colors text-base md:text-lg">+971 50 123 4567</a>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h4 className="font-national2 font-bold text-lg md:text-xl uppercase tracking-widest text-lambda">Socials</h4>
-            <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3 md:gap-4">
+            <h4 className="font-national2 font-bold text-base md:text-xl uppercase tracking-widest text-lambda">Socials</h4>
+            <div className="flex flex-row md:flex-col flex-wrap gap-4 md:gap-2">
               <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">Instagram</a>
               <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">LinkedIn</a>
               <a href="#" className="font-helvetica font-medium text-white/80 hover:text-lambda underline-offset-4 w-fit">YouTube</a>
@@ -244,9 +244,9 @@ export default function Footer() {
           
         </div>
         
-        <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-16 md:mt-24 pt-6 border-t border-white/20 text-white/40 text-sm font-helvetica">
-          <p>© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+        <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-10 md:mt-24 pt-6 border-t border-white/20 text-white/40 text-xs md:text-sm font-helvetica">
+          <p className="text-center md:text-left mb-4 md:mb-0">© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
+          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
