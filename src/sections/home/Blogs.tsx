@@ -24,12 +24,12 @@ export default function Blogs() {
   const y6 = useTransform(scrollYProgress, [0.7, 1], ["120vh", "-120vh"]);
 
   const cards = [
-    { y: y1, className: "left-[5%] md:left-[2%] lg:left-[5%]", title: "The protection that is rarely spoken of...", img: "https://images.unsplash.com/photo-1614088836528-662706eebf23?q=80&w=600" },
+    { y: y1, className: "left-[5%] md:left-[2%] lg:left-[5%]", title: "The protection that is rarely spoken of...", img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80" },
     { y: y2, className: "right-[5%] md:right-[2%] lg:right-[10%]", title: "5 Tips for excelling as an executive protection subcontractor", img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=600" },
-    { y: y3, className: "left-[15%] md:left-[15%] lg:left-[20%]", title: "Navigating high-risk environments with precision", img: "https://images.unsplash.com/photo-1584445892556-9818817d2da5?q=80&w=600" },
+    { y: y3, className: "left-[15%] md:left-[15%] lg:left-[20%]", title: "Navigating high-risk environments with precision", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" },
     { y: y4, className: "right-[15%] md:right-[15%] lg:right-[25%]", title: "The future of tactical security technology", img: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=600" },
     { y: y5, className: "left-[10%] md:left-[5%] lg:left-[10%]", title: "Mastering situational awareness in urban settings", img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=600" },
-    { y: y6, className: "right-[10%] md:right-[5%] lg:right-[15%]", title: "Strategic planning for VIP transport and logistics", img: "https://images.unsplash.com/photo-1533054178521-9e735520e181?q=80&w=600" },
+    { y: y6, className: "right-[10%] md:right-[5%] lg:right-[15%]", title: "Strategic planning for VIP transport and logistics", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" },
   ];
 
   return (

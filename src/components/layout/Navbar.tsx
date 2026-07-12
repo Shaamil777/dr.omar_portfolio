@@ -39,15 +39,15 @@ export default function Navbar() {
       <nav className="w-full px-4 sm:px-8 py-3 md:py-4 bg-[#FAF8F5] flex items-center justify-between text-[#111] relative z-[60]">
         <div className="flex items-center">
           {/* LOGO */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-3xl sm:text-5xl md:text-[48px] tracking-tighter mr-4 sm:mr-8 leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
+          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-3xl sm:text-5xl md:text-[48px] xl:text-[36px] 2xl:text-[48px] tracking-tighter mr-4 sm:mr-8 xl:mr-6 2xl:mr-8 leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
             DR. OMAR
           </Link>
           
           {/* SEPARATOR */}
-          <div className="hidden xl:block w-[3px] h-10 bg-black/20 mr-8"></div>
+          <div className="hidden xl:block w-[3px] h-8 2xl:h-10 bg-black/20 mr-6 2xl:mr-8"></div>
           
           {/* DESKTOP LINKS */}
-          <div className="hidden xl:flex items-center gap-5 2xl:gap-8 font-helvetica text-[26px] md:text-[28px] font-black tracking-tight leading-none" style={{ WebkitTextStroke: '0.5px currentColor' }}>
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-8 font-helvetica text-[18px] 2xl:text-[26px] font-black tracking-tight leading-none" style={{ WebkitTextStroke: '0.5px currentColor' }}>
             <Link href="#about" className="hover:text-black/60 transition-colors">About</Link>
             <Link href="#entrepreneur" className="hover:text-black/60 transition-colors">Entrepreneur</Link>
             <Link href="#programmes-section" className="group relative flex items-center hover:text-black/60 transition-colors">
@@ -64,7 +64,7 @@ export default function Navbar() {
           {/* CTA BUTTON */}
           <Link 
             href="#cta" 
-            className="hidden sm:flex bg-[#111] text-white px-6 py-2.5 md:px-10 md:py-3.5 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.3)] hover:bg-black/90 hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[20px] md:text-[28px] leading-none items-center justify-center whitespace-nowrap"
+            className="hidden sm:flex bg-[#111] text-white px-6 py-2.5 md:px-10 md:py-3.5 xl:px-6 xl:py-2.5 2xl:px-10 2xl:py-3.5 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.3)] hover:bg-black/90 hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[20px] md:text-[28px] xl:text-[20px] 2xl:text-[28px] leading-none items-center justify-center whitespace-nowrap"
             style={{ WebkitTextStroke: '0.5px currentColor' }}
           >
             BESPOKE QUOTE
