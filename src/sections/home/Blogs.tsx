@@ -33,7 +33,7 @@ export default function Blogs() {
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-[#FAF8F5]">
+    <section ref={containerRef} id="insights" className="relative h-[400vh] bg-[#FAF8F5] text-[#111]">
       
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
@@ -41,7 +41,7 @@ export default function Blogs() {
         {/* Background Ticks Circle (Scroll Rotation) */}
         <motion.div 
           style={{ rotate: circleRotate }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.08]"
         >
           {/* Inner Continuous Slow Rotation */}
           <motion.div
@@ -52,25 +52,26 @@ export default function Blogs() {
             {Array.from({ length: 72 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute w-[1.5px] h-[350px] md:h-[700px]"
+                className="absolute w-[1.5px] h-[450px] md:h-[800px]"
                 style={{ transform: `rotate(${i * 5}deg)` }}
               >
-                <div className="w-full h-[15px] bg-[#1a2b3c]"></div>
+                <div className="w-full h-[15px] bg-[#111]"></div>
               </div>
             ))}
           </motion.div>
         </motion.div>
 
         {/* Content (Title, Text, Button) */}
-        <div className="relative z-30 flex flex-col items-center text-center px-2 md:px-4 max-w-xl pointer-events-auto bg-[#f4f5f5]/85 md:bg-transparent py-5 md:py-0 rounded-3xl backdrop-blur-md md:backdrop-blur-none">
-          <h2 className="text-[#0f172a] text-2xl sm:text-3xl md:text-6xl font-bold tracking-tight mb-3 md:mb-6 uppercase drop-shadow-sm">
-            LATEST BLOGS
+        <div className="relative z-30 flex flex-col items-center text-center px-4 max-w-2xl pointer-events-auto py-5">
+          <div className="font-helvetica font-bold text-lg md:text-xl mb-4 text-[#CD1D1D]">(5)</div>
+          <h2 className="text-[#111] font-national2 font-black text-6xl md:text-8xl lg:text-[8rem] uppercase leading-[0.85] tracking-normal mb-6 mix-blend-multiply">
+            LATEST<br/>INSIGHTS
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm md:text-xl font-medium mb-5 md:mb-12 leading-relaxed drop-shadow-sm max-w-[200px] sm:max-w-[260px] md:max-w-none mx-auto">
-            Explore my latest articles, insights, and thoughts <br className="hidden md:block" /> on entrepreneurship, technology, and beyond.
+          <p className="font-helvetica font-medium text-sm md:text-lg text-zinc-500 mb-8 max-w-sm mx-auto leading-relaxed">
+            Explore my latest articles, insights, and thoughts on entrepreneurship, technology, and leadership.
           </p>
-          <button className="bg-[#131b26] text-white text-[9px] md:text-sm font-bold tracking-[0.2em] uppercase px-6 md:px-10 py-2.5 md:py-4 rounded-full hover:bg-black transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-            Read All Blogs
+          <button className="bg-[#CD1D1D] text-white font-national2 font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
+            READ ALL
           </button>
         </div>
 
@@ -79,16 +80,22 @@ export default function Blogs() {
           <motion.div 
             key={index}
             style={{ y: card.y }} 
-            className={`absolute top-[50%] -translate-y-1/2 ${card.className} w-56 md:w-72 lg:w-80 h-56 md:h-72 lg:h-80 bg-slate-800 shadow-2xl overflow-hidden flex items-end p-4 md:p-5 lg:p-6 z-40 group cursor-pointer rounded-none`}
+            className={`absolute top-[50%] -translate-y-1/2 ${card.className} w-48 md:w-64 lg:w-80 aspect-[4/5] bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col justify-end p-5 md:p-6 lg:p-8 z-40 group rounded-2xl md:rounded-[2rem] border-[3px] border-[#FAF8F5] cursor-none`}
           >
              <div 
-               className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-110 transition-transform duration-700"
+               className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
                style={{ backgroundImage: `url('${card.img}')` }}
              ></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent"></div>
-             <h3 className="relative z-10 text-white font-bold uppercase text-[10px] md:text-sm lg:text-base leading-snug drop-shadow-lg">
-               {card.title}
-             </h3>
+             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+             
+             <div className="relative z-10 flex flex-col gap-2 md:gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+               <span className="font-courier text-[#CD1D1D] font-bold text-[10px] md:text-xs tracking-widest uppercase">
+                 Article
+               </span>
+               <h3 className="text-white font-national2 font-bold uppercase text-lg md:text-xl lg:text-3xl leading-[0.95] drop-shadow-lg">
+                 {card.title}
+               </h3>
+             </div>
           </motion.div>
         ))}
         

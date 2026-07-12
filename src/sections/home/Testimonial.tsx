@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight, Triangle, Leaf, TrendingUp, Hexagon } from 'lucide-react';
+import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const testimonials = [
   {
@@ -10,175 +11,149 @@ const testimonials = [
     quote: "Dr. Omar's coaching changed the way I lead my business and my life. His insights helped me scale with clarity and confidence.",
     name: "FAISAL K.",
     position: "Founder, Techvista Solutions",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
     quote: "A truly transformative experience. I learned to lead with purpose, build a strong team, and create real impact.",
     name: "SANA M.",
     position: "CEO, Elevate Consultancy",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
     quote: "The leadership program helped our organization align our values with our vision. The results have been extraordinary.",
     name: "RAMESH P.",
     position: "COO, GreenField Group",
-    image: "https://randomuser.me/api/portraits/men/67.jpg"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
     quote: "Dr. Omar has a rare ability to unlock potential in people. His guidance was the turning point in my entrepreneurial journey.",
     name: "NIDHA A.",
     position: "Founder, StyleRoute",
-    image: "https://randomuser.me/api/portraits/women/68.jpg"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 5,
     quote: "An exceptional mentor and strategist. The frameworks I learned are now the foundation of our company's culture.",
     name: "DAVID L.",
     position: "Director, Apex Innovations",
-    image: "https://randomuser.me/api/portraits/men/91.jpg"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 6,
     quote: "His strategic transformation methods were exactly what we needed to break through our growth plateau. Highly recommended.",
     name: "ELENA R.",
     position: "VP of Growth, Synergy Tech",
-    image: "https://randomuser.me/api/portraits/women/33.jpg"
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
-const logos = [
-  { name: "GulfStar", sub: "INDUSTRIES", Icon: Star },
-  { name: "Techvista", sub: "SOLUTIONS", Icon: Triangle },
-  { name: "GreenField", sub: "GROUP", Icon: Leaf },
-  { name: "Elevate", sub: "CONSULTANCY", Icon: TrendingUp },
-  { name: "StyleRoute", sub: "FASHION", Icon: Hexagon },
-];
-
 export default function Testimonial() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const [containerWidth, setContainerWidth] = useState(1200);
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const ctx = gsap.context(() => {
+      const quotes = gsap.utils.toArray('.quote-block');
+      const images = gsap.utils.toArray('.client-image');
+      
+      quotes.forEach((quote: any, i) => {
+        // Initial state for all but the first one
+        if (i !== 0) gsap.set(quote, { opacity: 0.15 });
+        
+        ScrollTrigger.create({
+          trigger: quote,
+          start: "top 55%", 
+          end: "bottom 45%",
+          onEnter: () => {
+            gsap.to(quote, { opacity: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+            gsap.to(images, { opacity: 0, scale: 0.95, duration: 0.6, overwrite: "auto" });
+            gsap.to(images[i] as Element, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+          },
+          onEnterBack: () => {
+            gsap.to(quote, { opacity: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+            gsap.to(images, { opacity: 0, scale: 0.95, duration: 0.6, overwrite: "auto" });
+            gsap.to(images[i] as Element, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+          },
+          onLeave: () => gsap.to(quote, { opacity: 0.15, duration: 0.5, overwrite: "auto" }),
+          onLeaveBack: () => gsap.to(quote, { opacity: 0.15, duration: 0.5, overwrite: "auto" }),
+        });
+      });
+    }, containerRef);
+    
+    return () => ctx.revert();
   }, []);
 
-  // Card width is 290px, gap is 24px (1.5rem)
-  const CARD_WIDTH = 290;
-  const GAP = 24;
-  const SLIDE_AMOUNT = CARD_WIDTH + GAP;
-  
-  const visibleCardsCount = containerWidth / SLIDE_AMOUNT;
-  const maxIndex = Math.max(0, Math.ceil(testimonials.length - visibleCardsCount));
-
-  const nextSlide = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
-  const prevSlide = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
-
   return (
-    <section className="w-full bg-[#FAF8F5] py-8 lg:py-16 overflow-hidden text-black" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-      <div className="max-w-[1700px] w-full mx-auto px-6 lg:px-16 relative">
+    <section ref={containerRef} id="testimonials" className="w-full bg-[#FAF8F5] text-[#111] relative pt-24 md:pt-48 pb-32 border-t-2 border-[#111]/5">
+      
+      {/* Background massive typography watermark */}
+      <div className="absolute top-10 left-0 w-full overflow-hidden pointer-events-none select-none opacity-[0.03] z-0 flex justify-center">
+        <h1 className="font-national2 font-black text-[20vw] leading-none whitespace-nowrap">
+          TESTIMONIALS
+        </h1>
+      </div>
+
+      <div className="max-w-[1500px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
         
-        {/* Removed Top Header Section */}
-
-        {/* Slider Section */}
-        <div className="relative group">
-          {/* Slider Controls */}
-          <button 
-            onClick={prevSlide} 
-            disabled={currentIndex === 0}
-            className={`absolute -left-5 lg:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all z-10 ${currentIndex === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 hover:shadow-md hover:scale-105'}`}
-          >
-            <ChevronLeft size={20} strokeWidth={2} className="text-gray-600" />
-          </button>
-          
-          <button 
-            onClick={nextSlide} 
-            disabled={currentIndex === maxIndex}
-            className={`absolute -right-5 lg:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all z-10 ${currentIndex === maxIndex ? 'opacity-0 pointer-events-none' : 'opacity-100 hover:shadow-md hover:scale-105'}`}
-          >
-            <ChevronRight size={20} strokeWidth={2} className="text-gray-600" />
-          </button>
-
-          {/* Cards Track */}
-          <div className="overflow-hidden py-8 -my-8 px-4 -mx-4" ref={containerRef}>
-            <motion.div 
-              className="flex gap-6 transition-transform duration-700 ease-[0.32,0.72,0,1]"
-              style={{ transform: `translateX(-${currentIndex * SLIDE_AMOUNT}px)` }}
-            >
-              {testimonials.map((t, i) => (
-                <motion.div 
-                  key={t.id} 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: 0.1 * i, duration: 0.6 }}
-                  className="w-[290px] flex-shrink-0"
-                >
-                  <motion.div
-                    whileHover={{ y: -8 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white rounded-[20px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] h-full min-h-[340px] flex flex-col relative group/card border border-transparent hover:border-gray-100 transition-colors"
-                  >
-                    {/* Big Quote Background */}
-                    <div className="absolute top-6 right-6 text-gray-100 opacity-50 group-hover/card:opacity-100 transition-opacity">
-                      <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.017 21L16.41 14.592C14.773 14.592 13.447 13.256 13.447 11.605C13.447 9.954 14.773 8.618 16.41 8.618C18.047 8.618 19.373 9.954 19.373 11.605V12.181C19.373 15.65 17.518 18.667 14.654 20.198L14.017 21ZM5.385 21L7.778 14.592C6.141 14.592 4.815 13.256 4.815 11.605C4.815 9.954 6.141 8.618 7.778 8.618C9.415 8.618 10.741 9.954 10.741 11.605V12.181C10.741 15.65 8.886 18.667 6.022 20.198L5.385 21Z" />
-                      </svg>
-                    </div>
-                    
-                    {/* Stars */}
-                    <div className="flex gap-[2px] mb-5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill="#E0B53A" className="text-[#E0B53A]" />
-                      ))}
-                    </div>
-                    
-                    {/* Testimonial Text */}
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow relative z-10">
-                      {t.quote}
-                    </p>
-                    
-                    <div className="h-[1px] w-full bg-gray-100 mb-5" />
-                    
-                    {/* Client Info */}
-                    <div className="flex items-center gap-4">
-                      <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
-                      <div>
-                        <h4 className="font-bold uppercase text-[13px] tracking-wide text-gray-900">{t.name}</h4>
-                        <p className="text-xs text-gray-500 mt-1">{t.position}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
+        {/* Desktop Left Pinned Area */}
+        <div className="hidden lg:block lg:col-span-4 relative h-full">
+          <div className="sticky top-[15vh] h-[75vh] flex flex-col justify-between">
+            <div>
+              <div className="font-helvetica font-bold text-xl mb-4 text-[#CD1D1D]">(4)</div>
+              <h2 className="font-national2 font-black text-6xl xl:text-7xl uppercase leading-[0.85] tracking-normal mb-6">
+                IMPACT<br/>REALIZED
+              </h2>
+              <p className="font-helvetica font-medium text-lg text-zinc-500 max-w-sm">
+                The transformation our clients experience is the ultimate measure of our success.
+              </p>
+            </div>
+            
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-zinc-200 mt-12 shadow-2xl">
+               {testimonials.map((t, i) => (
+                 <div key={t.id} className={`client-image absolute inset-0 ${i === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]`}>
+                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                 </div>
+               ))}
+            </div>
           </div>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-3 mt-12">
-          {[...Array(maxIndex + 1)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === currentIndex ? 'bg-gray-800 w-4' : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
+        {/* Right Scrollable Quotes */}
+        <div className="lg:col-span-8 flex flex-col">
+          {/* Mobile Header */}
+          <div className="lg:hidden mb-16 flex flex-col">
+             <div className="font-helvetica font-bold text-lg mb-4 text-[#CD1D1D]">(4)</div>
+             <h2 className="font-national2 font-black text-5xl md:text-6xl uppercase leading-[0.85] mb-4">
+               IMPACT REALIZED
+             </h2>
+             <p className="font-helvetica font-medium text-zinc-500">
+                The transformation our clients experience is the ultimate measure of our success.
+              </p>
+          </div>
+          
+          <div className="flex flex-col gap-48 md:gap-[40vh] lg:py-[30vh]">
+            {testimonials.map((t, i) => (
+              <div key={t.id} className="quote-block flex flex-col transition-all cursor-none">
+                <div className="lg:hidden w-20 h-20 relative rounded-full overflow-hidden mb-8 bg-zinc-200 shadow-lg">
+                  <Image src={t.image} alt={t.name} fill className="object-cover grayscale" />
+                </div>
+                
+                <h3 className="font-national2 font-black text-3xl md:text-5xl lg:text-[4rem] leading-[0.95] tracking-normal mb-12 text-[#111]">
+                  &ldquo;{t.quote}&rdquo;
+                </h3>
+                
+                <div className="flex flex-col gap-1 border-l-4 border-[#CD1D1D] pl-6 py-1">
+                  <span className="font-courier font-bold text-xl tracking-wider uppercase">{t.name}</span>
+                  <span className="font-helvetica font-medium text-zinc-500 uppercase text-sm tracking-wide">{t.position}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
         
       </div>
     </section>

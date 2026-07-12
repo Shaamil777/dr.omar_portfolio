@@ -63,6 +63,13 @@ export default function Programmes() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
+      
+      const target = e.target as HTMLElement;
+      if (target && target.closest('.program-card-item')) {
+        setIsHoveringCard(true);
+      } else {
+        setIsHoveringCard(false);
+      }
     };
     
     const handleScroll = () => {
@@ -166,8 +173,6 @@ export default function Programmes() {
              <div 
                key={prog.id} 
                className="program-card-item relative group cursor-none perspective-1000 z-10 hover:z-50"
-               onMouseEnter={() => setIsHoveringCard(true)}
-               onMouseLeave={() => setIsHoveringCard(false)}
              >
                 
                 {/* Pop-out Image 1 (Bottom Left) */}

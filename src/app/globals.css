@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@media (pointer: fine) {
+  body {
+    cursor: none !important;
+  }
+  a, button, input, textarea, select, [role="button"], .interactive-hover {
+    cursor: none !important;
+  }
+}
+
 @theme {
   --color-zigma: #4E37FF;
   --color-lambda: #D8D3D3;
