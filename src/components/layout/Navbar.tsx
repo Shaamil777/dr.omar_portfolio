@@ -73,25 +73,40 @@ export default function Navbar() {
           {/* MOBILE MENU TOGGLE */}
           <button 
             className="xl:hidden flex items-center justify-center p-2 rounded-lg bg-black/5 hover:bg-black/10 transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open Menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <Menu size={28} />
           </button>
         </div>
       </nav>
 
       {/* MOBILE OVERLAY MENU */}
       <div 
-        className={`fixed inset-0 bg-[#FAF8F5] z-[55] flex flex-col pt-24 px-6 pb-8 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] xl:hidden ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`fixed inset-0 bg-[#FAF8F5] z-[100] flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] xl:hidden ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
       >
-        <div className="flex flex-col gap-5 sm:gap-6 font-helvetica font-black text-3xl sm:text-4xl tracking-tighter leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
+        {/* Mobile Menu Header */}
+        <div className="w-full px-4 sm:px-8 py-3 md:py-4 flex items-center justify-between text-[#111]">
+          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-3xl sm:text-5xl md:text-[48px] tracking-tighter leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
+            DR. OMAR
+          </Link>
+          <button 
+            className="flex items-center justify-center p-2 rounded-lg bg-black/5 hover:bg-black/10 transition-colors"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close Menu"
+          >
+            <X size={28} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-5 sm:gap-6 font-helvetica font-black text-3xl sm:text-4xl tracking-tighter leading-none px-6 pt-8">
           {links.map((link) => (
             <Link 
               key={link.name}
               href={link.href} 
               onClick={() => setIsOpen(false)}
               className="text-[#111] hover:text-[#CD1D1D] transition-colors border-b border-black/10 pb-4"
+              style={{ WebkitTextStroke: '1px currentColor' }}
             >
               {link.name}
             </Link>
@@ -100,12 +115,13 @@ export default function Navbar() {
             href="#cta" 
             onClick={() => setIsOpen(false)}
             className="text-[#111] hover:text-[#CD1D1D] transition-colors pb-4"
+            style={{ WebkitTextStroke: '1px currentColor' }}
           >
             Get in touch
           </Link>
         </div>
         
-        <div className="mt-auto">
+        <div className="mt-auto px-6 pb-8">
           <Link 
             href="#cta" 
             onClick={() => setIsOpen(false)}
