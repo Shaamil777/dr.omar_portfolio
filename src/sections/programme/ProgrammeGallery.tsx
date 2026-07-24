@@ -95,7 +95,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 relative">
           
           {/* Left Column (6 cols, pushed left edge) — Sticky Title & Text */}
-          <div className="lg:col-span-6 relative 2xl:-ml-40" ref={leftColRef}>
+          <div className="lg:col-span-6 relative" ref={leftColRef}>
             <div className="lg:sticky lg:top-32 flex flex-col items-start pt-0 mt-0">
               {/* Decorative Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#CD1D1D]/30 bg-[#CD1D1D]/5 text-[#CD1D1D] text-xs font-bold tracking-widest uppercase mb-6">
@@ -133,7 +133,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
           </div>
 
           {/* Right Column (6 cols, pushed far right) — Vertically Scrolling Image Stack */}
-          <div className="lg:col-span-6 lg:col-start-7 2xl:-mr-48 mt-8 lg:mt-0" ref={rightColRef}>
+          <div className="lg:col-span-6 lg:col-start-7 mt-8 lg:mt-0" ref={rightColRef}>
             <div className="flex flex-col w-full rounded-3xl overflow-hidden border-[4px] border-white shadow-[0_30px_60px_rgba(0,0,0,0.25)] bg-white">
               {gallery.map((img, index) => (
                 <div 
