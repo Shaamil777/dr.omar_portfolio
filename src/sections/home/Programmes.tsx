@@ -38,6 +38,7 @@ const AbstractIcon = ({ index }: { index: number }) => {
 };
 
 import Image from "next/image";
+import Link from "next/link";
 
 // ... [existing imports and icons]
 
@@ -170,9 +171,10 @@ export default function Programmes() {
            const img2 = programImages[(i * 2 + 1) % programImages.length];
 
            return (
-             <div 
+             <Link 
+               href={`/programme/${prog.id}`}
                key={prog.id} 
-               className="program-card-item relative group cursor-none perspective-1000 z-10 hover:z-50"
+               className="program-card-item relative group cursor-none perspective-1000 z-10 hover:z-50 block"
              >
                 
                 {/* Pop-out Image 1 (Bottom Left) */}
@@ -202,9 +204,19 @@ export default function Programmes() {
                     </p>
                   </div>
                 </div>
-             </div>
+             </Link>
            );
          })}
+      </div>
+
+      {/* View All Button */}
+      <div className="w-full flex justify-center mt-12 md:mt-20">
+        <Link 
+          href="/programmes"
+          className="bg-[#111] text-white font-national2 font-black text-2xl md:text-3xl uppercase tracking-tight px-10 py-4 rounded-full hover:bg-[#CD1D1D] transition-colors duration-300 shadow-xl hover:-translate-y-1 transform"
+        >
+          VIEW ALL PROGRAMMES
+        </Link>
       </div>
 
     </section>

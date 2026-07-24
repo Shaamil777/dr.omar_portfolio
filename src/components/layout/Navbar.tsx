@@ -28,7 +28,7 @@ export default function Navbar() {
   const links = [
     { name: "About", href: "#about" },
     { name: "Entrepreneur", href: "#entrepreneur" },
-    { name: "Programmes", href: "#programmes-section" },
+    { name: "Programmes", href: "/programmes" },
     { name: "Achievements", href: "#achievements" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Blog", href: "#blogs" },
@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="hidden xl:flex items-center gap-4 2xl:gap-8 font-helvetica text-[18px] 2xl:text-[26px] font-black tracking-tight leading-none" style={{ WebkitTextStroke: '0.5px currentColor' }}>
             <Link href="#about" className="hover:text-black/60 transition-colors">About</Link>
             <Link href="#entrepreneur" className="hover:text-black/60 transition-colors">Entrepreneur</Link>
-            <Link href="#programmes-section" className="group relative flex items-center hover:text-black/60 transition-colors">
+            <Link href="/programmes" className="group relative flex items-center hover:text-black/60 transition-colors">
               Programmes <ChevronDown />
             </Link>
             <Link href="#achievements" className="hover:text-black/60 transition-colors">Achievements</Link>

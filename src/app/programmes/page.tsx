@@ -149,22 +149,22 @@ export default function ProgrammesListingPage() {
         </div>
         
         {/* Sub Header Toolbar */}
-        <div className="w-full px-6 lg:px-24 max-w-[100rem] mx-auto py-6 flex flex-col md:flex-row items-start md:items-center justify-between border-b-[2px] border-[#111]/10 gap-4 md:gap-0">
-          <div className="font-helvetica font-bold text-lg md:text-xl text-zinc-500 min-w-[80px]">
+        <div className="w-full px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between border-b-[2px] border-[#111]/10 gap-4 md:gap-0">
+          <div className="font-helvetica font-bold text-lg md:text-xl min-w-[80px]">
             ({companiesData.length})
           </div>
           <div className="font-helvetica font-bold text-lg md:text-xl text-left md:text-center flex-1">
-            Transformational Mentorship for Ambitious Leaders
+            Transformational Programs for Ambitious Leaders
           </div>
           <div className="w-full md:w-auto flex justify-start md:justify-end">
-            <button className="bg-[#111] text-white font-national2 font-black text-xl uppercase tracking-tight px-6 py-2 rounded-xl hover:bg-[#CD1D1D] transition-colors shadow-lg">
+            <button className="bg-[#CD1D1D] text-white font-national2 font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full hover:bg-black transition-colors shadow-lg">
               VIEW ROADMAP
             </button>
           </div>
         </div>
         
         {/* Grid of Cards */}
-        <div className="program-grid w-full px-6 lg:px-24 max-w-[100rem] mx-auto mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-y-16">
+        <div className="program-grid w-full px-4 md:px-8 mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-y-16">
            {companiesData.map((company, i) => {
              const img1 = programImages[(i * 2) % programImages.length];
              const img2 = programImages[(i * 2 + 1) % programImages.length];
@@ -187,9 +187,9 @@ export default function ProgrammesListingPage() {
                   </div>
 
                   {/* Main Card */}
-                  <div className="relative z-10 bg-white border-[2px] border-black/10 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-16 group-hover:-rotate-3 group-hover:scale-105 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] min-h-[400px] md:min-h-[450px] w-full transform-gpu origin-bottom">
+                  <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-16 group-hover:-rotate-3 group-hover:scale-105 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] min-h-[400px] md:min-h-[450px] w-full transform-gpu origin-bottom">
                     <div>
-                      <div className="mb-10 text-zinc-300 group-hover:text-[#CD1D1D] transition-colors duration-500">
+                      <div className="mb-10 text-[#111]">
                         <AbstractIcon index={i} />
                       </div>
                       <h2 className="font-national2 font-black text-4xl md:text-5xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
@@ -197,21 +197,10 @@ export default function ProgrammesListingPage() {
                       </h2>
                     </div>
                     
-                    <div className="flex flex-col gap-6">
-                      <p className="font-helvetica font-medium text-zinc-500 text-sm md:text-base leading-relaxed line-clamp-4">
+                    <div>
+                      <p className="font-helvetica font-medium text-zinc-600 text-sm md:text-base leading-relaxed line-clamp-4">
                         {company.description}
                       </p>
-                      
-                      <div className="flex flex-wrap gap-2 pt-4 border-t border-black/10">
-                        {company.components.map((comp) => (
-                          <span 
-                            key={comp} 
-                            className="px-2.5 py-1 bg-[#FAF8F5] text-zinc-400 font-courier text-[9px] uppercase tracking-widest font-bold rounded-md"
-                          >
-                            {comp}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                </Link>
