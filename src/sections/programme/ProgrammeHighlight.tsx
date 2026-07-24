@@ -99,7 +99,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#0a0a0a] text-white h-[calc(60vh*var(--pillar-count))] md:h-[calc(100vh*var(--pillar-count))]"
+      className="relative w-full bg-[#0a0a0a] text-white h-[calc(150vh*var(--pillar-count))] md:h-[calc(100vh*var(--pillar-count))]"
       style={{ "--pillar-count": pillars.length } as React.CSSProperties}
     >
       <div 
