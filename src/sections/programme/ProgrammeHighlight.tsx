@@ -39,13 +39,15 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
     if (pillars.length === 0) return;
 
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 768;
+
       // Setup initial states
       pillars.forEach((_, i) => {
         const el = pillarsRef.current[i];
         if (i === 0) {
-          gsap.set(el, { opacity: 1, y: 0, filter: "blur(0px)" });
+          gsap.set(el, { opacity: 1, y: 0, filter: isMobile ? "none" : "blur(0px)" });
         } else {
-          gsap.set(el, { opacity: 0, y: 80, filter: "blur(10px)" });
+          gsap.set(el, { opacity: 0, y: isMobile ? 40 : 80, filter: isMobile ? "none" : "blur(10px)" });
         }
       });
 
@@ -68,7 +70,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
           tl.to(el, {
             opacity: 1,
             y: 0,
-            filter: "blur(0px)",
+            ...(isMobile ? {} : { filter: "blur(0px)" }),
             duration: 1,
             ease: "power2.out"
           }, i * 2 - 1);
@@ -81,8 +83,8 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
         if (i < pillars.length - 1) {
           tl.to(el, {
             opacity: 0,
-            y: -80,
-            filter: "blur(10px)",
+            y: isMobile ? -40 : -80,
+            ...(isMobile ? {} : { filter: "blur(10px)" }),
             duration: 1,
             ease: "power2.in"
           }, i * 2 + 1);
@@ -97,8 +99,8 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#0a0a0a] text-white"
-      style={{ height: `${pillars.length * 100}vh` }} // 100vh per pillar for scroll depth
+      className="relative w-full bg-[#0a0a0a] text-white h-[calc(60vh*var(--pillar-count))] md:h-[calc(100vh*var(--pillar-count))]"
+      style={{ "--pillar-count": pillars.length } as React.CSSProperties}
     >
       <div 
         ref={containerRef}
@@ -107,10 +109,10 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
         {/* Abstract Ambient Background */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
            {/* Deep red ambient glow */}
-           <div className="absolute w-[600px] h-[600px] bg-[#CD1D1D] rounded-full blur-[150px] opacity-[0.07]" />
+           <div className="hidden md:block absolute w-[600px] h-[600px] bg-[#CD1D1D] rounded-full blur-[150px] opacity-[0.07]" />
            
            {/* Blinking Scattered Pixels (Aligned to 80px grid) */}
-           <svg className="absolute inset-0 w-full h-full opacity-50 z-0">
+           <svg className="hidden md:block absolute inset-0 w-full h-full opacity-50 z-0">
              <pattern id="pixel-pattern" width="800" height="800" patternUnits="userSpaceOnUse">
                 <rect x="80" y="160" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '0s', animationDuration: '3s' }} />
                 <rect x="400" y="80" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '1s', animationDuration: '4s' }} />

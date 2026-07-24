@@ -15,7 +15,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
 
   const defaultImages = [
     { url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800", alt: "Img 1", caption: "01 // MENTORSHIP" },
-    { url: "https://images.unsplash.com/photo-1542744094-24638ea0bc40?auto=format&fit=crop&q=80&w=800", alt: "Img 2", caption: "02 // MASTERCLASS" },
+    { url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800", alt: "Img 2", caption: "02 // MASTERCLASS" },
     { url: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800", alt: "Img 3", caption: "03 // RETREAT" },
     { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800", alt: "Img 4", caption: "04 // STRATEGY" },
   ];
@@ -90,12 +90,12 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
            }} 
       />
       
-      <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] relative z-20">
+      <div className="container mx-auto px-6 lg:px-12 2xl:px-24 max-w-[100rem] relative z-20">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 relative">
           
           {/* Left Column (6 cols, pushed left edge) — Sticky Title & Text */}
-          <div className="lg:col-span-6 relative lg:-ml-40" ref={leftColRef}>
+          <div className="lg:col-span-6 relative 2xl:-ml-40" ref={leftColRef}>
             <div className="lg:sticky lg:top-32 flex flex-col items-start pt-0 mt-0">
               {/* Decorative Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#CD1D1D]/30 bg-[#CD1D1D]/5 text-[#CD1D1D] text-xs font-bold tracking-widest uppercase mb-6">
@@ -103,7 +103,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
                 Inside The Experience
               </div>
 
-              <h2 className="font-national2 text-4xl sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase tracking-normal leading-[1.05] text-[#111] mb-6">
+              <h2 className="font-national2 text-4xl sm:text-[3.5rem] md:text-[4.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5.5rem] font-black uppercase tracking-normal leading-[1.05] text-[#111] mb-6">
                 WITNESS THE<br/>TRANSFORMATION
               </h2>
               
@@ -133,7 +133,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
           </div>
 
           {/* Right Column (6 cols, pushed far right) — Vertically Scrolling Image Stack */}
-          <div className="lg:col-span-6 lg:col-start-7 lg:-mr-48 mt-8 lg:mt-0" ref={rightColRef}>
+          <div className="lg:col-span-6 lg:col-start-7 2xl:-mr-48 mt-8 lg:mt-0" ref={rightColRef}>
             <div className="flex flex-col w-full rounded-3xl overflow-hidden border-[4px] border-white shadow-[0_30px_60px_rgba(0,0,0,0.25)] bg-white">
               {gallery.map((img, index) => (
                 <div 

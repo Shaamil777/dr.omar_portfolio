@@ -97,7 +97,7 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
           {duplicatedTestimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="w-[350px] md:w-[450px] flex-shrink-0 bg-white border border-black/10 p-8 rounded-2xl shadow-sm transition-all duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:border-[#CD1D1D]/30"
+              className="w-[280px] md:w-[450px] flex-shrink-0 bg-white border border-black/10 p-6 md:p-8 rounded-2xl shadow-sm transition-all duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:border-[#CD1D1D]/30"
             >
               <div className="flex items-center gap-1 mb-6 text-[#CD1D1D]">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -105,7 +105,7 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
                 ))}
               </div>
               
-              <p className="font-national2 text-xl md:text-2xl font-bold tracking-tight text-[#111] mb-8 leading-snug">
+              <p className="font-national2 text-lg md:text-2xl font-bold tracking-tight text-[#111] mb-6 md:mb-8 leading-snug">
                 "{testimonial.quote}"
               </p>
               

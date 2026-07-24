@@ -65,7 +65,7 @@ export const companiesData: CompanyData[] = [
         caption: "01 // ONE-ON-ONE MENTORSHIP"
       },
       {
-        url: "https://images.unsplash.com/photo-1542744094-24638ea0bc40?auto=format&fit=crop&q=80&w=800",
+        url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
         alt: "Masterclass",
         caption: "02 // GLOBAL MASTERCLASS"
       },
