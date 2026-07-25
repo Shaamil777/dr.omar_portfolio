@@ -8,14 +8,14 @@ export default function CompanyOwnsSection({ company }: { company: CompanyData }
   // Using some abstract Unsplash images to represent corporate logos
   const ownedCompanies = [
     { name: "BCC", logo: "/logos/BCC/BCC_dark.png" },
-    { name: "BI", logo: "/logos/BI/bi_dark.png" },
-    { name: "DI", logo: "/logos/DI/di_dark.png" },
-    { name: "EI", logo: "/logos/EI/EI_dark.png" },
-    { name: "HEA", logo: "/logos/HEA/hea.png" },
-    { name: "MDI", logo: "/logos/MDI/mdi_dark.png" },
+    { name: "Business Immersion", logo: "/logos/BI/bi_dark.png" },
+    { name: "Deep Immersion", logo: "/logos/DI/di_dark.png" },
+    { name: "Emotional Intelligence", logo: "/logos/EI/EI_dark.png" },
+    { name: "Human Excellence Academy", logo: "/logos/HEA/hea.png" },
+    { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_dark.png" },
     { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_dark.png" },
-    { name: "TI", logo: "/logos/TI/ti_dark.png" },
-    { name: "YI", logo: "/logos/YI/yi_dark.png" },
+    { name: "Teens Immersion", logo: "/logos/TI/ti_dark.png" },
+    { name: "Youth Immersion", logo: "/logos/YI/yi_dark.png" },
   ];
 
   // We duplicate the array multiple times to ensure a seamless infinite loop across wide screens
@@ -78,9 +78,6 @@ export default function CompanyOwnsSection({ company }: { company: CompanyData }
               <h4 className="font-helvetica text-xl md:text-2xl font-black uppercase tracking-normal text-[#111] group-hover/item:text-[#CD1D1D] transition-colors duration-300 mb-1">
                 {item.name}
               </h4>
-              <p className="font-helvetica text-sm md:text-base text-zinc-500 font-medium">
-                Portfolio Company
-              </p>
             </div>
           ))}
         </div>

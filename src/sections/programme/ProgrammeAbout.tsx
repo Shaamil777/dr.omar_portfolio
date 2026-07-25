@@ -78,16 +78,9 @@ export default function ProgrammeAbout({ company }: { company: CompanyData }) {
           {/* Left Column (3 cols) — Sticky Label */}
           <div className="lg:col-span-3">
             <div className="sticky top-32" ref={titleRef}>
-              <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
+              <span className="font-courier text-sm md:text-base uppercase tracking-[0.3em] text-[#CD1D1D] font-black inline-block -mt-1 md:-mt-2">
                 [ ABOUT {company.name} ]
               </span>
-              
-              {/* Optional: Add a subtle grid coordinates aesthetic */}
-              <div className="mt-8 font-courier text-[9px] tracking-[0.2em] text-[#111]/30 hidden lg:block">
-                SEC_02 // INFO
-                <br/>
-                COORD: 34.0522° N, 118.2437° W
-              </div>
             </div>
           </div>
 
@@ -95,7 +88,7 @@ export default function ProgrammeAbout({ company }: { company: CompanyData }) {
           <div className="lg:col-span-9 flex flex-col gap-12 lg:gap-16">
             <p 
               ref={p1Ref}
-              className="font-helvetica text-2xl md:text-4xl lg:text-5xl font-black text-[#111] leading-[1.1] tracking-tight uppercase"
+              className="font-helvetica text-2xl md:text-4xl lg:text-5xl font-black text-[#111] leading-[1.1] tracking-tight"
             >
               {p1Text}
             </p>
