@@ -204,11 +204,11 @@ export default function Entrepreneur() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="entrepreneur" className="bg-[#131313] text-white h-[100vh] relative overflow-hidden pt-6 md:pt-16 lg:pt-12 flex flex-col justify-center cursor-default">
+    <section ref={sectionRef} id="entrepreneur" className="bg-[#131313] text-white h-[100vh] relative overflow-hidden pt-4 md:pt-12 lg:pt-6 flex flex-col justify-center cursor-default">
       
       {/* Custom Follower Cursor */}
       <div 
-        className="fixed top-0 left-0 w-24 h-24 rounded-full border border-white/40 backdrop-blur-md bg-white/10 text-white flex items-center justify-center font-national2 font-bold tracking-widest text-sm pointer-events-none z-[100] transition-opacity duration-300"
+        className="fixed top-0 left-0 w-24 h-24 rounded-full border border-white/40 backdrop-blur-md bg-white/10 text-white flex items-center justify-center font-helvetica font-bold tracking-widest text-sm pointer-events-none z-[100] transition-opacity duration-300"
         style={{ 
           transform: `translate(${cursorPos.x - 48}px, ${cursorPos.y - 48}px) scale(${isHoveringCard ? 1 : 0})`,
           opacity: isHoveringCard ? 1 : 0,
@@ -220,18 +220,18 @@ export default function Entrepreneur() {
 
       {/* Header Container */}
       <div className="px-6 md:px-12 lg:px-24 w-full flex-shrink-0 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-3 md:mb-4">
-          <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-black uppercase leading-[0.85] tracking-normal max-w-[1200px]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-2 md:mb-3 lg:mb-2">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-black uppercase leading-[0.9] tracking-normal max-w-[1000px]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
             BUILDING VENTURES THAT CONNECT, PERFORM, AND MOVE PEOPLE
           </h2>
-          <span className="text-2xl md:text-4xl lg:text-[2.5rem] font-black uppercase tracking-wide mt-6 md:mt-0 md:pl-8 whitespace-nowrap" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
+          <span className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-black uppercase tracking-wide mt-4 md:mt-0 md:pl-8 whitespace-nowrap" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
             THE WORK
           </span>
         </div>
         
-        <div className="w-full h-[2px] bg-white/30 mb-3 md:mb-4"></div>
+        <div className="w-full h-[2px] bg-white/30 mb-2 md:mb-3 lg:mb-2"></div>
         
-        <div className="flex justify-between items-center text-xs md:text-sm lg:text-lg font-bold mb-6 md:mb-10 lg:mb-8 tracking-tight">
+        <div className="flex justify-between items-center text-xs md:text-sm lg:text-base font-bold mb-4 md:mb-8 lg:mb-4 tracking-tight">
           <span className="w-12 font-courier opacity-60">VER.1</span>
           <span>What we&apos;ve built</span>
           <span className="w-12 text-right font-courier tracking-widest">
@@ -241,15 +241,15 @@ export default function Entrepreneur() {
       </div>
 
       {/* GSAP Track Container */}
-      <div className="pl-6 md:pl-12 lg:pl-24 pb-4 md:pb-8 lg:pb-6 flex-1 flex items-center min-h-0 relative z-10">
+      <div className="pl-6 md:pl-12 lg:pl-24 pb-4 md:pb-6 lg:pb-4 flex-1 flex items-center min-h-0 relative z-10">
         <div ref={trackRef} className="flex gap-4 md:gap-12 w-[max-content] items-start">
           {companies.map((company) => (
             <div 
               key={company.id} 
-              className="entrepreneur-card w-[85vw] md:w-[75vw] lg:w-[50vw] flex flex-col shrink-0 group cursor-none"
+              className="entrepreneur-card w-[85vw] md:w-[75vw] lg:w-[45vw] xl:w-[50vw] flex flex-col shrink-0 group cursor-none"
             >
               <div className="card-inner flex flex-col w-full origin-bottom transform-gpu">
-                <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/8] max-h-[45vh] md:max-h-[55vh] lg:max-h-[50vh] rounded-2xl md:rounded-[2rem] overflow-hidden mb-4 md:mb-6 bg-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/8] max-h-[40vh] md:max-h-[45vh] lg:max-h-[35vh] xl:max-h-[45vh] rounded-2xl md:rounded-[2rem] overflow-hidden mb-3 md:mb-4 lg:mb-3 xl:mb-6 bg-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
                   <Image 
                     src={company.image} 
                     alt={company.name} 
@@ -259,10 +259,10 @@ export default function Entrepreneur() {
                   />
                 </div>
                 
-                <div className="card-content flex flex-col-reverse lg:flex-row gap-3 md:gap-6 lg:gap-8 justify-between items-start lg:items-center mt-1 md:mt-2">
+                <div className="card-content flex flex-col-reverse lg:flex-row gap-3 md:gap-6 lg:gap-4 xl:gap-8 justify-between items-start lg:items-center mt-1">
                   {/* Left Side: Title & Description */}
-                  <div className="flex flex-col gap-2 md:gap-4 lg:w-[65%]">
-                    <h3 className="text-3xl md:text-4xl lg:text-[2.75rem] font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-national2, sans-serif)"}}>
+                  <div className="flex flex-col gap-1 md:gap-3 lg:gap-2 xl:gap-4 lg:w-[65%]">
+                    <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] xl:text-4xl font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
                       {company.name}
                     </h3>
                     <p className="text-white/70 text-xs md:text-base lg:text-lg font-medium leading-relaxed max-w-2xl line-clamp-3 md:line-clamp-none">

@@ -103,7 +103,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
                 Inside The Experience
               </div>
 
-              <h2 className="font-national2 text-4xl sm:text-[3.5rem] md:text-[4.5rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5.5rem] font-black uppercase tracking-normal leading-[1.05] text-[#111] mb-6">
+              <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-black uppercase tracking-tight leading-[1.05] text-[#111] mb-6">
                 WITNESS THE<br/>TRANSFORMATION
               </h2>
               
@@ -114,11 +114,11 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
               {/* Stats Row */}
               <div className="flex items-center gap-6 sm:gap-12 border-t border-black/10 pt-8 w-full max-w-sm relative">
                 <div className="relative z-10 group">
-                  <div className="font-national2 text-4xl sm:text-5xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">50+</div>
+                  <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">50+</div>
                   <div className="font-courier text-[10px] sm:text-xs font-bold tracking-widest text-zinc-500 uppercase mt-2">Global Retreats</div>
                 </div>
                 <div className="relative z-10 group">
-                  <div className="font-national2 text-4xl sm:text-5xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">10k</div>
+                  <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">10k</div>
                   <div className="font-courier text-[10px] sm:text-xs font-bold tracking-widest text-zinc-500 uppercase mt-2">Lives Changed</div>
                 </div>
                 
@@ -138,7 +138,7 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
               {gallery.map((img, index) => (
                 <div 
                   key={index}
-                  className="relative w-full aspect-[2/1] overflow-hidden group"
+                  className="relative w-full aspect-[4/3] overflow-hidden group"
                 >
                   <Image 
                     src={img.url} 

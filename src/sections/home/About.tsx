@@ -62,7 +62,7 @@ export default function About() {
             <div key={index} className={`overflow-hidden ${line.indent}`}>
               <motion.h3
                 style={{ y: line.y, opacity: line.opacity }}
-                className="font-national2 text-[10vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw] xl:text-[110px] 2xl:text-[130px] font-black uppercase tracking-normal leading-[0.9] text-[#111] whitespace-nowrap"
+                className="font-helvetica text-[7vw] sm:text-[6.5vw] md:text-[6vw] lg:text-[5vw] xl:text-[80px] 2xl:text-[90px] font-black uppercase tracking-normal leading-[0.9] text-[#111] whitespace-nowrap"
               >
                 {line.text}
               </motion.h3>
@@ -118,7 +118,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-                className={`text-lg sm:text-xl md:text-2xl lg:text-[28px] font-national2 font-black uppercase text-[#111] leading-[1.1] tracking-normal mt-2 md:mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
+                className={`text-lg sm:text-xl md:text-2xl lg:text-[28px] font-helvetica font-black uppercase text-[#111] leading-[1.1] tracking-normal mt-2 md:mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
               >
                 "His philosophy is simple: transform people first, and lasting success will follow."
               </motion.p>
@@ -141,7 +141,7 @@ export default function About() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 w-full"
             >
               {/* Primary Button */}
-              <Link href="/journey" className="bg-[#111] text-white px-6 py-4 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
+              <Link href="/journey" className="bg-[#111] text-white px-6 py-4 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
                 EXPLORE JOURNEY
                 <svg className="w-4 h-4 md:w-6 md:h-6 ml-2 md:ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -149,7 +149,7 @@ export default function About() {
               </Link>
 
               {/* Secondary Button */}
-              <a href="#consultation" className="bg-transparent border-[3px] md:border-4 border-[#111] text-[#111] px-6 py-4 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
+              <a href="#consultation" className="bg-transparent border-[3px] md:border-4 border-[#111] text-[#111] px-6 py-4 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
                 BOOK CONSULTATION
               </a>
             </motion.div>

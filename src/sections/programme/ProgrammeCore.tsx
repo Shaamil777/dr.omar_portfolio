@@ -64,7 +64,7 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
         {/* Massive Clipped Typography */}
         <h2 
           ref={textRef}
-          className="font-national2 font-black uppercase tracking-tighter leading-[0.85] text-[#111] mb-16 select-none"
+          className="font-helvetica font-black uppercase tracking-tighter leading-[0.85] text-[#111] mb-16 select-none"
           style={{ fontSize: "clamp(3rem, 12vw, 12rem)" }}
         >
           ARE YOU<br/>READY TO<br/>SCALE?
@@ -90,7 +90,7 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
           
           {/* Main button body */}
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-[#111] group-hover:bg-[#CD1D1D] flex items-center justify-center text-white transition-colors duration-500 shadow-2xl">
-            <span className="font-national2 font-bold uppercase tracking-widest text-sm md:text-base">
+            <span className="font-helvetica font-bold uppercase tracking-widest text-sm md:text-base">
               Apply Now
             </span>
           </div>

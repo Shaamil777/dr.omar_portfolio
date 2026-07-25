@@ -126,7 +126,7 @@ export default function ProgrammesListingPage() {
 
       {/* Custom Follower Cursor */}
       <div 
-        className="fixed top-0 left-0 w-24 h-24 rounded-full bg-[#CD1D1D] text-white flex items-center justify-center font-national2 font-bold tracking-widest text-sm pointer-events-none z-[100] transition-opacity duration-300"
+        className="fixed top-0 left-0 w-24 h-24 rounded-full bg-[#CD1D1D] text-white flex items-center justify-center font-helvetica font-bold tracking-widest text-sm pointer-events-none z-[100] transition-opacity duration-300"
         style={{ 
           transform: `translate(${cursorPos.x - 48}px, ${cursorPos.y - 48}px) scale(${isHoveringCard ? 1 : 0})`,
           opacity: isHoveringCard ? 1 : 0,
@@ -141,7 +141,7 @@ export default function ProgrammesListingPage() {
         <div className="relative w-full overflow-hidden flex border-b-[3px] border-[#111] pb-2 md:pb-4 mb-2 perspective-1000">
           <div ref={marqueeRef} className="flex whitespace-nowrap min-w-fit origin-left">
              {[...Array(6)].map((_, i) => (
-               <h1 key={i} className="font-national2 font-black text-[22vw] leading-[0.8] tracking-normal uppercase px-12 md:px-16 text-[#111]">
+               <h1 key={i} className="font-helvetica font-black text-[16vw] leading-[0.8] tracking-normal uppercase px-12 md:px-16 text-[#111]">
                  OUR PROGRAMMES
                </h1>
              ))}
@@ -157,7 +157,7 @@ export default function ProgrammesListingPage() {
             Transformational Programs for Ambitious Leaders
           </div>
           <div className="w-full md:w-auto flex justify-start md:justify-end">
-            <button className="bg-[#CD1D1D] text-white font-national2 font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full hover:bg-black transition-colors shadow-lg">
+            <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full hover:bg-black transition-colors shadow-lg">
               VIEW ROADMAP
             </button>
           </div>
@@ -192,7 +192,7 @@ export default function ProgrammesListingPage() {
                       <div className="mb-10 text-[#111]">
                         <AbstractIcon index={i} />
                       </div>
-                      <h2 className="font-national2 font-black text-4xl md:text-5xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
+                      <h2 className="font-helvetica font-black text-3xl md:text-4xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
                           {company.name}
                       </h2>
                     </div>

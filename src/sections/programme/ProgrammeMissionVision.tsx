@@ -97,7 +97,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
             {/* Headings */}
             <div className="mb-8">
               {headings.map((heading, i) => (
-                <h3 key={i} className="font-national2 text-3xl md:text-4xl lg:text-5xl font-black text-[#111] leading-[1.1] tracking-tight">
+                <h3 key={i} className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-black text-[#111] leading-[1.1] tracking-tight">
                   {heading}
                 </h3>
               ))}
@@ -113,7 +113,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 {stats.map((stat, i) => (
                   <div key={i} className="bg-white/60 backdrop-blur-md border border-black/10 rounded-2xl p-6 hover:bg-white/90 transition-colors duration-300">
-                    <div className="font-national2 text-4xl font-black text-[#CD1D1D] mb-3">{stat.value}</div>
+                    <div className="font-helvetica text-3xl font-black text-[#CD1D1D] mb-3">{stat.value}</div>
                     <div className="font-helvetica text-sm font-medium text-zinc-700 leading-snug">{stat.label}</div>
                   </div>
                 ))}
@@ -122,10 +122,10 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-[#CD1D1D] hover:bg-[#a81414] text-white font-national2 font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 shadow-lg shadow-[#CD1D1D]/30">
+              <button className="bg-[#CD1D1D] hover:bg-[#a81414] text-white font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 shadow-lg shadow-[#CD1D1D]/30">
                 Join The {company.name} Program
               </button>
-              <button className="bg-white hover:bg-zinc-100 text-[#111] border border-black/10 font-national2 font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 flex items-center gap-2 shadow-sm">
+              <button className="bg-white hover:bg-zinc-100 text-[#111] border border-black/10 font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 flex items-center gap-2 shadow-sm">
                 Brochure
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CD1D1D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -147,7 +147,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
               <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <EyeIcon />
               </div>
-              <h4 className="font-national2 text-xl font-black uppercase tracking-widest text-[#111] mb-4">Vision</h4>
+              <h4 className="font-helvetica text-xl font-black uppercase tracking-widest text-[#111] mb-4">Vision</h4>
               <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
                 {vision}
               </p>
@@ -187,7 +187,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
               <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <TargetIcon />
               </div>
-              <h4 className="font-national2 text-xl font-black uppercase tracking-widest text-[#111] mb-4">Mission</h4>
+              <h4 className="font-helvetica text-xl font-black uppercase tracking-widest text-[#111] mb-4">Mission</h4>
               <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
                 {mission}
               </p>

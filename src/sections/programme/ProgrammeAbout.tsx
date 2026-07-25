@@ -95,7 +95,7 @@ export default function ProgrammeAbout({ company }: { company: CompanyData }) {
           <div className="lg:col-span-9 flex flex-col gap-12 lg:gap-16">
             <p 
               ref={p1Ref}
-              className="font-national2 text-3xl md:text-5xl lg:text-6xl font-black text-[#111] leading-[1.1] tracking-tight uppercase"
+              className="font-helvetica text-2xl md:text-4xl lg:text-5xl font-black text-[#111] leading-[1.1] tracking-tight uppercase"
             >
               {p1Text}
             </p>

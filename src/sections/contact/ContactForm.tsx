@@ -81,7 +81,7 @@ export default function ContactForm() {
           <button
             disabled={isSubmitting || submitted}
             type="submit"
-            className={`w-full py-5 rounded-xl font-national2 font-black uppercase tracking-normal text-[18px] md:text-[20px] leading-none flex items-center justify-center transition-all duration-300 shadow-[0_8px_16px_rgba(0,0,0,0.1)] hover:-translate-y-1 ${
+            className={`w-full py-5 rounded-xl font-helvetica font-black uppercase tracking-normal text-[18px] md:text-[20px] leading-none flex items-center justify-center transition-all duration-300 shadow-[0_8px_16px_rgba(0,0,0,0.1)] hover:-translate-y-1 ${
               submitted 
                 ? 'bg-green-600 text-white' 
                 : 'bg-[#111] text-white hover:bg-[#CD1D1D] hover:shadow-[0_12px_24px_rgba(205,29,29,0.3)]'

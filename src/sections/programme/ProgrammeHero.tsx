@@ -229,7 +229,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
             </div>
 
             {/* Title */}
-            <h1 className="font-national2 font-black uppercase tracking-tight leading-[0.85] mb-0 perspective-[800px]">
+            <h1 className="font-helvetica font-black uppercase tracking-tight leading-[0.85] mb-0 perspective-[800px]">
               {data.fullName.map((word, i) => (
                 <span
                   key={i}

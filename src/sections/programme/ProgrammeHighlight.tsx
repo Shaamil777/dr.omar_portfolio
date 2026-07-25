@@ -135,7 +135,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
             <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block text-center md:text-left">
               [ THE CORE FRAMEWORK ]
             </span>
-            <span className="font-national2 text-sm text-zinc-500 font-bold hidden md:block uppercase tracking-widest">
+            <span className="font-helvetica text-sm text-zinc-500 font-bold hidden md:block uppercase tracking-widest">
               {company.name} Pillars
             </span>
         </div>
@@ -149,7 +149,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
               className="absolute inset-0 flex flex-col items-center justify-center text-center will-change-transform"
             >
               {/* Massive Watermark Number in background */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] -z-10 font-national2 font-black leading-none select-none" style={{ fontSize: "clamp(20rem, 50vw, 60rem)" }}>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] -z-10 font-helvetica font-black leading-none select-none" style={{ fontSize: "clamp(20rem, 50vw, 60rem)" }}>
                 0{index + 1}
               </div>
 
@@ -159,7 +159,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
               </div>
 
               {/* Massive Title */}
-              <h3 className="font-national2 text-5xl md:text-7xl lg:text-[7rem] font-black uppercase tracking-normal leading-[0.9] text-white mb-8 md:mb-12">
+              <h3 className="font-helvetica text-4xl md:text-6xl lg:text-[5rem] font-black uppercase tracking-normal leading-[0.9] text-white mb-8 md:mb-12">
                 {pillar.title}
               </h3>
 

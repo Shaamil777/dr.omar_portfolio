@@ -34,7 +34,7 @@ export default function ContactInfo() {
     <div className="w-full h-full flex flex-col justify-between py-6">
       <div className="space-y-12">
         <div>
-          <h2 className="text-3xl font-national2 font-black text-[#111] mb-4 uppercase tracking-tight">Direct Access</h2>
+          <h2 className="text-2xl font-helvetica font-black text-[#111] mb-4 uppercase tracking-tight">Direct Access</h2>
           <p className="text-zinc-500 font-helvetica font-medium leading-relaxed max-w-md">
             Reach out to our team directly. We typically respond to all inquiries within 24 hours. Let's discuss how we can help you achieve your goals.
           </p>
@@ -54,7 +54,7 @@ export default function ContactInfo() {
                 <item.icon className="w-6 h-6" />
               </div>
               <div className="pt-1">
-                <h3 className="text-xl font-national2 font-black uppercase text-[#111] mb-1 group-hover:text-[#CD1D1D] transition-colors">{item.title}</h3>
+                <h3 className="text-xl font-helvetica font-black uppercase text-[#111] mb-1 group-hover:text-[#CD1D1D] transition-colors">{item.title}</h3>
                 <p className="text-zinc-900 font-helvetica font-bold text-lg">{item.detail}</p>
                 <p className="text-sm text-zinc-500 font-helvetica mt-1">{item.description}</p>
               </div>

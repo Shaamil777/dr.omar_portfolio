@@ -18,9 +18,9 @@ export default function Cta() {
 
   const patternSvgDim = `
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="8" fill="#4a4a4a" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
-      <text x="0" y="16" fill="#4a4a4a" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
-      <text x="0" y="24" fill="#4a4a4a" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="8" fill="#4a4a4a" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="16" fill="#4a4a4a" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="24" fill="#4a4a4a" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
     </svg>
   `;
   const patternUrlDim = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
@@ -29,9 +29,9 @@ export default function Cta() {
 
   const patternSvgBright = `
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="8" fill="#a1a1a1" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
-      <text x="0" y="16" fill="#a1a1a1" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
-      <text x="0" y="24" fill="#a1a1a1" font-size="9" font-family="'National 2 Condensed', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="8" fill="#a1a1a1" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="16" fill="#a1a1a1" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
+      <text x="0" y="24" fill="#a1a1a1" font-size="9" font-family="'Helvetica', sans-serif" font-weight="bold" letter-spacing="-0.5">OMAR</text>
     </svg>
   `;
   const patternUrlBright = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
@@ -53,7 +53,7 @@ export default function Cta() {
             WebkitBackgroundClip: "text",
             backgroundImage: `url("${patternUrlDim}")`,
             backgroundRepeat: "repeat",
-            fontFamily: "var(--font-national2)",
+            fontFamily: "var(--font-helvetica)",
           }}
         >
           PEOPLE<br />
@@ -73,7 +73,7 @@ export default function Cta() {
             WebkitBackgroundClip: "text",
             backgroundImage: `url("${patternUrlBright}")`,
             backgroundRepeat: "repeat",
-            fontFamily: "var(--font-national2)",
+            fontFamily: "var(--font-helvetica)",
             maskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
             WebkitMaskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 10%, transparent 100%)`,
           }}

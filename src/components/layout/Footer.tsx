@@ -106,16 +106,16 @@ export default function Footer() {
     };
   }, []);
 
-  // Marquee text style matching National 2 Condensed – 900
+  // Marquee text style matching Helvetica – 900
   const marqueeTextStyle: React.CSSProperties = {
-    fontFamily: "var(--font-national2)",
+    fontFamily: "var(--font-helvetica)",
     fontWeight: 900,
     fontSize: "clamp(3.5rem, 12vw, 13rem)",
     lineHeight: "0.85",
   };
 
   const smallTextStyle: React.CSSProperties = {
-    fontFamily: "var(--font-national2)",
+    fontFamily: "var(--font-helvetica)",
     fontWeight: 900,
     fontSize: "clamp(0.6rem, 1.5vw, 0.85rem)",
     lineHeight: "1.3",
@@ -124,7 +124,7 @@ export default function Footer() {
 
   // Sticker base
   const stickerBase: React.CSSProperties = {
-    fontFamily: "var(--font-national2)",
+    fontFamily: "var(--font-helvetica)",
     fontWeight: 900,
     fontSize: "clamp(2.5rem, 8vw, 9rem)",
     lineHeight: "0.85",
@@ -217,20 +217,20 @@ export default function Footer() {
         <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t border-black/10 pt-8 md:pt-12">
           
           <div className="flex flex-col gap-4 md:gap-6 sm:col-span-2 md:col-span-1">
-            <h3 className="font-national2 font-black text-4xl md:text-5xl uppercase tracking-tighter text-[#111]">DR. OMAR®</h3>
+            <h3 className="font-helvetica font-black text-3xl md:text-4xl uppercase tracking-tighter text-[#111]">DR. OMAR®</h3>
             <p className="font-helvetica text-zinc-500 text-sm md:text-base max-w-sm leading-relaxed">
               Global Leadership Coach, NLP Expert, and Life Transformation Specialist. Empowering individuals and organizations to achieve their highest potential.
             </p>
           </div>
 
           <div className="flex flex-col gap-3 md:gap-4">
-            <h4 className="font-national2 font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Contact</h4>
+            <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Contact</h4>
             <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] transition-colors text-base md:text-lg">info@dromar.com</a>
             <a href="tel:+971501234567" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] transition-colors text-base md:text-lg">+971 50 123 4567</a>
           </div>
 
           <div className="flex flex-col gap-3 md:gap-4">
-            <h4 className="font-national2 font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Socials</h4>
+            <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Socials</h4>
             <div className="flex flex-row md:flex-col flex-wrap gap-4 md:gap-2">
               <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Instagram</a>
               <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">LinkedIn</a>

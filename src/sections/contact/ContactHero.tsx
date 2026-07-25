@@ -25,7 +25,7 @@ export default function ContactHero() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-national2 text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] xl:text-[120px] 2xl:text-[140px] font-black uppercase tracking-normal leading-[0.9] text-[#111]"
+              className="font-helvetica text-[12vw] sm:text-[7vw] md:text-[6.5vw] lg:text-[6vw] xl:text-[120px] 2xl:text-[140px] font-black uppercase tracking-normal leading-[0.9] text-[#111]"
             >
               LET'S
             </motion.h1>
@@ -35,7 +35,7 @@ export default function ContactHero() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-              className="font-national2 text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] xl:text-[120px] 2xl:text-[140px] font-black uppercase tracking-normal leading-[0.9] text-[#111]"
+              className="font-helvetica text-[12vw] sm:text-[7vw] md:text-[6.5vw] lg:text-[6vw] xl:text-[120px] 2xl:text-[140px] font-black uppercase tracking-normal leading-[0.9] text-[#111]"
             >
               CONNECT.
             </motion.h1>

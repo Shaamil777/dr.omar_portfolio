@@ -34,16 +34,6 @@ const helvetica = localFont({
   ],
   variable: "--font-helvetica",
 });
-const national2 = localFont({
-  src: [
-    {
-      path: "./fonts/National2Condensed/TestNational2Condensed-Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-national2",
-});
 const headingNow = localFont({
   src: [
     {
@@ -79,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth bg-zinc-950 text-white">
-      <body className={`${helvetica.className} ${national2.variable} ${headingNow.variable} ${courier.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${helvetica.className} ${helvetica.variable} ${headingNow.variable} ${courier.variable} antialiased min-h-screen flex flex-col`}>
         <CustomCursor />
         <ScrollRestoration />
         <SmoothScrollProvider>

@@ -39,7 +39,7 @@ export default function Navbar() {
       <nav className="w-full px-4 sm:px-8 py-3 md:py-4 bg-[#FAF8F5] flex items-center justify-between text-[#111] relative z-[60]">
         <div className="flex items-center">
           {/* LOGO */}
-          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-3xl sm:text-5xl md:text-[48px] xl:text-[36px] 2xl:text-[48px] tracking-tighter mr-4 sm:mr-8 xl:mr-6 2xl:mr-8 leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
+          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-2xl sm:text-4xl md:text-[48px] xl:text-[36px] 2xl:text-[48px] tracking-tighter mr-4 sm:mr-8 xl:mr-6 2xl:mr-8 leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
             DR. OMAR
           </Link>
           
@@ -64,7 +64,7 @@ export default function Navbar() {
           {/* CTA BUTTON */}
           <Link 
             href="#cta" 
-            className="hidden sm:flex bg-[#111] text-white px-6 py-2.5 md:px-10 md:py-3.5 xl:px-6 xl:py-2.5 2xl:px-10 2xl:py-3.5 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.3)] hover:bg-black/90 hover:shadow-xl hover:-translate-y-1 transition-all font-national2 font-black uppercase tracking-tight text-[20px] md:text-[28px] xl:text-[20px] 2xl:text-[28px] leading-none items-center justify-center whitespace-nowrap"
+            className="hidden sm:flex bg-[#111] text-white px-6 py-2.5 md:px-10 md:py-3.5 xl:px-6 xl:py-2.5 2xl:px-10 2xl:py-3.5 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.3)] hover:bg-black/90 hover:shadow-xl hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-tight text-[20px] md:text-[28px] xl:text-[20px] 2xl:text-[28px] leading-none items-center justify-center whitespace-nowrap"
             style={{ WebkitTextStroke: '0.5px currentColor' }}
           >
             BESPOKE QUOTE
@@ -87,7 +87,7 @@ export default function Navbar() {
       >
         {/* Mobile Menu Header */}
         <div className="w-full px-4 sm:px-8 py-3 md:py-4 flex items-center justify-between text-[#111]">
-          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-3xl sm:text-5xl md:text-[48px] tracking-tighter leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
+          <Link href="/" onClick={() => setIsOpen(false)} className="font-helvetica font-black text-2xl sm:text-4xl md:text-[48px] tracking-tighter leading-none" style={{ WebkitTextStroke: '1px currentColor' }}>
             DR. OMAR
           </Link>
           <button 
@@ -99,7 +99,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-5 sm:gap-6 font-helvetica font-black text-3xl sm:text-4xl tracking-tighter leading-none px-6 pt-8">
+        <div className="flex flex-col gap-5 sm:gap-6 font-helvetica font-black text-2xl sm:text-3xl tracking-tighter leading-none px-6 pt-8">
           {links.map((link) => (
             <Link 
               key={link.name}
@@ -125,7 +125,7 @@ export default function Navbar() {
           <Link 
             href="#cta" 
             onClick={() => setIsOpen(false)}
-            className="w-full bg-[#111] text-white py-5 rounded-xl shadow-2xl font-national2 font-black uppercase tracking-tight text-3xl leading-none flex items-center justify-center"
+            className="w-full bg-[#111] text-white py-5 rounded-xl shadow-2xl font-helvetica font-black uppercase tracking-tight text-2xl leading-none flex items-center justify-center"
             style={{ WebkitTextStroke: '1px currentColor' }}
           >
             BESPOKE QUOTE

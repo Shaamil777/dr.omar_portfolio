@@ -69,7 +69,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                 [ FAQ ]
               </span>
               
-              <h2 className="font-national2 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] text-[#111] mb-8">
+              <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] text-[#111] mb-8">
                 FREQUENTLY<br/>
                 ASKED<br/>
                 QUESTIONS
@@ -108,7 +108,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                         <span className={`font-courier text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-zinc-300 group-hover:text-[#CD1D1D]/50"}`}>
                           {num}
                         </span>
-                        <h3 className={`font-national2 text-xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] group-hover:text-[#CD1D1D]"}`}>
+                        <h3 className={`font-helvetica text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] group-hover:text-[#CD1D1D]"}`}>
                           {faq.question}
                         </h3>
                       </div>

@@ -92,7 +92,7 @@ export default function Testimonial() {
       
       {/* Background massive typography watermark */}
       <div className="absolute top-10 left-0 w-full overflow-hidden pointer-events-none select-none opacity-[0.03] z-0 flex justify-center">
-        <h1 className="font-national2 font-black text-[20vw] leading-none whitespace-nowrap">
+        <h1 className="font-helvetica font-black text-[14vw] leading-none whitespace-nowrap">
           TESTIMONIALS
         </h1>
       </div>
@@ -104,7 +104,7 @@ export default function Testimonial() {
           <div className="sticky top-[15vh] h-[75vh] flex flex-col justify-between">
             <div>
               <div className="font-helvetica font-bold text-xl mb-4 text-[#CD1D1D]">(4)</div>
-              <h2 className="font-national2 font-black text-6xl xl:text-7xl uppercase leading-[0.85] tracking-normal mb-6">
+              <h2 className="font-helvetica font-black text-5xl xl:text-6xl uppercase leading-[0.85] tracking-normal mb-6">
                 IMPACT<br/>REALIZED
               </h2>
               <p className="font-helvetica font-medium text-lg text-zinc-500 max-w-sm">
@@ -127,7 +127,7 @@ export default function Testimonial() {
           {/* Mobile Header */}
           <div className="lg:hidden mb-16 flex flex-col">
              <div className="font-helvetica font-bold text-lg mb-4 text-[#CD1D1D]">(4)</div>
-             <h2 className="font-national2 font-black text-5xl md:text-6xl uppercase leading-[0.85] mb-4">
+             <h2 className="font-helvetica font-black text-4xl md:text-5xl uppercase leading-[0.85] mb-4">
                IMPACT REALIZED
              </h2>
              <p className="font-helvetica font-medium text-zinc-500">
@@ -142,7 +142,7 @@ export default function Testimonial() {
                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale" />
                 </div>
                 
-                <h3 className="font-national2 font-black text-3xl md:text-5xl lg:text-[4rem] leading-[0.95] tracking-normal mb-12 text-[#111]">
+                <h3 className="font-helvetica font-black text-2xl md:text-4xl lg:text-[3rem] leading-[0.95] tracking-normal mb-12 text-[#111]">
                   &ldquo;{t.quote}&rdquo;
                 </h3>
                 

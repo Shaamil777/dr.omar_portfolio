@@ -17,7 +17,7 @@ export default function Typography() {
             fontWeight="900" 
             textLength="1800" 
             lengthAdjust="spacingAndGlyphs" 
-            style={{ fontFamily: "var(--font-national2), sans-serif" }}
+            style={{ fontFamily: "var(--font-helvetica), sans-serif" }}
           >
             TESTIMONIALS
           </text>
@@ -36,7 +36,7 @@ export default function Typography() {
             fontWeight="900" 
             textLength="1800" 
             lengthAdjust="spacingAndGlyphs" 
-            style={{ fontFamily: "var(--font-national2), sans-serif" }}
+            style={{ fontFamily: "var(--font-helvetica), sans-serif" }}
           >
             TESTIMONIALS
           </text>

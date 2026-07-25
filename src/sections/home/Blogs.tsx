@@ -64,13 +64,13 @@ export default function Blogs() {
         {/* Content (Title, Text, Button) */}
         <div className="relative z-30 flex flex-col items-center text-center px-4 max-w-2xl pointer-events-auto py-5">
           <div className="font-helvetica font-bold text-lg md:text-xl mb-4 text-[#CD1D1D]">(5)</div>
-          <h2 className="text-[#111] font-national2 font-black text-6xl md:text-8xl lg:text-[8rem] uppercase leading-[0.85] tracking-normal mb-6 mix-blend-multiply">
+          <h2 className="text-[#111] font-helvetica font-black text-5xl md:text-7xl lg:text-[6rem] uppercase leading-[0.85] tracking-normal mb-6 mix-blend-multiply">
             LATEST<br/>INSIGHTS
           </h2>
           <p className="font-helvetica font-medium text-sm md:text-lg text-zinc-500 mb-8 max-w-sm mx-auto leading-relaxed">
             Explore my latest articles, insights, and thoughts on entrepreneurship, technology, and leadership.
           </p>
-          <button className="bg-[#CD1D1D] text-white font-national2 font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
+          <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
             READ ALL
           </button>
         </div>
@@ -92,7 +92,7 @@ export default function Blogs() {
                <span className="font-courier text-[#CD1D1D] font-bold text-[10px] md:text-xs tracking-widest uppercase">
                  Article
                </span>
-               <h3 className="text-white font-national2 font-bold uppercase text-lg md:text-xl lg:text-3xl leading-[0.95] drop-shadow-lg">
+               <h3 className="text-white font-helvetica font-bold uppercase text-lg md:text-xl lg:text-2xl leading-[0.95] drop-shadow-lg">
                  {card.title}
                </h3>
              </div>
