@@ -1,13 +1,24 @@
 import AboutHero from "@/sections/about/AboutHero";
-import AboutIntro from "@/sections/about/AboutIntro";
+import AboutBiography from "@/sections/about/AboutBiography";
+import AboutStats from "@/sections/about/AboutStats";
+import AboutEcosystem from "@/sections/about/AboutEcosystem";
+import AboutAuthority from "@/sections/about/AboutAuthority";
+import AboutPhilanthropy from "@/sections/about/AboutPhilanthropy";
 import AboutCta from "@/sections/about/AboutCta";
+import PageGridBackground from "@/components/ui/PageGridBackground";
 
 export default function AboutPage() {
   return (
-    <main>
-      <AboutHero />
-      <AboutIntro />
-      <AboutCta />
-    </main>
+    <PageGridBackground>
+      <main className="min-h-screen relative">
+        <AboutHero />
+        <AboutBiography />
+        <AboutStats />
+        <AboutEcosystem />
+        <AboutAuthority />
+        <AboutPhilanthropy />
+        <AboutCta />
+      </main>
+    </PageGridBackground>
   );
 }

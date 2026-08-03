@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large image assets
+public/hero/cleared_images/
+public/hero/input/
+
+# python virtual environment
+myenv/
