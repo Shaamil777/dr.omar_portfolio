@@ -1,5 +1,6 @@
 import AboutHero from "@/sections/about/AboutHero";
 import AboutBiography from "@/sections/about/AboutBiography";
+import AboutStory from "@/sections/about/AboutStory";
 import AboutStats from "@/sections/about/AboutStats";
 import AboutEcosystem from "@/sections/about/AboutEcosystem";
 import AboutAuthority from "@/sections/about/AboutAuthority";
@@ -13,6 +14,7 @@ export default function AboutPage() {
       <main className="min-h-screen relative">
         <AboutHero />
         <AboutBiography />
+        <AboutStory />
         <AboutStats />
         <AboutEcosystem />
         <AboutAuthority />
