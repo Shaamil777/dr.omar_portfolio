@@ -64,10 +64,10 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
         {/* Massive Clipped Typography */}
         <h2 
           ref={textRef}
-          className="font-national2 font-black uppercase tracking-tighter leading-[0.85] text-[#111] mb-16 select-none"
+          className="font-helvetica font-bold tracking-tighter leading-[0.85] text-[#111] mb-16 select-none"
           style={{ fontSize: "clamp(3rem, 12vw, 12rem)" }}
         >
-          ARE YOU<br/>READY TO<br/>SCALE?
+          Are You<br/>Ready to<br/>Scale?
         </h2>
         
         <p className="font-helvetica text-lg md:text-xl text-zinc-600 max-w-2xl mb-16">

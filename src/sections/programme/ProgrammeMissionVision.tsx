@@ -97,7 +97,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
             {/* Headings */}
             <div className="mb-8">
               {headings.map((heading, i) => (
-                <h3 key={i} className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-black text-[#111] leading-[1.1] tracking-tight">
+                <h3 key={i} className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold text-[#111] leading-[1.1] tracking-tight">
                   {heading}
                 </h3>
               ))}
@@ -147,7 +147,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
               <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <EyeIcon />
               </div>
-              <h4 className="font-helvetica text-xl font-black uppercase tracking-widest text-[#111] mb-4">Vision</h4>
+              <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Vision</h4>
               <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
                 {vision}
               </p>
@@ -187,7 +187,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
               <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <TargetIcon />
               </div>
-              <h4 className="font-helvetica text-xl font-black uppercase tracking-widest text-[#111] mb-4">Mission</h4>
+              <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Mission</h4>
               <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
                 {mission}
               </p>

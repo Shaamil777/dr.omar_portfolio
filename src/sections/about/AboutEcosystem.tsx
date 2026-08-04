@@ -11,22 +11,22 @@ export default function AboutEcosystem() {
 
   const organizations = [
     { 
-      name: "HUMAN EXCELLENCE ACADEMY", 
+      name: "Human Excellence Academy", 
       tagline: "Transforming People. Developing Leaders.",
       desc: "The flagship institution founded by Dr. Omar to help individuals unlock their highest potential through holistic human development, integrating psychology, emotional intelligence, leadership, and neuroscience." 
     },
     { 
-      name: "BRANDMOUNT", 
+      name: "Brandmount", 
       tagline: "The Identity Expert • Building Brands with Purpose",
       desc: "A strategic branding and business consulting company that helps entrepreneurs and organizations discover, define, and communicate their authentic identity and long-term brand building." 
     },
     { 
-      name: "OATHMEN® LLC, SHARJAH", 
+      name: "OATHMEN® LLC, Sharjah", 
       tagline: "From Ideas to IPO®",
       desc: "A startup coaching, incubation, and entrepreneurship ecosystem established to help aspiring founders transform innovative ideas into scalable, investment-ready businesses." 
     },
     { 
-      name: "TRAVELNGROW LLC, DUBAI", 
+      name: "TravelNGrow LLC, Dubai", 
       tagline: "Where Business Meets the World",
       desc: "A premium global tourism, business networking, and experiential learning company that combines international travel with entrepreneurship, leadership development, and international networking." 
     },
@@ -61,8 +61,8 @@ export default function AboutEcosystem() {
             <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
               [ THE ECOSYSTEM ]
             </span>
-            <h2 className="font-helvetica text-4xl md:text-5xl lg:text-[5rem] font-black uppercase tracking-tight leading-[0.9] text-[#111]">
-              ORGANIZATIONS <span className="text-transparent" style={{ WebkitTextStroke: '2px #111' }}>FOUNDED</span>
+            <h2 className="font-helvetica text-4xl md:text-5xl lg:text-[5rem] font-bold tracking-tight leading-[0.9] text-[#111]">
+              Organizations <span className="text-transparent" style={{ WebkitTextStroke: '2px #111' }}>Founded</span>
             </h2>
           </div>
           <p className="font-helvetica font-bold text-sm md:text-base text-zinc-500 max-w-md">
@@ -87,7 +87,7 @@ export default function AboutEcosystem() {
               </div>
 
               <div className="relative z-10 mt-8">
-                <h3 className="font-helvetica text-3xl md:text-4xl font-black uppercase tracking-tight leading-[0.95] text-white mb-4">
+                <h3 className="font-helvetica text-3xl md:text-4xl font-bold tracking-tight leading-[0.95] text-white mb-4">
                   {org.name}
                 </h3>
                 <p className="font-helvetica text-sm md:text-base font-medium text-white/75 group-hover:text-white transition-colors leading-relaxed">
@@ -105,7 +105,7 @@ export default function AboutEcosystem() {
               <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
                 [ LIFELONG JOURNEY ]
               </span>
-              <h3 className="font-helvetica text-2xl md:text-4xl font-black uppercase tracking-tight">
+              <h3 className="font-helvetica text-2xl md:text-4xl font-bold tracking-tight">
                 The Transformation Framework
               </h3>
             </div>

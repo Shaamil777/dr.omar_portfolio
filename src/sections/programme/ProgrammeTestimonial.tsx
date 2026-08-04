@@ -70,8 +70,8 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
             <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
               [ THE ALUMNI ]
             </span>
-            <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1] text-[#111]">
-              LEADERS WHO<br/>SCALED
+            <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
+              Leaders Who<br/>Scaled
             </h2>
           </div>
           
@@ -114,7 +114,7 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
                   <Image src={testimonial.image} alt={testimonial.name} fill className="object-cover" />
                 </div>
                 <div>
-                  <h4 className="font-helvetica font-bold text-[#111] text-sm uppercase tracking-wider">{testimonial.name}</h4>
+                  <h4 className="font-helvetica font-bold text-[#111] text-sm tracking-wider">{testimonial.name}</h4>
                   <p className="font-courier text-xs text-zinc-500 mt-1">{testimonial.role}</p>
                 </div>
               </div>

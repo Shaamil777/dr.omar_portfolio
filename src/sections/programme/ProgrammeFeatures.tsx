@@ -98,8 +98,8 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
           <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
             [ WHAT YOU GET ]
           </span>
-          <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4.5rem] font-black uppercase tracking-normal leading-[0.9] text-[#111]">
-            THE ECOSYSTEM
+          <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4.5rem] font-bold tracking-normal leading-[0.9] text-[#111]">
+            The Ecosystem
           </h2>
         </div>
 
@@ -127,7 +127,7 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
                   
                   {/* Text block (Larger) */}
                   <div className="flex flex-col pt-1">
-                    <h3 className="font-helvetica text-2xl md:text-3xl lg:text-[2.25rem] font-black uppercase tracking-normal text-[#111] leading-[0.9] mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                    <h3 className="font-helvetica text-2xl md:text-3xl lg:text-[2.25rem] font-bold tracking-normal text-[#111] leading-[0.9] mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
                       {feature.title}
                     </h3>
                     <p className="font-helvetica font-bold text-sm md:text-base lg:text-lg text-zinc-500 leading-relaxed pr-2">

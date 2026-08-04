@@ -141,7 +141,7 @@ export default function About() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 w-full"
             >
               {/* Primary Button */}
-              <Link href="/journey" className="bg-[#111] text-white px-6 py-4 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
+              <Link href="/about" className="bg-[#111] text-white px-6 py-4 md:px-10 md:py-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto">
                 EXPLORE JOURNEY
                 <svg className="w-4 h-4 md:w-6 md:h-6 ml-2 md:ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -149,7 +149,7 @@ export default function About() {
               </Link>
 
               {/* Secondary Button */}
-              <a href="#consultation" className="bg-transparent border-[3px] md:border-4 border-[#111] text-[#111] px-6 py-4 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
+              <a href="/contact" className="bg-transparent border-[3px] md:border-4 border-[#111] text-[#111] px-6 py-4 md:px-10 md:py-6 rounded-xl hover:bg-black/5 hover:-translate-y-1 transition-all font-helvetica font-black uppercase tracking-normal text-[16px] md:text-[24px] leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
                 BOOK CONSULTATION
               </a>
             </motion.div>

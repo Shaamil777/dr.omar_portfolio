@@ -97,7 +97,7 @@ const heroData: Record<string, {
   chips: string[];
 }> = {
   bcc: {
-    fullName: ["BUSINESS", "COACHING", "CLUB"],
+    fullName: ["Business", "Coaching", "Club"],
     tagline: "BCC PROGRAMME",
     shortDescription: "An annual mentorship and business networking ecosystem for entrepreneurs building sustainable brands and scalable legacy.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
@@ -132,7 +132,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
   }, []);
 
   const data = heroData[company.slug] || {
-    fullName: [company.name.toUpperCase()],
+    fullName: [company.name],
     tagline: `${company.name} PROGRAMME`,
     shortDescription: company.description,
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
@@ -229,7 +229,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
             </div>
 
             {/* Title */}
-            <h1 className="font-national2 font-black uppercase tracking-tight leading-[0.85] mb-0 perspective-[800px]">
+            <h1 className="font-helvetica font-bold tracking-tight leading-[0.85] mb-0 perspective-[800px]">
               {data.fullName.map((word, i) => (
                 <span
                   key={i}

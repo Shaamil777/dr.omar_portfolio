@@ -55,8 +55,8 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
             <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
               [ INSIGHTS ]
             </span>
-            <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1] text-[#111]">
-              LATEST CASE<br/>STUDIES
+            <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
+              Latest Case<br/>Studies
             </h2>
           </div>
           
@@ -86,7 +86,7 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
 
               {/* Text Content */}
               <div className="flex flex-col flex-grow mt-6">
-                <h3 className="font-helvetica text-[1.75rem] md:text-3xl lg:text-[2rem] font-black leading-[0.9] text-[#111] uppercase tracking-tighter group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <h3 className="font-helvetica text-[1.75rem] md:text-3xl lg:text-[2rem] font-bold leading-[0.9] text-[#111] tracking-tighter group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {blog.title}
                 </h3>
                 {/* Optional Description (fallback for custom data) */}

@@ -12,19 +12,19 @@ export default function AboutPhilanthropy() {
 
   const futureVisions = [
     {
-      title: "RUQAYYA FOUNDATION",
+      title: "Ruqayya Foundation",
       desc: "To protect, educate, mentor, and empower more than 10,000 families through counselling, education, leadership development, life skills, and sustainable social initiatives.",
     },
     {
-      title: "OATHMEN® STARTUP VILLAGE",
+      title: "OATHMEN® Startup Village",
       desc: "To establish one of the region's leading startup incubation and entrepreneurship campuses, where founders can innovate, build businesses, access mentors, and create globally scalable companies.",
     },
     {
-      title: "HUMAN EXCELLENCE VILLAGE",
+      title: "Human Excellence Village",
       desc: "To create a nature-based experiential leadership destination where individuals, families, entrepreneurs, executives, and organizations can reconnect with themselves and experience holistic transformation.",
     },
     {
-      title: "TRAVELNGROW GLOBAL",
+      title: "TravelNGrow Global",
       desc: "To build TravelNGrow into a globally recognized premium business travel and networking company that connects entrepreneurs, investors, and leaders through curated international experiences.",
     },
   ];
@@ -72,8 +72,8 @@ export default function AboutPhilanthropy() {
             <span className="phil-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
               [ THE HIGHER PURPOSE ]
             </span>
-            <h2 className="phil-element font-helvetica text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9] text-[#111] mb-8">
-              PROTECTING THE <span className="text-[#CD1D1D]">VULNERABLE</span>
+            <h2 className="phil-element font-helvetica text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[0.9] text-[#111] mb-8">
+              Protecting the <span className="text-[#CD1D1D]">Vulnerable</span>
             </h2>
             
             <p className="phil-element font-helvetica text-lg md:text-2xl text-zinc-700 font-bold leading-relaxed mb-6">
@@ -100,7 +100,7 @@ export default function AboutPhilanthropy() {
             <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
               [ THE ROAD AHEAD ]
             </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-black uppercase tracking-tight text-[#111]">
+            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight text-[#111]">
               Future Vision & Institutions
             </h3>
             <p className="font-helvetica text-sm md:text-base text-zinc-500 max-w-xl mx-auto mt-2">
@@ -115,7 +115,7 @@ export default function AboutPhilanthropy() {
                   <span className="font-courier text-xs font-bold text-[#CD1D1D] block mb-3">
                     0{idx + 1} // FUTURE VISION
                   </span>
-                  <h4 className="font-helvetica text-2xl md:text-3xl font-black uppercase tracking-tight mb-4 text-white">
+                  <h4 className="font-helvetica text-2xl md:text-3xl font-bold tracking-tight mb-4 text-white">
                     {vision.title}
                   </h4>
                   <p className="font-helvetica text-sm md:text-base text-white/70 leading-relaxed">
@@ -133,7 +133,7 @@ export default function AboutPhilanthropy() {
             <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
               [ GUIDING PRINCIPLES ]
             </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-black uppercase tracking-tight">
+            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight">
               Words to Live By
             </h3>
           </div>

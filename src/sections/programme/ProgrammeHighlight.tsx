@@ -159,7 +159,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
               </div>
 
               {/* Massive Title */}
-              <h3 className="font-helvetica text-4xl md:text-6xl lg:text-[5rem] font-black uppercase tracking-normal leading-[0.9] text-white mb-8 md:mb-12">
+              <h3 className="font-helvetica text-4xl md:text-6xl lg:text-[5rem] font-bold tracking-normal leading-[0.9] text-white mb-8 md:mb-12">
                 {pillar.title}
               </h3>
 

@@ -52,7 +52,7 @@ export default function AboutBiography() {
               <span className="font-courier text-[10px] uppercase tracking-widest text-[#CD1D1D] font-bold block mb-1">
                 20+ YEARS OF EXPERIENCE
               </span>
-              <p className="font-helvetica text-xl font-bold uppercase tracking-wide text-white">
+              <p className="font-helvetica text-xl font-bold tracking-wide text-white">
                 Developing People Before Developing Businesses
               </p>
             </div>
@@ -63,8 +63,8 @@ export default function AboutBiography() {
             <span className="bio-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block">
               [ WHO IS DR. ABDUSSALAM OMAR? ]
             </span>
-            <h2 className="bio-element font-helvetica text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] text-white mb-8">
-              SOME BUILD CAREERS. OTHERS BUILD BUSINESSES. <span className="text-[#CD1D1D]">A FEW DEDICATE THEIR LIVES</span> TO BUILDING PEOPLE.
+            <h2 className="bio-element font-helvetica text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-white mb-8">
+              Some build careers. Others build businesses. <span className="text-[#CD1D1D]">A few dedicate their lives</span> to building people.
             </h2>
             
             <div className="bio-element font-helvetica text-base md:text-xl text-white/75 font-medium leading-relaxed space-y-6 mb-12">

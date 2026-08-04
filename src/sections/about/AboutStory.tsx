@@ -41,8 +41,8 @@ export default function AboutStory() {
           <span className="story-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
             [ THE ORIGIN // FROM LOSS TO PURPOSE ]
           </span>
-          <h2 className="story-element font-helvetica text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.95] text-white max-w-5xl">
-            DR. OMAR&apos;S STORY <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>BEGAN WITH LOSS.</span>
+          <h2 className="story-element font-helvetica text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] text-white max-w-5xl">
+            Dr. Omar&apos;s story <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>began with loss.</span>
           </h2>
         </div>
 
@@ -63,7 +63,7 @@ export default function AboutStory() {
                 <span className="font-courier text-[10px] uppercase tracking-widest text-[#CD1D1D] font-bold block mb-1">
                   RESILIENCE • COMPASSION • GRATITUDE
                 </span>
-                <p className="font-helvetica text-lg uppercase tracking-wide text-white/90">
+                <p className="font-helvetica text-lg tracking-wide text-white/90">
                   Circumstances Never Define Destiny
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default function AboutStory() {
               <svg className="w-10 h-10 text-[#CD1D1D]/20 absolute top-4 right-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="font-helvetica text-xl md:text-2xl font-bold uppercase tracking-tight text-white leading-snug mb-4">
+              <p className="font-helvetica text-xl md:text-2xl font-bold tracking-tight text-white leading-snug mb-4">
                 &ldquo;Your past may explain who you are today, but it never has to decide who you become tomorrow.&rdquo;
               </p>
               <span className="font-courier text-xs uppercase tracking-widest text-white/50">
@@ -88,7 +88,7 @@ export default function AboutStory() {
           <div className="lg:col-span-7 flex flex-col justify-center space-y-8 font-helvetica text-lg md:text-xl text-white/80 leading-relaxed">
             
             <div className="story-element p-6 md:p-8 rounded-[24px] bg-white/[0.03] border border-white/5 space-y-4">
-              <h3 className="font-helvetica text-2xl md:text-3xl font-black uppercase text-white tracking-tight">
+              <h3 className="font-helvetica text-2xl md:text-3xl font-bold text-white tracking-tight">
                 An Orphanage Childhood & Early Hardship
               </h3>
               <p className="text-white/70">
@@ -97,7 +97,7 @@ export default function AboutStory() {
             </div>
 
             <div className="story-element p-6 md:p-8 rounded-[24px] bg-white/[0.03] border border-white/5 space-y-4">
-              <h3 className="font-helvetica text-2xl md:text-3xl font-black uppercase text-[#CD1D1D] tracking-tight">
+              <h3 className="font-helvetica text-2xl md:text-3xl font-bold text-[#CD1D1D] tracking-tight">
                 The Foundation of Life&apos;s Purpose
               </h3>
               <p className="text-white/70">
@@ -106,7 +106,7 @@ export default function AboutStory() {
             </div>
 
             <div className="story-element p-6 md:p-8 rounded-[24px] bg-white/[0.03] border border-white/5 space-y-4">
-              <h3 className="font-helvetica text-2xl md:text-3xl font-black uppercase text-white tracking-tight">
+              <h3 className="font-helvetica text-2xl md:text-3xl font-bold text-white tracking-tight">
                 From Pain to a Deep Passion for Healing
               </h3>
               <p className="text-white/70">

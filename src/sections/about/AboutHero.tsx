@@ -44,12 +44,12 @@ export default function AboutHero() {
         <span className="hero-text font-courier text-xs md:text-sm uppercase tracking-[0.4em] text-[#CD1D1D] font-bold mb-6 block">
           [ PURPOSE • LEADERSHIP • TRANSFORMATION ]
         </span>
-        <h1 className="hero-text font-helvetica text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tight leading-[0.9] text-white max-w-[85rem] mb-8">
-          HEALING PEOPLE.<br />
-          <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>DEVELOPING LEADERS.</span><br />
-          BUILDING PURPOSE-DRIVEN ORGANIZATIONS.
+        <h1 className="hero-text font-helvetica text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tight leading-[0.9] text-white max-w-[85rem] mb-8">
+          Healing People.<br />
+          <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>Developing Leaders.</span><br />
+          Building Purpose-Driven Organizations.
         </h1>
-        <p className="hero-text font-helvetica text-sm md:text-xl text-white/70 font-medium tracking-wide uppercase max-w-4xl border-t border-white/10 pt-6">
+        <p className="hero-text font-helvetica text-sm md:text-xl text-white/70 font-medium tracking-wide max-w-4xl border-t border-white/10 pt-6">
           Business Leadership Coach • Human Transformation Expert • Branding Strategist • Entrepreneur
         </p>
       </div>

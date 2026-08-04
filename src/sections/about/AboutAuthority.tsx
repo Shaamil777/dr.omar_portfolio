@@ -58,8 +58,8 @@ export default function AboutAuthority() {
             <span className="auth-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
               [ THE TRUSTED AUTHORITY ]
             </span>
-            <h2 className="auth-element font-helvetica text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] text-[#111] mb-6">
-              ACCREDITED & <span className="text-transparent" style={{ WebkitTextStroke: '1px #111' }}>RECOGNIZED</span>
+            <h2 className="auth-element font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-[#111] mb-6">
+              Accredited & <span className="text-transparent" style={{ WebkitTextStroke: '1px #111' }}>Recognized</span>
             </h2>
             <p className="auth-element font-helvetica text-base md:text-lg text-zinc-600 mb-8 max-w-2xl">
               Dr. Omar&apos;s multidisciplinary background enables him to integrate medical science, psychology, coaching, leadership, branding, entrepreneurship, and holistic development into one comprehensive transformation methodology.
@@ -93,7 +93,7 @@ export default function AboutAuthority() {
             <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
               [ MULTIDISCIPLINARY FRAMEWORK ]
             </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-black uppercase tracking-tight">
+            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight">
               10 Core Areas of Expertise
             </h3>
             <p className="font-helvetica text-sm md:text-base text-white/60 mt-2">

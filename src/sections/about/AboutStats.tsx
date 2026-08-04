@@ -66,8 +66,8 @@ export default function AboutStats() {
           <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
             [ IMPACT AT A GLANCE ]
           </span>
-          <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] text-white">
-            SCALE <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>BY THE</span> NUMBERS
+          <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-white">
+            Scale <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>by the</span> Numbers
           </h2>
           <p className="font-helvetica text-white/60 text-base md:text-lg max-w-2xl mt-4">
             Every coaching engagement reflects Dr. Omar&apos;s belief that sustainable success begins with transforming people before transforming businesses.
@@ -112,7 +112,7 @@ export default function AboutStats() {
             <span className="font-courier text-xs uppercase tracking-widest text-[#CD1D1D] font-bold block mb-2">
               KEYNOTE SESSIONS & LEADERSHIP WORKSHOPS
             </span>
-            <h3 className="font-helvetica text-2xl md:text-3xl font-black uppercase text-white">
+            <h3 className="font-helvetica text-2xl md:text-3xl font-bold text-white">
               Corporate Training Programs Delivered
             </h3>
             <p className="font-helvetica text-white/60 text-sm md:text-base mt-2 max-w-xl">

@@ -141,8 +141,8 @@ export default function ProgrammesListingPage() {
         <div className="relative w-full overflow-hidden flex border-b-[3px] border-[#111] pb-2 md:pb-4 mb-2 perspective-1000">
           <div ref={marqueeRef} className="flex whitespace-nowrap min-w-fit origin-left">
              {[...Array(6)].map((_, i) => (
-               <h1 key={i} className="font-helvetica font-black text-[16vw] leading-[0.8] tracking-normal uppercase px-12 md:px-16 text-[#111]">
-                 OUR PROGRAMMES
+               <h1 key={i} className="font-helvetica font-bold text-[16vw] leading-[0.8] tracking-normal px-12 md:px-16 text-[#111]">
+                 Our Programmes
                </h1>
              ))}
           </div>
@@ -192,7 +192,7 @@ export default function ProgrammesListingPage() {
                       <div className="mb-10 text-[#111]">
                         <AbstractIcon index={i} />
                       </div>
-                      <h2 className="font-helvetica font-black text-3xl md:text-4xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
+                      <h2 className="font-helvetica font-bold text-3xl md:text-4xl leading-[0.9] tracking-normal mb-6 text-[#111]">
                           {company.name}
                       </h2>
                     </div>

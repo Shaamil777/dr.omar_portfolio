@@ -69,10 +69,10 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                 [ FAQ ]
               </span>
               
-              <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] text-[#111] mb-8">
-                FREQUENTLY<br/>
-                ASKED<br/>
-                QUESTIONS
+              <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] text-[#111] mb-8">
+                Frequently<br/>
+                Asked<br/>
+                Questions
               </h2>
 
               <div className="font-courier text-[9px] tracking-[0.2em] text-[#111]/30 hidden lg:block">

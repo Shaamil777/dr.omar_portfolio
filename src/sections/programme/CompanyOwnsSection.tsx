@@ -42,11 +42,11 @@ export default function CompanyOwnsSection({ company }: { company: CompanyData }
         <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
           [ DR. OMAR'S ECOSYSTEM ]
         </span>
-        <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4rem] font-black uppercase tracking-normal leading-[1] text-[#111] flex flex-wrap justify-center gap-x-4 lg:gap-x-6">
-          <span>COMPANIES DR OMAR</span>
-          <span className="text-[#CD1D1D]">OWNS</span>
-          <span>AND</span>
-          <span className="text-transparent" style={{ WebkitTextStroke: '2px #111' }}>LEADS</span>
+        <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4rem] font-bold tracking-normal leading-[1] text-[#111] flex flex-wrap justify-center gap-x-4 lg:gap-x-6">
+          <span>Companies Dr. Omar</span>
+          <span className="text-[#CD1D1D]">Owns</span>
+          <span>and</span>
+          <span className="text-transparent" style={{ WebkitTextStroke: '2px #111' }}>Leads</span>
         </h2>
       </div>
 
@@ -75,7 +75,7 @@ export default function CompanyOwnsSection({ company }: { company: CompanyData }
               </div>
               
               {/* Company Name & Text */}
-              <h4 className="font-helvetica text-xl md:text-2xl font-black uppercase tracking-normal text-[#111] group-hover/item:text-[#CD1D1D] transition-colors duration-300 mb-1">
+              <h4 className="font-helvetica text-xl md:text-2xl font-bold tracking-normal text-[#111] group-hover/item:text-[#CD1D1D] transition-colors duration-300 mb-1">
                 {item.name}
               </h4>
             </div>

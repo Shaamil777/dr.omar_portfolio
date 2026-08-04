@@ -103,8 +103,8 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
                 Inside The Experience
               </div>
 
-              <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-black uppercase tracking-tight leading-[1.05] text-[#111] mb-6">
-                WITNESS THE<br/>TRANSFORMATION
+              <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-bold tracking-tight leading-[1.05] text-[#111] mb-6">
+                Witness the<br/>Transformation
               </h2>
               
               <p className="font-helvetica text-lg md:text-xl text-zinc-500 max-w-md font-medium leading-snug mb-12">
