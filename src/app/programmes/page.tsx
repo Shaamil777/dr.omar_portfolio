@@ -137,6 +137,19 @@ export default function ProgrammesListingPage() {
       </div>
 
       <section className="pt-24 md:pt-32 relative z-20">
+        {/* Back to Home Button */}
+        <div className="px-6 md:px-16 mb-6">
+          <Link 
+            href="/" 
+            className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#111] hover:bg-[#CD1D1D] text-white transition-all shadow-md font-helvetica font-bold text-xs sm:text-sm tracking-wider uppercase"
+          >
+            <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span>Back to Home</span>
+          </Link>
+        </div>
+
         {/* Huge Scrolling Text Marquee */}
         <div className="relative w-full overflow-hidden flex border-b-[3px] border-[#111] pb-2 md:pb-4 mb-2 perspective-1000">
           <div ref={marqueeRef} className="flex whitespace-nowrap min-w-fit origin-left">
