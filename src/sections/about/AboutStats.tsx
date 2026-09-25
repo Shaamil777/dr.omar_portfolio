@@ -67,7 +67,7 @@ export default function AboutStats() {
             [ IMPACT AT A GLANCE ]
           </span>
           <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-white">
-            Scale <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>by the</span> Numbers
+            Scale <span>by the</span> Numbers
           </h2>
           <p className="font-helvetica text-white/60 text-base md:text-lg max-w-2xl mt-4">
             Every coaching engagement reflects Dr. Omar&apos;s belief that sustainable success begins with transforming people before transforming businesses.

@@ -20,8 +20,8 @@
   --color-fox: #C4929D;
   --color-golf: #8598AC;
   --color-secondary: #131313;
-  --font-national2: var(--font-national2);
-  --font-headingNow: var(--font-heading-now);
-  --font-helvetica: var(--font-helvetica);
-  --font-courier: var(--font-courier);
+  --font-national2: var(--font-poppins);
+  --font-headingNow: var(--font-poppins);
+  --font-helvetica: var(--font-poppins);
+  --font-courier: var(--font-poppins);
 }

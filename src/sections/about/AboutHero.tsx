@@ -46,7 +46,7 @@ export default function AboutHero() {
         </span>
         <h1 className="hero-text font-helvetica text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tight leading-[0.9] text-white max-w-[85rem] mb-8">
           Healing People.<br />
-          <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>Developing Leaders.</span><br />
+          <span>Developing Leaders.</span><br />
           Building Purpose-Driven Organizations.
         </h1>
         <p className="hero-text font-helvetica text-sm md:text-xl text-white/70 font-medium tracking-wide max-w-4xl border-t border-white/10 pt-6">

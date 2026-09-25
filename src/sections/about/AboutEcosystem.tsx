@@ -62,7 +62,7 @@ export default function AboutEcosystem() {
               [ THE ECOSYSTEM ]
             </span>
             <h2 className="font-helvetica text-4xl md:text-5xl lg:text-[5rem] font-bold tracking-tight leading-[0.9] text-[#111]">
-              Organizations <span className="text-transparent" style={{ WebkitTextStroke: '2px #111' }}>Founded</span>
+              Organizations <span>Founded</span>
             </h2>
           </div>
           <p className="font-helvetica font-bold text-sm md:text-base text-zinc-500 max-w-md">

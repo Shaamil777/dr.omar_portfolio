@@ -59,7 +59,7 @@ export default function AboutAuthority() {
               [ THE TRUSTED AUTHORITY ]
             </span>
             <h2 className="auth-element font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-[#111] mb-6">
-              Accredited & <span className="text-transparent" style={{ WebkitTextStroke: '1px #111' }}>Recognized</span>
+              Accredited & <span>Recognized</span>
             </h2>
             <p className="auth-element font-helvetica text-base md:text-lg text-zinc-600 mb-8 max-w-2xl">
               Dr. Omar&apos;s multidisciplinary background enables him to integrate medical science, psychology, coaching, leadership, branding, entrepreneurship, and holistic development into one comprehensive transformation methodology.

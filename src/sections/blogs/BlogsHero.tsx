@@ -1,1 +1,65 @@
-export default function BlogsHero() { return <section className="h-screen bg-orange-800 flex items-center justify-center text-4xl font-bold text-white">Blogs Hero</section>; }
+"use client";
+
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function BlogsHero() {
+  const containerRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".hero-text",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "expo.out", delay: 0.2 }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={containerRef} className="relative w-full h-[90vh] md:h-[100vh] flex items-center justify-center bg-[#111] overflow-hidden">
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=2000"
+          alt="Blogs Background"
+          fill
+          className="object-cover opacity-35 grayscale"
+          priority
+        />
+        {/* Gradient overlays to blend into the black background at the top and #FAF8F5 at the bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-[#111]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111]/60 via-transparent to-[#111]/60" />
+      </div>
+
+      <div ref={textRef} className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-20">
+        <span className="hero-text font-courier text-xs md:text-sm uppercase tracking-[0.4em] text-[#CD1D1D] font-bold mb-6 block">
+          [ INSIGHTS • PERSPECTIVES • STRATEGY ]
+        </span>
+        <h1 className="hero-text font-helvetica text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tight leading-[0.9] text-white max-w-[85rem] mb-8">
+          The Latest <br />
+          <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>Thoughts.</span>
+        </h1>
+        <p className="hero-text font-helvetica text-sm md:text-xl text-white/70 font-medium tracking-wide max-w-4xl border-t border-white/10 pt-6">
+          Deep dives into leadership, enterprise protection, and purpose-driven organizations.
+        </p>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center hero-text">
+        <span className="font-courier text-[10px] uppercase tracking-widest text-[#111]/60 font-bold mb-2">Scroll</span>
+        <div className="w-[1px] h-12 bg-[#111]/20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[#111] animate-pulse" />
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -42,7 +42,7 @@ export default function AboutStory() {
             [ THE ORIGIN // FROM LOSS TO PURPOSE ]
           </span>
           <h2 className="story-element font-helvetica text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] text-white max-w-5xl">
-            Dr. Omar&apos;s story <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>began with loss.</span>
+            Dr. Omar&apos;s story <span>began with loss.</span>
           </h2>
         </div>
 

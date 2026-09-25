@@ -57,7 +57,7 @@ export default function AboutCta() {
           [ THE NEXT CHAPTER ]
         </span>
         <h2 className="cta-element font-helvetica text-4xl md:text-6xl lg:text-[6.5rem] font-bold tracking-tight leading-[0.9] text-white mb-14">
-          Begin Your <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>Transformation</span>
+          Begin Your <span>Transformation</span>
         </h2>
         
         <button className="cta-element group relative inline-flex items-center justify-center px-12 py-6 bg-[#CD1D1D] text-white font-helvetica font-bold uppercase tracking-widest text-sm md:text-lg overflow-hidden rounded-full transition-transform hover:scale-105 duration-300">
