@@ -168,26 +168,22 @@ export default function AboutBiography() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-black/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-6 lg:gap-y-8">
             {philosophySteps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="philosophy-tag group relative p-8 md:p-10 border-r border-b border-black/10 hover:bg-black/[0.02] transition-colors duration-500 flex flex-col justify-between min-h-[240px] cursor-default"
+                className="philosophy-tag flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 border-b border-black/10 pb-4 md:pb-6 cursor-default"
               >
-                {/* Number & Accent */}
-                <div className="flex items-center justify-between mb-12">
-                  <span className="font-courier text-[#CD1D1D] text-lg md:text-xl font-bold tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
-                    {(idx + 1).toString().padStart(2, '0')}
-                  </span>
-                  <div className="w-12 h-[1px] bg-black/0 group-hover:bg-[#CD1D1D]/50 transition-colors duration-500" />
-                </div>
+                <span className="font-courier text-[#CD1D1D] text-sm md:text-base font-bold tracking-widest min-w-[30px]">
+                  {(idx + 1).toString().padStart(2, '0')}
+                </span>
                 
-                {/* Text */}
-                <div>
-                  <h3 className="font-helvetica text-xl md:text-2xl font-bold text-[#0a0a0a] mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 flex-grow">
+                  <h4 className="font-helvetica text-lg md:text-xl font-bold text-[#0a0a0a] min-w-[120px]">
                     {step.title}
-                  </h3>
-                  <p className="font-helvetica text-sm text-[#0a0a0a]/60 group-hover:text-[#0a0a0a]/90 transition-colors duration-300 font-medium leading-relaxed">
+                  </h4>
+                  <span className="hidden sm:block text-black/10">—</span>
+                  <p className="font-helvetica text-sm md:text-base text-[#0a0a0a]/60 font-medium">
                     {step.desc}
                   </p>
                 </div>

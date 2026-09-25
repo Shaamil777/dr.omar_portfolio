@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -13,38 +14,72 @@ export default function AboutEcosystem() {
     { 
       name: "Human Excellence Academy", 
       tagline: "Transforming People. Developing Leaders.",
+      logo: (
+        <div className="flex flex-col">
+          <span className="font-helvetica font-black text-4xl md:text-[2.75rem] tracking-tighter text-white leading-none">
+            Human<br className="hidden md:block"/>Excellence
+          </span>
+          <span className="font-helvetica font-light text-sm md:text-base text-white/90 mt-2 tracking-[0.2em] uppercase">
+            Academy
+          </span>
+        </div>
+      ),
       desc: "The flagship institution founded by Dr. Omar to help individuals unlock their highest potential through holistic human development, integrating psychology, emotional intelligence, leadership, and neuroscience." 
     },
     { 
       name: "Brandmount", 
       tagline: "The Identity Expert • Building Brands with Purpose",
+      logo: (
+        <div className="flex flex-col">
+          <span className="font-helvetica font-black text-[2.75rem] md:text-5xl tracking-tighter text-white leading-none">
+            Brandmount<sup className="text-xl -top-4 md:-top-5 ml-1">®</sup>
+          </span>
+          <span className="font-helvetica font-light text-base md:text-lg text-white/90 mt-1 tracking-wide">
+            The identity expert
+          </span>
+        </div>
+      ),
       desc: "A strategic branding and business consulting company that helps entrepreneurs and organizations discover, define, and communicate their authentic identity and long-term brand building." 
     },
     { 
       name: "OATHMEN® LLC, Sharjah", 
       tagline: "From Ideas to IPO®",
+      logo: (
+        <div className="flex flex-col">
+          <span className="font-helvetica font-bold text-3xl md:text-4xl tracking-wide text-white leading-none">
+            OATHMEN
+          </span>
+          <span className="font-helvetica font-bold text-[9px] md:text-[11px] tracking-[0.2em] text-white mt-1">
+            THE STARTUP COACHING CLUB
+          </span>
+        </div>
+      ),
       desc: "A startup coaching, incubation, and entrepreneurship ecosystem established to help aspiring founders transform innovative ideas into scalable, investment-ready businesses." 
     },
     { 
       name: "TravelNGrow LLC, Dubai", 
       tagline: "Where Business Meets the World",
+      logo: (
+        <div className="flex flex-col">
+          <span className="font-helvetica font-bold text-[2.5rem] md:text-[2.75rem] tracking-tight text-white leading-none">
+            Travel<span className="text-[#F5A623]">N</span>Grow<sup className="text-xl -top-4 ml-1">®</sup>
+          </span>
+          <span className="font-helvetica font-light text-sm md:text-base tracking-[0.15em] text-white mt-1 uppercase">
+            experience the world
+          </span>
+        </div>
+      ),
       desc: "A premium global tourism, business networking, and experiential learning company that combines international travel with entrepreneurship, leadership development, and international networking." 
     },
-  ];
-
-  const frameworkSteps = [
-    "Awareness", "Consultation", "Deep Immersion®", "Personal Growth & Entrepreneurship",
-    "Business Coaching Club", "Business Immersion®", "Organizational Coaching", 
-    "Executive Mentoring", "TravelNGrow Global", "Legacy & Impact"
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".eco-card",
-        { opacity: 0, scale: 0.95, y: 30 },
+        ".eco-row",
+        { opacity: 0, y: 30 },
         { 
-          opacity: 1, scale: 1, y: 0, duration: 1, stagger: 0.15, ease: "expo.out",
+          opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 75%" }
         }
       );
@@ -53,81 +88,35 @@ export default function AboutEcosystem() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white text-[#111] py-24 md:py-44 relative z-10">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem]">
-        
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-              [ THE ECOSYSTEM ]
-            </span>
-            <h2 className="font-helvetica text-4xl md:text-5xl lg:text-[5rem] font-bold tracking-tight leading-[0.9] text-[#111]">
-              Organizations <span>Founded</span>
-            </h2>
-          </div>
-          <p className="font-helvetica font-bold text-sm md:text-base text-zinc-500 max-w-md">
-            Driven by a vision to create lasting impact beyond individual coaching, Dr. Omar has established a group of purpose-driven organizations that together form a complete transformation ecosystem.
-          </p>
-        </div>
+    <section ref={sectionRef} className="w-full bg-[#0a0a0a] relative z-10 py-20 md:py-32 flex flex-col justify-center min-h-screen border-t border-white/10 overflow-hidden">
+      {/* Abstract Background Elements (Matching Story Section) */}
+      <div className="absolute top-1/3 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] translate-x-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[30vw] h-[30vw] bg-[#CD1D1D]/5 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
-        {/* Organizations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+      <div className="container mx-auto px-6 lg:px-12 max-w-[80rem] relative z-10">
+        <div className="flex flex-col">
           {organizations.map((org, index) => (
-            <div key={index} className="eco-card group relative p-10 md:p-14 rounded-[32px] bg-[#111] overflow-hidden flex flex-col justify-between min-h-[360px] md:min-h-[420px] shadow-xl">
-              {/* Background Accent */}
-              <div className="absolute inset-0 bg-[#CD1D1D] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out z-0" />
-              
-              <div className="relative z-10">
-                <span className="font-courier text-[10px] text-white/50 group-hover:text-white/80 font-bold tracking-widest mb-2 block transition-colors">
-                  0{index + 1} // ORGANIZATION
-                </span>
-                <span className="font-courier text-xs uppercase tracking-widest text-[#CD1D1D] group-hover:text-white/90 font-bold mb-4 block transition-colors">
-                  {org.tagline}
-                </span>
+            <div 
+              key={index} 
+              className={`eco-row flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 py-10 lg:py-16 ${index !== 0 ? 'border-t border-[#CD1D1D]/40' : ''}`}
+            >
+              {/* Logo Column */}
+              <div className="w-full lg:w-[35%] flex-shrink-0 flex items-center lg:items-start lg:pt-1">
+                {org.logo}
               </div>
 
-              <div className="relative z-10 mt-8">
-                <h3 className="font-helvetica text-3xl md:text-4xl font-bold tracking-tight leading-[0.95] text-white mb-4">
-                  {org.name}
+              {/* Text Column */}
+              <div className="w-full lg:w-[65%] flex flex-col gap-4">
+                <h3 className="font-helvetica text-white text-lg md:text-xl">
+                  <span className="font-bold">{org.name}</span> <span className="font-medium italic text-white/90">{org.tagline}</span>
                 </h3>
-                <p className="font-helvetica text-sm md:text-base font-medium text-white/75 group-hover:text-white transition-colors leading-relaxed">
+                <p className="font-helvetica text-sm md:text-base text-white/70 font-light leading-relaxed">
                   {org.desc}
                 </p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Transformation Framework Roadmap */}
-        <div className="eco-card p-8 md:p-12 rounded-[32px] bg-zinc-900 text-white border border-black/10">
-          <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
-                [ LIFELONG JOURNEY ]
-              </span>
-              <h3 className="font-helvetica text-2xl md:text-4xl font-bold tracking-tight">
-                The Transformation Framework
-              </h3>
-            </div>
-            <p className="font-helvetica text-xs md:text-sm text-white/60 max-w-sm">
-              Supporting individuals and entrepreneurs through every stage of personal growth, leadership development, and business excellence.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            {frameworkSteps.map((step, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <div className="px-4 py-2.5 rounded-2xl bg-white/10 text-white font-helvetica font-bold text-xs md:text-sm uppercase tracking-wider hover:bg-[#CD1D1D] transition-colors">
-                  {step}
-                </div>
-                {idx < frameworkSteps.length - 1 && (
-                  <span className="text-[#CD1D1D] font-black text-sm">➔</span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );
