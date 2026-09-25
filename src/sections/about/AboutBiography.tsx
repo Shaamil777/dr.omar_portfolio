@@ -66,18 +66,7 @@ export default function AboutBiography() {
         );
       });
 
-      // Philosophy tags animation
-      gsap.fromTo(
-        ".philosophy-tag",
-        { y: 20, opacity: 0, scale: 0.9 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.05, ease: "back.out(1.5)",
-          scrollTrigger: {
-            trigger: ".philosophy-container",
-            start: "top 85%",
-          }
-        }
-      );
+
 
     }, sectionRef);
 
@@ -85,40 +74,43 @@ export default function AboutBiography() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#0a0a0a] text-white py-24 md:py-32 relative overflow-hidden z-10">
+    <section ref={sectionRef} className="w-full bg-white text-[#0a0a0a] pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden z-10">
       {/* Abstract Background Elements */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-      
-      <div className="container mx-auto px-6 lg:px-10 max-w-[90rem] relative z-10">
+
+      <div className="container mx-auto px-6 lg:px-10 max-w-[90rem] relative z-10 pointer-events-auto">
         
         {/* Top Half: Image & Bio Text */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-20 lg:mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-16 lg:mb-24">
           
-          {/* Left: Image / Visual */}
-          <div className="lg:col-span-5 relative" ref={imageRef}>
-            <div className="bio-image-wrapper relative aspect-[4/5] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group rounded-2xl">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
+          {/* Left: Image Cutout */}
+          <div className="lg:col-span-5 relative group" ref={imageRef}>
+            <div className="bio-image-wrapper relative w-full h-[600px] md:h-[700px] lg:h-[850px]">
               <Image 
-                src="/images/about/02.png"
+                src="/images/about/dr_lines.png"
                 alt="Dr. Abdussalam Omar Profile"
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-1000 ease-out"
+                className="object-contain object-bottom grayscale group-hover:grayscale-0 opacity-90 lg:opacity-100 transition-all duration-1000 ease-out drop-shadow-2xl scale-[1.15] -translate-x-6 lg:-translate-x-12 translate-y-6 lg:translate-y-12"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/20 to-transparent z-10 opacity-90" />
               
-              {/* Vertical red accent line */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#CD1D1D] z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            </div>
+              {/* Premium Gradient Base to mask the cut */}
+              <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Floating Minimal Badge */}
-            <div className="bio-badge absolute -bottom-6 -right-4 lg:-right-8 z-20 bg-[#111] border border-white/5 p-5 md:p-6 shadow-2xl max-w-[240px]">
-              <div className="flex flex-col gap-2">
-                <span className="font-helvetica font-black text-4xl md:text-5xl text-[#CD1D1D] leading-none tracking-tighter">20+</span>
-                <div className="mt-2">
-                  <h4 className="font-helvetica text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.3em] mb-2">Years of Impact</h4>
-                  <p className="font-helvetica text-[11px] md:text-xs text-white/50 leading-relaxed font-light">
-                    Developing People Before Developing Businesses.
-                  </p>
+              {/* Premium Inline Badge at the bottom */}
+              <div className="bio-badge absolute bottom-0 left-0 w-full z-20 flex items-center justify-between border-t border-black/10 bg-white/50 backdrop-blur-xl px-6 py-5 md:px-8 md:py-6">
+                <div className="flex items-center gap-5">
+                  <span className="font-helvetica font-black text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-[#0a0a0a] to-[#0a0a0a]/50 leading-none tracking-tighter">
+                    20<span className="text-[#CD1D1D]">+</span>
+                  </span>
+                  <div className="h-10 w-[1px] bg-black/20" />
+                  <div className="flex flex-col gap-1">
+                    <span className="font-courier text-[10px] md:text-[11px] font-bold text-[#CD1D1D] uppercase tracking-[0.25em]">
+                      Years of Impact
+                    </span>
+                    <span className="font-helvetica text-[10px] md:text-[11px] text-[#0a0a0a]/60 font-medium leading-snug max-w-[160px]">
+                      Developing People Before Developing Businesses
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,68 +125,76 @@ export default function AboutBiography() {
               </span>
             </div>
             
-            <h2 className="bio-text-elem font-helvetica text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1] text-white mb-8 md:mb-10">
+            <h2 className="bio-text-elem font-helvetica text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1] text-[#0a0a0a] mb-8 md:mb-10">
               Some build careers. <br className="hidden md:block" />
-              <span className="text-white/30">Others build businesses.</span> <br className="hidden md:block" />
+              <span className="text-[#0a0a0a]/30">Others build businesses.</span> <br className="hidden md:block" />
               <span className="text-[#CD1D1D]">A few build people.</span>
             </h2>
             
             <div className="space-y-5 md:space-y-6 mb-8 max-w-2xl">
-              <p className="bio-text-elem font-helvetica text-base md:text-lg text-white/80 font-light leading-relaxed">
+              <p className="bio-text-elem font-helvetica text-base md:text-lg text-[#0a0a0a]/80 font-medium leading-relaxed">
                 Dr. Abdussalam Omar belongs to the third category. An internationally recognized Business Leadership Coach, Human Transformation Expert, and Social Entrepreneur, he has spent over two decades helping individuals and organizations unlock their true potential.
               </p>
               
-              <p className="bio-text-elem font-helvetica text-base md:text-lg text-white/60 font-light leading-relaxed">
+              <p className="bio-text-elem font-helvetica text-base md:text-lg text-[#0a0a0a]/60 font-medium leading-relaxed">
                 His work goes far beyond conventional coaching. Drawing from healthcare, psychology, emotional intelligence, and holistic human development, he has created a unique transformation methodology.
               </p>
             </div>
 
             <div className="bio-text-elem relative pl-5 py-2 border-l-2 border-[#CD1D1D] max-w-2xl">
-              <p className="font-helvetica text-sm md:text-base text-white/90 italic font-light leading-relaxed">
+              <p className="font-helvetica text-sm md:text-base text-[#0a0a0a]/90 italic font-medium leading-relaxed">
                 &quot;Choosing purpose over comfort, he voluntarily retired from academia to dedicate his life full-time to human transformation and entrepreneurship.&quot;
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Half: Philosophy Section - Full Width */}
-        <div className="bio-text-elem philosophy-container pt-12 md:pt-16 border-t border-white/10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div className="max-w-2xl">
-              <span className="font-courier text-[10px] uppercase tracking-widest text-[#CD1D1D] font-bold block mb-4">
-                THE CORE COACHING PHILOSOPHY
+        {/* Philosophy Grid - placed under biography content full width */}
+        <div className="pt-16 md:pt-24 philosophy-container mt-10">
+          <div className="flex flex-col mb-16 md:mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[1px] w-12 bg-[#CD1D1D]" />
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
+                The Foundation
               </span>
-              <p className="font-helvetica text-base md:text-lg text-white/60 font-light leading-relaxed">
+            </div>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+              <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#0a0a0a] max-w-2xl leading-[1.1]">
+                Core Coaching Philosophy.
+              </h2>
+              <p className="font-helvetica text-base md:text-lg text-[#0a0a0a]/60 font-medium leading-relaxed max-w-xl">
                 When people heal emotionally and discover their purpose, they become better leaders, build stronger families, and create ethical businesses.
               </p>
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-black/10">
             {philosophySteps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="philosophy-tag flex flex-col gap-3 group cursor-default"
+                className="philosophy-tag group relative p-8 md:p-10 border-r border-b border-black/10 hover:bg-black/[0.02] transition-colors duration-500 flex flex-col justify-between min-h-[240px] cursor-default"
               >
-                <div className="flex items-center gap-4">
-                  <span className="font-courier text-[#CD1D1D]/60 text-xs font-bold tracking-widest">
-                    {(idx + 1).toString().padStart(2, '0')} //
+                {/* Number & Accent */}
+                <div className="flex items-center justify-between mb-12">
+                  <span className="font-courier text-[#CD1D1D] text-lg md:text-xl font-bold tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
+                    {(idx + 1).toString().padStart(2, '0')}
                   </span>
-                  <div className="h-[1px] flex-grow bg-white/5 group-hover:bg-[#CD1D1D]/30 transition-colors duration-500" />
+                  <div className="w-12 h-[1px] bg-black/0 group-hover:bg-[#CD1D1D]/50 transition-colors duration-500" />
                 </div>
+                
+                {/* Text */}
                 <div>
-                  <span className="font-helvetica text-base font-bold text-white/90 group-hover:text-white transition-colors block mb-1">
+                  <h3 className="font-helvetica text-xl md:text-2xl font-bold text-[#0a0a0a] mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
                     {step.title}
-                  </span>
-                  <span className="font-helvetica text-xs md:text-sm text-white/40 group-hover:text-white/70 transition-colors font-light">
+                  </h3>
+                  <p className="font-helvetica text-sm text-[#0a0a0a]/60 group-hover:text-[#0a0a0a]/90 transition-colors duration-300 font-medium leading-relaxed">
                     {step.desc}
-                  </span>
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        
       </div>
     </section>
   );
