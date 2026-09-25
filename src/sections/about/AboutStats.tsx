@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -24,19 +25,19 @@ export default function AboutStats() {
       
       counters.forEach((counter) => {
         const target = parseFloat(counter.getAttribute("data-target") || "0");
+        const obj = { val: 0 };
         
-        gsap.to(counter, {
-          innerHTML: target,
+        gsap.to(obj, {
+          val: target,
           duration: 2.5,
           ease: "power3.out",
-          snap: { innerHTML: 1 },
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
           },
           onUpdate: function() {
             if (counter) {
-              counter.innerHTML = Math.ceil(Number(this.targets()[0].innerHTML)).toLocaleString();
+              counter.innerHTML = Math.ceil(obj.val).toLocaleString();
             }
           }
         });
@@ -59,11 +60,22 @@ export default function AboutStats() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#111] text-white py-24 md:py-36 relative z-10 border-t border-white/10">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem]">
+    <section ref={sectionRef} className="w-full h-[100vh] text-white relative z-10 overflow-hidden flex flex-col justify-center py-6">
+      {/* Background Image & Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/images/about/SSK04519.webp"
+          alt="Stats Background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75" />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem] relative z-10">
         
-        <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
-          <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
+        <div className="mb-8 md:mb-12 flex flex-col items-center text-center">
+          <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-3 block">
             [ IMPACT AT A GLANCE ]
           </span>
           <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-white">
@@ -74,17 +86,17 @@ export default function AboutStats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-16 lg:gap-y-24 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10 lg:gap-y-12 mb-8 md:mb-12">
           {stats.map((stat, index) => (
             <div key={index} className="stat-card flex flex-col items-center text-center">
-              <div className="flex items-baseline justify-center mb-2">
+              <div className="flex items-baseline justify-center mb-1">
                 <span 
-                  className="stat-value font-helvetica text-5xl md:text-7xl lg:text-[6rem] font-black leading-none text-white tracking-tighter"
+                  className="stat-value font-helvetica text-5xl md:text-6xl lg:text-[5.5rem] font-black leading-none text-white tracking-tighter"
                   data-target={stat.value}
                 >
-                  0
+                  {stat.value.toLocaleString()}
                 </span>
-                <span className="font-helvetica text-4xl md:text-5xl lg:text-[4rem] font-black text-[#CD1D1D] ml-1">
+                <span className="font-helvetica text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#CD1D1D] ml-1">
                   {stat.suffix}
                 </span>
               </div>
@@ -96,23 +108,23 @@ export default function AboutStats() {
         </div>
 
         {/* Featured 7th Stat Card */}
-        <div className="stat-card p-8 md:p-12 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
+        <div className="stat-card p-6 md:p-8 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto backdrop-blur-sm">
           <div className="flex items-baseline justify-center">
             <span 
-              className="stat-value font-helvetica text-6xl md:text-8xl font-black leading-none text-white tracking-tighter"
+              className="stat-value font-helvetica text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white tracking-tighter"
               data-target="1500"
             >
-              0
+              1,500
             </span>
             <span className="font-helvetica text-5xl md:text-6xl font-black text-[#CD1D1D] ml-1">
               +
             </span>
           </div>
           <div className="text-center md:text-left">
-            <span className="font-courier text-xs uppercase tracking-widest text-[#CD1D1D] font-bold block mb-2">
+            <span className="font-courier text-[10px] md:text-xs uppercase tracking-widest text-[#CD1D1D] font-bold block mb-2">
               KEYNOTE SESSIONS & LEADERSHIP WORKSHOPS
             </span>
-            <h3 className="font-helvetica text-2xl md:text-3xl font-bold text-white">
+            <h3 className="font-helvetica text-xl md:text-2xl font-bold text-white">
               Corporate Training Programs Delivered
             </h3>
             <p className="font-helvetica text-white/60 text-sm md:text-base mt-2 max-w-xl">
