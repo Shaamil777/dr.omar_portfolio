@@ -32,7 +32,7 @@ export default function AboutStory() {
       <div className="absolute top-1/3 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[30vw] h-[30vw] bg-[#CD1D1D]/5 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
-      <div className="container mx-auto px-6 lg:px-8 max-w-[90rem] relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10">
         
         {/* Top Half */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 md:mb-16">

@@ -72,7 +72,7 @@ export default function AboutStats() {
         <div className="absolute inset-0 bg-black/75" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem] relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10">
         
         <div className="mb-8 md:mb-12 flex flex-col items-center text-center">
           <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-3 block">
