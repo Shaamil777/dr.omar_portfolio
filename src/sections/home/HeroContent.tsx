@@ -188,7 +188,7 @@ const HeroContent = forwardRef<HTMLDivElement>((props, ref) => {
            {/* Top margin line above the text */}
            <div className="border-t border-white/20 pt-4 sm:pt-6 md:pt-8 w-full max-w-[95%]">
              <div 
-               className="flex flex-col text-left font-helvetica font-black text-[28px] leading-[1] xs:text-[8vw] sm:text-[38px] md:text-[50px] lg:text-[56px] uppercase sm:leading-[0.95] md:leading-[60px] lg:leading-[68px] tracking-tight hero-text-content w-full max-w-none"
+               className="flex flex-col text-left font-helvetica font-bold text-[28px] leading-[1] xs:text-[8vw] sm:text-[38px] md:text-[50px] lg:text-[60px] xl:text-[68px] uppercase sm:leading-[0.95] md:leading-[1.1] lg:leading-[1.1] tracking-tight hero-text-content w-full max-w-none"
                style={{ wordSpacing: '0.15em' }}
              >
                <div className="hero-word font-courier text-[10px] sm:text-[12px] text-white/40 font-normal mb-2 sm:mb-3 md:mb-4 tracking-[0.2em] leading-normal uppercase" style={{ wordSpacing: 'normal' }}>

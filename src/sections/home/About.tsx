@@ -62,7 +62,7 @@ export default function About() {
             <div key={index} className={`overflow-hidden ${line.indent}`}>
               <motion.h3
                 style={{ y: line.y, opacity: line.opacity }}
-                className="font-helvetica text-[7vw] sm:text-[6.5vw] md:text-[6vw] lg:text-[5vw] xl:text-[80px] 2xl:text-[90px] font-black uppercase tracking-normal leading-[0.9] text-[#111] whitespace-nowrap"
+                className="font-helvetica text-[7vw] sm:text-[6.5vw] md:text-[6vw] lg:text-[5vw] xl:text-[80px] 2xl:text-[90px] font-bold uppercase tracking-normal leading-[0.9] text-[#111] whitespace-nowrap"
               >
                 {line.text}
               </motion.h3>
@@ -91,7 +91,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-helvetica font-bold text-[#111] leading-[1.3] tracking-tight"
+                className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-helvetica font-medium text-[#111] leading-[1.3] tracking-tight"
               >
                 For over 20 years, Dr. Abdussalam Omar has helped entrepreneurs, executives, and organizations unlock their full potential through leadership coaching, human transformation, branding, and strategic business development.
               </motion.p>

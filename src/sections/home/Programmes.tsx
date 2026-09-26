@@ -154,7 +154,7 @@ export default function Programmes() {
         <div className="font-helvetica font-bold text-lg md:text-xl min-w-[80px]">
           (9)
         </div>
-        <div className="font-helvetica font-bold text-lg md:text-xl text-left md:text-center flex-1">
+        <div className="font-helvetica font-medium text-lg md:text-xl text-left md:text-center flex-1">
           Transformational Programs for Ambitious Leaders
         </div>
         <div className="w-full md:w-auto flex justify-start md:justify-end">
@@ -193,7 +193,7 @@ export default function Programmes() {
                     <div className="mb-10 text-[#111]">
                       <AbstractIcon index={i} />
                     </div>
-                    <h2 className="font-helvetica font-black text-3xl md:text-4xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
+                    <h2 className="font-helvetica font-bold text-3xl md:text-4xl uppercase leading-[0.9] tracking-normal mb-6 text-[#111]">
                         {prog.name}
                     </h2>
                   </div>

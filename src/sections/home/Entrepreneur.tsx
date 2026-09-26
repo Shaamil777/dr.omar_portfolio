@@ -221,10 +221,10 @@ export default function Entrepreneur() {
       {/* Header Container */}
       <div className="px-6 md:px-12 lg:px-24 w-full flex-shrink-0 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-2 md:mb-3 lg:mb-2">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-black uppercase leading-[0.9] tracking-normal max-w-[1000px]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-bold uppercase leading-[0.9] tracking-normal max-w-[1000px]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
             BUILDING VENTURES THAT CONNECT, PERFORM, AND MOVE PEOPLE
           </h2>
-          <span className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-black uppercase tracking-wide mt-4 md:mt-0 md:pl-8 whitespace-nowrap" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
+          <span className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide mt-4 md:mt-0 md:pl-8 whitespace-nowrap" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
             THE WORK
           </span>
         </div>
@@ -262,7 +262,7 @@ export default function Entrepreneur() {
                 <div className="card-content flex flex-col-reverse lg:flex-row gap-3 md:gap-6 lg:gap-4 xl:gap-8 justify-between items-start lg:items-center mt-1">
                   {/* Left Side: Title & Description */}
                   <div className="flex flex-col gap-1 md:gap-3 lg:gap-2 xl:gap-4 lg:w-[65%]">
-                    <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] xl:text-4xl font-black uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
+                    <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] xl:text-4xl font-bold uppercase tracking-wide leading-[0.9]" style={{fontFamily: "var(--font-helvetica, sans-serif)"}}>
                       {company.name}
                     </h3>
                     <p className="text-white/70 text-xs md:text-base lg:text-lg font-medium leading-relaxed max-w-2xl line-clamp-3 md:line-clamp-none">
