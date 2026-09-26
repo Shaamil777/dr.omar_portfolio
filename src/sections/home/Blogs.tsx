@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Blogs() {
@@ -70,9 +71,9 @@ export default function Blogs() {
           <p className="font-helvetica font-medium text-sm md:text-lg text-zinc-500 mb-8 max-w-sm mx-auto leading-relaxed">
             Explore my latest articles, insights, and thoughts on entrepreneurship, technology, and leadership.
           </p>
-          <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
+          <Link href="/blogs" className="bg-[#CD1D1D] text-white font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
             READ ALL
-          </button>
+          </Link>
         </div>
 
         {/* Flowing Cards */}

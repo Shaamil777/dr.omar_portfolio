@@ -100,7 +100,7 @@ export default function BlogsList() {
                     {blog.date}
                   </span>
                 </div>
-                <h3 className="font-helvetica font-black text-2xl md:text-3xl leading-[1.1] text-[#111] mb-6 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <h3 className="font-helvetica font-bold text-2xl md:text-3xl leading-[1.1] text-[#111] mb-6 group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {blog.title}
                 </h3>
                 
