@@ -49,65 +49,88 @@ export default function AboutAuthority() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-zinc-100 text-[#111] py-24 md:py-36 relative z-10 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem]">
-        
-        {/* Top Header & Visual Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
-          <div className="lg:col-span-7">
-            <span className="auth-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-              [ THE TRUSTED AUTHORITY ]
-            </span>
-            <h2 className="auth-element font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-[#111] mb-6">
-              Accredited & <span>Recognized</span>
-            </h2>
-            <p className="auth-element font-helvetica text-base md:text-lg text-zinc-600 mb-8 max-w-2xl">
-              Dr. Omar&apos;s multidisciplinary background enables him to integrate medical science, psychology, coaching, leadership, branding, entrepreneurship, and holistic development into one comprehensive transformation methodology.
-            </p>
+    <section ref={sectionRef} className="w-full bg-white text-[#0a0a0a] relative z-10  overflow-hidden">
+      {/* Abstract Background Element */}
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 font-helvetica font-bold text-sm md:text-base text-zinc-800">
-              {credentials.map((cred, idx) => (
-                <li key={idx} className="auth-element flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm border border-zinc-200/80">
-                  <span className="w-6 h-6 rounded-full bg-[#CD1D1D] text-white flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
-                    ✓
-                  </span>
-                  <span>{cred}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* Top Header & Visual Section - Full Right Bleed */}
+      <div className="relative w-full">
+        <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+            {/* Left side text & credentials */}
+            <div className="lg:col-span-7 flex flex-col justify-center auth-element py-20 md:py-32 lg:pr-16">
+              <h2 className="font-helvetica text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-[0.85] text-[#0a0a0a] uppercase mb-10">
+                Accredited<br />
+                <span className="text-[#CD1D1D]">Authority</span>
+              </h2>
+              
+              <div className="pl-5 border-l-[3px] border-[#CD1D1D] mb-16 max-w-2xl">
+                <p className="font-helvetica text-lg md:text-[22px] text-[#0a0a0a]/80 leading-relaxed font-medium">
+                  Dr. Omar's multidisciplinary background enables him to integrate medical science, psychology, coaching, leadership, branding, entrepreneurship, and holistic development into one comprehensive transformation methodology.
+                </p>
+              </div>
 
-          <div className="lg:col-span-5 auth-element relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border border-black/10">
-            <Image 
-              src="/images/about/DSC06856.jpg"
-              alt="Dr. Abdussalam Omar Authority"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-            />
+              <div className="w-full">
+                <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.25em] text-[#0a0a0a]/40 font-bold mb-8 block">
+                  Select Credentials & Recognitions
+                </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 border-t border-black/10 pt-8">
+                  {credentials.map((cred, idx) => (
+                    <div key={idx} className="flex items-start gap-4 group">
+                      <span className="font-courier text-[#CD1D1D] font-bold text-xs mt-1 transition-transform duration-300 group-hover:translate-x-1">
+                        {(idx + 1).toString().padStart(2, '0')}
+                      </span>
+                      <span className="font-helvetica text-sm md:text-base font-medium text-[#0a0a0a]/80 leading-snug group-hover:text-[#0a0a0a] transition-colors duration-300">
+                        {cred}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Placeholder to keep grid layout intact while image breaks out */}
+            <div className="hidden lg:block lg:col-span-5" />
           </div>
         </div>
 
+        {/* Right side Image (Bleeds to the right edge and touches top/bottom) */}
+        <div className="auth-element relative w-full h-[500px] lg:absolute lg:top-0 lg:right-0 lg:w-[45%] xl:w-[45%] lg:h-full z-0">
+          <Image 
+            src="/images/about/DSC06856.jpg"
+            alt="Dr. Abdussalam Omar Authority"
+            fill
+            className="object-cover object-[center_30%] grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+          />
+          {/* Subtle Left Border Overlay for separation */}
+          <div className="absolute inset-0 lg:border-l border-black/10 pointer-events-none" />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10 pb-24 md:pb-40">
         {/* 10 Areas of Expertise Grid */}
-        <div className="auth-element p-8 md:p-14 bg-[#111] rounded-[32px] text-white">
-          <div className="mb-10 text-center md:text-left">
-            <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
-              [ MULTIDISCIPLINARY FRAMEWORK ]
-            </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight">
-              10 Core Areas of Expertise
-            </h3>
-            <p className="font-helvetica text-sm md:text-base text-white/60 mt-2">
+        <div className="auth-element pt-8 md:pt-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+            <div>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
+                [ MULTIDISCIPLINARY FRAMEWORK ]
+              </span>
+              <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#0a0a0a]">
+                10 Core Areas<br />of Expertise
+              </h3>
+            </div>
+            <p className="font-helvetica text-base md:text-lg text-[#0a0a0a]/60 font-medium max-w-md">
               Combining healthcare, psychology, leadership, business, and coaching into one practical transformation methodology.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-black/10">
             {expertise.map((item, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#CD1D1D] transition-colors flex items-start gap-4">
-                <span className="font-courier text-xs font-bold text-[#CD1D1D] pt-1">
-                  0{index + 1}
+              <div key={index} className="group p-6 md:p-8 border-r border-b border-black/10 flex flex-col justify-between min-h-[220px] hover:bg-black/[0.03] transition-colors duration-500 cursor-default">
+                <span className="font-courier text-[#CD1D1D] text-lg font-bold opacity-80 group-hover:opacity-100 transition-opacity">
+                  {(index + 1).toString().padStart(2, '0')}
                 </span>
-                <span className="font-helvetica font-bold text-lg uppercase tracking-wide text-white/90">
+                <span className="font-helvetica font-bold text-lg leading-snug tracking-tight text-[#0a0a0a] group-hover:text-[#CD1D1D] transition-colors">
                   {item}
                 </span>
               </div>

@@ -57,92 +57,101 @@ export default function AboutPhilanthropy() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white text-[#111] py-24 md:py-40 relative z-10 border-t border-black/10">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[90rem]">
-        
-        {/* Philanthropy & Ruqayya Foundation */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28">
-          <div className="lg:col-span-7">
-            <div className="w-16 h-16 rounded-full bg-[#CD1D1D]/10 flex items-center justify-center mb-6 phil-element">
-              <svg className="w-8 h-8 text-[#CD1D1D]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
+    <section ref={sectionRef} className="w-full bg-[#0a0a0a] text-white py-24 md:py-40 relative z-10 border-t border-white/10 overflow-hidden">
+      {/* Abstract Background Elements */}
+      <div className="absolute top-1/4 left-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] -translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] translate-y-1/3 translate-x-1/4 pointer-events-none" />
 
-            <span className="phil-element font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
+      <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10">
+        
+        {/* Top Header & Visual Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch mb-32">
+          {/* Left Side - Text */}
+          <div className="lg:col-span-7 flex flex-col justify-center phil-element py-12 lg:pr-16">
+            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block">
               [ THE HIGHER PURPOSE ]
             </span>
-            <h2 className="phil-element font-helvetica text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[0.9] text-[#111] mb-8">
-              Protecting the <span className="text-[#CD1D1D]">Vulnerable</span>
+            <h2 className="font-helvetica text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-[0.85] text-white uppercase mb-10">
+              Protecting the<br />
+              <span className="text-[#CD1D1D]">Vulnerable</span>
             </h2>
             
-            <p className="phil-element font-helvetica text-lg md:text-2xl text-zinc-700 font-bold leading-relaxed mb-6">
-              The ultimate drive of a leader is not just profit, but humanity. Dr. Omar’s commitment to societal impact is most evident in his role as Chairman of the Ruqayya Foundation.
-            </p>
-            <p className="phil-element font-helvetica text-base md:text-lg text-zinc-600 leading-relaxed">
+            <div className="pl-5 border-l-[3px] border-[#CD1D1D] mb-12 max-w-2xl">
+              <p className="font-helvetica text-lg md:text-[22px] text-white/90 leading-relaxed font-medium">
+                The ultimate drive of a leader is not just profit, but humanity. Dr. Omar’s commitment to societal impact is most evident in his role as Chairman of the Ruqayya Foundation.
+              </p>
+            </div>
+            
+            <p className="font-helvetica text-base md:text-lg text-white/60 leading-relaxed max-w-2xl font-light">
               Dedicated to protecting, educating, mentoring, and empowering more than 10,000 families through counselling, education, leadership development, life skills, and sustainable social initiatives—because ethical wealth creates lasting impact.
             </p>
           </div>
 
-          <div className="lg:col-span-5 phil-element relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border border-black/10">
+          {/* Right Side - Image */}
+          <div className="lg:col-span-5 phil-element relative w-full h-[500px] lg:h-auto min-h-[500px] rounded-[24px] lg:rounded-[40px] overflow-hidden">
             <Image 
               src="/images/about/DSC07408.jpg"
               alt="Dr. Abdussalam Omar - Ruqayya Foundation"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
             />
+            <div className="absolute inset-0 border border-white/10 rounded-[24px] lg:rounded-[40px] pointer-events-none" />
           </div>
         </div>
 
         {/* Future Vision Grid */}
-        <div className="mb-28 phil-element">
-          <div className="mb-12 text-center">
-            <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
-              [ THE ROAD AHEAD ]
-            </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight text-[#111]">
-              Future Vision & Institutions
-            </h3>
-            <p className="font-helvetica text-sm md:text-base text-zinc-500 max-w-xl mx-auto mt-2">
+        <div className="mb-32 phil-element pt-16 border-t border-white/10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+            <div>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
+                [ THE ROAD AHEAD ]
+              </span>
+              <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+                Future Vision<br />& Institutions
+              </h3>
+            </div>
+            <p className="font-helvetica text-base md:text-lg text-white/60 font-medium max-w-md">
               Building institutions that outlive him—institutions that inspire people to discover purpose, serve humanity, create ethical prosperity, and build a more peaceful world.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {futureVisions.map((vision, idx) => (
-              <div key={idx} className="p-8 md:p-10 rounded-[28px] bg-zinc-900 text-white border border-black/10 flex flex-col justify-between">
+              <div key={idx} className="group p-8 md:p-10 border-r border-b border-white/10 flex flex-col justify-between min-h-[320px] hover:bg-white/[0.02] transition-colors duration-500 cursor-default">
                 <div>
-                  <span className="font-courier text-xs font-bold text-[#CD1D1D] block mb-3">
-                    0{idx + 1} // FUTURE VISION
+                  <span className="font-courier text-[#CD1D1D] text-xs font-bold block mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                    0{idx + 1} // VISION
                   </span>
-                  <h4 className="font-helvetica text-2xl md:text-3xl font-bold tracking-tight mb-4 text-white">
+                  <h4 className="font-helvetica text-2xl font-bold tracking-tight mb-4 text-white group-hover:text-[#CD1D1D] transition-colors">
                     {vision.title}
                   </h4>
-                  <p className="font-helvetica text-sm md:text-base text-white/70 leading-relaxed">
-                    {vision.desc}
-                  </p>
                 </div>
+                <p className="font-helvetica text-sm text-white/60 leading-relaxed font-light">
+                  {vision.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Words to Live By */}
-        <div className="phil-element p-10 md:p-16 rounded-[32px] bg-[#111] text-white">
-          <div className="mb-10 text-center">
-            <span className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-2">
+        <div className="phil-element pt-24 border-t border-white/10">
+          <div className="mb-16 text-center lg:text-left">
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
               [ GUIDING PRINCIPLES ]
             </span>
-            <h3 className="font-helvetica text-3xl md:text-5xl font-bold tracking-tight">
+            <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               Words to Live By
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
             {wordsToLiveBy.map((quote, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start gap-4">
-                <span className="text-[#CD1D1D] font-black text-xl leading-none">“</span>
-                <p className="font-helvetica font-bold text-base md:text-lg uppercase tracking-wide text-white/90">
+              <div key={idx} className="flex items-start gap-6 group">
+                <span className="text-[#CD1D1D] font-helvetica font-black text-4xl md:text-5xl leading-none pt-1 opacity-50 group-hover:opacity-100 transition-opacity">
+                  “
+                </span>
+                <p className="font-helvetica text-xl md:text-2xl font-medium tracking-tight text-white/70 group-hover:text-white transition-colors leading-snug">
                   {quote}
                 </p>
               </div>
