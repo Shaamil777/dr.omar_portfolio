@@ -21,7 +21,7 @@ export default function Hero() {
       const container = containerRef.current;
       if (!container) return;
   
-      let ctx = gsap.context(() => {
+      const ctx = gsap.context(() => {
         const obj = { frame: 0 };
         
         const tl = gsap.timeline({

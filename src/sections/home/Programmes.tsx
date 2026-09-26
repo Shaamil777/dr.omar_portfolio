@@ -91,7 +91,7 @@ export default function Programmes() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       // 1. Endless Marquee Animation
       gsap.to(marqueeRef.current, {
         xPercent: -50,
@@ -178,17 +178,17 @@ export default function Programmes() {
              >
                 
                 {/* Pop-out Image 1 (Bottom Left) */}
-                <div className="absolute inset-0 m-auto w-[90%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-x-[40%] md:group-hover:-translate-x-[50%] group-hover:translate-y-[80%] md:group-hover:translate-y-[100%] group-hover:-rotate-[15deg] shadow-2xl pointer-events-none">
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-x-[35%] group-hover:translate-y-[60%] group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
                   <Image src={img1} alt="" fill className="object-cover" />
                 </div>
 
                 {/* Pop-out Image 2 (Bottom Right) */}
-                <div className="absolute inset-0 m-auto w-[90%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-[40%] md:group-hover:translate-x-[50%] group-hover:translate-y-[70%] md:group-hover:translate-y-[90%] group-hover:rotate-[12deg] shadow-2xl pointer-events-none">
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-[35%] group-hover:translate-y-[45%] group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
                   <Image src={img2} alt="" fill className="object-cover" />
                 </div>
 
                 {/* Main Card */}
-                <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-16 group-hover:-rotate-3 group-hover:scale-105 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] min-h-[400px] md:min-h-[450px] w-full transform-gpu origin-bottom">
+                <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-12 group-hover:-rotate-2 group-hover:scale-[1.03] group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] h-full min-h-[380px] md:min-h-[420px] w-full transform-gpu origin-bottom">
                   <div>
                     <div className="mb-10 text-[#111]">
                       <AbstractIcon index={i} />

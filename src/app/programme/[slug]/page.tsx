@@ -47,7 +47,7 @@ export default async function DynamicCompanyPage({
         <ProgrammeMissionVision company={company} />
         <ProgrammeHighlight company={company} />
         <ProgrammeFeatures company={company} />
-        <CompanyOwnsSection company={company} />
+        <CompanyOwnsSection />
         <ProgrammeGallery company={company} />
         <ProgrammeTestimonial company={company} />
         <ProgrammeFAQ company={company} />

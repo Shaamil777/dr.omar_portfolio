@@ -136,7 +136,7 @@ export default function Testimonial() {
           </div>
           
           <div className="flex flex-col gap-48 md:gap-[40vh] lg:py-[30vh]">
-            {testimonials.map((t, i) => (
+            {testimonials.map((t) => (
               <div key={t.id} className="quote-block flex flex-col transition-all cursor-none">
                 <div className="lg:hidden w-20 h-20 relative rounded-full overflow-hidden mb-8 bg-zinc-200 shadow-lg">
                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale" />

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import type { CompanyData } from "@/constants/companies";
 
-export default function CompanyOwnsSection({ company }: { company: CompanyData }) {
+export default function CompanyOwnsSection() {
   // We can use default placeholder logos for the companies owned by Dr Omar
   // Using some abstract Unsplash images to represent corporate logos
   const ownedCompanies = [
