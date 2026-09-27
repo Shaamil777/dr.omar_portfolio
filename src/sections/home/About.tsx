@@ -46,8 +46,7 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  // Background moves up slowly, Person moves down slowly (classic parallax depth)
-  const bgParallax = useTransform(rowProgress, [0, 1], ["-10%", "10%"]);
+  // Person moves down slowly (classic parallax depth)
   const personParallax = useTransform(rowProgress, [0, 1], ["10%", "-10%"]);
 
   return (
@@ -158,28 +157,13 @@ export default function About() {
           {/* Image Area with Parallax and Reveal */}
           <div className="w-full lg:w-1/2 relative flex justify-center items-end min-h-[350px] sm:min-h-[500px] lg:min-h-[950px] mt-8 lg:-mt-96">
             
-            {/* Abstract Background (Blob scales) */}
-            <motion.div 
-              style={{ y: bgParallax }}
-              className="absolute inset-0 z-0 flex items-center justify-center"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 2, ease: "easeOut" }}
-                style={{ backgroundImage: `url('/images/about/about_abstract.png')` }}
-                className="w-[250%] h-[250%] sm:w-[180%] sm:h-[180%] lg:w-full lg:h-full bg-contain blur-[0.7px] bg-center bg-no-repeat"
-              />
-            </motion.div>
-            
             {/* Person Container (Portrait fades up) */}
             <motion.div 
               style={{ y: personParallax }}
-              className="relative z-10 flex flex-col items-center w-[90%] sm:w-[75%] lg:w-[65%] mb-0 sm:mb-8 lg:mb-20"
+              className="relative z-10 flex flex-col items-center w-[95%] sm:w-[80%] lg:w-[75%] translate-y-4 lg:translate-y-12 mb-0 sm:mb-4 lg:mb-10"
             >
               <img 
-                src="/images/about/09.png" 
+                src="/images/about/dr_line2.png" 
                 alt="Dr. Omar" 
                 className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] contrast-[1.1] saturate-[1.1] [mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]" 
               />

@@ -113,32 +113,14 @@ export default function Entrepreneur() {
         ease: "none"
       });
 
-      // 2. Velocity-Based Skew Physics
-      const proxy = { skew: 0 };
-      const skewSetter = gsap.quickSetter(".card-inner", "skewX", "deg");
-      const clamp = gsap.utils.clamp(-15, 15); // Increased max skew
-
       ScrollTrigger.create({
         trigger: section,
         start: "top top",
         end: () => `+=${getScrollAmount()}`,
         pin: true,
         animation: tween,
-        scrub: 1.5, // Increased scrub slightly for more rubber-band feel
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const velocity = clamp(self.getVelocity() / -100); // Lower divisor makes it skew more easily
-          if (Math.abs(velocity) > Math.abs(proxy.skew)) {
-            proxy.skew = velocity;
-            gsap.to(proxy, {
-              skew: 0,
-              duration: 1.5,
-              ease: "elastic.out(1, 0.4)", // This provides the bouncy, elastic snap-back
-              overwrite: true,
-              onUpdate: () => skewSetter(proxy.skew)
-            });
-          }
-        }
+        scrub: 1.5, // Smooth scrub
+        invalidateOnRefresh: true
       });
 
       // 3. Card Parallax, Stagger & Dynamic Background Colors
