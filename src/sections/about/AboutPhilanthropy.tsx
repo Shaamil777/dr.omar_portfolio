@@ -29,18 +29,6 @@ export default function AboutPhilanthropy() {
     },
   ];
 
-  const wordsToLiveBy = [
-    "Healing is the beginning of every transformation.",
-    "Purpose gives direction. Habits create destiny.",
-    "Your past may shape you, but it never has to define your future.",
-    "Businesses grow only as much as their leaders grow.",
-    "Dream boldly. Live ethically. Serve generously.",
-    "Inner peace is the highest form of success.",
-    "Build systems that create freedom, not dependency.",
-    "Ethical wealth creates lasting impact.",
-    "Identity shapes habits, and habits shape destiny.",
-    "Leave every person and every organization better than you found them.",
-  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -134,30 +122,6 @@ export default function AboutPhilanthropy() {
           </div>
         </div>
 
-        {/* Words to Live By */}
-        <div className="phil-element pt-24 border-t border-white/10">
-          <div className="mb-16 text-center lg:text-left">
-            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
-              [ GUIDING PRINCIPLES ]
-            </span>
-            <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
-              Words to Live By
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-            {wordsToLiveBy.map((quote, idx) => (
-              <div key={idx} className="flex items-start gap-6 group">
-                <span className="text-[#CD1D1D] font-helvetica font-black text-4xl md:text-5xl leading-none pt-1 opacity-50 group-hover:opacity-100 transition-opacity">
-                  “
-                </span>
-                <p className="font-helvetica text-xl md:text-2xl font-medium tracking-tight text-white/70 group-hover:text-white transition-colors leading-snug">
-                  {quote}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
 
       </div>
     </section>

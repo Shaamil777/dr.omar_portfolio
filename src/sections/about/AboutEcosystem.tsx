@@ -122,14 +122,18 @@ export default function AboutEcosystem() {
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div 
+          className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory gap-4 lg:gap-0 pb-6 lg:pb-0 -mx-6 px-6 lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden" 
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          data-lenis-prevent="true"
+        >
           {organizations.map((org: any, index) => (
             <div 
               key={index} 
-              className={`eco-row flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 py-10 lg:py-16 ${index !== 0 ? 'border-t border-[#CD1D1D]/40' : ''}`}
+              className={`eco-row flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-16 p-8 lg:p-0 lg:py-16 min-w-[85vw] sm:min-w-[60vw] lg:min-w-0 snap-center lg:snap-none bg-white/[0.03] lg:bg-transparent rounded-3xl lg:rounded-none border border-white/5 lg:border-0 ${index !== 0 ? 'lg:border-t lg:border-[#CD1D1D]/40' : ''}`}
             >
               {/* Logo Column */}
-              <div className="w-full lg:w-[35%] flex-shrink-0 flex items-center lg:items-start lg:pt-1">
+              <div className="w-full lg:w-[35%] flex-shrink-0 flex items-center lg:items-start lg:pt-1 min-h-[80px] lg:min-h-0">
                 {org.logo}
               </div>
 
@@ -137,7 +141,7 @@ export default function AboutEcosystem() {
               <div className="w-full lg:w-[65%] flex flex-col gap-4">
                 <h3 className="font-helvetica text-lg md:text-xl">
                   {org.name && <span className="font-bold text-white">{org.name} </span>}
-                  <span className={`font-medium italic ${org.isHea ? 'text-[#2986CC]' : 'text-white/90'}`}>{org.tagline}</span>
+                  <span className={`font-medium italic block lg:inline mt-1 lg:mt-0 ${org.isHea ? 'text-[#2986CC]' : 'text-white/90'}`}>{org.tagline}</span>
                 </h3>
                 <div className="font-helvetica text-sm md:text-base text-white/70 font-light leading-relaxed">
                   {org.desc}

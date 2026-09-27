@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutAuthority() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [showAllCredentials, setShowAllCredentials] = useState(false);
+  const [showAllExpertise, setShowAllExpertise] = useState(false);
 
   const credentials = [
     "ICF Accredited Leadership & Executive Coach",
@@ -76,7 +78,10 @@ export default function AboutAuthority() {
                 </span>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 border-t border-black/10 pt-8">
                   {credentials.map((cred, idx) => (
-                    <div key={idx} className="flex items-start gap-4 group">
+                    <div 
+                      key={idx} 
+                      className={`items-start gap-4 group ${!showAllCredentials && idx >= 2 ? 'hidden md:flex' : 'flex'}`}
+                    >
                       <span className="font-courier text-[#CD1D1D] font-bold text-xs mt-1 transition-transform duration-300 group-hover:translate-x-1">
                         {(idx + 1).toString().padStart(2, '0')}
                       </span>
@@ -86,6 +91,16 @@ export default function AboutAuthority() {
                     </div>
                   ))}
                 </div>
+                
+                {/* Mobile Show More Button */}
+                {!showAllCredentials && credentials.length > 2 && (
+                  <button 
+                    onClick={() => setShowAllCredentials(true)}
+                    className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  >
+                    <span>[ + SHOW ALL CREDENTIALS ]</span>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -126,7 +141,10 @@ export default function AboutAuthority() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-black/10">
             {expertise.map((item, index) => (
-              <div key={index} className="group p-6 md:p-8 border-r border-b border-black/10 flex flex-col justify-between min-h-[220px] hover:bg-black/[0.03] transition-colors duration-500 cursor-default">
+              <div 
+                key={index} 
+                className={`group p-6 md:p-8 border-r border-b border-black/10 flex-col justify-between min-h-[220px] hover:bg-black/[0.03] transition-colors duration-500 cursor-default ${!showAllExpertise && index >= 2 ? 'hidden md:flex' : 'flex'}`}
+              >
                 <span className="font-courier text-[#CD1D1D] text-lg font-bold opacity-80 group-hover:opacity-100 transition-opacity">
                   {(index + 1).toString().padStart(2, '0')}
                 </span>
@@ -136,6 +154,16 @@ export default function AboutAuthority() {
               </div>
             ))}
           </div>
+
+          {/* Mobile Show More Button for Expertise */}
+          {!showAllExpertise && expertise.length > 2 && (
+            <button 
+              onClick={() => setShowAllExpertise(true)}
+              className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <span>[ + SHOW ALL EXPERTISE ]</span>
+            </button>
+          )}
         </div>
 
       </div>

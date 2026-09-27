@@ -60,7 +60,7 @@ export default function AboutStats() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full h-[100vh] text-white relative z-10 overflow-hidden flex flex-col justify-center py-6">
+    <section ref={sectionRef} className="w-full h-auto text-white relative z-10 overflow-hidden flex flex-col justify-center py-12 md:py-24">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -86,21 +86,21 @@ export default function AboutStats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10 lg:gap-y-12 mb-8 md:mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6 md:gap-y-10 lg:gap-y-12 mb-8 md:mb-12">
           {stats.map((stat, index) => (
             <div key={index} className="stat-card flex flex-col items-center text-center">
               <div className="flex items-baseline justify-center mb-1">
                 <span 
-                  className="stat-value font-helvetica text-5xl md:text-6xl lg:text-[5.5rem] font-black leading-none text-white tracking-tighter"
+                  className="stat-value font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[5.5rem] font-black leading-none text-white tracking-tighter"
                   data-target={stat.value}
                 >
                   {stat.value.toLocaleString()}
                 </span>
-                <span className="font-helvetica text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#CD1D1D] ml-1">
+                <span className="font-helvetica text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-black text-[#CD1D1D] ml-1">
                   {stat.suffix}
                 </span>
               </div>
-              <p className="font-courier font-bold text-xs md:text-sm uppercase tracking-widest text-white/60 max-w-[160px] md:max-w-xs">
+              <p className="font-courier font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/60 max-w-[140px] sm:max-w-[160px] md:max-w-xs">
                 {stat.label}
               </p>
             </div>
@@ -108,15 +108,15 @@ export default function AboutStats() {
         </div>
 
         {/* Featured 7th Stat Card */}
-        <div className="stat-card p-6 md:p-8 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto backdrop-blur-sm">
-          <div className="flex items-baseline justify-center">
+        <div className="stat-card p-5 sm:p-6 md:p-8 rounded-[24px] sm:rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 max-w-5xl mx-auto backdrop-blur-sm">
+          <div className="flex items-baseline justify-center shrink-0">
             <span 
-              className="stat-value font-helvetica text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white tracking-tighter"
+              className="stat-value font-helvetica text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-none text-white tracking-tighter"
               data-target="1500"
             >
               1,500
             </span>
-            <span className="font-helvetica text-5xl md:text-6xl font-black text-[#CD1D1D] ml-1">
+            <span className="font-helvetica text-3xl sm:text-4xl md:text-6xl font-black text-[#CD1D1D] ml-1">
               +
             </span>
           </div>

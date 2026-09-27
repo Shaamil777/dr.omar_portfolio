@@ -12,16 +12,7 @@ export default function AboutBiography() {
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  const philosophySteps = [
-    { title: "Identity", desc: "Knowing who you are" },
-    { title: "Clarity", desc: "Seeing the path ahead" },
-    { title: "Purpose", desc: "Finding your 'why'" },
-    { title: "Direction", desc: "Moving with intent" },
-    { title: "Discipline", desc: "Consistent action" },
-    { title: "Habits", desc: "Building the foundation" },
-    { title: "Excellence", desc: "Mastering the craft" },
-    { title: "Significance", desc: "Leaving a legacy" }
-  ];
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -74,18 +65,18 @@ export default function AboutBiography() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white text-[#0a0a0a] pt-24 md:pt-32 pb-16 md:pb-24 relative overflow-hidden z-10">
+    <section ref={sectionRef} className="w-full bg-white text-[#0a0a0a] pt-16 md:pt-32 pb-12 md:pb-24 relative overflow-hidden z-10">
       {/* Abstract Background Elements */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-10 max-w-[90rem] relative z-10 pointer-events-auto">
         
         {/* Top Half: Image & Bio Text */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-12 lg:mb-24">
           
           {/* Left: Image Cutout */}
           <div className="lg:col-span-5 relative group" ref={imageRef}>
-            <div className="bio-image-wrapper relative w-full h-[600px] md:h-[700px] lg:h-[850px]">
+            <div className="bio-image-wrapper relative w-full h-[450px] sm:h-[550px] md:h-[700px] lg:h-[850px]">
               <Image 
                 src="/images/about/dr_lines.png"
                 alt="Dr. Abdussalam Omar Profile"
@@ -149,48 +140,7 @@ export default function AboutBiography() {
           </div>
         </div>
 
-        {/* Philosophy Grid - placed under biography content full width */}
-        <div className="pt-16 md:pt-24 philosophy-container mt-10">
-          <div className="flex flex-col mb-16 md:mb-20">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-12 bg-[#CD1D1D]" />
-              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
-                The Foundation
-              </span>
-            </div>
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-              <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#0a0a0a] max-w-2xl leading-[1.1]">
-                Core Coaching Philosophy.
-              </h2>
-              <p className="font-helvetica text-base md:text-lg text-[#0a0a0a]/60 font-medium leading-relaxed max-w-xl">
-                When people heal emotionally and discover their purpose, they become better leaders, build stronger families, and create ethical businesses.
-              </p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-6 lg:gap-y-8">
-            {philosophySteps.map((step, idx) => (
-              <div 
-                key={idx} 
-                className="philosophy-tag flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 border-b border-black/10 pb-4 md:pb-6 cursor-default"
-              >
-                <span className="font-courier text-[#CD1D1D] text-sm md:text-base font-bold tracking-widest min-w-[30px]">
-                  {(idx + 1).toString().padStart(2, '0')}
-                </span>
-                
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 flex-grow">
-                  <h4 className="font-helvetica text-lg md:text-xl font-bold text-[#0a0a0a] min-w-[120px]">
-                    {step.title}
-                  </h4>
-                  <span className="hidden sm:block text-black/10">—</span>
-                  <p className="font-helvetica text-sm md:text-base text-[#0a0a0a]/60 font-medium">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );
