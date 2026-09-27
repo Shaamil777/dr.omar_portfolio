@@ -56,21 +56,6 @@ export default function Hero() {
           }
         }, 0);
   
-        // 3. Animate Telemetry Widgets (Scattered Data)
-        const sticky = stickyRef.current;
-        if (sticky) {
-          const widgets = sticky.querySelectorAll('.telemetry-widget');
-          widgets.forEach((widget, index) => {
-            const targetColor = widget.getAttribute('data-reveal-color') || '#ffffff';
-            tl.to(widget, {
-              '--progress': 1, // Animates the custom CSS variable from 0 to 1
-              opacity: 1,
-              color: targetColor, // Change color from white to the specific reveal color
-              duration: 0.15,
-              ease: 'power2.out'
-            }, index * 0.12 + 0.1); // Staggered reveal as we scroll
-          });
-        }
   
         // 4. Animate Redactions and Background
         if (contentRef.current) {
@@ -83,15 +68,15 @@ export default function Hero() {
             const redactionBoxes = textContent.querySelectorAll('.redaction-box');
             
             // Make text visible (still covered by red boxes initially)
-            tl.set(hiddenTexts, { autoAlpha: 1 }, 0.1);
+            tl.set(hiddenTexts, { autoAlpha: 1 }, 0.02);
             
             // Shrink the red boxes to reveal the text
             tl.to(redactionBoxes, {
               scaleX: 0,
-              duration: 0.4,
-              stagger: 0.15,
+              duration: 0.15,
+              stagger: 0.05,
               ease: 'power3.inOut'
-            }, 0.2);
+            }, 0.05);
           }
           
           if (overlay) {
