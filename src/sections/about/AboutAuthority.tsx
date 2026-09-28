@@ -124,6 +124,7 @@ export default function AboutAuthority() {
 
       <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10 pb-24 md:pb-40">
         {/* 10 Areas of Expertise Grid */}
+        {/* 
         <div className="auth-element pt-8 md:pt-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
             <div>
@@ -153,7 +154,6 @@ export default function AboutAuthority() {
             ))}
           </div>
 
-          {/* Mobile Show More Button for Expertise */}
           {!showAllExpertise && expertise.length > 2 && (
             <button 
               onClick={() => setShowAllExpertise(true)}
@@ -163,7 +163,7 @@ export default function AboutAuthority() {
             </button>
           )}
         </div>
-
+        */}
       </div>
     </section>
   );
