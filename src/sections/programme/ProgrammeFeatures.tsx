@@ -95,9 +95,7 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
         
         {/* Section Header */}
         <div className="mb-12 md:mb-16 flex flex-col items-start lg:ml-8">
-          <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-            [ WHAT YOU GET ]
-          </span>
+          <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> WHAT YOU GET </span>
           <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4.5rem] font-bold tracking-normal leading-[0.9] text-[#111]">
             The Ecosystem
           </h2>

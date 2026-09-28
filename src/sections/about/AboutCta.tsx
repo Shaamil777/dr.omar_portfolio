@@ -46,9 +46,7 @@ export default function AboutCta() {
 
         {/* The Next Chapter */}
         <div className="cta-element w-full flex flex-col items-center pt-24 border-t border-black/10">
-          <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#0a0a0a]/40 font-bold mb-8 block">
-            [ THE NEXT CHAPTER ]
-          </span>
+          <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#0a0a0a]/40 font-bold mb-8 block"> THE NEXT CHAPTER </span>
           
           <h2 className="font-helvetica text-5xl md:text-7xl lg:text-[8rem] font-bold tracking-tighter leading-[0.85] text-[#0a0a0a] uppercase mb-16">
             Begin Your<br />

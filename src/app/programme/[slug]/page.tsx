@@ -23,7 +23,7 @@ export default async function DynamicCompanyPage({
   const company = companiesData.find((c) => c.slug === slug);
 
   if (!company) {
-    notFound();
+    return <div>Error: company with slug {slug} not found</div>;
   }
 
   return (

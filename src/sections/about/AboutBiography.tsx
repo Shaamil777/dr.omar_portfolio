@@ -95,10 +95,10 @@ export default function AboutBiography() {
                   </span>
                   <div className="h-10 w-[1px] bg-black/20" />
                   <div className="flex flex-col gap-1">
-                    <span className="font-courier text-[10px] md:text-[11px] font-bold text-[#CD1D1D] uppercase tracking-[0.25em]">
+                    <span className="font-courier text-xs md:text-sm font-bold text-[#CD1D1D] uppercase tracking-[0.25em]">
                       Years of Impact
                     </span>
-                    <span className="font-helvetica text-[10px] md:text-[11px] text-[#0a0a0a]/60 font-medium leading-snug max-w-[160px]">
+                    <span className="font-helvetica text-xs md:text-sm text-[#0a0a0a]/60 font-medium leading-snug max-w-[160px]">
                       Developing People Before Developing Businesses
                     </span>
                   </div>
@@ -111,7 +111,7 @@ export default function AboutBiography() {
           <div className="lg:col-span-7 flex flex-col pt-16 lg:pt-0 lg:pl-6" ref={textRef}>
             <div className="bio-text-elem flex items-center gap-4 mb-6 md:mb-8">
               <div className="h-[1px] w-8 bg-[#CD1D1D]" />
-              <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
                 ABOUT DR. ABDUSSALAM OMAR
               </span>
             </div>

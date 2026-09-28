@@ -92,11 +92,11 @@ export default function BlogsList() {
               {/* Content */}
               <div className="flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-courier text-[#CD1D1D] font-bold text-[10px] tracking-widest uppercase">
+                  <span className="font-courier text-[#CD1D1D] font-bold text-xs tracking-widest uppercase">
                     {blog.category}
                   </span>
                   <span className="w-1 h-1 rounded-full bg-zinc-300"></span>
-                  <span className="font-courier text-zinc-500 font-bold text-[10px] tracking-widest uppercase">
+                  <span className="font-courier text-zinc-500 font-bold text-xs tracking-widest uppercase">
                     {blog.date}
                   </span>
                 </div>

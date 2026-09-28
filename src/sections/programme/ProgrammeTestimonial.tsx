@@ -67,9 +67,7 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-              [ THE ALUMNI ]
-            </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> THE ALUMNI </span>
             <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
               Leaders Who<br/>Scaled
             </h2>

@@ -39,9 +39,7 @@ export default function CompanyOwnsSection() {
       `}} />
 
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] mb-20 text-center">
-        <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-          [ DR. OMAR'S ECOSYSTEM ]
-        </span>
+        <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> DR. OMAR'S ECOSYSTEM </span>
         <h2 className="font-helvetica text-3xl md:text-4xl lg:text-[4rem] font-bold tracking-normal leading-[1] text-[#111] flex flex-wrap justify-center gap-x-4 lg:gap-x-6">
           <span>Companies Dr. Omar</span>
           <span className="text-[#CD1D1D]">Owns</span>

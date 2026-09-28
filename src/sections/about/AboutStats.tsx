@@ -75,9 +75,7 @@ export default function AboutStats() {
       <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10">
         
         <div className="mb-8 md:mb-12 flex flex-col items-center text-center">
-          <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-3 block">
-            [ IMPACT AT A GLANCE ]
-          </span>
+          <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-3 block"> IMPACT AT A GLANCE </span>
           <h2 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9] text-white">
             Scale <span>by the</span> Numbers
           </h2>
@@ -100,7 +98,7 @@ export default function AboutStats() {
                   {stat.suffix}
                 </span>
               </div>
-              <p className="font-courier font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/60 max-w-[140px] sm:max-w-[160px] md:max-w-xs">
+              <p className="font-courier font-bold text-xs sm:text-sm md:text-base uppercase tracking-widest text-white/60 max-w-[140px] sm:max-w-[160px] md:max-w-xs">
                 {stat.label}
               </p>
             </div>
@@ -121,7 +119,7 @@ export default function AboutStats() {
             </span>
           </div>
           <div className="text-center md:text-left">
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-widest text-[#CD1D1D] font-bold block mb-2">
+            <span className="font-courier text-xs md:text-sm uppercase tracking-widest text-[#CD1D1D] font-bold block mb-2">
               KEYNOTE SESSIONS & LEADERSHIP WORKSHOPS
             </span>
             <h3 className="font-helvetica text-xl md:text-2xl font-bold text-white">

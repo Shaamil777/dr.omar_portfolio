@@ -56,9 +56,7 @@ export default function AboutPhilanthropy() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch mb-32">
           {/* Left Side - Text */}
           <div className="lg:col-span-7 flex flex-col justify-center phil-element py-12 lg:pr-16">
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block">
-              [ THE HIGHER PURPOSE ]
-            </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> THE HIGHER PURPOSE </span>
             <h2 className="font-helvetica text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-[0.85] text-white uppercase mb-10">
               Protecting the<br />
               <span className="text-[#CD1D1D]">Vulnerable</span>
@@ -91,9 +89,7 @@ export default function AboutPhilanthropy() {
         <div className="mb-32 phil-element pt-16 border-t border-white/10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
             <div>
-              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
-                [ THE ROAD AHEAD ]
-              </span>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4"> THE ROAD AHEAD </span>
               <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
                 Future Vision<br />& Institutions
               </h3>

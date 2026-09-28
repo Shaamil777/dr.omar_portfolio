@@ -132,9 +132,7 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
 
         {/* Top Header Fixed overlay */}
         <div className="absolute top-8 md:top-16 left-0 w-full px-6 lg:px-24 max-w-[100rem] mx-auto z-20 flex justify-center md:justify-between items-start pointer-events-none">
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block text-center md:text-left">
-              [ THE CORE FRAMEWORK ]
-            </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block text-center md:text-left"> THE CORE FRAMEWORK </span>
             <span className="font-helvetica text-sm text-zinc-500 font-bold hidden md:block uppercase tracking-widest">
               {company.name} Pillars
             </span>

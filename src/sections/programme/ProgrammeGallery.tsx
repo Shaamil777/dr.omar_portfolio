@@ -115,11 +115,11 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
               <div className="flex items-center gap-6 sm:gap-12 border-t border-black/10 pt-8 w-full max-w-sm relative">
                 <div className="relative z-10 group">
                   <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">50+</div>
-                  <div className="font-courier text-[10px] sm:text-xs font-bold tracking-widest text-zinc-500 uppercase mt-2">Global Retreats</div>
+                  <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">Global Retreats</div>
                 </div>
                 <div className="relative z-10 group">
                   <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">10k</div>
-                  <div className="font-courier text-[10px] sm:text-xs font-bold tracking-widest text-zinc-500 uppercase mt-2">Lives Changed</div>
+                  <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">Lives Changed</div>
                 </div>
                 
                 {/* Decorative rotating element */}

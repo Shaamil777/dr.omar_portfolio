@@ -73,7 +73,7 @@ export default function AboutAuthority() {
               </div>
 
               <div className="w-full">
-                <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.25em] text-[#0a0a0a]/40 font-bold mb-8 block">
+                <span className="font-courier text-xs md:text-sm uppercase tracking-[0.25em] text-[#0a0a0a]/40 font-bold mb-8 block">
                   Select Credentials & Recognitions
                 </span>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 border-t border-black/10 pt-8">
@@ -98,7 +98,7 @@ export default function AboutAuthority() {
                     onClick={() => setShowAllCredentials(true)}
                     className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
                   >
-                    <span>[ + SHOW ALL CREDENTIALS ]</span>
+                    <span>+ SHOW ALL CREDENTIALS</span>
                   </button>
                 )}
               </div>
@@ -127,9 +127,7 @@ export default function AboutAuthority() {
         <div className="auth-element pt-8 md:pt-16">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
             <div>
-              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4">
-                [ MULTIDISCIPLINARY FRAMEWORK ]
-              </span>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4"> MULTIDISCIPLINARY FRAMEWORK </span>
               <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#0a0a0a]">
                 10 Core Areas<br />of Expertise
               </h3>
@@ -161,7 +159,7 @@ export default function AboutAuthority() {
               onClick={() => setShowAllExpertise(true)}
               className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <span>[ + SHOW ALL EXPERTISE ]</span>
+              <span>+ SHOW ALL EXPERTISE</span>
             </button>
           )}
         </div>

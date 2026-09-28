@@ -42,7 +42,7 @@ export default function AboutHero() {
 
       <div ref={textRef} className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-20">
         <span className="hero-text font-courier text-xs md:text-sm uppercase tracking-[0.4em] text-[#CD1D1D] font-bold mb-6 block">
-          [ PURPOSE • LEADERSHIP • TRANSFORMATION ]
+          PURPOSE • LEADERSHIP • TRANSFORMATION
         </span>
         <h1 className="hero-text font-helvetica text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tight leading-[0.9] text-white max-w-[85rem] mb-8">
           Healing People.<br />
@@ -56,7 +56,7 @@ export default function AboutHero() {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center hero-text">
-        <span className="font-courier text-[10px] uppercase tracking-widest text-white/50 mb-2">Scroll</span>
+        <span className="font-courier text-xs uppercase tracking-widest text-white/50 mb-2">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-white animate-pulse" />
         </div>

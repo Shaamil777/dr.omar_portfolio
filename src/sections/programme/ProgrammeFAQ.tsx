@@ -65,9 +65,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
           {/* Left Column (4 cols) — Sticky Title */}
           <div className="lg:col-span-4" ref={leftColRef}>
             <div className="sticky top-32">
-              <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block">
-                [ FAQ ]
-              </span>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> FAQ </span>
               
               <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] text-[#111] mb-8">
                 Frequently<br/>

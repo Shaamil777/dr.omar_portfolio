@@ -89,7 +89,7 @@ export default function BlogsHero() {
           
           <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-white/95 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transition-transform duration-500 group-hover:-translate-y-2 pointer-events-none">
             <div className="w-2 h-2 rounded-full bg-[#CD1D1D] animate-pulse" />
-            <span className="font-helvetica font-bold text-[10px] md:text-xs uppercase tracking-widest text-[#111]">Featured Article</span>
+            <span className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-[#111]">Featured Article</span>
           </div>
         </div>
       </div>

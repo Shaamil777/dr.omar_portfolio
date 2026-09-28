@@ -52,9 +52,7 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <span className="font-courier text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
-              [ INSIGHTS ]
-            </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> INSIGHTS </span>
             <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
               Latest Case<br/>Studies
             </h2>

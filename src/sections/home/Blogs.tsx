@@ -90,7 +90,7 @@ export default function Blogs() {
              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
              
              <div className="relative z-10 flex flex-col gap-2 md:gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-               <span className="font-courier text-[#CD1D1D] font-bold text-[10px] md:text-xs tracking-widest uppercase">
+               <span className="font-courier text-[#CD1D1D] font-bold text-xs md:text-sm tracking-widest uppercase">
                  Article
                </span>
                <h3 className="text-white font-helvetica font-bold uppercase text-lg md:text-xl lg:text-2xl leading-[0.95] drop-shadow-lg">

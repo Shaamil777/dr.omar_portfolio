@@ -221,7 +221,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
             {/* Tag */}
             <div
               ref={tagRef}
-              className="flex items-center gap-3 mb-6 lg:mb-10 font-courier text-[10px] md:text-[12px] text-zinc-400 tracking-[0.25em] uppercase font-bold opacity-0"
+              className="flex items-center gap-3 mb-6 lg:mb-10 font-courier text-xs md:text-sm text-zinc-400 tracking-[0.25em] uppercase font-bold opacity-0"
             >
               <div className="w-2 h-2 bg-[#CD1D1D] rounded-full" />
               <span>{data.tagline}</span>
@@ -265,7 +265,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
               {data.chips.map((chip) => (
                 <span
                   key={chip}
-                  className="hero-chip px-4 py-1.5 border border-[#111]/20 rounded-full font-courier text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-[#111]/70 hover:border-[#CD1D1D] hover:text-[#CD1D1D] transition-all duration-300 cursor-default opacity-0"
+                  className="hero-chip px-4 py-1.5 border border-[#111]/20 rounded-full font-courier text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#111]/70 hover:border-[#CD1D1D] hover:text-[#CD1D1D] transition-all duration-300 cursor-default opacity-0"
                 >
                   {chip}
                 </span>
