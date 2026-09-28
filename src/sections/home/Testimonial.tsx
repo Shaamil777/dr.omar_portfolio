@@ -115,7 +115,7 @@ export default function Testimonial() {
             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-zinc-200 mt-12 shadow-2xl">
                {testimonials.map((t, i) => (
                  <div key={t.id} className={`client-image absolute inset-0 ${i === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]`}>
-                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale lg:hover:grayscale-0 transition-all duration-700" />
                  </div>
                ))}
             </div>

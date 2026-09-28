@@ -82,12 +82,12 @@ export default function BlogsHero() {
             src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=2000"
             alt="Blogs Featured"
             fill
-            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+            className="object-cover grayscale lg:group-hover:grayscale-0 transition-all duration-700 ease-out lg:group-hover:scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-[#111]/20 group-hover:bg-[#111]/0 transition-colors duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#111]/20 lg:group-hover:bg-[#111]/0 transition-colors duration-700 pointer-events-none" />
           
-          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-white/95 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transition-transform duration-500 group-hover:-translate-y-2 pointer-events-none">
+          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-white/95 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3 shadow-xl transition-transform duration-500 lg:group-hover:-translate-y-2 pointer-events-none">
             <div className="w-2 h-2 rounded-full bg-[#CD1D1D] animate-pulse" />
             <span className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-[#111]">Featured Article</span>
           </div>

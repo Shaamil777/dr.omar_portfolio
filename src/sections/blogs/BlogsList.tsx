@@ -84,9 +84,9 @@ export default function BlogsList() {
                   src={blog.img}
                   alt={blog.title}
                   fill
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 bg-black/10 lg:group-hover:bg-transparent transition-colors duration-500" />
               </div>
               
               {/* Content */}
@@ -100,14 +100,14 @@ export default function BlogsList() {
                     {blog.date}
                   </span>
                 </div>
-                <h3 className="font-helvetica font-bold text-2xl md:text-3xl leading-[1.1] text-[#111] mb-6 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <h3 className="font-helvetica font-bold text-2xl md:text-3xl leading-[1.1] text-[#111] mb-6 lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {blog.title}
                 </h3>
                 
                 {/* Read More Link */}
-                <div className="mt-auto flex items-center gap-2 text-[#111] group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <div className="mt-auto flex items-center gap-2 text-[#111] lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                   <span className="font-helvetica font-bold text-sm tracking-tight uppercase">Read Article</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform duration-300">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transform lg:group-hover:translate-x-1 transition-transform duration-300">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>

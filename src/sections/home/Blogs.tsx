@@ -71,7 +71,7 @@ export default function Blogs() {
           <p className="font-helvetica font-medium text-sm md:text-lg text-zinc-500 mb-8 max-w-sm mx-auto leading-relaxed">
             Explore my latest articles, insights, and thoughts on entrepreneurship, technology, and leadership.
           </p>
-          <Link href="/blogs" className="bg-[#CD1D1D] text-white font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full hover:bg-black transition-colors shadow-xl">
+          <Link href="/blogs" className="bg-[#CD1D1D] text-white font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-8 py-3 rounded-full lg:hover:bg-black transition-colors shadow-xl">
             READ ALL
           </Link>
         </div>
@@ -84,12 +84,12 @@ export default function Blogs() {
             className={`absolute top-[50%] -translate-y-1/2 ${card.className} w-48 md:w-64 lg:w-80 aspect-[4/5] bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col justify-end p-5 md:p-6 lg:p-8 z-40 group rounded-2xl md:rounded-[2rem] border-[3px] border-[#FAF8F5] cursor-none`}
           >
              <div 
-               className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+               className="absolute inset-0 bg-cover bg-center opacity-60 lg:group-hover:opacity-100 lg:group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
                style={{ backgroundImage: `url('${card.img}')` }}
              ></div>
              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
              
-             <div className="relative z-10 flex flex-col gap-2 md:gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+             <div className="relative z-10 flex flex-col gap-2 md:gap-3 translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 ease-out">
                <span className="font-courier text-[#CD1D1D] font-bold text-xs md:text-sm tracking-widest uppercase">
                  Article
                </span>

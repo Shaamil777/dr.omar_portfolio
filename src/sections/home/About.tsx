@@ -126,7 +126,7 @@ export default function About() {
             {/* Read More Toggle for Mobile */}
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
-              className="md:hidden self-start text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors mt-2 underline underline-offset-4"
+              className="md:hidden self-start text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 lg:hover:text-zinc-900 transition-colors mt-2 underline underline-offset-4"
             >
               {isExpanded ? "Read Less" : "Read More"}
             </button>
@@ -140,7 +140,7 @@ export default function About() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 md:mt-8 w-full"
             >
               {/* Primary Button */}
-              <Link href="/about" className="bg-[#111] text-white px-6 py-3 md:px-7 md:py-3.5 rounded-xl shadow-md hover:bg-[#CD1D1D] hover:shadow-xl hover:-translate-y-0.5 transition-all font-helvetica font-bold uppercase tracking-wider text-xs sm:text-sm md:text-base leading-none flex items-center justify-center w-full sm:w-auto">
+              <Link href="/about" className="bg-[#111] text-white px-6 py-3 md:px-7 md:py-3.5 rounded-xl shadow-md lg:hover:bg-[#CD1D1D] lg:hover:shadow-xl lg:hover:-translate-y-0.5 transition-all font-helvetica font-bold uppercase tracking-wider text-xs sm:text-sm md:text-base leading-none flex items-center justify-center w-full sm:w-auto">
                 EXPLORE JOURNEY
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -148,7 +148,7 @@ export default function About() {
               </Link>
 
               {/* Secondary Button */}
-              <Link href="/contact" className="bg-transparent border-2 border-[#111] text-[#111] px-6 py-3 md:px-7 md:py-3.5 rounded-xl hover:bg-black/5 hover:-translate-y-0.5 transition-all font-helvetica font-bold uppercase tracking-wider text-xs sm:text-sm md:text-base leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
+              <Link href="/contact" className="bg-transparent border-2 border-[#111] text-[#111] px-6 py-3 md:px-7 md:py-3.5 rounded-xl lg:hover:bg-black/5 lg:hover:-translate-y-0.5 transition-all font-helvetica font-bold uppercase tracking-wider text-xs sm:text-sm md:text-base leading-none flex items-center justify-center w-full sm:w-auto mt-2 sm:mt-0">
                 BOOK CONSULTATION
               </Link>
             </motion.div>

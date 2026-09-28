@@ -84,10 +84,10 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
           }}
         >
           {/* Outer animated ring */}
-          <div className="absolute inset-0 rounded-full border border-black/10 group-hover:scale-110 group-hover:border-[#CD1D1D]/30 transition-all duration-500" />
+          <div className="absolute inset-0 rounded-full border border-black/10 lg:group-hover:scale-110 lg:group-hover:border-[#CD1D1D]/30 transition-all duration-500" />
           
           {/* Main button body */}
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-[#111] group-hover:bg-[#CD1D1D] flex items-center justify-center text-white transition-colors duration-500 shadow-2xl">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-[#111] lg:group-hover:bg-[#CD1D1D] flex items-center justify-center text-white transition-colors duration-500 shadow-2xl">
             <span className="font-national2 font-bold uppercase tracking-widest text-sm md:text-base">
               Apply Now
             </span>

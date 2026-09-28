@@ -50,11 +50,11 @@ export default function ContactInfo() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex items-start space-x-6 group cursor-pointer"
             >
-              <div className="p-4 bg-white border-2 border-black/10 rounded-2xl text-[#111] group-hover:border-[#CD1D1D] group-hover:text-[#CD1D1D] group-hover:-translate-y-1 transition-all duration-300 shadow-sm">
+              <div className="p-4 bg-white border-2 border-black/10 rounded-2xl text-[#111] lg:group-hover:border-[#CD1D1D] lg:group-hover:text-[#CD1D1D] lg:group-hover:-translate-y-1 transition-all duration-300 shadow-sm">
                 <item.icon className="w-6 h-6" />
               </div>
               <div className="pt-1">
-                <h3 className="text-xl font-helvetica font-black uppercase text-[#111] mb-1 group-hover:text-[#CD1D1D] transition-colors">{item.title}</h3>
+                <h3 className="text-xl font-helvetica font-black uppercase text-[#111] mb-1 lg:group-hover:text-[#CD1D1D] transition-colors">{item.title}</h3>
                 <p className="text-zinc-900 font-helvetica font-bold text-lg">{item.detail}</p>
                 <p className="text-sm text-zinc-500 font-helvetica mt-1">{item.description}</p>
               </div>
@@ -73,7 +73,7 @@ export default function ContactInfo() {
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.95 }}
-              className="p-4 bg-white border-2 border-black/10 rounded-full text-[#111] hover:text-[#CD1D1D] hover:border-[#CD1D1D] hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-sm"
+              className="p-4 bg-white border-2 border-black/10 rounded-full text-[#111] lg:hover:text-[#CD1D1D] lg:hover:border-[#CD1D1D] lg:hover:-translate-y-1 lg:hover:scale-105 transition-all duration-300 shadow-sm"
               aria-label={social.label}
             >
               <social.icon className="w-5 h-5" />

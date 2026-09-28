@@ -141,9 +141,9 @@ export default function ProgrammesListingPage() {
         <div className="px-6 md:px-16 mb-6">
           <Link 
             href="/" 
-            className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#111] hover:bg-[#CD1D1D] text-white transition-all shadow-md font-helvetica font-bold text-xs sm:text-sm tracking-wider uppercase"
+            className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#111] lg:hover:bg-[#CD1D1D] text-white transition-all shadow-md font-helvetica font-bold text-xs sm:text-sm tracking-wider uppercase"
           >
-            <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 transition-transform lg:group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             <span>Back to Home</span>
@@ -170,7 +170,7 @@ export default function ProgrammesListingPage() {
             Transformational Programs for Ambitious Leaders
           </div>
           <div className="w-full md:w-auto flex justify-start md:justify-end">
-            <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full hover:bg-black transition-colors shadow-lg">
+            <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full lg:hover:bg-black transition-colors shadow-lg">
               VIEW ROADMAP
             </button>
           </div>
@@ -186,21 +186,21 @@ export default function ProgrammesListingPage() {
                <Link 
                  href={`/programme/${company.slug}`}
                  key={company.slug} 
-                 className="program-card-item relative group cursor-none perspective-1000 z-10 hover:z-50 block"
+                 className="program-card-item relative group cursor-none perspective-1000 z-10 lg:hover:z-50 block"
                >
                   
                   {/* Pop-out Image 1 (Bottom Left) */}
-                  <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-x-[35%] group-hover:translate-y-[60%] group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
+                  <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-x-[35%] lg:group-hover:translate-y-[60%] lg:group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
                     <Image src={img1} alt="" fill className="object-cover" />
                   </div>
 
                   {/* Pop-out Image 2 (Bottom Right) */}
-                  <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-[35%] group-hover:translate-y-[45%] group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
+                  <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:translate-x-[35%] lg:group-hover:translate-y-[45%] lg:group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
                     <Image src={img2} alt="" fill className="object-cover" />
                   </div>
 
                   {/* Main Card */}
-                  <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-12 group-hover:-rotate-2 group-hover:scale-[1.03] group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] h-full min-h-[380px] md:min-h-[420px] w-full transform-gpu origin-bottom">
+                  <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-y-12 lg:group-hover:-rotate-2 lg:group-hover:scale-[1.03] lg:group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] lg:group-hover:border-[#111] h-full min-h-[380px] md:min-h-[420px] w-full transform-gpu origin-bottom">
                     <div>
                       <div className="mb-10 text-[#111]">
                         <AbstractIcon index={i} />

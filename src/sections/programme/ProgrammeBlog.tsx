@@ -58,9 +58,9 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
             </h2>
           </div>
           
-          <button className="flex items-center gap-2 font-helvetica font-bold uppercase tracking-widest text-sm text-[#CD1D1D] hover:text-[#111] transition-colors duration-300 group pb-2">
+          <button className="flex items-center gap-2 font-helvetica font-bold uppercase tracking-widest text-sm text-[#CD1D1D] lg:hover:text-[#111] transition-colors duration-300 group pb-2">
             View All Articles
-            <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <svg className="w-4 h-4 transform lg:group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </button>
         </div>
 
@@ -78,13 +78,13 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
                   src={blog.image} 
                   alt={blog.title} 
                   fill 
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
                 />
               </div>
 
               {/* Text Content */}
               <div className="flex flex-col flex-grow mt-6">
-                <h3 className="font-helvetica text-[1.75rem] md:text-3xl lg:text-[2rem] font-bold leading-[0.9] text-[#111] tracking-tighter group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <h3 className="font-helvetica text-[1.75rem] md:text-3xl lg:text-[2rem] font-bold leading-[0.9] text-[#111] tracking-tighter lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {blog.title}
                 </h3>
                 {/* Optional Description (fallback for custom data) */}

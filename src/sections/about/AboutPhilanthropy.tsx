@@ -79,7 +79,7 @@ export default function AboutPhilanthropy() {
               src="/images/about/DSC07408.jpg"
               alt="Dr. Abdussalam Omar - Ruqayya Foundation"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+              className="object-cover grayscale lg:hover:grayscale-0 transition-all duration-1000 shadow-2xl"
             />
             <div className="absolute inset-0 border border-white/10 rounded-[24px] lg:rounded-[40px] pointer-events-none" />
           </div>
@@ -101,12 +101,12 @@ export default function AboutPhilanthropy() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
             {futureVisions.map((vision, idx) => (
-              <div key={idx} className="group p-8 md:p-10 border-r border-b border-white/10 flex flex-col justify-between min-h-[320px] hover:bg-white/[0.02] transition-colors duration-500 cursor-default">
+              <div key={idx} className="group p-8 md:p-10 border-r border-b border-white/10 flex flex-col justify-between min-h-[320px] lg:hover:bg-white/[0.02] transition-colors duration-500 cursor-default">
                 <div>
-                  <span className="font-courier text-[#CD1D1D] text-xs font-bold block mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                  <span className="font-courier text-[#CD1D1D] text-xs font-bold block mb-4 opacity-80 lg:group-hover:opacity-100 transition-opacity">
                     0{idx + 1} // VISION
                   </span>
-                  <h4 className="font-helvetica text-2xl font-bold tracking-tight mb-4 text-white group-hover:text-[#CD1D1D] transition-colors">
+                  <h4 className="font-helvetica text-2xl font-bold tracking-tight mb-4 text-white lg:group-hover:text-[#CD1D1D] transition-colors">
                     {vision.title}
                   </h4>
                 </div>

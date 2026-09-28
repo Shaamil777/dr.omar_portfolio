@@ -71,15 +71,15 @@ export default function Navbar() {
           
           {/* DESKTOP LINKS */}
           <div className="hidden xl:flex items-center gap-5 2xl:gap-10 font-helvetica text-[15px] 2xl:text-[20px] font-black tracking-tight leading-none text-[#111]">
-            <Link href="/about" className="hover:text-[#CD1D1D] transition-colors">About</Link>
-            <a href="#entrepreneur" onClick={(e) => handleScrollToSection(e, "entrepreneur")} className="hover:text-[#CD1D1D] transition-colors cursor-pointer">Entrepreneur</a>
-            <Link href="/programmes" className="group relative flex items-center hover:text-[#CD1D1D] transition-colors">
+            <Link href="/about" className="lg:hover:text-[#CD1D1D] transition-colors">About</Link>
+            <a href="#entrepreneur" onClick={(e) => handleScrollToSection(e, "entrepreneur")} className="lg:hover:text-[#CD1D1D] transition-colors cursor-pointer">Entrepreneur</a>
+            <Link href="/programmes" className="group relative flex items-center lg:hover:text-[#CD1D1D] transition-colors">
               Programmes <ChevronDown />
             </Link>
-            <a href="#achievements" onClick={(e) => handleScrollToSection(e, "achievements")} className="hover:text-[#CD1D1D] transition-colors cursor-pointer">Achievements</a>
-            <a href="#testimonials" onClick={(e) => handleScrollToSection(e, "testimonials")} className="hover:text-[#CD1D1D] transition-colors cursor-pointer">Testimonials</a>
-            <a href="#blogs" onClick={(e) => handleScrollToSection(e, "blogs")} className="hover:text-[#CD1D1D] transition-colors cursor-pointer">Blog</a>
-            <Link href="/contact" className="hover:text-[#CD1D1D] transition-colors">Get in touch</Link>
+            <a href="#achievements" onClick={(e) => handleScrollToSection(e, "achievements")} className="lg:hover:text-[#CD1D1D] transition-colors cursor-pointer">Achievements</a>
+            <a href="#testimonials" onClick={(e) => handleScrollToSection(e, "testimonials")} className="lg:hover:text-[#CD1D1D] transition-colors cursor-pointer">Testimonials</a>
+            <a href="#blogs" onClick={(e) => handleScrollToSection(e, "blogs")} className="lg:hover:text-[#CD1D1D] transition-colors cursor-pointer">Blog</a>
+            <Link href="/contact" className="lg:hover:text-[#CD1D1D] transition-colors">Get in touch</Link>
           </div>
         </div>
 
@@ -87,14 +87,14 @@ export default function Navbar() {
           {/* CTA BUTTON */}
           <Link 
             href="/contact" 
-            className="hidden sm:flex bg-[#111] text-white px-5 py-2 md:px-6 md:py-2.5 2xl:px-9 2xl:py-3.5 rounded-xl shadow-sm hover:bg-[#CD1D1D] hover:shadow-md hover:-translate-y-0.5 transition-all font-helvetica font-black uppercase tracking-wider text-xs md:text-[13px] 2xl:text-[16px] leading-none items-center justify-center whitespace-nowrap"
+            className="hidden sm:flex bg-[#111] text-white px-5 py-2 md:px-6 md:py-2.5 2xl:px-9 2xl:py-3.5 rounded-xl shadow-sm lg:hover:bg-[#CD1D1D] lg:hover:shadow-md lg:hover:-translate-y-0.5 transition-all font-helvetica font-black uppercase tracking-wider text-xs md:text-[13px] 2xl:text-[16px] leading-none items-center justify-center whitespace-nowrap"
           >
             BESPOKE QUOTE
           </Link>
 
           {/* MOBILE MENU TOGGLE */}
           <button 
-            className="xl:hidden flex items-center justify-center p-2 rounded-lg bg-black/5 hover:bg-black/10 transition-colors"
+            className="xl:hidden flex items-center justify-center p-2 rounded-lg bg-black/5 lg:hover:bg-black/10 transition-colors"
             onClick={() => setIsOpen(true)}
             aria-label="Open Menu"
           >
@@ -113,7 +113,7 @@ export default function Navbar() {
             DR. OMAR
           </Link>
           <button 
-            className="flex items-center justify-center p-2 rounded-lg bg-black/5 hover:bg-black/10 transition-colors"
+            className="flex items-center justify-center p-2 rounded-lg bg-black/5 lg:hover:bg-black/10 transition-colors"
             onClick={() => setIsOpen(false)}
             aria-label="Close Menu"
           >
@@ -128,7 +128,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href} 
                 onClick={(e) => handleScrollToSection(e, link.href.slice(1))}
-                className="text-[#111] hover:text-[#CD1D1D] transition-colors border-b border-black/10 pb-4 cursor-pointer"
+                className="text-[#111] lg:hover:text-[#CD1D1D] transition-colors border-b border-black/10 pb-4 cursor-pointer"
               >
                 {link.name}
               </a>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href} 
                 onClick={() => setIsOpen(false)}
-                className="text-[#111] hover:text-[#CD1D1D] transition-colors border-b border-black/10 pb-4"
+                className="text-[#111] lg:hover:text-[#CD1D1D] transition-colors border-b border-black/10 pb-4"
               >
                 {link.name}
               </Link>
@@ -146,7 +146,7 @@ export default function Navbar() {
           <Link 
             href="/contact" 
             onClick={() => setIsOpen(false)}
-            className="text-[#111] hover:text-[#CD1D1D] transition-colors pb-4"
+            className="text-[#111] lg:hover:text-[#CD1D1D] transition-colors pb-4"
           >
             Get in touch
           </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
           <Link 
             href="/contact" 
             onClick={() => setIsOpen(false)}
-            className="w-full bg-[#111] text-white py-4 rounded-xl shadow-lg font-helvetica font-black uppercase tracking-wider text-lg leading-none flex items-center justify-center hover:bg-[#CD1D1D] transition-colors"
+            className="w-full bg-[#111] text-white py-4 rounded-xl shadow-lg font-helvetica font-black uppercase tracking-wider text-lg leading-none flex items-center justify-center lg:hover:bg-[#CD1D1D] transition-colors"
           >
             BESPOKE QUOTE
           </Link>

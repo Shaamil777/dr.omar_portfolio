@@ -237,7 +237,7 @@ export default function Entrepreneur() {
                     alt={company.name} 
                     fill 
                     sizes="(max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
-                    className="parallax-image object-cover scale-[1.6] transition-transform duration-1000 ease-out group-hover:scale-[1.65]" 
+                    className="parallax-image object-cover scale-[1.6] transition-transform duration-1000 ease-out lg:group-hover:scale-[1.65]" 
                   />
                 </div>
                 

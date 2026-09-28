@@ -265,7 +265,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
               {data.chips.map((chip) => (
                 <span
                   key={chip}
-                  className="hero-chip px-4 py-1.5 border border-[#111]/20 rounded-full font-courier text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#111]/70 hover:border-[#CD1D1D] hover:text-[#CD1D1D] transition-all duration-300 cursor-default opacity-0"
+                  className="hero-chip px-4 py-1.5 border border-[#111]/20 rounded-full font-courier text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#111]/70 lg:hover:border-[#CD1D1D] lg:hover:text-[#CD1D1D] transition-all duration-300 cursor-default opacity-0"
                 >
                   {chip}
                 </span>

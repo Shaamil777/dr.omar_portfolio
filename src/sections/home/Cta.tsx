@@ -67,7 +67,7 @@ export default function Cta() {
 
         {/* Spotlight Bright Text */}
         <h1
-          className="absolute top-0 left-0 w-full h-full z-10 text-[22vw] sm:text-[18vw] md:text-[14vw] pt-[1vw] leading-[0.85] md:leading-[0.75] font-black uppercase text-center tracking-tight pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-y-[1.4] md:scale-y-100 flex items-center justify-center bg-[length:10px_10px] md:bg-[length:24px_24px]"
+          className="absolute top-0 left-0 w-full h-full z-10 text-[22vw] sm:text-[18vw] md:text-[14vw] pt-[1vw] leading-[0.85] md:leading-[0.75] font-black uppercase text-center tracking-tight pointer-events-none select-none opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 scale-y-[1.4] md:scale-y-100 flex items-center justify-center bg-[length:10px_10px] md:bg-[length:24px_24px]"
           style={{
             WebkitTextFillColor: "transparent",
             WebkitBackgroundClip: "text",

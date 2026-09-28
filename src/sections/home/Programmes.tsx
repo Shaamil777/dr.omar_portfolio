@@ -158,7 +158,7 @@ export default function Programmes() {
           Transformational Programs for Ambitious Leaders
         </div>
         <div className="w-full md:w-auto flex justify-start md:justify-end">
-          <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full hover:bg-black transition-colors shadow-lg">
+          <button className="bg-[#CD1D1D] text-white font-helvetica font-black text-2xl uppercase tracking-tight px-6 py-2 rounded-full lg:hover:bg-black transition-colors shadow-lg">
             OUR EXPERTISE
           </button>
         </div>
@@ -174,21 +174,21 @@ export default function Programmes() {
              <Link 
                href={`/programme/${prog.id}`}
                key={prog.id} 
-               className="program-card-item relative group cursor-none perspective-1000 z-10 hover:z-50 block"
+               className="program-card-item relative group cursor-none perspective-1000 z-10 lg:hover:z-50 block"
              >
                 
                 {/* Pop-out Image 1 (Bottom Left) */}
-                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-x-[35%] group-hover:translate-y-[60%] group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-x-[35%] lg:group-hover:translate-y-[60%] lg:group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
                   <Image src={img1} alt="" fill className="object-cover" />
                 </div>
 
                 {/* Pop-out Image 2 (Bottom Right) */}
-                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-[35%] group-hover:translate-y-[45%] group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:translate-x-[35%] lg:group-hover:translate-y-[45%] lg:group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
                   <Image src={img2} alt="" fill className="object-cover" />
                 </div>
 
                 {/* Main Card */}
-                <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-12 group-hover:-rotate-2 group-hover:scale-[1.03] group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] group-hover:border-[#111] h-full min-h-[380px] md:min-h-[420px] w-full transform-gpu origin-bottom">
+                <div className="relative z-10 bg-[#FAF8F5] border-[2px] border-[#e4e0d5] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-y-12 lg:group-hover:-rotate-2 lg:group-hover:scale-[1.03] lg:group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)] lg:group-hover:border-[#111] h-full min-h-[380px] md:min-h-[420px] w-full transform-gpu origin-bottom">
                   <div>
                     <div className="mb-10 text-[#111]">
                       <AbstractIcon index={i} />
@@ -213,7 +213,7 @@ export default function Programmes() {
       <div className="w-full flex justify-center mt-12 md:mt-20">
         <Link 
           href="/programmes"
-          className="bg-[#111] text-white font-helvetica font-black text-2xl md:text-2xl uppercase tracking-tight px-10 py-4 rounded-full hover:bg-[#CD1D1D] transition-colors duration-300 shadow-xl hover:-translate-y-1 transform"
+          className="bg-[#111] text-white font-helvetica font-black text-2xl md:text-2xl uppercase tracking-tight px-10 py-4 rounded-full lg:hover:bg-[#CD1D1D] transition-colors duration-300 shadow-xl lg:hover:-translate-y-1 transform"
         >
           VIEW ALL PROGRAMMES
         </Link>

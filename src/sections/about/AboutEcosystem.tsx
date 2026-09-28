@@ -145,7 +145,7 @@ export default function AboutEcosystem() {
                   src={org.bgImage} 
                   alt={org.name || "Organization Background"} 
                   fill 
-                  className={`object-cover opacity-10 md:opacity-[0.12] transition-transform duration-700 group-hover:scale-105 ${org.bgPosition || 'object-center'}`}
+                  className={`object-cover opacity-10 md:opacity-[0.12] transition-transform duration-700 lg:group-hover:scale-105 ${org.bgPosition || 'object-center'}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent lg:w-2/3" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent md:hidden" />

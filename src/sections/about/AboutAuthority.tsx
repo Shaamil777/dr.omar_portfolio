@@ -82,10 +82,10 @@ export default function AboutAuthority() {
                       key={idx} 
                       className={`items-start gap-4 group ${!showAllCredentials && idx >= 2 ? 'hidden md:flex' : 'flex'}`}
                     >
-                      <span className="font-courier text-[#CD1D1D] font-bold text-xs mt-1 transition-transform duration-300 group-hover:translate-x-1">
+                      <span className="font-courier text-[#CD1D1D] font-bold text-xs mt-1 transition-transform duration-300 lg:group-hover:translate-x-1">
                         {(idx + 1).toString().padStart(2, '0')}
                       </span>
-                      <span className="font-helvetica text-sm md:text-base font-medium text-[#0a0a0a]/80 leading-snug group-hover:text-[#0a0a0a] transition-colors duration-300">
+                      <span className="font-helvetica text-sm md:text-base font-medium text-[#0a0a0a]/80 leading-snug lg:group-hover:text-[#0a0a0a] transition-colors duration-300">
                         {cred}
                       </span>
                     </div>
@@ -96,7 +96,7 @@ export default function AboutAuthority() {
                 {!showAllCredentials && credentials.length > 2 && (
                   <button 
                     onClick={() => setShowAllCredentials(true)}
-                    className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
+                    className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 lg:hover:opacity-80 transition-opacity"
                   >
                     <span>+ SHOW ALL CREDENTIALS</span>
                   </button>
@@ -115,7 +115,7 @@ export default function AboutAuthority() {
             src="/images/about/DSC06856.jpg"
             alt="Dr. Abdussalam Omar Authority"
             fill
-            className="object-cover object-[center_30%] grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+            className="object-cover object-[center_30%] grayscale lg:hover:grayscale-0 transition-all duration-1000 shadow-2xl"
           />
           {/* Subtle Left Border Overlay for separation */}
           <div className="absolute inset-0 lg:border-l border-black/10 pointer-events-none" />

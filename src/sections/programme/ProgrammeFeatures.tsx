@@ -114,7 +114,7 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
                   className="flex flex-row items-start gap-6 border-t border-black/10 pt-8 group"
                 >
                   {/* Thumbnail (Larger) */}
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-[20px] overflow-hidden shadow-sm border border-black/10 group-hover:scale-105 transition-transform duration-500">
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-[20px] overflow-hidden shadow-sm border border-black/10 lg:group-hover:scale-105 transition-transform duration-500">
                     <Image 
                       src={feature.image || 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=400'} 
                       alt={feature.title} 
@@ -125,7 +125,7 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
                   
                   {/* Text block (Larger) */}
                   <div className="flex flex-col pt-1">
-                    <h3 className="font-helvetica text-2xl md:text-3xl lg:text-[2.25rem] font-bold tracking-normal text-[#111] leading-[0.9] mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                    <h3 className="font-helvetica text-2xl md:text-3xl lg:text-[2.25rem] font-bold tracking-normal text-[#111] leading-[0.9] mb-3 lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                       {feature.title}
                     </h3>
                     <p className="font-helvetica font-bold text-sm md:text-base lg:text-lg text-zinc-500 leading-relaxed pr-2">

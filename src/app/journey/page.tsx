@@ -12,7 +12,7 @@ export default function JourneyPage() {
       </p>
       <Link 
         href="/"
-        className="bg-[#111] text-white px-8 py-5 rounded-xl hover:bg-[#CD1D1D] hover:-translate-y-1 transition-all shadow-[0_12px_24px_rgba(0,0,0,0.2)] hover:shadow-xl font-helvetica font-black uppercase tracking-normal text-lg md:text-xl flex items-center justify-center"
+        className="bg-[#111] text-white px-8 py-5 rounded-xl lg:hover:bg-[#CD1D1D] lg:hover:-translate-y-1 transition-all shadow-[0_12px_24px_rgba(0,0,0,0.2)] lg:hover:shadow-xl font-helvetica font-black uppercase tracking-normal text-lg md:text-xl flex items-center justify-center"
       >
         <svg className="w-5 h-5 mr-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />

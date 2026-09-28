@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-export default function PageGridBackground({ children }: { children: React.ReactNode }) {
+export default function PageGridBackground({ children, hideOnMobile = false }: { children: React.ReactNode, hideOnMobile?: boolean }) {
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +28,7 @@ export default function PageGridBackground({ children }: { children: React.React
     <div ref={containerRef} className="relative min-h-screen w-full bg-[#FAF8F5]">
       {/* Global Crosshatch Grid Background (Scrolls with page) */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className={`absolute inset-0 z-0 pointer-events-none ${hideOnMobile ? 'hidden lg:block' : ''}`}
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
@@ -41,7 +41,7 @@ export default function PageGridBackground({ children }: { children: React.React
 
       {/* Global Red Grid Lines Spotlight — follows cursor (Scrolls with page) */}
       <div
-        className="absolute inset-0 z-20 pointer-events-none mix-blend-multiply transition-opacity duration-300"
+        className={`absolute inset-0 z-20 pointer-events-none mix-blend-multiply transition-opacity duration-300 ${hideOnMobile ? 'hidden lg:block' : ''}`}
         style={{
           opacity: mousePos.x > 0 ? 1 : 0,
           backgroundImage: `

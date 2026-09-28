@@ -64,22 +64,22 @@ export default function AboutPhilosophy() {
           {philosophySteps.map((step, idx) => (
             <div 
               key={idx} 
-              className="philosophy-tag group relative p-8 md:p-10 border-r border-b border-white/10 hover:bg-white/[0.03] transition-colors duration-500 flex flex-col justify-between min-h-[240px] cursor-default"
+              className="philosophy-tag group relative p-8 md:p-10 border-r border-b border-white/10 lg:hover:bg-white/[0.03] transition-colors duration-500 flex flex-col justify-between min-h-[240px] cursor-default"
             >
               {/* Number & Accent */}
               <div className="flex items-center justify-between mb-12">
-                <span className="font-courier text-[#CD1D1D] text-lg md:text-xl font-bold tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
+                <span className="font-courier text-[#CD1D1D] text-lg md:text-xl font-bold tracking-widest opacity-80 lg:group-hover:opacity-100 transition-opacity">
                   {(idx + 1).toString().padStart(2, '0')}
                 </span>
-                <div className="w-12 h-[1px] bg-white/0 group-hover:bg-[#CD1D1D]/50 transition-colors duration-500" />
+                <div className="w-12 h-[1px] bg-white/0 lg:group-hover:bg-[#CD1D1D]/50 transition-colors duration-500" />
               </div>
               
               {/* Text */}
               <div>
-                <h3 className="font-helvetica text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#CD1D1D] transition-colors duration-300">
+                <h3 className="font-helvetica text-xl md:text-2xl font-bold text-white mb-3 lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="font-helvetica text-sm text-white/50 group-hover:text-white/80 transition-colors duration-300 font-light leading-relaxed">
+                <p className="font-helvetica text-sm text-white/50 lg:group-hover:text-white/80 transition-colors duration-300 font-light leading-relaxed">
                   {step.desc}
                 </p>
               </div>

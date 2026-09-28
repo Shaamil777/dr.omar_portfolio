@@ -63,7 +63,7 @@ export default function BlogsCta() {
 
         {/* Spotlight Bright Text */}
         <h2
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-10 text-[18vw] sm:text-[14vw] md:text-[10vw] leading-[0.85] font-black uppercase text-center tracking-tight pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[length:12px_12px] md:bg-[length:24px_24px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-10 text-[18vw] sm:text-[14vw] md:text-[10vw] leading-[0.85] font-black uppercase text-center tracking-tight pointer-events-none select-none opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-[length:12px_12px] md:bg-[length:24px_24px]"
           style={{
             WebkitTextFillColor: "transparent",
             WebkitBackgroundClip: "text",
@@ -80,7 +80,7 @@ export default function BlogsCta() {
         
         <div className="relative z-20 mt-12 md:mt-20">
           <Link href="/contact">
-            <button className="bg-white text-[#111] font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-10 py-4 rounded-full hover:bg-[#CD1D1D] hover:text-white transition-all duration-300 shadow-xl hover:shadow-[#CD1D1D]/20 hover:scale-105 active:scale-95">
+            <button className="bg-white text-[#111] font-helvetica font-black text-xl md:text-2xl uppercase tracking-tight px-10 py-4 rounded-full lg:hover:bg-[#CD1D1D] lg:hover:text-white transition-all duration-300 shadow-xl lg:hover:shadow-[#CD1D1D]/20 lg:hover:scale-105 active:scale-95">
               SUBSCRIBE NOW
             </button>
           </Link>

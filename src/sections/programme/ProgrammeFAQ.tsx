@@ -95,7 +95,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                     className={`bg-white/60 backdrop-blur-md rounded-2xl border transition-all duration-500 overflow-hidden group ${
                       isOpen 
                         ? "border-[#CD1D1D]/30 shadow-[0_10px_40px_rgba(205,29,29,0.08)] bg-white/90" 
-                        : "border-black/10 hover:border-[#CD1D1D]/20 hover:bg-white/80 hover:shadow-lg"
+                        : "border-black/10 lg:hover:border-[#CD1D1D]/20 lg:hover:bg-white/80 lg:hover:shadow-lg"
                     }`}
                   >
                     <button
@@ -103,10 +103,10 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                       className="w-full p-6 md:p-8 flex items-start md:items-center justify-between text-left"
                     >
                       <div className="flex items-start md:items-center gap-6 pr-8">
-                        <span className={`font-courier text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-zinc-300 group-hover:text-[#CD1D1D]/50"}`}>
+                        <span className={`font-courier text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-zinc-300 lg:group-hover:text-[#CD1D1D]/50"}`}>
                           {num}
                         </span>
-                        <h3 className={`font-helvetica text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] group-hover:text-[#CD1D1D]"}`}>
+                        <h3 className={`font-helvetica text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] lg:group-hover:text-[#CD1D1D]"}`}>
                           {faq.question}
                         </h3>
                       </div>
@@ -114,13 +114,13 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                       <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-500 ${
                         isOpen 
                           ? "border-[#CD1D1D] bg-[#CD1D1D] shadow-[0_0_15px_rgba(205,29,29,0.3)]" 
-                          : "border-black/10 group-hover:border-[#CD1D1D] bg-transparent"
+                          : "border-black/10 lg:group-hover:border-[#CD1D1D] bg-transparent"
                       }`}>
                         <div className="relative w-4 h-4 md:w-5 md:h-5">
                           {/* Horizontal line */}
-                          <div className={`absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 transition-all duration-300 ${isOpen ? "bg-white" : "bg-[#111] group-hover:bg-[#CD1D1D]"}`} />
+                          <div className={`absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 transition-all duration-300 ${isOpen ? "bg-white" : "bg-[#111] lg:group-hover:bg-[#CD1D1D]"}`} />
                           {/* Vertical line (rotates flat when open) */}
-                          <div className={`absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 transition-all duration-300 ${isOpen ? "rotate-90 bg-white opacity-0" : "bg-[#111] group-hover:bg-[#CD1D1D]"}`} />
+                          <div className={`absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 transition-all duration-300 ${isOpen ? "rotate-90 bg-white opacity-0" : "bg-[#111] lg:group-hover:bg-[#CD1D1D]"}`} />
                         </div>
                       </div>
                     </button>

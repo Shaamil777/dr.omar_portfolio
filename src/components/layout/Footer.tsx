@@ -225,17 +225,17 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3 md:gap-4">
             <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Contact</h4>
-            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] transition-colors text-base md:text-lg">info@dromar.com</a>
-            <a href="tel:+971501234567" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] transition-colors text-base md:text-lg">+971 50 123 4567</a>
+            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] transition-colors text-base md:text-lg">info@dromar.com</a>
+            <a href="tel:+971501234567" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] transition-colors text-base md:text-lg">+971 50 123 4567</a>
           </div>
 
           <div className="flex flex-col gap-3 md:gap-4">
             <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Socials</h4>
             <div className="flex flex-row md:flex-col flex-wrap gap-4 md:gap-2">
-              <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Instagram</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">LinkedIn</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">YouTube</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Twitter</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Instagram</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">LinkedIn</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">YouTube</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Twitter</a>
             </div>
           </div>
           
@@ -244,8 +244,8 @@ export default function Footer() {
         <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-10 md:mt-24 pt-6 border-t border-black/10 text-zinc-400 text-xs md:text-sm font-helvetica">
           <p className="text-center md:text-left mb-4 md:mb-0">© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
-            <a href="#" className="hover:text-[#CD1D1D] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#CD1D1D] transition-colors">Terms of Service</a>
+            <a href="#" className="lg:hover:text-[#CD1D1D] transition-colors">Privacy Policy</a>
+            <a href="#" className="lg:hover:text-[#CD1D1D] transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

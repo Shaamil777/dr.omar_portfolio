@@ -112,7 +112,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
             {stats.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 {stats.map((stat, i) => (
-                  <div key={i} className="bg-white/60 backdrop-blur-md border border-black/10 rounded-2xl p-6 hover:bg-white/90 transition-colors duration-300">
+                  <div key={i} className="bg-white/60 backdrop-blur-md border border-black/10 rounded-2xl p-6 lg:hover:bg-white/90 transition-colors duration-300">
                     <div className="font-helvetica text-3xl font-black text-[#CD1D1D] mb-3">{stat.value}</div>
                     <div className="font-helvetica text-sm font-medium text-zinc-700 leading-snug">{stat.label}</div>
                   </div>
@@ -122,10 +122,10 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-[#CD1D1D] hover:bg-[#a81414] text-white font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 shadow-lg shadow-[#CD1D1D]/30">
+              <button className="bg-[#CD1D1D] lg:hover:bg-[#a81414] text-white font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 shadow-lg shadow-[#CD1D1D]/30">
                 Join The {company.name} Program
               </button>
-              <button className="bg-white hover:bg-zinc-100 text-[#111] border border-black/10 font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 flex items-center gap-2 shadow-sm">
+              <button className="bg-white lg:hover:bg-zinc-100 text-[#111] border border-black/10 font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 flex items-center gap-2 shadow-sm">
                 Brochure
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CD1D1D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -142,9 +142,9 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
             {/* Vision Card */}
             <div 
               ref={(el) => { bentoCardsRef.current[0] = el; }}
-              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
+              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center lg:hover:bg-white/90 transition-all duration-500 lg:hover:-translate-y-2 lg:hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
             >
-              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
+              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 lg:group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <EyeIcon />
               </div>
               <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Vision</h4>
@@ -162,7 +162,7 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
                 src={images[0]} 
                 alt="Vision" 
                 fill 
-                className="object-cover hover:scale-105 transition-transform duration-700"
+                className="object-cover lg:hover:scale-105 transition-transform duration-700"
               />
             </div>
 
@@ -175,16 +175,16 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
                 src={images[1]} 
                 alt="Mission" 
                 fill 
-                className="object-cover hover:scale-105 transition-transform duration-700"
+                className="object-cover lg:hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Mission Card */}
             <div 
               ref={(el) => { bentoCardsRef.current[3] = el; }}
-              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
+              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center lg:hover:bg-white/90 transition-all duration-500 lg:hover:-translate-y-2 lg:hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
             >
-              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
+              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 lg:group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
                 <TargetIcon />
               </div>
               <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Mission</h4>

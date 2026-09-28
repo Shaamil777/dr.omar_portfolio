@@ -81,7 +81,7 @@ export default function AboutBiography() {
                 src="/images/about/dr_lines.png"
                 alt="Dr. Abdussalam Omar Profile"
                 fill
-                className="object-contain object-bottom grayscale group-hover:grayscale-0 opacity-90 lg:opacity-100 transition-all duration-1000 ease-out drop-shadow-2xl scale-[1.15] -translate-x-6 lg:-translate-x-12 translate-y-6 lg:translate-y-12"
+                className="object-contain object-bottom grayscale lg:group-hover:grayscale-0 opacity-90 lg:opacity-100 transition-all duration-1000 ease-out drop-shadow-2xl scale-[1.15] -translate-x-6 lg:-translate-x-12 translate-y-6 lg:translate-y-12"
               />
               
               {/* Premium Gradient Base to mask the cut */}
