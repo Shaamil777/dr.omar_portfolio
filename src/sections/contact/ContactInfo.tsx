@@ -72,9 +72,8 @@ export default function ContactInfo() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -3, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-4 bg-white border-2 border-black/10 rounded-full text-[#111] hover:text-[#CD1D1D] hover:border-[#CD1D1D] transition-all duration-300 shadow-sm"
+              className="p-4 bg-white border-2 border-black/10 rounded-full text-[#111] hover:text-[#CD1D1D] hover:border-[#CD1D1D] hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-sm"
               aria-label={social.label}
             >
               <social.icon className="w-5 h-5" />

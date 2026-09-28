@@ -122,49 +122,6 @@ export default function AboutAuthority() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 max-w-[100rem] relative z-10 pb-24 md:pb-40">
-        {/* 10 Areas of Expertise Grid */}
-        {/* 
-        <div className="auth-element pt-8 md:pt-16">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
-            <div>
-              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block mb-4"> MULTIDISCIPLINARY FRAMEWORK </span>
-              <h3 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#0a0a0a]">
-                10 Core Areas<br />of Expertise
-              </h3>
-            </div>
-            <p className="font-helvetica text-base md:text-lg text-[#0a0a0a]/60 font-medium max-w-md">
-              Combining healthcare, psychology, leadership, business, and coaching into one practical transformation methodology.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-black/10">
-            {expertise.map((item, index) => (
-              <div 
-                key={index} 
-                className={`group p-6 md:p-8 border-r border-b border-black/10 flex-col justify-between min-h-[220px] hover:bg-black/[0.03] transition-colors duration-500 cursor-default ${!showAllExpertise && index >= 2 ? 'hidden md:flex' : 'flex'}`}
-              >
-                <span className="font-courier text-[#CD1D1D] text-lg font-bold opacity-80 group-hover:opacity-100 transition-opacity">
-                  {(index + 1).toString().padStart(2, '0')}
-                </span>
-                <span className="font-helvetica font-bold text-lg leading-snug tracking-tight text-[#0a0a0a] group-hover:text-[#CD1D1D] transition-colors">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {!showAllExpertise && expertise.length > 2 && (
-            <button 
-              onClick={() => setShowAllExpertise(true)}
-              className="md:hidden mt-8 text-xs font-courier uppercase tracking-[0.2em] text-[#CD1D1D] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <span>+ SHOW ALL EXPERTISE</span>
-            </button>
-          )}
-        </div>
-        */}
-      </div>
     </section>
   );
 }

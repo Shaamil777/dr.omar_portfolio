@@ -25,3 +25,19 @@
   --font-helvetica: var(--font-poppins);
   --font-courier: var(--font-poppins);
 }
+
+@custom-variant hover {
+  @media (min-width: 1024px) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
+@custom-variant group-hover {
+  @media (min-width: 1024px) {
+    :where(.group):hover & {
+      @slot;
+    }
+  }
+}
