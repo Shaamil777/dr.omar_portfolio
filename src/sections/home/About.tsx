@@ -8,7 +8,6 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,7 +89,7 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-helvetica font-medium text-[#111] leading-[1.3] tracking-tight"
+                className="text-base sm:text-lg md:text-xl font-helvetica font-normal text-zinc-600 leading-relaxed"
               >
                 For over 20 years, Dr. Abdussalam Omar has helped entrepreneurs, executives, and organizations unlock their full potential through leadership coaching, human transformation, branding, and strategic business development.
               </motion.p>
@@ -99,37 +98,11 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                className="text-base sm:text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight"
-              >
-                By combining emotional intelligence, psychology, leadership, and business strategy, he empowers people to become better leaders, build ethical businesses, and create lasting impact.
-              </motion.p>
-              <motion.p 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-                className={`text-base sm:text-lg md:text-xl lg:text-[22px] font-helvetica font-bold text-zinc-500 leading-[1.3] tracking-tight ${!isExpanded ? 'hidden md:block' : ''}`}
-              >
-                Having mentored thousands of entrepreneurs, coached organizations across industries, and worked with leaders throughout India and the GCC, his mission is to develop purpose-driven leaders who create meaningful and lasting impact in their communities and organizations.
-              </motion.p>
-              <motion.p 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-                className={`text-lg sm:text-xl md:text-2xl lg:text-[28px] font-helvetica font-black uppercase text-[#111] leading-[1.1] tracking-normal mt-2 md:mt-4 ${!isExpanded ? 'hidden md:block' : ''}`}
+                className="text-lg sm:text-xl md:text-2xl font-helvetica font-medium italic text-[#111] leading-snug mt-2 md:mt-4"
               >
                 "His philosophy is simple: transform people first, and lasting success will follow."
               </motion.p>
             </div>
-
-            {/* Read More Toggle for Mobile */}
-            <button 
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="md:hidden self-start text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 lg:hover:text-zinc-900 transition-colors mt-2 underline underline-offset-4"
-            >
-              {isExpanded ? "Read Less" : "Read More"}
-            </button>
 
             {/* CTA Buttons */}
             <motion.div 

@@ -159,13 +159,13 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full min-h-[100vh] md:min-h-[85vh] bg-[#FAF8F5] text-[#111] flex flex-col justify-end overflow-hidden"
+      className="relative w-full min-h-[100vh] md:min-h-[85vh] bg-[#111] text-white flex flex-col justify-end overflow-hidden"
     >
       {/* Marquee bands */}
       <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         {/* Upper Band */}
         <div
-          className="absolute top-[10%] md:top-[5%] bg-white border-y-2 border-black/10 py-4 md:py-8 z-10 shadow-xl"
+          className="absolute top-[10%] md:top-[5%] bg-white border-y-2 border-black py-4 md:py-8 z-10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
           style={{ width: "200%", left: "-50%", transform: "rotate(-1.5deg)" }}
         >
           <div ref={band1Ref} className="flex gap-4 md:gap-8 items-center whitespace-nowrap">
@@ -189,7 +189,7 @@ export default function Footer() {
 
         {/* Lower Band */}
         <div
-          className="absolute top-[18%] md:top-[18%] bg-white border-y-2 border-black/10 py-4 md:py-8 z-20 shadow-2xl"
+          className="absolute top-[18%] md:top-[18%] bg-white border-y-2 border-black py-4 md:py-8 z-20 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
           style={{ width: "200%", left: "-50%", transform: "rotate(1deg)" }}
         >
           <div ref={band2Ref} className="flex gap-4 md:gap-8 items-center whitespace-nowrap">
@@ -213,39 +213,76 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="relative z-30 flex-grow w-full flex flex-col justify-end pt-[40vh] md:pt-[50vh] pb-8 px-6 md:px-12 pointer-events-auto">
-        <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t border-black/10 pt-8 md:pt-12">
+      <div className="relative z-30 flex-grow w-full flex flex-col justify-end pt-[45vh] md:pt-[50vh] pb-8 px-6 md:px-12 pointer-events-auto">
+        <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 border-t border-white/10 pt-10 md:pt-16">
           
-          <div className="flex flex-col gap-4 md:gap-6 sm:col-span-2 md:col-span-1">
-            <h3 className="font-helvetica font-black text-3xl md:text-4xl uppercase tracking-tighter text-[#111]">DR. OMAR®</h3>
-            <p className="font-helvetica text-zinc-500 text-sm md:text-base max-w-sm leading-relaxed">
-              Global Leadership Coach, NLP Expert, and Life Transformation Specialist. Empowering individuals and organizations to achieve their highest potential.
+          {/* Brand & Newsletter */}
+          <div className="flex flex-col gap-6 lg:col-span-4 pr-0 lg:pr-10">
+            <h3 className="font-helvetica font-black text-4xl md:text-5xl uppercase tracking-tighter text-white">DR. OMAR<span className="text-[#CD1D1D]">.</span></h3>
+            <p className="font-helvetica text-zinc-400 text-sm md:text-base leading-relaxed">
+              Global Leadership Coach, NLP Expert, and Life Transformation Specialist. Empowering individuals and organizations to achieve their highest potential through deep immersion.
             </p>
+            <div className="mt-4 flex flex-col gap-4">
+              <span className="font-helvetica font-bold text-xs uppercase tracking-widest text-white/80">Join the inner circle</span>
+              <div className="flex items-center w-full max-w-sm border-b border-white/20 pb-2 transition-colors focus-within:border-white group">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="bg-transparent w-full text-sm font-helvetica text-white placeholder:text-zinc-600 outline-none"
+                />
+                <button className="font-helvetica font-bold text-xs uppercase tracking-widest text-[#CD1D1D] lg:hover:text-white transition-colors whitespace-nowrap ml-4">
+                  Subscribe
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3 md:gap-4">
-            <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Contact</h4>
-            <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] transition-colors text-base md:text-lg">info@dromar.com</a>
-            <a href="tel:+971501234567" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] transition-colors text-base md:text-lg">+971 50 123 4567</a>
+          {/* Quick Links */}
+          <div className="flex flex-col gap-4 lg:col-span-2 lg:col-start-6">
+            <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2">Company</h4>
+            <a href="/about" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">About Dr. Omar</a>
+            <a href="#entrepreneur" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">The Entrepreneur</a>
+            <a href="#achievements" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Achievements</a>
+            <a href="#blogs" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Insights & Blog</a>
+            <a href="#testimonials" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Success Stories</a>
           </div>
 
-          <div className="flex flex-col gap-3 md:gap-4">
-            <h4 className="font-helvetica font-bold text-base md:text-xl uppercase tracking-widest text-[#CD1D1D]">Socials</h4>
-            <div className="flex flex-row md:flex-col flex-wrap gap-4 md:gap-2">
-              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Instagram</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">LinkedIn</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">YouTube</a>
-              <a href="#" className="font-helvetica font-medium text-zinc-600 lg:hover:text-[#CD1D1D] underline-offset-4 w-fit transition-colors">Twitter</a>
+          {/* Programmes */}
+          <div className="flex flex-col gap-4 lg:col-span-2">
+            <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2">Expertise</h4>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Global Leadership</a>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Deep Immersion</a>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">NLP Coaching</a>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Executive Mentorship</a>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Masterclasses</a>
+          </div>
+
+          {/* Contact & Socials */}
+          <div className="flex flex-col gap-4 lg:col-span-3">
+            <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2">Connect</h4>
+            <div className="flex flex-col gap-1 mb-4">
+              <a href="mailto:info@dromar.com" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">info@dromar.com</a>
+              <a href="tel:+971501234567" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">+971 50 123 4567</a>
+              <span className="font-helvetica font-medium text-zinc-500 text-sm md:text-base mt-2">Dubai, United Arab Emirates</span>
+            </div>
+            
+            <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2 mt-1">Socials</h4>
+            <div className="flex flex-row gap-6">
+              <a href="#" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base">IG</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base">IN</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base">YT</a>
+              <a href="#" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base">TW</a>
             </div>
           </div>
           
         </div>
         
-        <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-10 md:mt-24 pt-6 border-t border-black/10 text-zinc-400 text-xs md:text-sm font-helvetica">
-          <p className="text-center md:text-left mb-4 md:mb-0">© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
-            <a href="#" className="lg:hover:text-[#CD1D1D] transition-colors">Privacy Policy</a>
-            <a href="#" className="lg:hover:text-[#CD1D1D] transition-colors">Terms of Service</a>
+        <div className="max-w-[100rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center mt-16 md:mt-24 pt-8 border-t border-white/10 text-zinc-500 text-xs md:text-sm font-helvetica">
+          <p className="text-center md:text-left mb-6 md:mb-0">© {new Date().getFullYear()} Dr. Abdussalam Omar. All Rights Reserved.</p>
+          <div className="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
+            <a href="#" className="lg:hover:text-white transition-colors font-medium">Privacy Policy</a>
+            <a href="#" className="lg:hover:text-white transition-colors font-medium">Terms of Service</a>
+            <a href="#" className="lg:hover:text-white transition-colors font-medium">Cookie Settings</a>
           </div>
         </div>
       </div>

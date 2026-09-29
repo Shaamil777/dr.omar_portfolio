@@ -178,13 +178,13 @@ export default function Programmes() {
              >
                 
                 {/* Pop-out Image 1 (Bottom Left) */}
-                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-x-[35%] lg:group-hover:translate-y-[60%] lg:group-hover:-rotate-[12deg] shadow-2xl pointer-events-none">
-                  <Image src={img1} alt="" fill className="object-cover" />
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:-translate-x-[35%] lg:group-hover:translate-y-[60%] lg:group-hover:-rotate-[12deg] shadow-2xl pointer-events-none bg-zinc-200">
+                  <Image src={img1} alt="" fill className="w-full h-full object-cover scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
 
                 {/* Pop-out Image 2 (Bottom Right) */}
-                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:translate-x-[35%] lg:group-hover:translate-y-[45%] lg:group-hover:rotate-[10deg] shadow-2xl pointer-events-none">
-                  <Image src={img2} alt="" fill className="object-cover" />
+                <div className="absolute inset-0 m-auto w-[85%] h-[220px] md:h-[260px] rounded-2xl overflow-hidden z-0 opacity-0 scale-75 lg:group-hover:scale-100 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] lg:group-hover:translate-x-[35%] lg:group-hover:translate-y-[45%] lg:group-hover:rotate-[10deg] shadow-2xl pointer-events-none bg-zinc-200">
+                  <Image src={img2} alt="" fill className="w-full h-full object-cover scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
 
                 {/* Main Card */}

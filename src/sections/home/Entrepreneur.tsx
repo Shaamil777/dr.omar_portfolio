@@ -125,7 +125,7 @@ export default function Entrepreneur() {
 
       // 3. Card Parallax, Stagger & Dynamic Background Colors
       gsap.utils.toArray('.entrepreneur-card').forEach((card: any, index: number) => {
-        const image = card.querySelector('.parallax-image');
+        const imageWrapper = card.querySelector('.parallax-wrapper');
         const inner = card.querySelector('.card-inner');
         const companyColor = companies[index].color;
         
@@ -146,10 +146,10 @@ export default function Entrepreneur() {
         });
 
         // Horizontal Image Parallax
-        gsap.fromTo(image, 
-          { xPercent: -25 },
+        gsap.fromTo(imageWrapper, 
+          { xPercent: -15 },
           {
-            xPercent: 25,
+            xPercent: 15,
             ease: "none",
             scrollTrigger: {
               trigger: card,
@@ -232,13 +232,15 @@ export default function Entrepreneur() {
             >
               <div className="card-inner flex flex-col w-full origin-bottom transform-gpu">
                 <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/8] max-h-[40vh] md:max-h-[45vh] lg:max-h-[35vh] xl:max-h-[45vh] rounded-2xl md:rounded-[2rem] overflow-hidden mb-3 md:mb-4 lg:mb-3 xl:mb-6 bg-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                  <Image 
-                    src={company.image} 
-                    alt={company.name} 
-                    fill 
-                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
-                    className="parallax-image object-cover scale-[1.6] transition-transform duration-1000 ease-out lg:group-hover:scale-[1.65]" 
-                  />
+                  <div className="parallax-wrapper absolute top-0 left-[-25%] w-[150%] h-full">
+                    <Image 
+                      src={company.image} 
+                      alt={company.name} 
+                      fill 
+                      sizes="(max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
+                      className="object-cover transition-transform duration-1000 ease-out lg:group-hover:scale-[1.05]" 
+                    />
+                  </div>
                 </div>
                 
                 <div className="card-content flex flex-col-reverse lg:flex-row gap-3 md:gap-6 lg:gap-4 xl:gap-8 justify-between items-start lg:items-center mt-1">
