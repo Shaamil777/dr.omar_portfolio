@@ -112,7 +112,7 @@ export default function About() {
                 className="mt-2 md:mt-4"
               >
                 <img 
-                  src="/images/about/sign.png" 
+                  src="/images/home/sign.png" 
                   alt="Dr. Omar Signature" 
                   className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain opacity-80 mix-blend-darken" 
                 />
@@ -151,7 +151,7 @@ export default function About() {
               className="relative z-10 flex flex-col items-center w-[95%] sm:w-[80%] lg:w-[75%] translate-y-4 lg:translate-y-12 mb-0 sm:mb-4 lg:mb-10"
             >
               <img 
-                src="/images/about/dr_line2.png" 
+                src="/images/home/dr_line2.png" 
                 alt="Dr. Omar" 
                 className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] contrast-[1.1] saturate-[1.1] [mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]" 
               />

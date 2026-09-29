@@ -19,25 +19,13 @@ export default function AboutEcosystem() {
       bgImage: "/images/about/hea.webp",
       bgPosition: "object-[center_20%] md:object-[center_25%]",
       logo: (
-        <div className="flex items-center gap-4">
-          {/* Abstract HEA Figure */}
-          <div className="relative w-12 h-16 flex-shrink-0">
-            <svg viewBox="0 0 100 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M40 30 C 50 10, 70 10, 80 30" stroke="#E66A6B" strokeWidth="6" strokeLinecap="round" />
-              <path d="M50 40 C 60 70, 40 100, 30 110" stroke="#EE9D45" strokeWidth="6" strokeLinecap="round" />
-              <path d="M20 50 C 40 40, 60 50, 70 80" stroke="#AF59A9" strokeWidth="6" strokeLinecap="round" />
-              <path d="M60 40 C 80 50, 90 80, 80 110" stroke="#4688D3" strokeWidth="6" strokeLinecap="round" />
-              <circle cx="50" cy="20" r="8" fill="#E66A6B" />
-            </svg>
-          </div>
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <span className="font-serif text-[3.5rem] md:text-[4.5rem] tracking-widest text-[#2986CC] leading-none mb-1">
-              HEA
-            </span>
-            <span className="font-helvetica font-medium text-[10px] md:text-xs tracking-[0.25em] text-[#2986CC] uppercase">
-              Human Excellence Academy
-            </span>
-          </div>
+        <div className="relative h-24 w-72 md:h-32 md:w-96 lg:h-40 lg:w-[400px] mix-blend-plus-lighter">
+          <Image 
+            src="/logos/HEA/hea.png" 
+            alt="HEA Logo" 
+            fill 
+            className="object-contain object-center lg:object-left" 
+          />
         </div>
       ),
       desc: (
@@ -69,13 +57,13 @@ export default function AboutEcosystem() {
       tagline: "From Ideas to IPO®",
       bgImage: "/images/about/oathman.webp",
       logo: (
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-          <span className="font-helvetica font-bold text-3xl md:text-4xl tracking-wide text-white leading-none">
-            OATHMEN
-          </span>
-          <span className="font-helvetica font-bold text-[9px] md:text-[11px] tracking-[0.2em] text-white mt-1">
-            THE STARTUP COACHING CLUB
-          </span>
+        <div className="relative h-20 w-64 md:h-28 md:w-80 lg:h-36 lg:w-[350px]">
+          <Image 
+            src="/logos/OATHMEN/oathmen_light.png" 
+            alt="OATHMEN Logo" 
+            fill 
+            className="object-contain object-center lg:object-left" 
+          />
         </div>
       ),
       desc: "A startup coaching, incubation, and entrepreneurship ecosystem established to help aspiring founders transform innovative ideas into scalable, investment-ready businesses." 
