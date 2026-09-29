@@ -89,7 +89,7 @@ export default function Navbar() {
   return (
     <>
       <div 
-        className={`w-full flex justify-center p-4 md:p-6 relative z-[60] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        className={`w-full flex justify-center pt-1 pb-2 px-4 md:pt-2 md:pb-4 md:px-6 relative z-[60] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
           showNavbar ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
@@ -103,7 +103,7 @@ export default function Navbar() {
           </div>
           
           {/* DESKTOP LINKS (Centered) */}
-          <div className="hidden xl:flex items-center justify-center gap-8 2xl:gap-12 font-helvetica text-[11px] 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-[#111]/50 xl:w-[60%]">
+          <div className="hidden xl:flex items-center justify-center gap-8 2xl:gap-12 font-helvetica text-[11px] 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-[#111]/85 xl:w-[60%]">
             <Link href="/about" className="lg:hover:text-[#111] transition-colors duration-300">About</Link>
             <a href="#entrepreneur" onClick={(e) => handleScrollToSection(e, "entrepreneur")} className="lg:hover:text-[#111] transition-colors duration-300 cursor-pointer">Entrepreneur</a>
             <Link href="/programmes" className="group relative flex items-center gap-1.5 lg:hover:text-[#111] transition-colors duration-300">

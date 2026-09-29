@@ -102,6 +102,21 @@ export default function About() {
               >
                 "His philosophy is simple: transform people first, and lasting success will follow."
               </motion.p>
+
+              {/* Signature Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+                className="mt-2 md:mt-4"
+              >
+                <img 
+                  src="/images/about/sign.png" 
+                  alt="Dr. Omar Signature" 
+                  className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain opacity-80 mix-blend-darken" 
+                />
+              </motion.div>
             </div>
 
             {/* CTA Buttons */}
