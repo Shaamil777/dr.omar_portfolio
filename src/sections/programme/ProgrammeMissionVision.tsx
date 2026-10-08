@@ -8,15 +8,15 @@ import type { CompanyData } from "@/constants/companies";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const EyeIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+const EyeIcon = ({ className = "text-[#111]" }) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
     <circle cx="12" cy="12" r="3" />
   </svg>
 );
 
-const TargetIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+const TargetIcon = ({ className = "text-[#111]" }) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <circle cx="12" cy="12" r="10" />
     <circle cx="12" cy="12" r="6" />
     <circle cx="12" cy="12" r="2" />
@@ -26,14 +26,14 @@ const TargetIcon = () => (
 export default function ProgrammeMissionVision({ company }: { company: CompanyData }) {
   const sectionRef = useRef<HTMLElement>(null);
   const leftColRef = useRef<HTMLDivElement>(null);
-  const bentoCardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const rightElementsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 75%",
           end: "bottom top",
           toggleActions: "play none none reverse",
         },
@@ -43,14 +43,14 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
       // Reveal left column
       tl.fromTo(
         leftColRef.current,
-        { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, duration: 1.2 }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1.2 }
       )
-      // Stagger reveal bento cards
+      // Stagger reveal right elements
       .fromTo(
-        bentoCardsRef.current.filter(Boolean),
-        { opacity: 0, y: 50, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.15 },
+        rightElementsRef.current.filter(Boolean),
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.2 },
         "-=0.8"
       );
     }, sectionRef);
@@ -64,70 +64,57 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
   const mission = company.mission || "";
   const vision = company.vision || "";
   const images = company.missionVisionImages || [
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600"
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200"
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full bg-transparent text-[#111] relative z-10 flex flex-col justify-center py-24"
+      className="min-h-screen w-full bg-transparent text-[#111] relative z-10 flex flex-col justify-center py-20 md:py-24"
     >
-      {/* Blinking Scattered Pixels Background (Bleeding from the section below) */}
-      <div className="absolute inset-0 z-0 pointer-events-none" style={{ WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 400px)', maskImage: 'linear-gradient(to top, black 0%, transparent 400px)' }}>
-        <svg className="absolute inset-0 w-full h-full opacity-[0.15]">
-          <pattern id="pixel-pattern-mission" width="800" height="800" patternUnits="userSpaceOnUse">
-             <rect x="240" y="720" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '0s', animationDuration: '3.5s' }} />
-             <rect x="560" y="640" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '1.2s', animationDuration: '4s' }} />
-             <rect x="80" y="560" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '0.4s', animationDuration: '2.8s' }} />
-             <rect x="400" y="480" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '2.1s', animationDuration: '3.2s' }} />
-             <rect x="640" y="720" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '1.7s', animationDuration: '3s' }} />
-             <rect x="320" y="400" width="80" height="80" fill="#CD1D1D" className="animate-pulse" style={{ animationDelay: '0.9s', animationDuration: '2.5s' }} />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#pixel-pattern-mission)" />
-        </svg>
-      </div>
-
       <div className="container mx-auto px-6 lg:px-12 max-w-[90rem] relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column (5 cols) */}
           <div ref={leftColRef} className="lg:col-span-5 flex flex-col">
             
-            {/* Headings */}
-            <div className="mb-8">
-              {headings.map((heading, i) => (
-                <h3 key={i} className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold text-[#111] leading-[1.1] tracking-tight">
-                  {heading}
-                </h3>
-              ))}
-            </div>
+            <div className="border-l-[3px] border-[#CD1D1D] pl-5 md:pl-8 flex flex-col gap-5 md:gap-6 mb-10">
+              {/* Headings */}
+              <div className="flex flex-col gap-1 md:gap-2">
+                {headings.map((heading, i) => (
+                  <h3 key={i} className="text-2xl sm:text-3xl md:text-4xl lg:text-[2rem] font-helvetica font-bold text-[#111] leading-[1.1] tracking-tight">
+                    {heading}
+                  </h3>
+                ))}
+              </div>
 
-            {/* Description */}
-            <p className="font-helvetica text-base md:text-lg text-zinc-600 leading-relaxed mb-12">
-              {desc}
-            </p>
+              {/* Description */}
+              <p className="text-base font-helvetica font-normal text-zinc-600 leading-relaxed max-w-lg">
+                {desc}
+              </p>
+            </div>
 
             {/* Stats */}
             {stats.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="flex flex-col gap-6 mb-10">
                 {stats.map((stat, i) => (
-                  <div key={i} className="bg-white/60 backdrop-blur-md border border-black/10 rounded-2xl p-6 lg:hover:bg-white/90 transition-colors duration-300">
-                    <div className="font-helvetica text-3xl font-black text-[#CD1D1D] mb-3">{stat.value}</div>
-                    <div className="font-helvetica text-sm font-medium text-zinc-700 leading-snug">{stat.label}</div>
+                  <div key={i} className="flex flex-col">
+                    <div className="font-helvetica text-3xl lg:text-4xl font-bold tracking-tight text-[#111] mb-1">{stat.value}</div>
+                    <div className="font-helvetica text-xs md:text-sm font-normal text-zinc-500 uppercase tracking-widest">{stat.label}</div>
                   </div>
                 ))}
               </div>
             )}
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-[#CD1D1D] lg:hover:bg-[#a81414] text-white font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 shadow-lg shadow-[#CD1D1D]/30">
+            <div className="flex flex-row items-center gap-3 w-full">
+              <button className="bg-[#111] lg:hover:bg-[#CD1D1D] text-white font-helvetica font-medium uppercase tracking-wider text-[10px] md:text-xs px-5 py-3 md:px-6 md:py-3.5 rounded-full transition-colors duration-300 whitespace-nowrap">
                 Join The {company.name} Program
               </button>
-              <button className="bg-white lg:hover:bg-zinc-100 text-[#111] border border-black/10 font-helvetica font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-colors duration-300 flex items-center gap-2 shadow-sm">
+              <button className="bg-transparent lg:hover:bg-zinc-100 text-[#111] border border-black/20 font-helvetica font-medium uppercase tracking-wider text-[10px] md:text-xs px-5 py-3 md:px-6 md:py-3.5 rounded-full transition-colors duration-300 flex items-center gap-2 whitespace-nowrap">
                 Brochure
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CD1D1D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" x2="12" y1="15" y2="3" />
@@ -136,61 +123,66 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
             </div>
           </div>
 
-          {/* Right Column (7 cols) — Bento Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Right Column (7 cols) — Minimal Editorial Layout */}
+          <div className="lg:col-span-7 flex flex-col h-full pt-2">
             
-            {/* Vision Card */}
-            <div 
-              ref={(el) => { bentoCardsRef.current[0] = el; }}
-              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center lg:hover:bg-white/90 transition-all duration-500 lg:hover:-translate-y-2 lg:hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
-            >
-              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 lg:group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
-                <EyeIcon />
+            {/* Elegant Multi-Image Header */}
+            <div className="flex gap-4 md:gap-6 mb-12">
+              {/* Image 1 (Wider, Left) */}
+              <div 
+                ref={(el) => { rightElementsRef.current[0] = el; }}
+                className="flex-[3] w-full aspect-[4/3] relative overflow-hidden rounded-sm bg-zinc-100"
+              >
+                <Image 
+                  src={images[0]} 
+                  alt="Mission & Vision" 
+                  fill 
+                  className="object-cover grayscale opacity-90 lg:hover:grayscale-0 lg:hover:opacity-100 lg:hover:scale-105 transition-all duration-700 ease-out"
+                />
               </div>
-              <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Vision</h4>
-              <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
-                {vision}
-              </p>
-            </div>
-
-            {/* Image 1 */}
-            <div 
-              ref={(el) => { bentoCardsRef.current[1] = el; }}
-              className="relative rounded-3xl overflow-hidden aspect-square md:aspect-auto h-full min-h-[300px] border border-black/10"
-            >
-              <Image 
-                src={images[0]} 
-                alt="Vision" 
-                fill 
-                className="object-cover lg:hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-
-            {/* Image 2 */}
-            <div 
-              ref={(el) => { bentoCardsRef.current[2] = el; }}
-              className="relative rounded-3xl overflow-hidden aspect-square md:aspect-auto h-full min-h-[300px] border border-black/10"
-            >
-              <Image 
-                src={images[1]} 
-                alt="Mission" 
-                fill 
-                className="object-cover lg:hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-
-            {/* Mission Card */}
-            <div 
-              ref={(el) => { bentoCardsRef.current[3] = el; }}
-              className="bg-white/60 backdrop-blur-md border border-black/10 rounded-3xl p-10 flex flex-col items-center justify-center text-center lg:hover:bg-white/90 transition-all duration-500 lg:hover:-translate-y-2 lg:hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] group"
-            >
-              <div className="w-14 h-14 bg-[#CD1D1D] rounded-full flex items-center justify-center mb-6 lg:group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#CD1D1D]/30">
-                <TargetIcon />
+              
+              {/* Image 2 (Taller, Right, Staggered down) */}
+              <div 
+                ref={(el) => { rightElementsRef.current[3] = el; }}
+                className="flex-[2] w-full aspect-[3/4] relative overflow-hidden rounded-sm bg-zinc-100 mt-8 md:mt-16"
+              >
+                <Image 
+                  src={images[1] || images[0]} 
+                  alt="Professional Leadership" 
+                  fill 
+                  className="object-cover grayscale opacity-90 lg:hover:grayscale-0 lg:hover:opacity-100 lg:hover:scale-105 transition-all duration-700 ease-out"
+                />
               </div>
-              <h4 className="font-helvetica text-xl font-bold tracking-widest text-[#111] mb-4">Mission</h4>
-              <p className="font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed font-medium">
-                {mission}
-              </p>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-8 md:gap-10">
+              {/* Vision Block */}
+              <div 
+                ref={(el) => { rightElementsRef.current[1] = el; }}
+                className="flex-1 border-t border-black/20 pt-6 group"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="font-helvetica text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-zinc-400 group-hover:text-[#CD1D1D] transition-colors duration-500">Vision</h4>
+                  <EyeIcon className="text-zinc-300 w-5 h-5 group-hover:text-[#CD1D1D] transition-colors duration-500" />
+                </div>
+                <p className="font-helvetica text-base md:text-lg text-[#111] leading-relaxed font-light pr-4">
+                  {vision}
+                </p>
+              </div>
+
+              {/* Mission Block */}
+              <div 
+                ref={(el) => { rightElementsRef.current[2] = el; }}
+                className="flex-1 border-t border-black/20 pt-6 group"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="font-helvetica text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-zinc-400 group-hover:text-[#CD1D1D] transition-colors duration-500">Mission</h4>
+                  <TargetIcon className="text-zinc-300 w-5 h-5 group-hover:text-[#CD1D1D] transition-colors duration-500" />
+                </div>
+                <p className="font-helvetica text-base md:text-lg text-[#111] leading-relaxed font-light pr-4">
+                  {mission}
+                </p>
+              </div>
             </div>
 
           </div>

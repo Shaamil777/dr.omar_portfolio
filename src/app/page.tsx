@@ -6,7 +6,7 @@ import Programmes from "@/sections/home/Programmes";
 import Achievements from "@/sections/home/Achievements";
 import Testimonial from "@/sections/home/Testimonial";
 import Blogs from "@/sections/home/Blogs";
-import Cta from "@/sections/home/Cta";
+import AboutCta from "@/sections/about/AboutCta";
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
         <div id="achievements"><Achievements /></div>
         <div id="testimonials"><Testimonial /></div>
         <div id="blogs"><Blogs /></div>
-        <div id="cta"><Cta /></div>
+        <div id="cta"><AboutCta hideQuote={true} /></div>
       </div>
     </main>
   );

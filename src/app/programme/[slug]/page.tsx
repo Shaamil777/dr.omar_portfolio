@@ -58,8 +58,3 @@ export default async function DynamicCompanyPage({
   );
 }
 
-export function generateStaticParams() {
-  return companiesData.map((company) => ({
-    slug: company.slug,
-  }));
-}

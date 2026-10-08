@@ -2,6 +2,7 @@ export type CompanyData = {
   slug: string;
   name: string;
   description: string;
+  aboutImage?: string;
   aboutParagraphs?: string[];
   missionVisionHeading?: string[];
   missionVisionDesc?: string;
@@ -24,6 +25,7 @@ export const companiesData: CompanyData[] = [
     slug: "bcc",
     name: "Business Coaching Club",
     description: "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy.",
+    aboutImage: "/images/programmes/bcc-about-bg.webp",
     aboutParagraphs: [
       "Business Coaching Club (BCC) is a year-long mentorship and business networking ecosystem designed to help entrepreneurs grow their businesses in a structured, sustainable, and ethical way.",
       "It focuses on transforming business owners into purpose-driven leaders who can scale their companies while maintaining balance in life values and spirituality."

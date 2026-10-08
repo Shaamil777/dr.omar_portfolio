@@ -62,14 +62,14 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#FAF8F5] text-[#111] py-24 md:py-32 relative z-10 overflow-hidden border-t border-black/10"
+      className="w-full bg-[#FAF8F5] text-[#111] py-16 md:py-20 relative z-10 overflow-hidden border-t border-black/10"
     >
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> THE ALUMNI </span>
-            <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
-              Leaders Who<br/>Scaled
+            <h2 className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] text-[#111]">
+              Leaders Who Scaled
             </h2>
           </div>
           
@@ -95,7 +95,7 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
           {duplicatedTestimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="w-[280px] md:w-[450px] flex-shrink-0 bg-white border border-black/10 p-6 md:p-8 rounded-2xl shadow-sm transition-all duration-300 lg:group-hover:opacity-50 lg:hover:!opacity-100 lg:hover:scale-[1.02] lg:hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] lg:hover:border-[#CD1D1D]/30"
+              className="w-[260px] md:w-[320px] flex-shrink-0 bg-white border border-black/10 p-5 md:p-6 rounded-xl shadow-sm transition-all duration-300 lg:group-hover:opacity-50 lg:hover:!opacity-100 lg:hover:scale-[1.02] lg:hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)] lg:hover:border-[#CD1D1D]/30"
             >
               <div className="flex items-center gap-1 mb-6 text-[#CD1D1D]">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -103,12 +103,12 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
                 ))}
               </div>
               
-              <p className="font-helvetica text-lg md:text-2xl font-bold tracking-tight text-[#111] mb-6 md:mb-8 leading-snug">
+              <p className="font-helvetica text-base md:text-lg font-bold tracking-tight text-[#111] mb-5 md:mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </p>
               
               <div className="flex items-center gap-4 mt-auto">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/10">
+                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-black/10">
                   <Image src={testimonial.image} alt={testimonial.name} fill className="object-cover" />
                 </div>
                 <div>

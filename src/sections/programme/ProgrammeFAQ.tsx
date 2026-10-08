@@ -57,7 +57,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full bg-transparent text-[#111] relative z-10 flex flex-col justify-center py-24 md:py-32"
+      className="w-full bg-transparent text-[#111] relative z-10 flex flex-col justify-center py-16 md:py-20"
     >
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
@@ -67,7 +67,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
             <div className="sticky top-32">
               <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> FAQ </span>
               
-              <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] text-[#111] mb-8">
+              <h2 className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] text-[#111] mb-6">
                 Frequently<br/>
                 Asked<br/>
                 Questions
@@ -83,7 +83,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
 
           {/* Right Column (8 cols) — Accordion */}
           <div className="lg:col-span-8" ref={faqListRef}>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 const num = (index + 1).toString().padStart(2, '0');
@@ -100,23 +100,23 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full p-6 md:p-8 flex items-start md:items-center justify-between text-left"
+                      className="w-full p-5 md:p-6 flex items-start md:items-center justify-between text-left"
                     >
-                      <div className="flex items-start md:items-center gap-6 pr-8">
-                        <span className={`font-courier text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-zinc-300 lg:group-hover:text-[#CD1D1D]/50"}`}>
+                      <div className="flex items-start md:items-center gap-4 pr-6">
+                        <span className={`font-courier text-base md:text-lg font-bold transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-zinc-300 lg:group-hover:text-[#CD1D1D]/50"}`}>
                           {num}
                         </span>
-                        <h3 className={`font-helvetica text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] lg:group-hover:text-[#CD1D1D]"}`}>
+                        <h3 className={`font-helvetica text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-[#CD1D1D]" : "text-[#111] lg:group-hover:text-[#CD1D1D]"}`}>
                           {faq.question}
                         </h3>
                       </div>
                       
-                      <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-500 ${
+                      <div className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full border flex items-center justify-center transition-all duration-500 ${
                         isOpen 
                           ? "border-[#CD1D1D] bg-[#CD1D1D] shadow-[0_0_15px_rgba(205,29,29,0.3)]" 
                           : "border-black/10 lg:group-hover:border-[#CD1D1D] bg-transparent"
                       }`}>
-                        <div className="relative w-4 h-4 md:w-5 md:h-5">
+                        <div className="relative w-3 h-3 md:w-4 md:h-4">
                           {/* Horizontal line */}
                           <div className={`absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 transition-all duration-300 ${isOpen ? "bg-white" : "bg-[#111] lg:group-hover:bg-[#CD1D1D]"}`} />
                           {/* Vertical line (rotates flat when open) */}
@@ -130,7 +130,7 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                       className="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                       style={{ maxHeight: isOpen ? "400px" : "0px", opacity: isOpen ? 1 : 0 }}
                     >
-                      <div className="px-6 pb-6 md:px-8 md:pb-8 pl-[4.5rem] md:pl-[5.5rem] font-helvetica text-base md:text-lg text-zinc-600 leading-relaxed max-w-3xl">
+                      <div className="px-5 pb-5 md:px-6 md:pb-6 pl-[3.5rem] md:pl-[4.5rem] font-helvetica text-sm md:text-base text-zinc-600 leading-relaxed max-w-3xl">
                         {faq.answer}
                       </div>
                     </div>

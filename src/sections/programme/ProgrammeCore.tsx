@@ -57,7 +57,7 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
     >
       <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center relative z-20">
         
-        <span className="font-courier text-sm uppercase tracking-[0.4em] text-[#CD1D1D] font-bold mb-8 block"> THE NEXT STEP </span>
+        <span className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase mb-8 block"> THE NEXT STEP </span>
         
         {/* Massive Clipped Typography */}
         <h2 

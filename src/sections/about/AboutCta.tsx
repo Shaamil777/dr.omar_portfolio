@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function AboutCta() {
+export default function AboutCta({ hideQuote = false }: { hideQuote?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -32,20 +32,22 @@ export default function AboutCta() {
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center max-w-[80rem]">
         
         {/* Quote Block - Pure Typography */}
-        <div className="cta-element mb-16 md:mb-32 max-w-5xl">
-          <span className="text-[#CD1D1D] font-helvetica font-black text-6xl md:text-8xl leading-none block mb-4 md:mb-6 opacity-30">
-            “
-          </span>
-          <p className="font-helvetica text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#0a0a0a] leading-[1.3] md:leading-[1.2] mb-8 md:mb-10 px-4 md:px-0">
-            I believe every person carries extraordinary potential. My mission is to help them discover it, develop it, and use it to build a meaningful life, an ethical business, and a better world.
-          </p>
-          <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block">
-            — DR. ABDUSSALAM OMAR
-          </span>
-        </div>
+        {!hideQuote && (
+          <div className="cta-element mb-16 md:mb-32 max-w-5xl">
+            <span className="text-[#CD1D1D] font-helvetica font-black text-6xl md:text-8xl leading-none block mb-4 md:mb-6 opacity-30">
+              “
+            </span>
+            <p className="font-helvetica text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#0a0a0a] leading-[1.3] md:leading-[1.2] mb-8 md:mb-10 px-4 md:px-0">
+              I believe every person carries extraordinary potential. My mission is to help them discover it, develop it, and use it to build a meaningful life, an ethical business, and a better world.
+            </p>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold block">
+              — DR. ABDUSSALAM OMAR
+            </span>
+          </div>
+        )}
 
         {/* The Next Chapter */}
-        <div className="cta-element w-full flex flex-col items-center pt-16 md:pt-24 border-t border-black/10">
+        <div className={`cta-element w-full flex flex-col items-center ${hideQuote ? '' : 'pt-16 md:pt-24 border-t border-black/10'}`}>
           <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#0a0a0a]/40 font-bold mb-6 md:mb-8 block"> THE NEXT CHAPTER </span>
           
           <h2 className="font-helvetica text-4xl sm:text-5xl md:text-7xl lg:text-[8rem] font-bold tracking-tighter leading-[0.9] md:leading-[0.85] text-[#0a0a0a] uppercase mb-10 md:mb-16">

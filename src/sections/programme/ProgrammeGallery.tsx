@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ProgrammeGallery({ company }: { company: CompanyData }) {
   const sectionRef = useRef<HTMLElement>(null);
   const leftColRef = useRef<HTMLDivElement>(null);
-  const rightColRef = useRef<HTMLDivElement>(null);
 
   const defaultImages = [
     { url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800", alt: "Img 1", caption: "01 // MENTORSHIP" },
@@ -63,7 +62,22 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
         }
       );
       
-      // We don't need complex parallax anymore, the native sticky + scroll handles the layout perfectly.
+      // Animate gallery images in a staggered flow
+      gsap.fromTo(".gallery-img",
+        { opacity: 0, y: 50, scale: 0.95 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1, 
+          duration: 1, 
+          stagger: 0.15, 
+          ease: "expo.out", 
+          scrollTrigger: { 
+            trigger: sectionRef.current, 
+            start: "top 60%" 
+          } 
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -132,22 +146,44 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
             </div>
           </div>
 
-          {/* Right Column (6 cols, pushed far right) — Vertically Scrolling Image Stack */}
-          <div className="lg:col-span-6 lg:col-start-7 mt-8 lg:mt-0" ref={rightColRef}>
-            <div className="flex flex-col w-full rounded-3xl overflow-hidden border-[4px] border-white shadow-[0_30px_60px_rgba(0,0,0,0.25)] bg-white">
-              {gallery.map((img, index) => (
-                <div 
-                  key={index}
-                  className="relative w-full aspect-[4/3] overflow-hidden group"
-                >
-                  <Image 
-                    src={img.url} 
-                    alt={img.alt} 
-                    fill 
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+          {/* Right Column (6 cols, pushed far right) — Asymmetrical Gallery Grid */}
+          <div className="lg:col-span-6 lg:col-start-7 mt-12 lg:mt-0">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 w-full">
+              {gallery.map((img, index) => {
+                // Determine grid span based on index for a dynamic layout
+                // 0 -> wide (col-span-2)
+                // 1 -> square (col-span-1)
+                // 2 -> square (col-span-1)
+                // 3 -> wide (col-span-2)
+                const isWide = index % 3 === 0;
+
+                return (
+                  <div 
+                    key={index}
+                    className={`gallery-img relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-black/5 shadow-xl group cursor-pointer bg-white ${isWide ? 'col-span-2 aspect-[16/9]' : 'col-span-1 aspect-[4/5]'}`}
+                  >
+                    <Image 
+                      src={img.url} 
+                      alt={img.alt || `Gallery Image ${index + 1}`} 
+                      fill 
+                      className="object-cover lg:group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
+                    />
+                    
+                    {/* Subtle gradient overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                    {/* Caption Overlay */}
+                    {img.caption && (
+                      <div className="absolute bottom-6 left-6 right-6 opacity-0 lg:group-hover:opacity-100 translate-y-4 lg:group-hover:translate-y-0 transition-all duration-500 pointer-events-none flex items-center gap-3">
+                        <span className="w-8 h-[2px] bg-[#CD1D1D] hidden sm:block"></span>
+                        <span className="font-courier text-xs md:text-sm uppercase tracking-[0.2em] text-white font-bold block drop-shadow-md">
+                          {img.caption}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 

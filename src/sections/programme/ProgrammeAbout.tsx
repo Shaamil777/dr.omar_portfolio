@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import type { CompanyData } from "@/constants/companies";
@@ -64,48 +65,57 @@ export default function ProgrammeAbout({ company }: { company: CompanyData }) {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full bg-transparent text-[#111] relative z-10 flex flex-col justify-center py-32"
+      className="min-h-screen w-full relative z-10 flex flex-col justify-center py-32 overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-24 max-w-[100rem]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src={company.aboutImage || "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000"}
+          alt={`${company.name} Background`}
+          fill
+          className="object-cover object-[center_30%]"
+        />
+        {/* Light fade black overlay */}
+        <div className="absolute inset-0 bg-black/80 z-10" />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 relative">
           
           {/* Decorative red line acting as a divider/accent */}
           <div 
             ref={lineRef}
-            className="absolute -top-16 left-0 right-0 h-[1px] bg-[#CD1D1D]/20 origin-left hidden lg:block"
+            className="absolute -top-16 left-0 right-0 h-[1px] bg-white/20 origin-left hidden lg:block"
           />
 
           {/* Left Column (3 cols) — Sticky Label */}
           <div className="lg:col-span-3">
             <div className="sticky top-32" ref={titleRef}>
-              <span className="font-courier text-sm md:text-base uppercase tracking-[0.3em] text-[#CD1D1D] font-black inline-block -mt-1 md:-mt-2">
-                [ ABOUT {company.name} ]
-              </span>
+              <h2 className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase">
+                About {company.name}
+              </h2>
             </div>
           </div>
 
           {/* Right Column (9 cols) — Content */}
-          <div className="lg:col-span-9 flex flex-col gap-12 lg:gap-16">
-            <p 
-              ref={p1Ref}
-              className="font-helvetica text-2xl md:text-4xl lg:text-5xl font-black text-[#111] leading-[1.1] tracking-tight"
-            >
-              {p1Text}
-            </p>
-            
-            {p2Text && (
-              <div className="grid grid-cols-1 md:grid-cols-12">
-                {/* Offset the second paragraph slightly in the grid */}
-                <div className="md:col-start-3 md:col-span-10">
-                  <p 
-                    ref={p2Ref}
-                    className="font-helvetica font-medium text-lg md:text-xl lg:text-2xl text-zinc-600 leading-relaxed"
-                  >
-                    {p2Text}
-                  </p>
-                </div>
-              </div>
-            )}
+          <div className="lg:col-span-9">
+            <div className="border-l-[3px] border-[#CD1D1D] pl-5 md:pl-8 flex flex-col gap-6 md:gap-8">
+              <p 
+                ref={p1Ref}
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-helvetica font-bold text-white leading-[1.3] tracking-tight"
+              >
+                {p1Text}
+              </p>
+              
+              {p2Text && (
+                <p 
+                  ref={p2Ref}
+                  className="text-base sm:text-lg md:text-xl font-helvetica font-normal text-zinc-300 leading-relaxed max-w-4xl"
+                >
+                  {p2Text}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
