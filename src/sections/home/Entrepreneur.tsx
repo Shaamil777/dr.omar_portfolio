@@ -214,10 +214,9 @@ export default function Entrepreneur() {
         <div className="w-full h-[2px] bg-white/30 mb-2 md:mb-3 lg:mb-2"></div>
         
         <div className="flex justify-between items-center text-xs md:text-sm lg:text-base font-bold mb-4 md:mb-8 lg:mb-4 tracking-tight">
-          <span className="w-12 font-courier opacity-60">VER.1</span>
           <span>What we&apos;ve built</span>
-          <span className="w-12 text-right font-courier tracking-widest">
-            [{activeIndex.toString().padStart(2, '0')} / {companies.length.toString().padStart(2, '0')}]
+          <span className="text-right font-courier tracking-widest whitespace-nowrap min-w-fit">
+            {activeIndex.toString().padStart(2, '0')} / {companies.length.toString().padStart(2, '0')}
           </span>
         </div>
       </div>

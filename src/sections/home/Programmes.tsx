@@ -151,10 +151,7 @@ export default function Programmes() {
       
       {/* Sub Header Toolbar */}
       <div className="w-full px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between border-b-[2px] border-[#111]/10 gap-4 md:gap-0">
-        <div className="font-helvetica font-bold text-lg md:text-xl min-w-[80px]">
-          (9)
-        </div>
-        <div className="font-helvetica font-medium text-lg md:text-xl text-left md:text-center flex-1">
+        <div className="font-helvetica font-medium text-lg md:text-xl text-left">
           Transformational Programs for Ambitious Leaders
         </div>
         <div className="w-full md:w-auto flex justify-start md:justify-end">

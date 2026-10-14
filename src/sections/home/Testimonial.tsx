@@ -103,7 +103,6 @@ export default function Testimonial() {
         <div className="hidden lg:block lg:col-span-4 relative h-full">
           <div className="sticky top-[15vh] h-[75vh] flex flex-col justify-between">
             <div>
-              <div className="font-helvetica font-bold text-xl mb-4 text-[#CD1D1D]">(4)</div>
               <h2 className="font-helvetica font-bold text-5xl xl:text-6xl uppercase leading-[0.85] tracking-normal mb-6">
                 IMPACT<br/>REALIZED
               </h2>
@@ -125,8 +124,7 @@ export default function Testimonial() {
         {/* Right Scrollable Quotes */}
         <div className="lg:col-span-8 flex flex-col">
           {/* Mobile Header */}
-          <div className="lg:hidden mb-16 flex flex-col">
-             <div className="font-helvetica font-bold text-lg mb-4 text-[#CD1D1D]">(4)</div>
+          <div className="lg:hidden mb-12 flex flex-col">
              <h2 className="font-helvetica font-bold text-4xl md:text-5xl uppercase leading-[0.85] mb-4">
                IMPACT REALIZED
              </h2>
@@ -135,20 +133,20 @@ export default function Testimonial() {
               </p>
           </div>
           
-          <div className="flex flex-col gap-48 md:gap-[40vh] lg:py-[30vh]">
+          <div className="flex flex-col gap-20 sm:gap-24 md:gap-[24vh] lg:py-[18vh]">
             {testimonials.map((t) => (
               <div key={t.id} className="quote-block flex flex-col transition-all cursor-none">
-                <div className="lg:hidden w-20 h-20 relative rounded-full overflow-hidden mb-8 bg-zinc-200 shadow-lg">
+                <div className="lg:hidden w-16 h-16 relative rounded-full overflow-hidden mb-6 bg-zinc-200 shadow-lg">
                   <Image src={t.image} alt={t.name} fill className="object-cover grayscale" />
                 </div>
                 
-                <h3 className="font-helvetica font-bold text-2xl md:text-4xl lg:text-[3rem] leading-[0.95] tracking-normal mb-12 text-[#111]">
+                <h3 className="font-helvetica font-bold text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.15] tracking-normal mb-6 md:mb-8 text-[#111]">
                   &ldquo;{t.quote}&rdquo;
                 </h3>
                 
                 <div className="flex flex-col gap-1 border-l-4 border-[#CD1D1D] pl-6 py-1">
-                  <span className="font-courier font-bold text-xl tracking-wider uppercase">{t.name}</span>
-                  <span className="font-helvetica font-medium text-zinc-500 uppercase text-sm tracking-wide">{t.position}</span>
+                  <span className="font-courier font-bold text-lg sm:text-xl tracking-wider uppercase">{t.name}</span>
+                  <span className="font-helvetica font-medium text-zinc-500 uppercase text-xs sm:text-sm tracking-wide">{t.position}</span>
                 </div>
               </div>
             ))}
