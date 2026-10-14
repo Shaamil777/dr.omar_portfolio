@@ -5,6 +5,7 @@ import ProgrammeHero from "@/sections/programme/ProgrammeHero";
 import ProgrammeAbout from "@/sections/programme/ProgrammeAbout";
 import ProgrammeHighlight from "@/sections/programme/ProgrammeHighlight";
 import ProgrammeFeatures from "@/sections/programme/ProgrammeFeatures";
+import ProgrammeStory from "@/sections/programme/ProgrammeStory";
 import ProgrammeFAQ from "@/sections/programme/ProgrammeFAQ";
 import ProgrammeGallery from "@/sections/programme/ProgrammeGallery";
 import ProgrammeTestimonial from "@/sections/programme/ProgrammeTestimonial";
@@ -47,6 +48,7 @@ export default async function DynamicCompanyPage({
         <ProgrammeMissionVision company={company} />
         <ProgrammeHighlight company={company} />
         <ProgrammeFeatures company={company} />
+        <ProgrammeStory company={company} />
         <CompanyOwnsSection />
         <ProgrammeGallery company={company} />
         <ProgrammeTestimonial company={company} />

@@ -1,3 +1,20 @@
+export type StoryChapter = {
+  chapter?: string;
+  tag?: string;
+  title: string;
+  description: string;
+  quote?: string;
+  image: string;
+  caption?: string;
+};
+
+export type CompanyStory = {
+  tagline?: string;
+  heading?: string;
+  description?: string;
+  chapters: StoryChapter[];
+};
+
 export type CompanyData = {
   slug: string;
   name: string;
@@ -17,6 +34,7 @@ export type CompanyData = {
   features?: { icon?: string; image?: string; title: string; description: string }[];
   testimonials?: { name: string; role: string; quote: string; image: string; rating: number }[];
   blogs?: { title: string; category?: string; image: string; date?: string; description?: string }[];
+  story?: CompanyStory;
   components: ("Hero" | "About" | "Testimonial" | "UpcomingEvents")[];
 };
 
@@ -137,6 +155,49 @@ export const companiesData: CompanyData[] = [
       { title: "How to Restructure Your Cap Table for Series A", category: "FINANCE", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600", date: "SEP 28, 2026" },
       { title: "Building a Board of Directors That Actually Helps", category: "STRATEGY", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600", date: "SEP 05, 2026" }
     ],
+    story: {
+      tagline: "OUR STORY // THE JOURNEY",
+      heading: "A Legacy Forged Through Purpose & Transformation",
+      description: "How a vision of ethical leadership evolved into a multi-national ecosystem empowering thousands of entrepreneurs to achieve scale without sacrificing their values.",
+      chapters: [
+        {
+          chapter: "01",
+          tag: "THE GENESIS",
+          title: "The Spark That Redefined Entrepreneurship",
+          description: "Business Coaching Club was born from a pivotal realization: rapid enterprise expansion should never come at the expense of personal values, family harmony, or spiritual peace. Witnessing high-performing founders trapped in constant operational fatigue and burnout, Dr. Omar architected a foundational methodology uniting corporate excellence with personal mastery.",
+          quote: "A true leader does not merely construct profitable businesses; they build enduring institutions anchored in integrity and purpose.",
+          image: "/images/about/brandmount.webp",
+          caption: "DR. OMAR DELIVERING THE INAUGURAL ADDRESS"
+        },
+        {
+          chapter: "02",
+          tag: "THE TRANSFORMATION",
+          title: "Transitioning From Founder-Led to System-Driven",
+          description: "As cohorts expanded across Asia and the Middle East, the program evolved into a year-long immersive incubator. Founders were guided through rigorous valuation restructuring, board-level governance, and autonomous execution frameworks—enabling them to step out of daily operations and step into true visionary leadership.",
+          quote: "When your systems run your business, you unlock the freedom to lead with foresight and strategic clarity.",
+          image: "/images/about/SSK04766.webp",
+          caption: "ANNUAL BUSINESS LEADERS CONCLAVE"
+        },
+        {
+          chapter: "03",
+          tag: "THE GLOBAL ECOSYSTEM",
+          title: "A Mastermind of Over 8,000 Visionaries",
+          description: "Today, BCC has grown into one of the most respected private business ecosystems in the region. Spanning more than 100 restructured enterprises, international executive retreats, and closed-door mastermind sessions, the collective strength of BCC members fosters cross-border partnerships and institutional funding.",
+          quote: "You are the average of the room you inhabit. When that room is filled with ethical visionaries, the impossible becomes standard.",
+          image: "/images/about/SSK04519.webp",
+          caption: "OVER 8,000 FOUNDERS EMPOWERED ACROSS ASIA & MIDDLE EAST"
+        },
+        {
+          chapter: "04",
+          tag: "THE LASTING LEGACY",
+          title: "Building Institutions That Outlast Generations",
+          description: "The ultimate destination of the BCC journey is generational continuity. By aligning capital growth with humanitarian values and family leadership, graduates of the program create enduring family offices, philanthropic trusts, and enterprises built to thrive for decades to come.",
+          quote: "Legacy is not what you leave behind for people; it is what you leave inside people.",
+          image: "/images/about/travel.webp",
+          caption: "EXCELLENCE HONORED AT GLOBAL RETREAT"
+        }
+      ]
+    },
     components: ["Hero", "About", "Testimonial", "UpcomingEvents"],
   },
   {
