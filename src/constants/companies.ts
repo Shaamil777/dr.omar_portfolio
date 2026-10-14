@@ -13,7 +13,7 @@ export type CompanyData = {
   faqs?: { question: string; answer: string }[];
   gallery?: { url: string; alt: string; caption: string }[];
   highlights?: { stat: string; label: string }[];
-  pillars?: { title: string; focus: string; concept: string; icon: string }[];
+  pillars?: { title: string; focus: string; concept: string; icon: string; image?: string }[];
   features?: { icon?: string; image?: string; title: string; description: string }[];
   testimonials?: { name: string; role: string; quote: string; image: string; rating: number }[];
   blogs?: { title: string; category?: string; image: string; date?: string; description?: string }[];
@@ -93,25 +93,29 @@ export const companiesData: CompanyData[] = [
         title: "Ethical Leadership & Purpose-Driven Growth",
         focus: "Integrity, Values, and Visionary Governance",
         concept: "Building a business that stands on truth, moral strength, and transparency. Moving beyond pure profit to create real societal value, uplift people, and lead with purpose.",
-        icon: "shield"
+        icon: "shield",
+        image: "/images/programmes/highlite1.webp"
       },
       {
         title: "Scalable Systems, Automation & Business Structuring",
         focus: "Operational Excellence, Systemization, and PE/IPO Readiness",
         concept: "Transitioning from a founder-led business to a system-driven enterprise. Setting up SOPs, dashboards, and scalable architectures that make companies ready for growth, funding, and long-term valuation.",
-        icon: "layers"
+        icon: "layers",
+        image: "/images/programmes/highlite2.webp"
       },
       {
         title: "Personal Mastery & Balanced Life",
         focus: "Harmony across Family, Health, Business, and Spirituality",
         concept: "Sustainable success without burnouts or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
-        icon: "heart"
+        icon: "heart",
+        image: "/images/programmes/highlite3.webp"
       },
       {
         title: "Legacy Building & Ecosystem Collaboration",
         focus: "Generational Continuity, Mentorship, and Global Networks",
         concept: "Designing institutions that outlast their founders. Leveraging a trusted, collaborative ecosystem of entrepreneurs and mentors to unlock global expansion and collective growth.",
-        icon: "globe"
+        icon: "globe",
+        image: "/images/programmes/highlite4.webp"
       }
     ],
     features: [
