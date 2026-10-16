@@ -13,12 +13,10 @@ export default function Home() {
     <main>
       <Hero />
       <div className="relative z-10 -mt-[100vh]">
-        <div className="relative">
-          <div className="sticky top-0 z-50">
-            <Navbar />
-          </div>
-          <div id="about"><About /></div>
+        <div className="sticky top-0 z-50">
+          <Navbar />
         </div>
+        <div id="about"><About /></div>
         <div id="entrepreneur"><Entrepreneur /></div>
         <div id="programmes"><Programmes /></div>
         <div id="achievements"><Achievements /></div>
