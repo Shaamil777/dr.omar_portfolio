@@ -72,12 +72,6 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
                 Asked<br/>
                 Questions
               </h2>
-
-              <div className="font-courier text-[9px] tracking-[0.2em] text-[#111]/30 hidden lg:block">
-                SEC_05 // DATA
-                <br/>
-                COORD: 25.2048° N, 55.2708° E
-              </div>
             </div>
           </div>
 

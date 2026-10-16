@@ -80,7 +80,7 @@ function PixelScatterGrid({ image }: { image: string }) {
           src={image}
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
       </div>
@@ -100,7 +100,7 @@ const heroData: Record<string, {
     fullName: ["Business", "Coaching", "Club"],
     tagline: "BCC PROGRAMME",
     shortDescription: "An annual mentorship and business networking ecosystem for entrepreneurs building sustainable brands and scalable legacy.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/programmes/hero.webp",
     chips: ["48 WEEKS", "DR. OMAR", "GLOBAL"],
   },
 };
@@ -135,7 +135,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
     fullName: [company.name],
     tagline: `${company.name} PROGRAMME`,
     shortDescription: company.description,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/programmes/hero.webp",
     chips: ["ONGOING", "DR. OMAR", "GLOBAL"],
   };
 

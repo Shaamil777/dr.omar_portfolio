@@ -111,12 +111,6 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
           {/* Left Column (6 cols, pushed left edge) — Sticky Title & Text */}
           <div className="lg:col-span-6 relative" ref={leftColRef}>
             <div className="lg:sticky lg:top-32 flex flex-col items-start pt-0 mt-0">
-              {/* Decorative Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#CD1D1D]/30 bg-[#CD1D1D]/5 text-[#CD1D1D] text-xs font-bold tracking-widest uppercase mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#CD1D1D] animate-pulse"></span>
-                Inside The Experience
-              </div>
-
               <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-bold tracking-tight leading-[1.05] text-[#111] mb-6">
                 Witness the<br/>Transformation
               </h2>
@@ -134,13 +128,6 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
                 <div className="relative z-10 group">
                   <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] lg:group-hover:text-[#CD1D1D] transition-colors duration-300">10k</div>
                   <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">Lives Changed</div>
-                </div>
-                
-                {/* Decorative rotating element */}
-                <div className="absolute right-0 top-6 opacity-10 animate-[spin_10s_linear_infinite] pointer-events-none">
-                  <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 0L53.5355 35.3553L85.3553 14.6447L64.6447 46.4645L100 50L64.6447 53.5355L85.3553 85.3553L53.5355 64.6447L50 100L46.4645 64.6447L14.6447 85.3553L35.3553 53.5355L0 50L35.3553 46.4645L14.6447 14.6447L46.4645 35.3553L50 0Z" fill="#111"/>
-                  </svg>
                 </div>
               </div>
             </div>
