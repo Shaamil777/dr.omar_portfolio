@@ -8,7 +8,7 @@ export default function CompanyOwnsSection() {
     { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
     { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
     { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },
-    { name: "Human Excellence Academy", logo: "/logos/HEA/hea.png" },
+    { name: "Human Excellence Academy", logo: "/logos/HEA/hea_light.png" },
     { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_liight.png" },
     { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_light.png" },
     { name: "Teens Immersion", logo: "/logos/TI/ti_light.png" },
@@ -66,7 +66,7 @@ export default function CompanyOwnsSection() {
               className="flex flex-col items-center justify-center mx-12 md:mx-16 group/item cursor-pointer"
             >
               {/* Logo */}
-              <div className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 relative flex items-center justify-center mb-3 group-hover/item:-translate-y-2 group-hover/item:scale-105 transition-all duration-500 drop-shadow-sm mix-blend-plus-lighter">
+              <div className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 relative flex items-center justify-center mb-3 group-hover/item:-translate-y-2 group-hover/item:scale-105 transition-all duration-500 drop-shadow-md">
                 <Image 
                   src={item.logo} 
                   alt={item.name} 

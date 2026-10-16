@@ -11,8 +11,8 @@ const companies = [
     name: "BCC - SINCE 2020", 
     description: "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200",
-    logo: "/logos/BCC/bcc.png",
-    color: "#ee203b", 
+    logo: "/logos/BCC/bcc_light.png",
+    color: "#8E1624", 
   },
   {
     id: "deep_immersion",
@@ -20,15 +20,15 @@ const companies = [
     description: "The flagship life transformation program integrating innovative coaching, holistic healing, and NLP techniques.",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
     logo: "/logos/DI/di_light.png",
-    color: "#b71f31", 
+    color: "#52111B", 
   },
   {
     id: "hea",
     name: "HEA - SINCE 2010", 
     description: "The most sought-after coaching, counselling, and training & development provider in the Middle East and India.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
-    logo: "/logos/HEA/hea.png",
-    color: "#0856a2", 
+    logo: "/logos/HEA/hea_light.png",
+    color: "#083663", 
   },
   {
     id: "executive_immersion",
@@ -36,15 +36,15 @@ const companies = [
     description: "A residential program exclusively designed for business owners and leaders, focusing on productivity and leadership.",
     image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=1200",
     logo: "/logos/BI/bi_light.png", 
-    color: "#2c4555", 
+    color: "#1B2E3C", 
   },
   {
     id: "oathmen",
     name: "OATHMEN", 
     description: "A premier initiative crafting future leaders with resilience, ethics, and strategic discipline.",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200",
-    logo: "", 
-    color: "#014d42", 
+    logo: "/logos/OATHMEN/oathmen_light.png", 
+    color: "#08362D", 
   },
   {
     id: "youth_immersion",
@@ -52,7 +52,7 @@ const companies = [
     description: "A transformative immersion program for young adults focused on purpose-discovery, personal growth, and clarity.",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1200",
     logo: "/logos/YI/yi_light.png",
-    color: "#131313", 
+    color: "#121214", 
   },
   {
     id: "teens_immersion",
@@ -60,7 +60,7 @@ const companies = [
     description: "A transformative experience for teenagers aged 14 to 19, exploring potential and developing resilience.",
     image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=1200",
     logo: "/logos/TI/ti_light.png",
-    color: "#ed2d58", 
+    color: "#7E1633", 
   },
 ];
 
@@ -186,7 +186,7 @@ export default function Entrepreneur() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="entrepreneur" className="bg-[#131313] text-white h-[100vh] relative overflow-hidden pt-4 md:pt-12 lg:pt-6 flex flex-col justify-center cursor-default">
+    <section ref={sectionRef} id="entrepreneur" style={{ backgroundColor: companies[0].color }} className="text-white h-[100vh] relative overflow-hidden pt-4 md:pt-12 lg:pt-6 flex flex-col justify-center cursor-default">
       
       {/* Custom Follower Cursor */}
       <div 
@@ -256,7 +256,7 @@ export default function Entrepreneur() {
                   {/* Right Side: Larger Logo */}
                   <div className="w-full lg:w-[35%] flex justify-start lg:justify-end">
                     {company.logo && (
-                      <div className="relative h-12 w-36 md:h-20 md:w-56 lg:h-24 lg:w-64 mix-blend-plus-lighter">
+                      <div className="relative h-12 w-36 md:h-20 md:w-56 lg:h-24 lg:w-64 drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)]">
                         <Image 
                           src={company.logo} 
                           alt={`${company.name} logo`} 

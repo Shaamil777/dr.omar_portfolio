@@ -19,9 +19,9 @@ export default function AboutEcosystem() {
       bgImage: "/images/about/hea.webp",
       bgPosition: "object-[center_20%] md:object-[center_25%]",
       logo: (
-        <div className="relative h-24 w-72 md:h-32 md:w-96 lg:h-40 lg:w-[400px] mix-blend-plus-lighter">
+        <div className="relative h-24 w-72 md:h-32 md:w-96 lg:h-40 lg:w-[400px] drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
           <Image 
-            src="/logos/HEA/hea.png" 
+            src="/logos/HEA/hea_light.png" 
             alt="HEA Logo" 
             fill 
             className="object-contain object-center lg:object-left" 
