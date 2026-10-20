@@ -41,6 +41,75 @@ const PillarIcon = ({ name, className }: { name: string; className?: string }) =
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
         </svg>
       );
+    case "users":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      );
+    case "compass":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" strokeWidth={1} />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" strokeWidth={1} />
+        </svg>
+      );
+    case "brain":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04zm5 0A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z" />
+        </svg>
+      );
+    case "sparkles":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.286L13 21l-2.286-6.857L5 12l5.714-2.286L13 3z" />
+        </svg>
+      );
+    case "target":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" strokeWidth={1} />
+          <circle cx="12" cy="12" r="6" strokeWidth={1} />
+          <circle cx="12" cy="12" r="2" strokeWidth={1} />
+        </svg>
+      );
+    case "shield-check":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      );
+    case "user-round-search":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="10" cy="8" r="5" strokeWidth={1} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M2 21a8 8 0 0110.434-7.62" />
+          <circle cx="17" cy="17" r="3" strokeWidth={1} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="m21 21-1.9-1.9" />
+        </svg>
+      );
+    case "user-round":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="5" strokeWidth={1} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 21a8 8 0 10-16 0" />
+        </svg>
+      );
+    case "calendar-check":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth={1} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 2v4M8 2v4m-5 4h18m-9 4l2 2 4-4" />
+        </svg>
+      );
+    case "messages-square":
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 9a2 2 0 01-2 2H6l-3 3V4a2 2 0 012-2h7a2 2 0 012 2v5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M18 9h2a2 2 0 012 2v7l-3-3h-5a2 2 0 01-2-2v-1" />
+        </svg>
+      );
     default:
       return (
         <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">

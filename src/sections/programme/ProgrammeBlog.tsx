@@ -64,8 +64,8 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
           </button>
         </div>
 
-        {/* Dense 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        {/* Responsive Grid — adapts to 2 or 3 articles */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${blogs.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-8 md:gap-10`}>
           {blogs.map((blog, index) => (
             <div 
               key={index} 
@@ -73,7 +73,7 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
               className="group cursor-pointer flex flex-col"
             >
               {/* Image Container with Zoom */}
-              <div className="relative w-full aspect-[2/1] rounded-[24px] overflow-hidden border border-black/10 shadow-sm">
+              <div className="relative w-full aspect-[16/10] rounded-[24px] overflow-hidden border border-black/10 shadow-sm">
                 <Image 
                   src={blog.image} 
                   alt={blog.title} 
@@ -84,13 +84,18 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
 
               {/* Text Content */}
               <div className="flex flex-col flex-grow mt-6">
-                <h3 className="font-helvetica text-[1.75rem] md:text-3xl lg:text-[2rem] font-bold leading-[0.9] text-[#111] tracking-tighter lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
+                {blog.category && (
+                  <span className="font-courier text-xs uppercase tracking-[0.25em] text-[#CD1D1D] font-bold mb-2.5 block">
+                    {blog.category}
+                  </span>
+                )}
+                <h3 className="font-helvetica text-xl sm:text-2xl lg:text-[1.65rem] font-bold leading-[1.15] text-[#111] tracking-tight lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
                   {blog.title}
                 </h3>
-                {/* Optional Description (fallback for custom data) */}
-                {(blog.description || blog.date) && (
-                  <p className="font-helvetica font-bold text-sm md:text-base lg:text-lg text-zinc-500 mt-3 leading-snug tracking-tight">
-                    {blog.description || blog.date}
+                {/* Date / Description */}
+                {(blog.date || blog.description) && (
+                  <p className="font-courier font-medium text-xs text-zinc-400 mt-3 tracking-widest uppercase">
+                    {blog.date || blog.description}
                   </p>
                 )}
               </div>

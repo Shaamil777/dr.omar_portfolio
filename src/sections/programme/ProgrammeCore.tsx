@@ -50,6 +50,12 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
     return () => ctx.revert();
   }, []);
 
+  const closingTag = company.closing?.tagline || "THE NEXT STEP";
+  const rawHeading = company.closing?.heading || "Are You\nReady to\nScale?";
+  const headingLines = rawHeading.split("\n");
+  const closingDesc = company.closing?.description || `Join the elite network inside the ${company.name} program and begin your transformational journey.`;
+  const ctaText = company.closing?.cta || "Apply Now";
+
   return (
     <section
       ref={sectionRef}
@@ -57,19 +63,21 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
     >
       <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center relative z-20">
         
-        <span className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase mb-8 block"> THE NEXT STEP </span>
+        <span className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase mb-8 block"> {closingTag} </span>
         
         {/* Massive Clipped Typography */}
         <h2 
           ref={textRef}
-          className="font-helvetica font-bold tracking-tighter leading-[0.85] text-[#111] mb-16 select-none"
-          style={{ fontSize: "clamp(3rem, 12vw, 12rem)" }}
+          className="font-helvetica font-bold tracking-tighter leading-[0.88] text-[#111] mb-12 select-none"
+          style={{ fontSize: "clamp(2.5rem, 9vw, 9.5rem)" }}
         >
-          Are You<br/>Ready to<br/>Scale?
+          {headingLines.map((line, i) => (
+            <span key={i} className="block">{line}</span>
+          ))}
         </h2>
         
-        <p className="font-helvetica text-lg md:text-xl text-zinc-600 max-w-2xl mb-16">
-          Join the elite network of founders inside the {company.name} program and restructure your business for legacy growth.
+        <p className="font-helvetica text-lg md:text-xl text-zinc-600 max-w-2xl mb-16 leading-relaxed">
+          {closingDesc}
         </p>
 
         {/* Magnetic Hover Button */}
@@ -87,9 +95,9 @@ export default function ProgrammeCore({ company }: { company: CompanyData }) {
           <div className="absolute inset-0 rounded-full border border-black/10 lg:group-hover:scale-110 lg:group-hover:border-[#CD1D1D]/30 transition-all duration-500" />
           
           {/* Main button body */}
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-[#111] lg:group-hover:bg-[#CD1D1D] flex items-center justify-center text-white transition-colors duration-500 shadow-2xl">
-            <span className="font-national2 font-bold uppercase tracking-widest text-sm md:text-base">
-              Apply Now
+          <div className="min-w-44 px-8 h-40 md:min-w-52 md:h-48 rounded-full bg-[#111] lg:group-hover:bg-[#CD1D1D] flex items-center justify-center text-white transition-colors duration-500 shadow-2xl">
+            <span className="font-national2 font-bold uppercase tracking-wider text-xs md:text-sm text-center px-4 leading-snug">
+              {ctaText}
             </span>
           </div>
         </button>

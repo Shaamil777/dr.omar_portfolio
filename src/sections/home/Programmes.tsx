@@ -51,6 +51,13 @@ const programImages = [
   "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800",
 ];
 
+const programCustomImages: Record<string, [string, string]> = {
+  business_immersion: [
+    "/images/programmes/bi/bi1.webp",
+    "/images/programmes/bi/bi2.webp",
+  ],
+};
+
 export default function Programmes() {
   const { programs } = data;
   const displayPrograms = programs.slice(0, 9);
@@ -164,8 +171,9 @@ export default function Programmes() {
       {/* Grid of Cards */}
       <div className="program-grid w-full px-4 md:px-8 mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-y-16">
          {displayPrograms.map((prog, i) => {
-           const img1 = programImages[(i * 2) % programImages.length];
-           const img2 = programImages[(i * 2 + 1) % programImages.length];
+           const defaultImg1 = programImages[(i * 2) % programImages.length];
+           const defaultImg2 = programImages[(i * 2 + 1) % programImages.length];
+           const [img1, img2] = programCustomImages[prog.id] || [defaultImg1, defaultImg2];
 
            return (
              <Link 

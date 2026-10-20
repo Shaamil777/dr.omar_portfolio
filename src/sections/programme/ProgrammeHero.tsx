@@ -37,9 +37,12 @@ function generatePattern(): number[] {
 }
 
 function PixelScatterGrid({ image }: { image: string }) {
-  const [pattern, setPattern] = useState<number[]>(() => generatePattern());
+  const [mounted, setMounted] = useState(false);
+  const [pattern, setPattern] = useState<number[]>([]);
 
   useEffect(() => {
+    setMounted(true);
+    setPattern(generatePattern());
     const interval = setInterval(() => {
       setPattern(generatePattern());
     }, 1800);
@@ -51,21 +54,22 @@ function PixelScatterGrid({ image }: { image: string }) {
   const svgWidth = COLS * cellSize;
   const svgHeight = ROWS * cellSize;
 
-  const maskSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}">${pattern.map((visible, i) => {
+  const maskSvg = pattern.length > 0 ? `<svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}">${pattern.map((visible, i) => {
     if (!visible) return "";
     const col = i % COLS;
     const row = Math.floor(i / COLS);
     return `<rect x="${col * cellSize}" y="${row * cellSize}" width="${cellSize - 1}" height="${cellSize - 1}" fill="white"/>`;
-  }).join("")}</svg>`;
+  }).join("")}</svg>` : "";
 
-  const maskUrl = `url("data:image/svg+xml,${encodeURIComponent(maskSvg)}")`;
+  const maskUrl = maskSvg ? `url("data:image/svg+xml,${encodeURIComponent(maskSvg)}")` : undefined;
 
   return (
     <>
       {/* Masked image */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 transition-opacity duration-300"
         style={{
+          opacity: mounted ? 1 : 0,
           maskImage: maskUrl,
           WebkitMaskImage: maskUrl,
           maskSize: `${svgWidth}px ${svgHeight}px`,
@@ -88,13 +92,15 @@ function PixelScatterGrid({ image }: { image: string }) {
   );
 }
 
-// Hardcoded BCC data — will be replaced by Sanity later
+// Hardcoded BCC and Youth Immersion data — will be replaced by Sanity later
 const heroData: Record<string, {
   fullName: string[];
   tagline: string;
   shortDescription: string;
   image: string;
   chips: string[];
+  logoDark?: string;
+  logoClassName?: string;
 }> = {
   bcc: {
     fullName: ["Business", "Coaching", "Club"],
@@ -102,6 +108,125 @@ const heroData: Record<string, {
     shortDescription: "An annual mentorship and business networking ecosystem for entrepreneurs building sustainable brands and scalable legacy.",
     image: "/images/programmes/hero.webp",
     chips: ["48 WEEKS", "DR. OMAR", "GLOBAL"],
+    logoDark: "/logos/BCC/BCC_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  youth_immersion: {
+    fullName: ["Youth", "Immersion®"],
+    tagline: "YOUTH IMMERSION® PROGRAMME",
+    shortDescription: "A transformational youth development program empowering young adults with confidence, leadership, communication, emotional intelligence, career clarity, and purpose-driven living.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Youth Development", "Purpose-Driven Leadership", "Dr. Omar Global"],
+    logoDark: "/logos/YI/yi_dark.png",
+    logoClassName: "h-9 sm:h-11 md:h-12 w-auto",
+  },
+  deep_immersion: {
+    fullName: ["Deep", "Immersion®"],
+    tagline: "THE FLAGSHIP HUMAN TRANSFORMATION EXPERIENCE",
+    shortDescription: "A transformational residential experience designed to help individuals reconnect with themselves, heal emotional wounds, discover their purpose, and redesign their lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Purpose Discovery", "Dr. Omar Global"],
+    logoDark: "/logos/DI/di_dark.png",
+    logoClassName: "h-8 sm:h-10 md:h-11 w-auto",
+  },
+  "deep-immersion": {
+    fullName: ["Deep", "Immersion®"],
+    tagline: "THE FLAGSHIP HUMAN TRANSFORMATION EXPERIENCE",
+    shortDescription: "A transformational residential experience designed to help individuals reconnect with themselves, heal emotional wounds, discover their purpose, and redesign their lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Purpose Discovery", "Dr. Omar Global"],
+    logoDark: "/logos/DI/di_dark.png",
+    logoClassName: "h-8 sm:h-10 md:h-11 w-auto",
+  },
+  business_immersion: {
+    fullName: ["Business", "Immersion®"],
+    tagline: "DEVELOPING BUSINESS LEADERS FOR SUSTAINABLE GROWTH",
+    shortDescription: "An advanced leadership and business acceleration program designed for entrepreneurs and business owners who aspire to build scalable, system-driven, and purpose-led organizations.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Business Transformation", "Strategic Leadership", "Dr. Omar Global"],
+    logoDark: "/logos/BI/bi_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  "business-immersion": {
+    fullName: ["Business", "Immersion®"],
+    tagline: "DEVELOPING BUSINESS LEADERS FOR SUSTAINABLE GROWTH",
+    shortDescription: "An advanced leadership and business acceleration program designed for entrepreneurs and business owners who aspire to build scalable, system-driven, and purpose-led organizations.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Business Transformation", "Strategic Leadership", "Dr. Omar Global"],
+    logoDark: "/logos/BI/bi_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  "human-excellence-academy": {
+    fullName: ["Human Excellence", "Academy"],
+    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
+    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
+    logoDark: "/logos/HEA/hea.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  "human_excellence_academy": {
+    fullName: ["Human Excellence", "Academy"],
+    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
+    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
+    logoDark: "/logos/HEA/hea.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  hea: {
+    fullName: ["Human Excellence", "Academy"],
+    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
+    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
+    logoDark: "/logos/HEA/hea.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  hea_program: {
+    fullName: ["Human Excellence", "Academy"],
+    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
+    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
+    logoDark: "/logos/HEA/hea.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  master_deep_immersion: {
+    fullName: ["Master Deep", "Immersion®"],
+    tagline: "A DEEPER JOURNEY INTO HUMAN TRANSFORMATION",
+    shortDescription: "An immersive personal transformation experience inspired by the principles of emotional awareness, identity discovery, purpose, and holistic human development.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Deep Personal Growth", "Purpose Discovery", "Dr. Omar Global"],
+    logoDark: "/logos/MDI/mdi_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  "master-deep-immersion": {
+    fullName: ["Master Deep", "Immersion®"],
+    tagline: "A DEEPER JOURNEY INTO HUMAN TRANSFORMATION",
+    shortDescription: "An immersive personal transformation experience inspired by the principles of emotional awareness, identity discovery, purpose, and holistic human development.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Deep Personal Growth", "Purpose Discovery", "Dr. Omar Global"],
+    logoDark: "/logos/MDI/mdi_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  teens_immersion: {
+    fullName: ["Teens", "Immersion®"],
+    tagline: "BUILDING STRONG FOUNDATIONS FOR LIFE.",
+    shortDescription: "A teen development program designed to help teenagers build self-confidence, discipline, emotional intelligence, communication skills, resilience, and positive life habits during their formative years.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Teen Development", "Life Skills & Confidence", "Dr. Omar Global"],
+    logoDark: "/logos/TI/ti_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
+  },
+  "teens-immersion": {
+    fullName: ["Teens", "Immersion®"],
+    tagline: "BUILDING STRONG FOUNDATIONS FOR LIFE.",
+    shortDescription: "A teen development program designed to help teenagers build self-confidence, discipline, emotional intelligence, communication skills, resilience, and positive life habits during their formative years.",
+    image: "/images/programmes/hero.webp",
+    chips: ["Teen Development", "Life Skills & Confidence", "Dr. Omar Global"],
+    logoDark: "/logos/TI/ti_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
   },
 };
 
@@ -131,7 +256,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
     };
   }, []);
 
-  const data = heroData[company.slug] || {
+  const data = heroData[company.slug] || heroData[company.slug.replace(/_/g, "-")] || heroData[company.slug.replace(/-/g, "_")] || {
     fullName: [company.name],
     tagline: `${company.name} PROGRAMME`,
     shortDescription: company.description,
@@ -212,7 +337,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
       <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-[#CD1D1D]/10 z-0" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] relative z-10 w-full">
+      <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] relative z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
           {/* Left Column — 7 cols */}
@@ -237,7 +362,14 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
                   className="block text-[14vw] sm:text-[11vw] md:text-[9vw] lg:text-[6.5vw] xl:text-[5.8vw] text-[#111] opacity-0 will-change-transform"
                   style={{ transformOrigin: "left center" }}
                 >
-                  {word}
+                  {word.includes("®") ? (
+                    <>
+                      {word.replace("®", "")}
+                      <sup className="text-[0.45em] -top-[0.6em] font-medium ml-1">®</sup>
+                    </>
+                  ) : (
+                    word
+                  )}
                   {i === 0 && (
                     <span className="text-[#CD1D1D]">.</span>
                   )}
@@ -255,13 +387,13 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
             {/* Description */}
             <p
               ref={descRef}
-              className="font-helvetica font-medium text-zinc-500 text-sm md:text-base lg:text-lg leading-relaxed max-w-md opacity-0"
+              className="font-helvetica font-medium text-zinc-500 text-sm md:text-base lg:text-lg leading-relaxed max-w-xl opacity-0"
             >
               {data.shortDescription}
             </p>
 
             {/* Chips */}
-            <div ref={chipsRef} className="flex flex-wrap gap-3 mt-6 lg:mt-10">
+            <div ref={chipsRef} className="flex flex-wrap gap-3 mt-6 lg:mt-10 max-w-lg">
               {data.chips.map((chip) => (
                 <span
                   key={chip}
@@ -308,15 +440,15 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
 
       {/* Logo Marquee Banner */}
       <div className="absolute bottom-0 left-0 w-full z-30 border-y-2 border-black/10 bg-white/90 backdrop-blur-md overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.12)]">
-        <div ref={marqueeRef} className="flex items-center gap-24 whitespace-nowrap py-2">
+        <div ref={marqueeRef} className="flex items-center gap-24 whitespace-nowrap py-3">
           {[...Array(16)].map((_, i) => (
-            <div key={i} className="flex items-center gap-24 flex-shrink-0">
+            <div key={i} className="flex items-center justify-center gap-24 flex-shrink-0 h-10 md:h-12">
               <Image
-                src={`/logos/${company.slug.toUpperCase()}/BCC_dark.png`}
+                src={data.logoDark || (company.slug === "youth_immersion" ? "/logos/YI/yi_dark.png" : `/logos/${company.slug.toUpperCase()}/BCC_dark.png`)}
                 alt={company.name}
-                width={120}
-                height={120}
-                className={`object-contain transition-all duration-300 ${
+                width={240}
+                height={80}
+                className={`${data.logoClassName || "h-8 sm:h-10 w-auto"} object-contain transition-all duration-300 ${
                   i % 2 === 0 ? "opacity-40 grayscale" : "opacity-90"
                 }`}
               />

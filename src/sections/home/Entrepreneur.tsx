@@ -31,12 +31,13 @@ const companies = [
     color: "#083663", 
   },
   {
-    id: "executive_immersion",
-    name: "EXECUTIVE IMMERSION", 
+    id: "business_immersion",
+    name: "BUSINESS IMMERSION", 
     description: "A residential program exclusively designed for business owners and leaders, focusing on productivity and leadership.",
-    image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/programmes/bi/bi1.webp",
     logo: "/logos/BI/bi_light.png", 
     color: "#1B2E3C", 
+    imagePosition: "center 68%",
   },
   {
     id: "oathmen",
@@ -147,9 +148,9 @@ export default function Entrepreneur() {
 
         // Horizontal Image Parallax
         gsap.fromTo(imageWrapper, 
-          { xPercent: -15 },
+          { xPercent: -4 },
           {
-            xPercent: 15,
+            xPercent: 4,
             ease: "none",
             scrollTrigger: {
               trigger: card,
@@ -230,14 +231,15 @@ export default function Entrepreneur() {
               className="entrepreneur-card w-[85vw] md:w-[75vw] lg:w-[45vw] xl:w-[50vw] flex flex-col shrink-0 group cursor-none"
             >
               <div className="card-inner flex flex-col w-full origin-bottom transform-gpu">
-                <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/8] max-h-[40vh] md:max-h-[45vh] lg:max-h-[35vh] xl:max-h-[45vh] rounded-2xl md:rounded-[2rem] overflow-hidden mb-3 md:mb-4 lg:mb-3 xl:mb-6 bg-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                  <div className="parallax-wrapper absolute top-0 left-[-25%] w-[150%] h-full">
+                <div className="relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9] max-h-[42vh] md:max-h-[48vh] lg:max-h-[44vh] xl:max-h-[48vh] rounded-2xl md:rounded-[2rem] overflow-hidden mb-3 md:mb-4 lg:mb-3 xl:mb-6 bg-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                  <div className="parallax-wrapper absolute top-0 left-[-5%] w-[110%] h-full">
                     <Image 
                       src={company.image} 
                       alt={company.name} 
                       fill 
                       sizes="(max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
-                      className="object-cover transition-transform duration-1000 ease-out lg:group-hover:scale-[1.05]" 
+                      className="object-cover transition-transform duration-1000 ease-out lg:group-hover:scale-[1.03]" 
+                      style={{ objectPosition: (company as any).imagePosition || "center center" }}
                     />
                   </div>
                 </div>

@@ -21,7 +21,14 @@ export default async function DynamicCompanyPage({
   params: Promise<{ slug: string }> 
 }) {
   const { slug } = await params;
-  const company = companiesData.find((c) => c.slug === slug);
+  const company = companiesData.find(
+    (c) =>
+      c.slug === slug ||
+      c.slug.replace(/_/g, "-") === slug ||
+      c.slug.replace(/-/g, "_") === slug ||
+      (c.slug === "human-excellence-academy" && (slug === "hea" || slug === "hea_program" || slug === "human_excellence_academy")) ||
+      (c.slug === "hea_program" && (slug === "hea" || slug === "human-excellence-academy" || slug === "human_excellence_academy"))
+  );
 
   if (!company) {
     return <div>Error: company with slug {slug} not found</div>;

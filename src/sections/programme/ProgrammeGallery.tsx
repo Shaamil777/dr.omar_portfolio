@@ -20,6 +20,12 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
   ];
 
   const gallery = company.gallery || defaultImages;
+  const title = company.galleryTitle || "Witness the\nTransformation";
+  const desc = company.galleryDescription || "Take an inside look at our immersive retreats, hands-on masterclasses, and powerful mentorship sessions. Every moment is designed to push your boundaries and unlock your ultimate potential.";
+  const stats = company.galleryStats || [
+    { value: "50+", label: "Global Retreats" },
+    { value: "10k", label: "Lives Changed" },
+  ];
 
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
@@ -112,23 +118,29 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
           <div className="lg:col-span-6 relative" ref={leftColRef}>
             <div className="lg:sticky lg:top-32 flex flex-col items-start pt-0 mt-0">
               <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-bold tracking-tight leading-[1.05] text-[#111] mb-6">
-                Witness the<br/>Transformation
+                {title.split("\n").map((line, i) => (
+                  <span key={i} className="block">
+                    {line}
+                  </span>
+                ))}
               </h2>
               
-              <p className="font-helvetica text-lg md:text-xl text-zinc-500 max-w-md font-medium leading-snug mb-12">
-                Take an inside look at our immersive retreats, hands-on masterclasses, and powerful mentorship sessions. Every moment is designed to push your boundaries and unlock your ultimate potential.
+              <p className="font-helvetica text-base sm:text-lg md:text-xl text-zinc-500 max-w-lg font-medium leading-relaxed mb-12">
+                {desc}
               </p>
               
               {/* Stats Row */}
-              <div className="flex items-center gap-6 sm:gap-12 border-t border-black/10 pt-8 w-full max-w-sm relative">
-                <div className="relative z-10 group">
-                  <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] lg:group-hover:text-[#CD1D1D] transition-colors duration-300">50+</div>
-                  <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">Global Retreats</div>
-                </div>
-                <div className="relative z-10 group">
-                  <div className="font-helvetica text-3xl sm:text-4xl font-black text-[#111] lg:group-hover:text-[#CD1D1D] transition-colors duration-300">10k</div>
-                  <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">Lives Changed</div>
-                </div>
+              <div className="flex flex-wrap sm:flex-nowrap items-start sm:items-center gap-6 sm:gap-12 border-t border-black/10 pt-8 w-full max-w-md relative">
+                {stats.map((stat, i) => (
+                  <div key={i} className="relative z-10 group flex-1">
+                    <div className="font-helvetica text-2xl sm:text-3xl lg:text-4xl font-black text-[#111] lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
+                      {stat.value}
+                    </div>
+                    <div className="font-courier text-xs sm:text-sm font-bold tracking-widest text-zinc-500 uppercase mt-2">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
