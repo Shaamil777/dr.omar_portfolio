@@ -14,13 +14,33 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Track scroll on home page to detect active section
-  useEffect(() => {
-    if (pathname !== "/") {
-      return;
-    }
+  const [isHidden, setIsHidden] = useState(false);
 
-    const handleScroll = () => {
+  // Track scroll on home page to detect active section & hide navbar in program sliding section
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    let rafId: number | null = null;
+
+    const checkVisibilityAndSection = () => {
+      // 1. Sliding section detection (Entrepreneur section)
+      const entrepreneurEl = document.getElementById("entrepreneur");
+      if (entrepreneurEl) {
+        const spacer =
+          entrepreneurEl.querySelector(".pin-spacer") ||
+          entrepreneurEl.closest(".pin-spacer") ||
+          entrepreneurEl;
+        const rect = spacer.getBoundingClientRect();
+        // Start smooth slide-out slightly before pin locks (top <= 75px) until sliding section unpins (bottom >= 75px)
+        const inSlidingSection = rect.top <= 75 && rect.bottom >= 75;
+        setIsHidden(inSlidingSection);
+        if (inSlidingSection) {
+          setIsDropdownOpen(false);
+          setIsOpen(false);
+        }
+      }
+
+      // 2. Active section detection
       const sections = ["about", "entrepreneur", "programmes", "achievements", "testimonials", "blogs"];
       const scrollPosition = window.scrollY + 200;
 
@@ -37,10 +57,41 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    const handleScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        checkVisibilityAndSection();
+        rafId = null;
+      });
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleCustomToggle = (e: Event) => {
+      const customEvent = e as CustomEvent<{ hide: boolean }>;
+      if (customEvent.detail) {
+        setIsHidden(customEvent.detail.hide);
+        if (customEvent.detail.hide) {
+          setIsDropdownOpen(false);
+          setIsOpen(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    window.addEventListener("toggle-navbar-hide", handleCustomToggle);
+
+    // Initial check scheduled in next frame
+    rafId = requestAnimationFrame(() => {
+      checkVisibilityAndSection();
+      rafId = null;
+    });
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("toggle-navbar-hide", handleCustomToggle);
+    };
   }, [pathname]);
 
   // Prevent scrolling when mobile menu is open
@@ -120,10 +171,19 @@ export default function Navbar() {
     { num: "06", name: "Insights & Blog", href: "#blogs", isRoute: false },
   ];
 
+  const isNavbarHidden = pathname === "/" && isHidden;
+
   return (
     <>
       {/* Normal Matching Solid Edge-to-Edge Navbar Header */}
-      <header className="w-full bg-[#FAF8F5] border-b border-black/15 relative z-[60] shadow-[0_1px_4px_rgba(0,0,0,0.03)]">
+      <header
+        className={`w-full bg-[#FAF8F5] border-b border-black/15 relative z-[60] shadow-[0_1px_4px_rgba(0,0,0,0.03)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform-gpu ${
+          isNavbarHidden
+            ? "-translate-y-full opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100 pointer-events-auto"
+        }`}
+        aria-hidden={isNavbarHidden}
+      >
         <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 lg:px-24 py-4 md:py-4.5 flex items-center justify-between text-[#111]">
           
           {/* BRAND LOGO (Left Aligned) */}

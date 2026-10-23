@@ -114,6 +114,14 @@ export default function Entrepreneur() {
         ease: "none"
       });
 
+      const dispatchNavbarToggle = (hide: boolean) => {
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(
+            new CustomEvent("toggle-navbar-hide", { detail: { hide } })
+          );
+        }
+      };
+
       ScrollTrigger.create({
         trigger: section,
         start: "top top",
@@ -121,7 +129,15 @@ export default function Entrepreneur() {
         pin: true,
         animation: tween,
         scrub: 1.5, // Smooth scrub
-        invalidateOnRefresh: true
+        invalidateOnRefresh: true,
+        onToggle: (self) => {
+          dispatchNavbarToggle(self.isActive);
+        },
+        onUpdate: (self) => {
+          if (self.isActive) {
+            dispatchNavbarToggle(true);
+          }
+        },
       });
 
       // 3. Card Parallax, Stagger & Dynamic Background Colors
@@ -183,11 +199,18 @@ export default function Entrepreneur() {
       });
     }, section);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(
+          new CustomEvent("toggle-navbar-hide", { detail: { hide: false } })
+        );
+      }
+    };
   }, []);
 
   return (
-    <section ref={sectionRef} id="entrepreneur" style={{ backgroundColor: companies[0].color }} className="text-white h-[100vh] relative overflow-hidden pt-4 md:pt-12 lg:pt-6 flex flex-col justify-center cursor-default">
+    <section ref={sectionRef} id="entrepreneur-section" style={{ backgroundColor: companies[0].color }} className="text-white h-[100vh] relative overflow-hidden pt-4 md:pt-12 lg:pt-6 flex flex-col justify-center cursor-default">
       
       {/* Custom Follower Cursor */}
       <div 

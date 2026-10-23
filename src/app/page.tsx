@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <Hero />
       <div className="relative z-10 -mt-[100vh]">
-        <div className="sticky top-0 z-50">
+        <div className="sticky top-0 z-50 pointer-events-none">
           <Navbar />
         </div>
         <div id="about"><About /></div>
