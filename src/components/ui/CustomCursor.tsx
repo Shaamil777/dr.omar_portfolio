@@ -85,6 +85,10 @@ export default function CustomCursor() {
     return null; // Do not render on mobile
   }
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <>
       {/* Outer trailing ring */}

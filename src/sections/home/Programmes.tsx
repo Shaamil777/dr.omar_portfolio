@@ -60,7 +60,28 @@ const programCustomImages: Record<string, [string, string]> = {
 
 export default function Programmes() {
   const { programs } = data;
-  const displayPrograms = programs.slice(0, 9);
+  const [programList, setProgramList] = useState(
+    programs.map((p) => ({ id: p.id, name: p.name, summary: p.summary }))
+  );
+  
+  useEffect(() => {
+    fetch("/api/admin/programs")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.success && json.data && json.data.length > 0) {
+          setProgramList(
+            json.data.map((c: any) => ({
+              id: c.slug,
+              name: c.name,
+              summary: c.description || c.summary,
+            }))
+          );
+        }
+      })
+      .catch((err) => console.error("Error fetching homepage programmes:", err));
+  }, []);
+
+  const displayPrograms = programList.slice(0, 9);
   
   const marqueeRef = useRef<HTMLDivElement>(null);
   

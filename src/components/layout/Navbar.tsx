@@ -171,6 +171,10 @@ export default function Navbar() {
     { num: "06", name: "Insights & Blog", href: "#blogs", isRoute: false },
   ];
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   const isNavbarHidden = pathname === "/" && isHidden;
 
   return (

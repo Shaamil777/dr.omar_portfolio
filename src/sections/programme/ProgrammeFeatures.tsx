@@ -45,7 +45,7 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
     }
   ];
 
-  const features = company.features && company.features.length >= 6 ? company.features : defaultFeatures;
+  const features = company.features && company.features.length > 0 ? company.features : defaultFeatures;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,17 +81,17 @@ export default function ProgrammeFeatures({ company }: { company: CompanyData })
           {/* Left Column: Sticky Header & Media Player */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col editorial-anim z-20">
             <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> 
-              WHAT YOU GET 
+              {company.ecosystemTagline || "WHAT YOU GET"} 
             </span>
             <h2 className="font-helvetica text-5xl md:text-6xl lg:text-[80px] font-bold tracking-tighter leading-[0.9] text-[#111] uppercase mb-12">
-              The Ecosystem
+              {company.ecosystemTitle || "The Ecosystem"}
             </h2>
             
             {/* Media Player - High End Minimal */}
             <div className="w-full aspect-[4/3] md:aspect-[16/10] bg-zinc-200 relative group cursor-pointer overflow-hidden rounded-sm shadow-xl">
               <Image 
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200" 
-                alt="Media Player" 
+                src={company.ecosystemMediaImage || "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200"} 
+                alt={company.ecosystemTitle || "Media Player"} 
                 fill 
                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
               />

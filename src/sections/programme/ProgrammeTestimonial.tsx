@@ -67,9 +67,11 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> THE ALUMNI </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> 
+              {company.testimonialsTagline || "THE ALUMNI"} 
+            </span>
             <h2 className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] text-[#111]">
-              Leaders Who Scaled
+              {company.testimonialsHeading || "Leaders Who Scaled"}
             </h2>
           </div>
           
@@ -80,7 +82,9 @@ export default function ProgrammeTestimonial({ company }: { company: CompanyData
                 <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
               ))}
             </div>
-            <span className="font-helvetica font-bold text-sm ml-2">4.9/5 Average Rating</span>
+            <span className="font-helvetica font-bold text-sm ml-2">
+              {company.testimonialsRatingText || "4.9/5 Average Rating"}
+            </span>
           </div>
         </div>
       </div>

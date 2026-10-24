@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
 export default function Footer() {
+  const pathname = usePathname();
   const containerRef = useRef<HTMLElement>(null);
   const band1Ref = useRef<HTMLDivElement>(null);
   const band2Ref = useRef<HTMLDivElement>(null);
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   useEffect(() => {
     if (!band1Ref.current || !band2Ref.current) return;

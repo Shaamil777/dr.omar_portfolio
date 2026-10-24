@@ -92,7 +92,7 @@ export default function ProgrammeAbout({ company }: { company: CompanyData }) {
           <div className="lg:col-span-3">
             <div className="sticky top-32" ref={titleRef}>
               <h2 className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase">
-                About {company.name}
+                {company.aboutTitle || `About ${company.name}`}
               </h2>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import type { CompanyData } from "@/constants/companies";
@@ -52,54 +53,66 @@ export default function ProgrammeBlog({ company }: { company: CompanyData }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> INSIGHTS </span>
+            <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block"> 
+              {company.blogsTagline || "INSIGHTS"} 
+            </span>
             <h2 className="font-helvetica text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1] text-[#111]">
-              Latest Case<br/>Studies
+              {(company.blogsHeading || "Latest Case\nStudies").split("\n").map((line, i) => (
+                <span key={i} className="block">{line}</span>
+              ))}
             </h2>
           </div>
           
-          <button className="flex items-center gap-2 font-helvetica font-bold uppercase tracking-widest text-sm text-[#CD1D1D] lg:hover:text-[#111] transition-colors duration-300 group pb-2">
+          <Link 
+            href="/blogs"
+            className="flex items-center gap-2 font-helvetica font-bold uppercase tracking-widest text-sm text-[#CD1D1D] lg:hover:text-[#111] transition-colors duration-300 group pb-2"
+          >
             View All Articles
             <svg className="w-4 h-4 transform lg:group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </button>
+          </Link>
         </div>
 
         {/* Responsive Grid — adapts to 2 or 3 articles */}
         <div className={`grid grid-cols-1 md:grid-cols-2 ${blogs.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-8 md:gap-10`}>
           {blogs.map((blog, index) => (
-            <div 
-              key={index} 
-              ref={(el) => { cardsRef.current[index] = el; }}
-              className="group cursor-pointer flex flex-col"
+            <Link
+              key={index}
+              href={blog.slug ? `/blogs/${blog.slug}` : "/blogs"}
+              className="block"
             >
-              {/* Image Container with Zoom */}
-              <div className="relative w-full aspect-[16/10] rounded-[24px] overflow-hidden border border-black/10 shadow-sm">
-                <Image 
-                  src={blog.image} 
-                  alt={blog.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
-                />
-              </div>
+              <div 
+                ref={(el) => { cardsRef.current[index] = el; }}
+                className="group cursor-pointer flex flex-col h-full"
+              >
+                {/* Image Container with Zoom */}
+                <div className="relative w-full aspect-[16/10] rounded-[24px] overflow-hidden border border-black/10 shadow-sm">
+                  <Image 
+                    src={blog.image} 
+                    alt={blog.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
+                  />
+                </div>
 
-              {/* Text Content */}
-              <div className="flex flex-col flex-grow mt-6">
-                {blog.category && (
-                  <span className="font-courier text-xs uppercase tracking-[0.25em] text-[#CD1D1D] font-bold mb-2.5 block">
-                    {blog.category}
-                  </span>
-                )}
-                <h3 className="font-helvetica text-xl sm:text-2xl lg:text-[1.65rem] font-bold leading-[1.15] text-[#111] tracking-tight lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
-                  {blog.title}
-                </h3>
-                {/* Date / Description */}
-                {(blog.date || blog.description) && (
-                  <p className="font-courier font-medium text-xs text-zinc-400 mt-3 tracking-widest uppercase">
-                    {blog.date || blog.description}
-                  </p>
-                )}
+                {/* Text Content */}
+                <div className="flex flex-col flex-grow mt-6">
+                  {blog.category && (
+                    <span className="font-courier text-xs uppercase tracking-[0.25em] text-[#CD1D1D] font-bold mb-2.5 block">
+                      {blog.category}
+                    </span>
+                  )}
+                  <h3 className="font-helvetica text-xl sm:text-2xl lg:text-[1.65rem] font-bold leading-[1.15] text-[#111] tracking-tight lg:group-hover:text-[#CD1D1D] transition-colors duration-300">
+                    {blog.title}
+                  </h3>
+                  {/* Date / Description */}
+                  {(blog.date || blog.description) && (
+                    <p className="font-courier font-medium text-xs text-zinc-400 mt-3 tracking-widest uppercase">
+                      {blog.date || blog.description}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

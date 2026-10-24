@@ -65,12 +65,14 @@ export default function ProgrammeFAQ({ company }: { company: CompanyData }) {
           {/* Left Column (4 cols) — Sticky Title */}
           <div className="lg:col-span-4" ref={leftColRef}>
             <div className="sticky top-32">
-              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> FAQ </span>
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-6 block"> 
+                {company.faqTagline || "FAQ"} 
+              </span>
               
               <h2 className="font-helvetica text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] text-[#111] mb-6">
-                Frequently<br/>
-                Asked<br/>
-                Questions
+                {(company.faqHeading || "Frequently\nAsked\nQuestions").split("\n").map((line, i) => (
+                  <span key={i} className="block">{line}</span>
+                ))}
               </h2>
             </div>
           </div>

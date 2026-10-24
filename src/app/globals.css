@@ -1,12 +1,48 @@
 @import "tailwindcss";
 
 @media (pointer: fine) {
-  body {
-    cursor: none !important;
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) {
+    cursor: none;
   }
-  a, button, input, textarea, select, [role="button"], .interactive-hover {
-    cursor: none !important;
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) a,
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) button,
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) input,
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) textarea,
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) select,
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) [role="button"],
+  body:not(.admin-mode):not(:has(.admin-root)):not(:has([data-admin="true"])) .interactive-hover {
+    cursor: none;
   }
+}
+
+html.admin-mode,
+body.admin-mode,
+.admin-root,
+[data-admin="true"],
+.admin-root * {
+  cursor: auto !important;
+}
+.admin-root a,
+.admin-root button,
+.admin-root [role="button"],
+.admin-root select,
+.admin-root label,
+.admin-root summary,
+.admin-root input[type="file"],
+.admin-root input[type="checkbox"],
+.admin-root input[type="radio"],
+.admin-root input[type="button"],
+.admin-root input[type="submit"] {
+  cursor: pointer !important;
+}
+.admin-root input,
+.admin-root textarea,
+.admin-root [contenteditable="true"] {
+  cursor: text !important;
+}
+.admin-root button:disabled,
+.admin-root input:disabled {
+  cursor: not-allowed !important;
 }
 
 @theme {

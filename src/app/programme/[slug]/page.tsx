@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { companiesData } from "@/constants/companies";
+import { getProgramBySlug, getBlogs } from "@/lib/storage";
 import ProgrammeHero from "@/sections/programme/ProgrammeHero";
 import ProgrammeAbout from "@/sections/programme/ProgrammeAbout";
 import ProgrammeHighlight from "@/sections/programme/ProgrammeHighlight";
@@ -21,18 +22,54 @@ export default async function DynamicCompanyPage({
   params: Promise<{ slug: string }> 
 }) {
   const { slug } = await params;
-  const company = companiesData.find(
-    (c) =>
-      c.slug === slug ||
-      c.slug.replace(/_/g, "-") === slug ||
-      c.slug.replace(/-/g, "_") === slug ||
-      (c.slug === "human-excellence-academy" && (slug === "hea" || slug === "hea_program" || slug === "human_excellence_academy")) ||
-      (c.slug === "hea_program" && (slug === "hea" || slug === "human-excellence-academy" || slug === "human_excellence_academy"))
-  );
+  const company =
+    (await getProgramBySlug(slug)) ||
+    companiesData.find(
+      (c) =>
+        c.slug === slug ||
+        c.slug.replace(/_/g, "-") === slug ||
+        c.slug.replace(/-/g, "_") === slug
+    );
 
   if (!company) {
-    return <div>Error: company with slug {slug} not found</div>;
+    return (
+      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center text-white p-6 text-center">
+        <h1 className="text-3xl font-bold mb-3">Programme Not Found</h1>
+        <p className="text-zinc-400 text-sm mb-6 max-w-md">
+          The requested programme with slug &quot;{slug}&quot; does not exist or has been removed.
+        </p>
+        <Link
+          href="/programmes"
+          className="px-6 py-2.5 rounded-full bg-[#CD1D1D] text-white font-bold text-xs uppercase tracking-wider"
+        >
+          View All Programmes
+        </Link>
+      </div>
+    );
   }
+
+  // Load blogs assigned to this programme or all programmes
+  const allBlogs = await getBlogs();
+  const assignedBlogs = allBlogs.filter((b) => {
+    if (!b.programSlug) return false;
+    if (b.programSlug === "none") return false;
+    return b.programSlug === company.slug || b.programSlug === "all";
+  });
+
+  const companyWithBlogs = {
+    ...company,
+    blogs:
+      assignedBlogs.length > 0
+        ? assignedBlogs.map((b) => ({
+            title: b.title,
+            category: b.category,
+            description: b.excerpt,
+            image: b.img,
+            date: b.date,
+            slug: b.slug,
+          }))
+        : company.blogs,
+  };
 
   return (
     <PageGridBackground>
@@ -56,11 +93,11 @@ export default async function DynamicCompanyPage({
         <ProgrammeHighlight company={company} />
         <ProgrammeFeatures company={company} />
         <ProgrammeStory company={company} />
-        <CompanyOwnsSection />
+        <CompanyOwnsSection company={company} />
         <ProgrammeGallery company={company} />
         <ProgrammeTestimonial company={company} />
         <ProgrammeFAQ company={company} />
-        <ProgrammeBlog company={company} />
+        <ProgrammeBlog company={companyWithBlogs} />
         <ProgrammeCore company={company} />
       </main>
     </PageGridBackground>

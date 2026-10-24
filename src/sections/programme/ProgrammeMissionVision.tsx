@@ -80,6 +80,9 @@ export default function ProgrammeMissionVision({ company }: { company: CompanyDa
           <div ref={leftColRef} className="lg:col-span-5 flex flex-col">
             
             <div className="border-l-[3px] border-[#CD1D1D] pl-5 md:pl-8 flex flex-col gap-5 md:gap-6 mb-10">
+              <span className="font-courier text-xs uppercase tracking-[0.3em] text-[#CD1D1D] font-bold">
+                {company.missionVisionTagline || "PURPOSE & VISION"}
+              </span>
               {/* Headings */}
               <div className="flex flex-col gap-1 md:gap-2">
                 {headings.map((heading, i) => (

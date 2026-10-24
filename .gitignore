@@ -46,3 +46,8 @@ public/hero/input/
 
 # python virtual environment
 myenv/
+
+# sqlite local databases
+*.db
+*.db-journal
+*.sqlite

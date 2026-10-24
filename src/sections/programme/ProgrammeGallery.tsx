@@ -117,6 +117,9 @@ export default function ProgrammeGallery({ company }: { company: CompanyData }) 
           {/* Left Column (6 cols, pushed left edge) — Sticky Title & Text */}
           <div className="lg:col-span-6 relative" ref={leftColRef}>
             <div className="lg:sticky lg:top-32 flex flex-col items-start pt-0 mt-0">
+              <span className="font-courier text-xs md:text-sm uppercase tracking-[0.3em] text-[#CD1D1D] font-bold mb-4 block">
+                {company.galleryTagline || "GALLERY // EXPERIENCE"}
+              </span>
               <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[4rem] font-bold tracking-tight leading-[1.05] text-[#111] mb-6">
                 {title.split("\n").map((line, i) => (
                   <span key={i} className="block">

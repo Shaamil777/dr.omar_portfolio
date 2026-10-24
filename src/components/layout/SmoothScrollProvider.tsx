@@ -11,6 +11,8 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname?.startsWith("/admin")) return;
+
     // Heavy, slow, and ultra-smooth scroll configuration
     const lenis = new Lenis({
       duration: 2.0, // Slower, heavier scroll

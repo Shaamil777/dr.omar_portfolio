@@ -1,19 +1,26 @@
 import Image from 'next/image';
+import type { CompanyData } from "@/constants/companies";
 
-export default function CompanyOwnsSection() {
-  // We can use default placeholder logos for the companies owned by Dr Omar
-  // Using some abstract Unsplash images to represent corporate logos
-  const ownedCompanies = [
-    { name: "BCC", logo: "/logos/BCC/bcc.png" },
-    { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
-    { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
-    { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },
-    { name: "Human Excellence Academy", logo: "/logos/HEA/hea_light.png" },
-    { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_liight.png" },
-    { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_light.png" },
-    { name: "Teens Immersion", logo: "/logos/TI/ti_light.png" },
-    { name: "Youth Immersion", logo: "/logos/YI/yi_light.png" },
-  ];
+const DEFAULT_OWNED_COMPANIES = [
+  { name: "BCC", logo: "/logos/BCC/bcc.png" },
+  { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
+  { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
+  { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },
+  { name: "Human Excellence Academy", logo: "/logos/HEA/hea_light.png" },
+  { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_liight.png" },
+  { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_light.png" },
+  { name: "Teens Immersion", logo: "/logos/TI/ti_light.png" },
+  { name: "Youth Immersion", logo: "/logos/YI/yi_light.png" },
+];
+
+export default function CompanyOwnsSection({ company }: { company?: CompanyData }) {
+  const ownedCompanies =
+    company?.ownedCompanies && company.ownedCompanies.length > 0
+      ? company.ownedCompanies
+      : DEFAULT_OWNED_COMPANIES;
+
+  const tagline = company?.ownedCompaniesTagline || "Dr. Omar's Ecosystem";
+  const heading = company?.ownedCompaniesHeading || "Companies Dr. Omar Owns and Leads";
 
   // We duplicate the array multiple times to ensure a seamless infinite loop across wide screens
   const marqueeItems = [...ownedCompanies, ...ownedCompanies, ...ownedCompanies];
@@ -24,7 +31,6 @@ export default function CompanyOwnsSection() {
       <div className="absolute top-1/3 right-0 w-[50vw] h-[50vw] bg-[#CD1D1D]/5 rounded-full blur-[140px] translate-x-1/4 pointer-events-none z-0" />
       <div className="absolute bottom-0 left-1/4 w-[30vw] h-[30vw] bg-[#CD1D1D]/5 rounded-full blur-[120px] translate-y-1/2 pointer-events-none z-0" />
 
-      
       {/* CSS for Infinite Marquee */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee {
@@ -41,13 +47,10 @@ export default function CompanyOwnsSection() {
 
       <div className="container mx-auto px-6 lg:px-24 max-w-[100rem] mb-16 text-center">
         <span className="text-sm md:text-base font-bold tracking-[0.3em] text-zinc-400 uppercase mb-4 block">
-          Dr. Omar's Ecosystem
+          {tagline}
         </span>
         <h2 className="font-helvetica text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.2] text-white flex flex-wrap justify-center gap-x-3 lg:gap-x-4">
-          <span>Companies Dr. Omar</span>
-          <span className="text-[#CD1D1D]">Owns</span>
-          <span>and</span>
-          <span>Leads</span>
+          <span>{heading}</span>
         </h2>
       </div>
 

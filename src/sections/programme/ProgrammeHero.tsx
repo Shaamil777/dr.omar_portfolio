@@ -111,124 +111,8 @@ const heroData: Record<string, {
     logoDark: "/logos/BCC/BCC_dark.png",
     logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
   },
-  youth_immersion: {
-    fullName: ["Youth", "Immersion®"],
-    tagline: "YOUTH IMMERSION® PROGRAMME",
-    shortDescription: "A transformational youth development program empowering young adults with confidence, leadership, communication, emotional intelligence, career clarity, and purpose-driven living.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Youth Development", "Purpose-Driven Leadership", "Dr. Omar Global"],
-    logoDark: "/logos/YI/yi_dark.png",
-    logoClassName: "h-9 sm:h-11 md:h-12 w-auto",
-  },
-  deep_immersion: {
-    fullName: ["Deep", "Immersion®"],
-    tagline: "THE FLAGSHIP HUMAN TRANSFORMATION EXPERIENCE",
-    shortDescription: "A transformational residential experience designed to help individuals reconnect with themselves, heal emotional wounds, discover their purpose, and redesign their lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Purpose Discovery", "Dr. Omar Global"],
-    logoDark: "/logos/DI/di_dark.png",
-    logoClassName: "h-8 sm:h-10 md:h-11 w-auto",
-  },
-  "deep-immersion": {
-    fullName: ["Deep", "Immersion®"],
-    tagline: "THE FLAGSHIP HUMAN TRANSFORMATION EXPERIENCE",
-    shortDescription: "A transformational residential experience designed to help individuals reconnect with themselves, heal emotional wounds, discover their purpose, and redesign their lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Purpose Discovery", "Dr. Omar Global"],
-    logoDark: "/logos/DI/di_dark.png",
-    logoClassName: "h-8 sm:h-10 md:h-11 w-auto",
-  },
-  business_immersion: {
-    fullName: ["Business", "Immersion®"],
-    tagline: "DEVELOPING BUSINESS LEADERS FOR SUSTAINABLE GROWTH",
-    shortDescription: "An advanced leadership and business acceleration program designed for entrepreneurs and business owners who aspire to build scalable, system-driven, and purpose-led organizations.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Business Transformation", "Strategic Leadership", "Dr. Omar Global"],
-    logoDark: "/logos/BI/bi_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  "business-immersion": {
-    fullName: ["Business", "Immersion®"],
-    tagline: "DEVELOPING BUSINESS LEADERS FOR SUSTAINABLE GROWTH",
-    shortDescription: "An advanced leadership and business acceleration program designed for entrepreneurs and business owners who aspire to build scalable, system-driven, and purpose-led organizations.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Business Transformation", "Strategic Leadership", "Dr. Omar Global"],
-    logoDark: "/logos/BI/bi_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  "human-excellence-academy": {
-    fullName: ["Human Excellence", "Academy"],
-    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
-    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
-    logoDark: "/logos/HEA/hea.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  "human_excellence_academy": {
-    fullName: ["Human Excellence", "Academy"],
-    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
-    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
-    logoDark: "/logos/HEA/hea.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  hea: {
-    fullName: ["Human Excellence", "Academy"],
-    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
-    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
-    logoDark: "/logos/HEA/hea.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  hea_program: {
-    fullName: ["Human Excellence", "Academy"],
-    tagline: "TRANSFORMING PEOPLE. DEVELOPING LEADERS.",
-    shortDescription: "A human development and coaching institution dedicated to helping individuals discover their potential, develop leadership capabilities, strengthen relationships, and build meaningful, purpose-driven lives.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Human Transformation", "Leadership Development", "Dr. Omar Global"],
-    logoDark: "/logos/HEA/hea.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  master_deep_immersion: {
-    fullName: ["Master Deep", "Immersion®"],
-    tagline: "A DEEPER JOURNEY INTO HUMAN TRANSFORMATION",
-    shortDescription: "An immersive personal transformation experience inspired by the principles of emotional awareness, identity discovery, purpose, and holistic human development.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Deep Personal Growth", "Purpose Discovery", "Dr. Omar Global"],
-    logoDark: "/logos/MDI/mdi_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  "master-deep-immersion": {
-    fullName: ["Master Deep", "Immersion®"],
-    tagline: "A DEEPER JOURNEY INTO HUMAN TRANSFORMATION",
-    shortDescription: "An immersive personal transformation experience inspired by the principles of emotional awareness, identity discovery, purpose, and holistic human development.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Deep Personal Growth", "Purpose Discovery", "Dr. Omar Global"],
-    logoDark: "/logos/MDI/mdi_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  teens_immersion: {
-    fullName: ["Teens", "Immersion®"],
-    tagline: "BUILDING STRONG FOUNDATIONS FOR LIFE.",
-    shortDescription: "A teen development program designed to help teenagers build self-confidence, discipline, emotional intelligence, communication skills, resilience, and positive life habits during their formative years.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Teen Development", "Life Skills & Confidence", "Dr. Omar Global"],
-    logoDark: "/logos/TI/ti_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
-  "teens-immersion": {
-    fullName: ["Teens", "Immersion®"],
-    tagline: "BUILDING STRONG FOUNDATIONS FOR LIFE.",
-    shortDescription: "A teen development program designed to help teenagers build self-confidence, discipline, emotional intelligence, communication skills, resilience, and positive life habits during their formative years.",
-    image: "/images/programmes/hero.webp",
-    chips: ["Teen Development", "Life Skills & Confidence", "Dr. Omar Global"],
-    logoDark: "/logos/TI/ti_dark.png",
-    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
-  },
 };
+
 
 export default function ProgrammeHero({ company }: { company: CompanyData }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -257,11 +141,13 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
   }, []);
 
   const data = heroData[company.slug] || heroData[company.slug.replace(/_/g, "-")] || heroData[company.slug.replace(/-/g, "_")] || {
-    fullName: [company.name],
+    fullName: company.name ? company.name.split(" ") : ["PROGRAMME"],
     tagline: `${company.name} PROGRAMME`,
     shortDescription: company.description,
-    image: "/images/programmes/hero.webp",
-    chips: ["ONGOING", "DR. OMAR", "GLOBAL"],
+    image: company.aboutImage || "/images/programmes/hero.webp",
+    chips: ["48 WEEKS", "DR. OMAR", "GLOBAL"],
+    logoDark: "/logos/BCC/BCC_dark.png",
+    logoClassName: "h-8 sm:h-9 md:h-10 w-auto",
   };
 
   useEffect(() => {
@@ -444,7 +330,7 @@ export default function ProgrammeHero({ company }: { company: CompanyData }) {
           {[...Array(16)].map((_, i) => (
             <div key={i} className="flex items-center justify-center gap-24 flex-shrink-0 h-10 md:h-12">
               <Image
-                src={data.logoDark || (company.slug === "youth_immersion" ? "/logos/YI/yi_dark.png" : `/logos/${company.slug.toUpperCase()}/BCC_dark.png`)}
+                src={data.logoDark || "/logos/BCC/BCC_dark.png"}
                 alt={company.name}
                 width={240}
                 height={80}

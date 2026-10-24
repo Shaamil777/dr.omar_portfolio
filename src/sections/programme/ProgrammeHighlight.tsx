@@ -302,10 +302,10 @@ export default function ProgrammeHighlight({ company }: { company: CompanyData }
         {/* Top Header Fixed overlay */}
         <div className="absolute top-8 sm:top-10 md:top-16 left-0 w-full px-5 sm:px-8 lg:px-24 max-w-[100rem] mx-auto z-20 flex justify-center md:justify-between items-center pointer-events-none">
             <span className="font-courier text-xs sm:text-sm uppercase tracking-[0.25em] md:tracking-[0.3em] text-[#CD1D1D] font-bold block text-center md:text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"> 
-              THE CORE FRAMEWORK 
+              {company.pillarsTagline || "THE CORE FRAMEWORK"} 
             </span>
             <span className="font-helvetica text-xs md:text-sm text-zinc-300 font-bold hidden md:block uppercase tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              {company.name} Pillars
+              {company.pillarsSubtitle || `${company.name} Pillars`}
             </span>
         </div>
 

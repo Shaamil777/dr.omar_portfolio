@@ -6,7 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/layout/Navbar";
-import { companiesData } from "@/constants/companies";
+import { companiesData, type CompanyData } from "@/constants/companies";
 
 const AbstractIcon = ({ index }: { index: number }) => {
   const type = index % 3;
@@ -57,8 +57,20 @@ const programCustomImages: Record<string, [string, string]> = {
 };
 
 export default function ProgrammesListingPage() {
+  const [programs, setPrograms] = useState<CompanyData[]>(companiesData);
   const marqueeRef = useRef<HTMLDivElement>(null);
   
+  useEffect(() => {
+    fetch("/api/admin/programs")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.success && json.data && json.data.length > 0) {
+          setPrograms(json.data);
+        }
+      })
+      .catch((err) => console.error("Error fetching programmes:", err));
+  }, []);
+
   // Custom cursor state
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [isHoveringCard, setIsHoveringCard] = useState(false);
@@ -171,7 +183,7 @@ export default function ProgrammesListingPage() {
         {/* Sub Header Toolbar */}
         <div className="w-full px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between border-b-[2px] border-[#111]/10 gap-4 md:gap-0">
           <div className="font-helvetica font-bold text-lg md:text-xl min-w-[80px]">
-            ({companiesData.length})
+            ({programs.length})
           </div>
           <div className="font-helvetica font-bold text-lg md:text-xl text-left md:text-center flex-1">
             Transformational Programs for Ambitious Leaders
@@ -185,7 +197,7 @@ export default function ProgrammesListingPage() {
         
         {/* Grid of Cards */}
         <div className="program-grid w-full px-4 md:px-8 mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-y-16">
-           {companiesData.map((company, i) => {
+           {programs.map((company, i) => {
              const defaultImg1 = programImages[(i * 2) % programImages.length];
              const defaultImg2 = programImages[(i * 2 + 1) % programImages.length];
              const [img1, img2] = programCustomImages[company.slug] || [defaultImg1, defaultImg2];
