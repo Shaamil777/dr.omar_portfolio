@@ -1,6 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
 import { CompanyData } from "@/constants/companies";
+import initialPrograms from "@/data/programs.json";
+import initialBlogs from "@/data/blogs.json";
 import {
   getProgramsFromDB,
   getProgramBySlugFromDB,
@@ -31,13 +33,17 @@ export type BlogPost = {
 const PROGRAMS_FILE = path.join(process.cwd(), "src", "data", "programs.json");
 const BLOGS_FILE = path.join(process.cwd(), "src", "data", "blogs.json");
 
-// Helper to ensure JSON mirror backup file exists
+// Helper to ensure JSON mirror backup file exists (only called on writes)
 async function ensureFile(filePath: string, defaultData: unknown) {
   try {
     await fs.access(filePath);
   } catch {
-    await fs.mkdir(path.dirname(filePath), { recursive: true });
-    await fs.writeFile(filePath, JSON.stringify(defaultData, null, 2), "utf-8");
+    try {
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, JSON.stringify(defaultData, null, 2), "utf-8");
+    } catch (e) {
+      console.warn("[Storage] Could not create fallback file on read-only system:", e);
+    }
   }
 }
 
@@ -52,18 +58,20 @@ export async function getPrograms(): Promise<CompanyData[]> {
       return dbPrograms;
     }
   } catch (error) {
-    console.error("[Storage] SQL getPrograms error, checking fallback:", error);
+    console.warn("[Storage] SQL getPrograms error, checking fallback:", error);
   }
 
-  // Fallback to JSON
+  // Fallback to local JSON file if readable on disk
   try {
-    await ensureFile(PROGRAMS_FILE, []);
     const data = await fs.readFile(PROGRAMS_FILE, "utf-8");
-    return JSON.parse(data) as CompanyData[];
-  } catch (err) {
-    console.error("[Storage] JSON fallback error:", err);
-    return [];
+    const parsed = JSON.parse(data) as CompanyData[];
+    if (parsed && parsed.length > 0) return parsed;
+  } catch {
+    // fs.readFile not available on read-only serverless/Vercel
   }
+
+  // Guaranteed bundled fallback with latest programs
+  return (initialPrograms as CompanyData[]) || [];
 }
 
 export async function getProgramBySlug(slug: string): Promise<CompanyData | null> {
@@ -152,18 +160,19 @@ export async function getBlogs(): Promise<BlogPost[]> {
       return dbBlogs;
     }
   } catch (error) {
-    console.error("[Storage] SQL getBlogs error, checking fallback:", error);
+    console.warn("[Storage] SQL getBlogs error, checking fallback:", error);
   }
 
-  // Fallback to JSON
+  // Fallback to local JSON file if readable on disk
   try {
-    await ensureFile(BLOGS_FILE, []);
     const data = await fs.readFile(BLOGS_FILE, "utf-8");
-    return JSON.parse(data) as BlogPost[];
-  } catch (err) {
-    console.error("[Storage] JSON fallback error:", err);
-    return [];
+    const parsed = JSON.parse(data) as BlogPost[];
+    if (parsed && parsed.length > 0) return parsed;
+  } catch {
+    // fs.readFile not available on read-only serverless/Vercel
   }
+
+  return (initialBlogs as BlogPost[]) || [];
 }
 
 export async function getBlogById(id: string): Promise<BlogPost | null> {

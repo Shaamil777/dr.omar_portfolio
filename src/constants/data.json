@@ -227,6 +227,17 @@
       "summary": "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy.",
       "duration": "48 weeks (1 year)",
       "format": "Annual Program"
+    },
+    {
+      "id": "dummy_program",
+      "name": "Dummy Leadership Programme",
+      "short_name": "DUMMY",
+      "category": "Mentorship",
+      "organization": "Dummy",
+      "target_audience": "Entrepreneurs & Leaders",
+      "summary": "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy.",
+      "duration": "1 Year",
+      "format": "Executive Program"
     }
   ],
 

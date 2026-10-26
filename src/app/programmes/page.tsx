@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/layout/Navbar";
 import { companiesData, type CompanyData } from "@/constants/companies";
+import initialPrograms from "@/data/programs.json";
 
 const AbstractIcon = ({ index }: { index: number }) => {
   const type = index % 3;
@@ -57,7 +58,7 @@ const programCustomImages: Record<string, [string, string]> = {
 };
 
 export default function ProgrammesListingPage() {
-  const [programs, setPrograms] = useState<CompanyData[]>(companiesData);
+  const [programs, setPrograms] = useState<CompanyData[]>(initialPrograms as CompanyData[]);
   const marqueeRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {

@@ -65,7 +65,11 @@ export type CompanyData = {
   components?: ("Hero" | "About" | "Testimonial" | "UpcomingEvents")[];
 };
 
-export const companiesData: CompanyData[] = [
+import initialPrograms from "@/data/programs.json";
+
+export const companiesData: CompanyData[] = initialPrograms as CompanyData[];
+
+export const allCatalogCompanies: CompanyData[] = [
   {
     slug: "bcc",
     name: "Business Coaching Club",

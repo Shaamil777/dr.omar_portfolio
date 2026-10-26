@@ -1,16 +1,41 @@
-import { createClient, type Client } from "@libsql/client";
+import { createClient, type Client, type InStatement, type ResultSet } from "@libsql/client";
 import path from "path";
 import fs from "fs/promises";
 import type { CompanyData } from "@/constants/companies";
 import type { BlogPost } from "./storage";
 
-// Determine database URL (defaults to a local SQLite database in src/data)
-const DB_FILE_PATH = path.join(process.cwd(), "src", "data", "dr_omar.db");
-const dbUrl = process.env.DATABASE_URL || `file:${DB_FILE_PATH}`;
+let _client: Client | null = null;
 
-export const db: Client = createClient({
-  url: dbUrl,
-});
+export function getDb(): Client | null {
+  if (_client) return _client;
+  try {
+    const DB_FILE_PATH = path.join(process.cwd(), "src", "data", "dr_omar.db");
+    const rawUrl = process.env.DATABASE_URL;
+
+    // In serverless environments like Vercel without an external remote DATABASE_URL (e.g. libsql://),
+    // skip local file SQLite to avoid EROFS and native addon failures
+    if (process.env.VERCEL && (!rawUrl || rawUrl.startsWith("file:"))) {
+      return null;
+    }
+
+    const dbUrl = rawUrl || `file:${DB_FILE_PATH}`;
+    _client = createClient({ url: dbUrl });
+    return _client;
+  } catch (err) {
+    console.warn("[SQL Database] Could not create database client:", err);
+    return null;
+  }
+}
+
+export const db = {
+  execute: async (stmt: InStatement): Promise<ResultSet> => {
+    const client = getDb();
+    if (!client) {
+      throw new Error("Database client not available in this environment");
+    }
+    return client.execute(stmt);
+  },
+};
 
 let isInitialized = false;
 
@@ -19,6 +44,8 @@ let isInitialized = false;
  */
 export async function initDatabase(): Promise<void> {
   if (isInitialized) return;
+  const client = getDb();
+  if (!client) return;
 
   try {
     // 1. Create programs table

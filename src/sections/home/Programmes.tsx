@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import data from "@/constants/data.json";
+import initialPrograms from "@/data/programs.json";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -59,9 +59,8 @@ const programCustomImages: Record<string, [string, string]> = {
 };
 
 export default function Programmes() {
-  const { programs } = data;
   const [programList, setProgramList] = useState(
-    programs.map((p) => ({ id: p.id, name: p.name, summary: p.summary }))
+    initialPrograms.map((p) => ({ id: p.slug, name: p.name, summary: p.description }))
   );
   
   useEffect(() => {

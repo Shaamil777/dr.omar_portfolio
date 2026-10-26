@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { companiesData } from "@/constants/companies";
+import { companiesData, allCatalogCompanies } from "@/constants/companies";
 import { getProgramBySlug, getBlogs } from "@/lib/storage";
 import ProgrammeHero from "@/sections/programme/ProgrammeHero";
 import ProgrammeAbout from "@/sections/programme/ProgrammeAbout";
@@ -25,6 +25,12 @@ export default async function DynamicCompanyPage({
   const company =
     (await getProgramBySlug(slug)) ||
     companiesData.find(
+      (c) =>
+        c.slug === slug ||
+        c.slug.replace(/_/g, "-") === slug ||
+        c.slug.replace(/-/g, "_") === slug
+    ) ||
+    allCatalogCompanies?.find(
       (c) =>
         c.slug === slug ||
         c.slug.replace(/_/g, "-") === slug ||
