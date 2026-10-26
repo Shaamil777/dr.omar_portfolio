@@ -162,11 +162,18 @@ export default function Footer() {
     border: "3px dashed rgba(205, 29, 29, 0.4)",
   };
 
+  const isLightPage = pathname === "/" || pathname === "/about" || pathname === "/programmes" || pathname?.startsWith("/programme");
+
   return (
     <footer
       ref={containerRef}
       className="relative w-full min-h-[100vh] md:min-h-[85vh] bg-[#111] text-white flex flex-col justify-end overflow-hidden"
     >
+      {/* Top transition filler for light pages to eliminate black space above sliding bands */}
+      {isLightPage && (
+        <div className="absolute top-0 left-0 w-full h-[15%] md:h-[10%] bg-white pointer-events-none" />
+      )}
+
       {/* Marquee bands */}
       <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         {/* Upper Band */}

@@ -227,4 +227,147 @@ export const companiesData: CompanyData[] = [
     },
     components: ["Hero", "About", "Testimonial", "UpcomingEvents"],
   },
+  {
+    slug: "deep_immersion",
+    name: "Deep Immersion",
+    description: "The award-winning 360-degree flagship life transformation program integrating innovative coaching, spiritual healing, and NLP techniques.",
+    aboutImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+    aboutParagraphs: [
+      "Deep Immersion is Dr. Abdussalam Omar's premier life transformation retreat, recognized by CEO Insights as the 'Most Innovative and Sustainable 360-degree Life Transformation Program in India'.",
+      "Tailored for high-achieving entrepreneurs and executives, this immersive experience unlocks emotional peace, restores balance in life and family, and aligns personal mastery with outer success."
+    ],
+    missionVisionHeading: ["Heal from within", "Master emotional agility", "Live with purposeful peace"],
+    missionVisionDesc: "To guide individuals toward profound self-discovery, emotional equilibrium, and purposeful living through experiential retreats, holistic healing science, and neuro-linguistic breakthroughs.",
+    stats: [
+      { value: "10,000+", label: "Lives transformed across India, Middle East, and Asia." },
+      { value: "98%", label: "Long-term sustained lifestyle & emotional breakthrough rate." }
+    ],
+    mission: "To liberate high-performers from chronic burnout and internal conflict, empowering them to live in harmony with family, health, and their deeper spiritual calling.",
+    vision: "To cultivate a global movement of self-aware, emotionally grounded leaders who foster peace, love, and integrity in their families and societies.",
+    missionVisionImages: [
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600"
+    ],
+    faqs: [
+      {
+        question: "What makes Deep Immersion different from standard retreats?",
+        answer: "Deep Immersion combines modern psychology, NLP coaching, and deep spiritual mindfulness into an intensive experiential methodology, targeting root subconscious patterns rather than surface habits."
+      },
+      {
+        question: "Who attends Deep Immersion retreats?",
+        answer: "Business leaders, C-suite executives, medical professionals, and dedicated individuals seeking profound mental clarity, stress relief, and purposeful realignment."
+      },
+      {
+        question: "What is the duration of the retreat?",
+        answer: "Retreats typically range from 4 to 7 intensive residential days held in serene nature sanctuaries, followed by structured integration coaching."
+      }
+    ],
+    highlights: [
+      { stat: "Top 10", label: "NLP Consultants Worldwide — CEO Insights" },
+      { stat: "10,000+", label: "Participants Immersed" },
+      { stat: "360°", label: "Mind, Body & Soul Transformation" },
+      { stat: "15+", label: "Years of Proven Methodology" }
+    ],
+    pillars: [
+      {
+        title: "Emotional Healing & Self-Realization",
+        focus: "Inner Peace, Emotional Clarity, and Subconscious Realignment",
+        concept: "Resolving lingering emotional wounds, dismantling limiting self-beliefs, and restoring profound calm.",
+        icon: "heart",
+        image: "/images/programmes/highlite1.webp"
+      },
+      {
+        title: "Life Harmony & Family Dynamics",
+        focus: "Deepened Connection, Parenting, and Generational Love",
+        concept: "Cultivating rich intimacy, active listening, and heart-centered communication with family and loved ones.",
+        icon: "users",
+        image: "/images/programmes/highlite3.webp"
+      },
+      {
+        title: "Holistic Health & Vital Energy",
+        focus: "Physical Vitality, Breathwork, and Restorative Rhythm",
+        concept: "Restoring sleep, rejuvenating biological rhythm, and unlocking sustainable, joyful daily stamina.",
+        icon: "shield",
+        image: "/images/programmes/highlite2.webp"
+      },
+      {
+        title: "Purpose-Driven Living & Spiritual Peace",
+        focus: "Contribution, Legacy, and Transcendence",
+        concept: "Reconnecting with transcendent meaning and using one's gifts to elevate society.",
+        icon: "globe",
+        image: "/images/programmes/highlite4.webp"
+      }
+    ],
+    components: ["Hero", "About", "Testimonial", "UpcomingEvents"]
+  },
+  {
+    slug: "hea",
+    name: "Human Excellence Academy",
+    description: "The most sought-after, innovative, and ethical coaching, counselling, and leadership development academy in the Middle East and India since 2010.",
+    aboutImage: "/images/about/hea.webp",
+    aboutParagraphs: [
+      "Founded in 2010 and expanded across Asia and the Middle East, Dr. Omar's Human Excellence Academy (HEA) is an institutional benchmark for executive coaching and human development.",
+      "HEA provides rigorous certifications, corporate leadership programs, and professional counselling designed to instill ethical wisdom and psychological mastery in leaders."
+    ],
+    missionVisionHeading: ["Empowering human potential", "Leading with ethical conviction", "Inspiring generational change"],
+    missionVisionDesc: "To cultivate ethical leaders and world-class counselors who elevate individuals, corporations, and communities through proven behavioral science and compassionate wisdom.",
+    stats: [
+      { value: "1,500+", label: "Executive training and leadership workshops delivered." },
+      { value: "20+", label: "Years of academic and professional counseling heritage." }
+    ],
+    mission: "To deliver transformative training, executive counseling, and human development programs that bridge behavioral excellence with moral integrity.",
+    vision: "To establish a global standard for human excellence where intellect, compassion, and leadership converge.",
+    faqs: [
+      {
+        question: "What courses does Human Excellence Academy offer?",
+        answer: "HEA provides certified NLP practitioner courses, executive leadership development, corporate culture consulting, and master counselor certifications."
+      },
+      {
+        question: "Is HEA accredited?",
+        answer: "Yes, HEA courses adhere to international coaching frameworks accredited by the American Board of NLP and ICF standards."
+      }
+    ],
+    highlights: [
+      { stat: "Since 2010", label: "Serving Middle East & India" },
+      { stat: "1,500+", label: "Workshops Conducted" },
+      { stat: "1,000+", label: "Organizations Coached" },
+      { stat: "ICF / ABNLP", label: "Accredited Methodologies" }
+    ],
+    components: ["Hero", "About", "Testimonial", "UpcomingEvents"]
+  },
+  {
+    slug: "business_immersion",
+    name: "Business Immersion",
+    description: "A high-velocity residential program exclusively designed for business owners and enterprise leaders focusing on systems, scalability, and execution.",
+    aboutImage: "/images/programmes/bi/bi1.webp",
+    aboutParagraphs: [
+      "Business Immersion (BI) is an intensive, closed-door residential program curated for founders and executive leaders who demand rapid operational breakthroughs.",
+      "Through immersive simulations, strategic restructuring workshops, and peer masterminds, participants step out of operational firefighting to architect self-sustaining business machines."
+    ],
+    missionVisionHeading: ["Automate operations", "De-risk growth", "Accelerate valuation"],
+    missionVisionDesc: "Equipping founders with real-time operational frameworks, financial architecture, and leadership teams to scale without bottlenecks.",
+    stats: [
+      { value: "500+", label: "Enterprises restructured into system-driven companies." },
+      { value: "4X", label: "Average operational efficiency increase within 6 months." }
+    ],
+    components: ["Hero", "About", "Testimonial", "UpcomingEvents"]
+  },
+  {
+    slug: "oathmen",
+    name: "OATHMEN",
+    description: "A practical 1-year entrepreneurship fellowship for young founders and next-gen builders. From Ideas to IPO.",
+    aboutImage: "/images/about/oathman.webp",
+    aboutParagraphs: [
+      "OATHMEN is a specialized startup coaching club and practical fellowship that empowers young entrepreneurs to transform bold concepts into investment-ready enterprises.",
+      "Covering ethical venture governance, weekly shipping cadences, and venture capital readiness, OATHMEN bridges ambition with institutional execution."
+    ],
+    missionVisionHeading: ["From ideas to IPO", "Execution-first learning", "Investment ready"],
+    missionVisionDesc: "To cultivate a fearless generation of ethical startup builders who solve real-world problems and construct enduring enterprises.",
+    stats: [
+      { value: "50+", label: "Innovative startups established and mentored." },
+      { value: "1 Year", label: "Intensive practical venture fellowship." }
+    ],
+    components: ["Hero", "About", "Testimonial", "UpcomingEvents"]
+  }
 ];
+
