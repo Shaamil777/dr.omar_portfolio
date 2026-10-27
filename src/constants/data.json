@@ -69,68 +69,59 @@
       "duration": "48 weeks (1 year)",
       "core_pillars": [
         {
-          "pillar": "Ethical Leadership",
-          "description": "Operating with integrity, transparency, and fairness."
+          "pillar": "Ethical Leadership & Purpose-Driven Growth",
+          "focus": "Integrity, Values, and Visionary Governance",
+          "description": "Building a business that stands on truth, moral strength, and transparency. Moving beyond pure profit to create real societal value, uplift people, and lead with purpose.",
+          "icon": "shield"
         },
         {
-          "pillar": "Purpose-Driven Growth",
-          "description": "Creating businesses that solve real problems and serve beyond profit."
+          "pillar": "Scalable Systems, Automation & Business Structuring",
+          "focus": "Operational Excellence, Systemization, and PE/IPO Readiness",
+          "description": "Transitioning from a founder-led business to a system-driven enterprise. Setting up SOPs, dashboards, and scalable architectures that make companies ready for growth, funding, and long-term valuation.",
+          "icon": "layers"
         },
         {
-          "pillar": "Sustainability & Legacy",
-          "description": "Designing systems, culture, and governance that endure across generations."
+          "pillar": "Personal Mastery & Balanced Life",
+          "focus": "Harmony across Family, Health, Business, and Spirituality",
+          "description": "Sustainable success without burnout or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
+          "icon": "heart"
         },
         {
-          "pillar": "Balanced Life",
-          "description": "Finding harmony between family, business, society, and spirituality."
-        },
-        {
-          "pillar": "Collective Growth",
-          "description": "Fostering a trusted circle of collaborative entrepreneurs."
-        },
-        {
-          "pillar": "Continuous Learning",
-          "description": "Maintaining a growth mindset to adapt to a fast-changing world."
+          "pillar": "Legacy Building & Ecosystem Collaboration",
+          "focus": "Generational Continuity, Mentorship, and Global Networks",
+          "description": "Designing institutions that outlast their founders. Leveraging a trusted, collaborative ecosystem of entrepreneurs and mentors to unlock global expansion and collective growth.",
+          "icon": "globe"
         }
       ],
-      "curriculum": [
-        {
-          "quarter": 1,
-          "title": "Foundation & Vision Setting",
-          "weeks": "1-12"
-        },
-        {
-          "quarter": 2,
-          "title": "Scaling Systems & Automation",
-          "weeks": "13-24"
-        },
-        {
-          "quarter": 3,
-          "title": "Advanced Growth & Expansion",
-          "weeks": "25-36"
-        },
-        {
-          "quarter": 4,
-          "title": "Mastery, Wealth & Legacy",
-          "weeks": "37-48"
-        }
-      ],
+      "journey": {
+        "label": "THE BCC JOURNEY",
+        "heading": "A Year of Mentorship, Growth & Transformation",
+        "description": "An immersive, year-long mentorship ecosystem combining business systems, leadership intelligence, personal mastery, and collaborative learning to help entrepreneurs scale sustainably with integrity and impact."
+      },
       "member_benefits": [
         {
-          "benefit": "Daily Mentorship",
-          "description": "Ongoing accountability and clarity throughout the year."
+          "benefit": "Global Mastermind",
+          "description": "Join an elite network of visionary founders and industry leaders from across the globe."
         },
         {
-          "benefit": "Practical Toolkits",
-          "description": "Ready-to-use SOPs, dashboards, checklists, and frameworks."
+          "benefit": "Strategic Mentorship",
+          "description": "1-on-1 guidance from veterans who have scaled multi-million dollar enterprises."
         },
         {
-          "benefit": "Global Networking",
-          "description": "Access to exclusive in-person gatherings, strategic collaborations, and global networks."
+          "benefit": "Valuation Restructuring",
+          "description": "Optimize your business model to attract high-tier investors and maximize exit multiples."
         },
         {
-          "benefit": "Corporate Readiness",
-          "description": "Guidance on structuring companies for IPO and Private Equity (PE) funding readiness."
+          "benefit": "Ethical Leadership",
+          "description": "Build a lasting legacy rooted in purpose, balance, and unwavering integrity."
+        },
+        {
+          "benefit": "Rapid Execution",
+          "description": "Implement proven frameworks to accelerate growth and bypass years of trial and error."
+        },
+        {
+          "benefit": "International Retreats",
+          "description": "Exclusive invites to closed-door networking events in premium global locations."
         }
       ]
     },

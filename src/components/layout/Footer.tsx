@@ -162,16 +162,21 @@ export default function Footer() {
     border: "3px dashed rgba(205, 29, 29, 0.4)",
   };
 
-  const isLightPage = pathname === "/" || pathname === "/about" || pathname === "/programmes" || pathname?.startsWith("/programme");
+  const isCreamPage = pathname === "/programmes" || pathname?.startsWith("/programme");
+  const isLightPage = pathname === "/" || pathname === "/about" || isCreamPage;
 
   return (
     <footer
       ref={containerRef}
       className="relative w-full min-h-[100vh] md:min-h-[85vh] bg-[#111] text-white flex flex-col justify-end overflow-hidden"
     >
-      {/* Top transition filler for light pages to eliminate black space above sliding bands */}
+      {/* Top transition filler for light/cream pages to eliminate black/white mismatched space above sliding bands */}
       {isLightPage && (
-        <div className="absolute top-0 left-0 w-full h-[15%] md:h-[10%] bg-white pointer-events-none" />
+        <div 
+          className={`absolute top-0 left-0 w-full h-[18%] md:h-[12%] pointer-events-none transition-colors duration-300 ${
+            isCreamPage ? "bg-[#FAF8F5]" : "bg-white"
+          }`} 
+        />
       )}
 
       {/* Marquee bands */}
@@ -241,20 +246,20 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-2 lg:col-start-6">
             <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2">Company</h4>
             <a href="/about" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">About Dr. Omar</a>
-            <a href="#entrepreneur" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">The Entrepreneur</a>
-            <a href="#achievements" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Achievements</a>
-            <a href="#blogs" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Insights & Blog</a>
-            <a href="#testimonials" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Success Stories</a>
+            <a href="/#entrepreneur" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">The Entrepreneur</a>
+            <a href="/#achievements" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Achievements</a>
+            <a href="/#blogs" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Insights & Blog</a>
+            <a href="/#testimonials" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Success Stories</a>
           </div>
 
           {/* Programmes */}
           <div className="flex flex-col gap-4 lg:col-span-2">
             <h4 className="font-helvetica font-bold text-xs md:text-sm uppercase tracking-widest text-white mb-2">Expertise</h4>
-            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Global Leadership</a>
-            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Deep Immersion</a>
+            <a href="/programme/bcc" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Business Coaching Club</a>
+            <a href="/programme/deep_immersion" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Deep Immersion</a>
             <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">NLP Coaching</a>
             <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Executive Mentorship</a>
-            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">Masterclasses</a>
+            <a href="/programmes" className="font-helvetica font-medium text-zinc-400 lg:hover:text-white transition-colors text-sm md:text-base w-fit">All Programmes →</a>
           </div>
 
           {/* Contact & Socials */}

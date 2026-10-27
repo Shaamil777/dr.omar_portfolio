@@ -33,7 +33,7 @@ interface ProgramFormProps {
 }
 
 const DEFAULT_OWNED_COMPANIES = [
-  { name: "BCC", logo: "/logos/BCC/bcc.png" },
+  { name: "BCC (Business Coaching Club)", logo: "/logos/BCC/bcc.png" },
   { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
   { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
   { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },
@@ -41,6 +41,7 @@ const DEFAULT_OWNED_COMPANIES = [
   { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_liight.png" },
   { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_light.png" },
   { name: "Teens Immersion", logo: "/logos/TI/ti_light.png" },
+  { name: "Youth Immersion", logo: "/logos/YI/yi_light.png" },
 ];
 
 function CharCount({ current = 0, max }: { current?: number; max: number }) {

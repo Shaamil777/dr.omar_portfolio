@@ -15,7 +15,7 @@
       "Lead with confidence",
       "Build a lasting legacy"
     ],
-    "missionVisionDesc": "To empower business owners to grow with clarity, lead with confidence, and build enduring legacies through a year-long ecosystem of structured mentorship, ethical leadership, and collaborative learning, BCC transforms entrepreneurs into purpose driven leaders who create sustainable wealth, meaningful impact, and balanced lives.",
+    "missionVisionDesc": "To empower business owners to grow with clarity, lead with confidence, and build enduring legacies through a year-long ecosystem of structured mentorship, ethical leadership, and collaborative learning, BCC transforms entrepreneurs into purpose-driven leaders who create sustainable wealth, meaningful impact, and balanced lives.",
     "stats": [
       {
         "value": "8,000+",
@@ -27,7 +27,7 @@
       }
     ],
     "mission": "To provide an immersive, year-long mentorship platform that integrates business systems, leadership intelligence, and personal mastery enabling entrepreneurs to scale sustainably with integrity and impact.",
-    "vision": "To build a global community of ethical and visionary entrepreneurs who create businesses that serve humanity, sustain growth across generations, and embody the principles of purpose, peace, and prosperity",
+    "vision": "To build a global community of ethical and visionary entrepreneurs who create businesses that serve humanity, sustain growth across generations, and embody the principles of purpose, peace, and prosperity.",
     "missionVisionImages": [
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600"
@@ -52,7 +52,7 @@
       {
         "title": "Personal Mastery & Balanced Life",
         "focus": "Harmony across Family, Health, Business, and Spirituality",
-        "concept": "Sustainable success without burnouts or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
+        "concept": "Sustainable success without burnout or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
         "icon": "heart",
         "image": "/images/programmes/highlite3.webp"
       },
@@ -109,7 +109,7 @@
     "ownedCompaniesHeading": "Companies Dr. Omar Owns and Leads",
     "ownedCompanies": [
       {
-        "name": "BCC",
+        "name": "BCC (Business Coaching Club)",
         "logo": "/logos/BCC/bcc.png"
       },
       {

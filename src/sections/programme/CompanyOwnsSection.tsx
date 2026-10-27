@@ -2,7 +2,7 @@ import Image from 'next/image';
 import type { CompanyData } from "@/constants/companies";
 
 const DEFAULT_OWNED_COMPANIES = [
-  { name: "BCC", logo: "/logos/BCC/bcc.png" },
+  { name: "BCC (Business Coaching Club)", logo: "/logos/BCC/bcc.png" },
   { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
   { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
   { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },

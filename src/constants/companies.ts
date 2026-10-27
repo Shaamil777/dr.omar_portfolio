@@ -54,6 +54,8 @@ export type CompanyData = {
   faqHeading?: string;
   faqs?: { question: string; answer: string }[];
   blogsTagline?: string;
+
+
   blogsHeading?: string;
   blogs?: { title: string; category?: string; image: string; date?: string; description?: string; slug?: string }[];
   closing?: {
@@ -74,40 +76,87 @@ export const allCatalogCompanies: CompanyData[] = [
     slug: "bcc",
     name: "Business Coaching Club",
     description: "An annual mentorship and business networking ecosystem designed to help entrepreneurs structure scalable growth, build sustainable brands, and protect their long-term legacy.",
+    aboutTitle: "About Business Coaching Club",
     aboutImage: "/images/programmes/bcc-about-bg.webp",
     aboutParagraphs: [
       "Business Coaching Club (BCC) is a year-long mentorship and business networking ecosystem designed to help entrepreneurs grow their businesses in a structured, sustainable, and ethical way.",
       "It focuses on transforming business owners into purpose-driven leaders who can scale their companies while maintaining balance in life values and spirituality."
     ],
+    missionVisionTagline: "PURPOSE & VISION",
     missionVisionHeading: ["Grow with clarity", "Lead with confidence", "Build a lasting legacy"],
-    missionVisionDesc: "To empower business owners to grow with clarity, lead with confidence, and build enduring legacies through a year-long ecosystem of structured mentorship, ethical leadership, and collaborative learning, BCC transforms entrepreneurs into purpose driven leaders who create sustainable wealth, meaningful impact, and balanced lives.",
+    missionVisionDesc: "To empower business owners to grow with clarity, lead with confidence, and build enduring legacies through a year-long ecosystem of structured mentorship, ethical leadership, and collaborative learning, BCC transforms entrepreneurs into purpose-driven leaders who create sustainable wealth, meaningful impact, and balanced lives.",
     stats: [
       { value: "8,000+", label: "Entrepreneurs & families mentored across Asia & the Middle East." },
       { value: "100+", label: "Companies guided to restructure for growth, valuation & funding." }
     ],
     mission: "To provide an immersive, year-long mentorship platform that integrates business systems, leadership intelligence, and personal mastery enabling entrepreneurs to scale sustainably with integrity and impact.",
-    vision: "To build a global community of ethical and visionary entrepreneurs who create businesses that serve humanity, sustain growth across generations, and embody the principles of purpose, peace, and prosperity",
+    vision: "To build a global community of ethical and visionary entrepreneurs who create businesses that serve humanity, sustain growth across generations, and embody the principles of purpose, peace, and prosperity.",
     missionVisionImages: [
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600"
     ],
-    faqs: [
+    pillarsTagline: "THE CORE FRAMEWORK",
+    pillarsSubtitle: "BCC Pillars",
+    pillars: [
       {
-        question: "Who is the Business Coaching Club (BCC) for?",
-        answer: "BCC is designed for established entrepreneurs, founders, and business owners who are looking to scale their operations, restructure for valuation, and build a lasting legacy with purpose."
+        title: "Ethical Leadership & Purpose-Driven Growth",
+        focus: "Integrity, Values, and Visionary Governance",
+        concept: "Building a business that stands on truth, moral strength, and transparency. Moving beyond pure profit to create real societal value, uplift people, and lead with purpose.",
+        icon: "shield",
+        image: "/images/programmes/highlite1.webp"
       },
       {
-        question: "How long does the mentorship program last?",
-        answer: "The ecosystem is designed as a year-long immersive journey, divided into structured modules covering business systems, leadership intelligence, and personal mastery."
+        title: "Scalable Systems, Automation & Business Structuring",
+        focus: "Operational Excellence, Systemization, and PE/IPO Readiness",
+        concept: "Transitioning from a founder-led business to a system-driven enterprise. Setting up SOPs, dashboards, and scalable architectures that make companies ready for growth, funding, and long-term valuation.",
+        icon: "layers",
+        image: "/images/programmes/highlite2.webp"
       },
       {
-        question: "Is this program conducted online or in-person?",
-        answer: "BCC uses a hybrid model. We host high-impact virtual masterclasses combined with exclusive, in-person networking retreats across Asia and the Middle East."
+        title: "Personal Mastery & Balanced Life",
+        focus: "Harmony across Family, Health, Business, and Spirituality",
+        concept: "Sustainable success without burnout or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
+        icon: "heart",
+        image: "/images/programmes/highlite3.webp"
       },
       {
-        question: "How do I apply for the program?",
-        answer: "You can apply by clicking the 'Join The Program' button. Our admissions team will review your business profile to ensure you are a good fit for the current cohort."
+        title: "Legacy Building & Ecosystem Collaboration",
+        focus: "Generational Continuity, Mentorship, and Global Networks",
+        concept: "Designing institutions that outlast their founders. Leveraging a trusted, collaborative ecosystem of entrepreneurs and mentors to unlock global expansion and collective growth.",
+        icon: "globe",
+        image: "/images/programmes/highlite4.webp"
       }
+    ],
+    ecosystemTagline: "WHAT YOU GET",
+    ecosystemTitle: "The Ecosystem",
+    ecosystemMediaImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { icon: "users", title: "Global Mastermind", description: "Join an elite network of visionary founders and industry leaders from across the globe.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" },
+      { icon: "target", title: "Strategic Mentorship", description: "1-on-1 guidance from veterans who have scaled multi-million dollar enterprises.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" },
+      { icon: "trending-up", title: "Valuation Restructuring", description: "Optimize your business model to attract high-tier investors and maximize exit multiples.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" },
+      { icon: "shield", title: "Ethical Leadership", description: "Build a lasting legacy rooted in purpose, balance, and unwavering integrity.", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" },
+      { icon: "zap", title: "Rapid Execution", description: "Implement proven frameworks to accelerate growth and bypass years of trial and error.", image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800" },
+      { icon: "globe", title: "International Retreats", description: "Exclusive invites to closed-door networking events in premium global locations.", image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" }
+    ],
+    ownedCompaniesTagline: "Dr. Omar's Ecosystem",
+    ownedCompaniesHeading: "Companies Dr. Omar Owns and Leads",
+    ownedCompanies: [
+      { name: "BCC (Business Coaching Club)", logo: "/logos/BCC/bcc.png" },
+      { name: "Business Immersion", logo: "/logos/BI/bi_light.png" },
+      { name: "Deep Immersion", logo: "/logos/DI/di_light.png" },
+      { name: "Emotional Intelligence", logo: "/logos/EI/ei_light.png" },
+      { name: "Human Excellence Academy", logo: "/logos/HEA/hea_light.png" },
+      { name: "Master Deep Immersion", logo: "/logos/MDI/mdi_liight.png" },
+      { name: "OATHMEN", logo: "/logos/OATHMEN/oathmen_light.png" },
+      { name: "Teens Immersion", logo: "/logos/TI/ti_light.png" },
+      { name: "Youth Immersion", logo: "/logos/YI/yi_light.png" }
+    ],
+    galleryTagline: "GALLERY // EXPERIENCE",
+    galleryTitle: "Witness the\nTransformation",
+    galleryDescription: "Take an inside look at our immersive retreats, hands-on masterclasses, and powerful mentorship sessions. Every moment is designed to push your boundaries and unlock your ultimate potential.",
+    galleryStats: [
+      { value: "50+", label: "Global Retreats" },
+      { value: "10k", label: "Lives Changed" }
     ],
     gallery: [
       {
@@ -137,50 +186,37 @@ export const allCatalogCompanies: CompanyData[] = [
       { stat: "8,000+", label: "Founders Mentored" },
       { stat: "100%", label: "Commitment to Excellence" }
     ],
-    pillars: [
-      {
-        title: "Ethical Leadership & Purpose-Driven Growth",
-        focus: "Integrity, Values, and Visionary Governance",
-        concept: "Building a business that stands on truth, moral strength, and transparency. Moving beyond pure profit to create real societal value, uplift people, and lead with purpose.",
-        icon: "shield",
-        image: "/images/programmes/highlite1.webp"
-      },
-      {
-        title: "Scalable Systems, Automation & Business Structuring",
-        focus: "Operational Excellence, Systemization, and PE/IPO Readiness",
-        concept: "Transitioning from a founder-led business to a system-driven enterprise. Setting up SOPs, dashboards, and scalable architectures that make companies ready for growth, funding, and long-term valuation.",
-        icon: "layers",
-        image: "/images/programmes/highlite2.webp"
-      },
-      {
-        title: "Personal Mastery & Balanced Life",
-        focus: "Harmony across Family, Health, Business, and Spirituality",
-        concept: "Sustainable success without burnouts or sacrificing personal well-being. Aligning professional performance with personal health, family values, and spiritual peace.",
-        icon: "heart",
-        image: "/images/programmes/highlite3.webp"
-      },
-      {
-        title: "Legacy Building & Ecosystem Collaboration",
-        focus: "Generational Continuity, Mentorship, and Global Networks",
-        concept: "Designing institutions that outlast their founders. Leveraging a trusted, collaborative ecosystem of entrepreneurs and mentors to unlock global expansion and collective growth.",
-        icon: "globe",
-        image: "/images/programmes/highlite4.webp"
-      }
-    ],
-    features: [
-      { icon: "users", title: "Global Mastermind", description: "Join an elite network of visionary founders and industry leaders from across the globe." },
-      { icon: "target", title: "Strategic Mentorship", description: "1-on-1 guidance from veterans who have scaled multi-million dollar enterprises." },
-      { icon: "trending-up", title: "Valuation Restructuring", description: "Optimize your business model to attract high-tier investors and maximize exit multiples." },
-      { icon: "shield", title: "Ethical Leadership", description: "Build a lasting legacy rooted in purpose, balance, and unwavering integrity." },
-      { icon: "zap", title: "Rapid Execution", description: "Implement proven frameworks to accelerate growth and bypass years of trial and error." },
-      { icon: "globe", title: "International Retreats", description: "Exclusive invites to closed-door networking events in premium global locations." }
-    ],
+    testimonialsTagline: "THE ALUMNI",
+    testimonialsHeading: "Leaders Who Scaled",
+    testimonialsRatingText: "4.9/5 Average Rating",
     testimonials: [
       { name: "Sarah Jenkins", role: "CEO, TechFlow", quote: "BCC completely rewired how I approach scaling. We 10x'd our valuation in under 14 months.", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200", rating: 5 },
       { name: "Ahmed Al-Fayed", role: "Founder, Zenith Capital", quote: "The network alone is worth a million dollars. The mentorship is simply priceless.", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200", rating: 5 },
       { name: "Elena Rostova", role: "Director, InnovateX", quote: "I finally have clarity. I'm no longer working in my business, I'm working on my legacy.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200", rating: 5 },
       { name: "Marcus Thorne", role: "Partner, V-Ventures", quote: "The ethical leadership framework taught here is the missing link in modern entrepreneurship.", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200", rating: 5 }
     ],
+    faqTagline: "FAQ",
+    faqHeading: "Frequently\nAsked\nQuestions",
+    faqs: [
+      {
+        question: "Who is the Business Coaching Club (BCC) for?",
+        answer: "BCC is designed for established entrepreneurs, founders, and business owners who are looking to scale their operations, restructure for valuation, and build a lasting legacy with purpose."
+      },
+      {
+        question: "How long does the mentorship program last?",
+        answer: "The ecosystem is designed as a year-long immersive journey, divided into structured modules covering business systems, leadership intelligence, and personal mastery."
+      },
+      {
+        question: "Is this program conducted online or in-person?",
+        answer: "BCC uses a hybrid model. We host high-impact virtual masterclasses combined with exclusive, in-person networking retreats across Asia and the Middle East."
+      },
+      {
+        question: "How do I apply for the program?",
+        answer: "You can apply by clicking the 'Join The Program' button. Our admissions team will review your business profile to ensure you are a good fit for the current cohort."
+      }
+    ],
+    blogsTagline: "INSIGHTS",
+    blogsHeading: "Latest Case\nStudies",
     blogs: [
       { title: "The 5 Pillars of Scaling Without Losing Your Soul", category: "LEADERSHIP", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600", date: "OCT 12, 2026" },
       { title: "How to Restructure Your Cap Table for Series A", category: "FINANCE", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600", date: "SEP 28, 2026" },
@@ -228,6 +264,12 @@ export const allCatalogCompanies: CompanyData[] = [
           caption: "EXCELLENCE HONORED AT GLOBAL RETREAT"
         }
       ]
+    },
+    closing: {
+      tagline: "THE NEXT STEP",
+      heading: "Are You\nReady to\nScale?",
+      description: "Join the elite network inside the Business Coaching Club and begin your transformational journey.",
+      cta: "Join The Program"
     },
     components: ["Hero", "About", "Testimonial", "UpcomingEvents"],
   },
