@@ -206,7 +206,21 @@ export default function ProgrammeStory({ company }: { company: CompanyData }) {
                             src={chapter.image}
                             alt="Story imagery"
                             fill
-                            className="object-cover grayscale contrast-[1.04] group-hover:grayscale-0 group-hover:scale-[1.04] transition-all duration-1000 ease-out"
+                            style={{
+                              objectPosition:
+                                idx === 0 || chapter.image.includes("brandmount")
+                                  ? "center 15%"
+                                  : idx === 1 || chapter.image.includes("SSK04766")
+                                  ? "center 10%"
+                                  : "center",
+                            }}
+                            className={`object-cover grayscale contrast-[1.04] group-hover:grayscale-0 group-hover:scale-[1.04] transition-all duration-1000 ease-out ${
+                              idx === 0 || chapter.image.includes("brandmount")
+                                ? "object-[center_15%]"
+                                : idx === 1 || chapter.image.includes("SSK04766")
+                                ? "object-[center_10%]"
+                                : "object-center"
+                            }`}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
                           />
                           
